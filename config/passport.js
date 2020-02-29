@@ -1,5 +1,5 @@
 var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
+// var LocalStrategy = require("passport-local").Strategy;
 
 var db = require("../models");
 
@@ -54,8 +54,8 @@ module.exports = passport;
 var passport = require('passport');
 var GithubStrategy = require('passport-github2').Strategy;
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
-var User = require('./user.js');
-var config = require('./oauth.js');
+var User = require('../models/user');
+var config = require('./oauth');
 
 passport.use(new GithubStrategy({
   clientID: config.github.clientID,
