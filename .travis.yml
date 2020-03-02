@@ -3,3 +3,4 @@ node_js:
   - stable
 services:
   - mongodb
+install: npm install --only=dev && npm install
