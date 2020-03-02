@@ -12,7 +12,6 @@ function App() {
       })
         .then(res => res.json())
         .then(res => {
-          console.log('Hey');
           setTestMessage(res.data);
         });
     };
