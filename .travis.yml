@@ -3,3 +3,5 @@ node_js:
   - stable
 services:
   - mongodb
+script:
+  - cd client/ && npm install --only=dev && npm install && npm test
