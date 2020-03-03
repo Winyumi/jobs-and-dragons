@@ -6,7 +6,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cd client/ && npm test",
+    "test": "cd client/tests && npm test",
     "eject": "react-scripts eject"
   },
   "repository": {
