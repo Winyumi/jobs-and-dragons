@@ -16,17 +16,10 @@ app.use(cors());
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
-  // res.status(200).json({
-  //   data: 'Hello from J&D!'
-  // });
-    res.sendFile(path.join(__dirname, "client/public", "index.html"));
+
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 
 });
-
-// app.use((_, res) => {
-//   res.sendFile(join(__dirname, "public", "index.html"));
-// });
-
 
 app.listen(
   PORT,
