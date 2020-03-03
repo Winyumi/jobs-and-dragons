@@ -4,4 +4,4 @@ node_js:
 services:
   - mongodb
 script:
-  - cd client/__tests__ && npm install --only=dev && npm install && npm test
+  - cd /jobs-and-dragons/client/__tests__ && npm install --only=dev && npm install && npm test
