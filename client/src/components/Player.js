@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { usePlayerContext } from '../../context/PlayerContext';
+import { usePlayerContext } from '../contexts/PlayerContext';
 import walkSprite from '../assets/player_walk.png';
 
 const Player = () => {

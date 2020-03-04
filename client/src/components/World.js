@@ -1,6 +1,6 @@
 import React from 'react';
 import Player from './Player';
-import Map from '../Map/Map';
+import Map from './Map/Map';
 import { dungeon } from '../maps/dungeon';
 
 const World = () => {
