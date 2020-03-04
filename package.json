@@ -1,30 +1,69 @@
 {
   "name": "jobs-and-dragons",
   "version": "1.0.0",
+  "private": true,
   "description": "Job Search Game",
   "main": "server.js",
   "scripts": {
     "lint": "eslint --fix /**/*.js --ignore-pattern node_modules/",
     "dev": "nodemon server",
-    "start": "concurrently \"npm run dev\" \"cd client && npm start\""
+    "start": "concurrently \"npm run dev\" \"react-scripts start\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Winyumi/jobs-and-dragons.git"
   },
-  "author": "",
+  "author": "Team Awesome Team 2",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Winyumi/jobs-and-dragons/issues"
   },
+  "proxy": "http://localhost:3000",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "homepage": "https://github.com/Winyumi/jobs-and-dragons#readme",
   "dependencies": {
+    "@auth0/auth0-spa-js": "^1.6.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.1",
+    "@testing-library/user-event": "^7.2.1",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "highlight.js": "^9.18.1",
+    "hljs": "^6.2.3",
+    "passport": "^0.4.1",
+    "passport-github": "^1.1.0",
+    "passport-github2": "^0.1.11",
+    "passport-google-oauth2": "^0.2.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "reactstrap": "^8.4.1"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
     "eslint": "^6.8.0",
     "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-import": "^2.20.1",
