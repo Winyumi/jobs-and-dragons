@@ -4,6 +4,7 @@
   "description": "Job Search Game",
   "main": "server.js",
   "scripts": {
+    "lint": "eslint --fix /**/*.js --ignore-pattern node_modules/",
     "dev": "nodemon server",
     "start": "concurrently \"npm run dev\" \"cd client && npm start\""
   },
@@ -25,6 +26,7 @@
   "devDependencies": {
     "concurrently": "^5.1.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
