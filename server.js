@@ -15,13 +15,13 @@ app.use(cors());
 // Use development logging middleware
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-app.get('/', (req, res, next) => {
-  res.status(200).json({
-    data: 'Hello from J&D!'
-  });
+app.get('/', (req, res) => {
+	res.status(200).json({
+		data: 'Hello from J&D!'
+	});
 });
 
 app.listen(
-  PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+	PORT,
+	console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 );
