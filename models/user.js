@@ -16,16 +16,33 @@ gitHub:{
   email: String,
 },
 resume:{
-  contact: String,
+  contact:{
+    name: String,
+    phone: Number,
+    email: String,
+  },
+  bio: String,
   experience: String,
   education: String,
   skills: String,
-  objective:String
+  Hobbies:String
 },
 coverLetter:{
   title: String,
-  body:String,
+  body: String,
 },
+jobsearch:{
+  title: String,
+  company: String,
+  id: Number,
+  description: String,
+  url: String,
+  Location:{
+    area:[],
+    long: Number,
+    lat: Number,
+  }
+}
 
 })
 
