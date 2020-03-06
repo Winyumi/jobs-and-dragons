@@ -5,10 +5,8 @@ const path = require('path');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
-
-
 // Load env variables
-dotenv.config({ path: path.join(__dirname, 'client/config/config.env') });
+dotenv.config({ path: path.join(__dirname, 'config/config.env') });
 
 const PORT = process.env.PORT || 3001;
 
@@ -30,9 +28,12 @@ app.listen(
 );
 
 const uri = process.env.MLAB_URI;
-mongoose.connect(uri,{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
-);
+mongoose.connect(uri, {
+	useNewUrlParser: true,
+	useCreateIndex: true,
+	useUnifiedTopology: true
+});
 const connection = mongoose.connection;
 connection.once('open', () => {
-  console.log("MongoDB database connection established successfully");
-})
+	console.log('MongoDB database connection established successfully');
+});
