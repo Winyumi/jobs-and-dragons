@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
   Collapse,
@@ -82,14 +81,12 @@ const NavBar = () => {
                       className="dropdown-profile"
                       activeClassName="router-link-exact-active"
                     >
-                      <FontAwesomeIcon icon="user" className="mr-3" /> 
                        Profile
                     </DropdownItem>
                     <DropdownItem
                       id="qsLogoutBtn"
                       onClick={() => logoutWithRedirect()}
                     >
-                      <FontAwesomeIcon icon="power-off" className="mr-3" /> 
                        Logout
                     </DropdownItem>
                   </DropdownMenu>
@@ -127,7 +124,6 @@ const NavBar = () => {
                   </span>
                 </NavItem>
                 <NavItem>
-                  <FontAwesomeIcon icon="user" className="mr-3" />
                   <RouterNavLink
                     to="/profile"
                     activeClassName="router-link-exact-active"
@@ -136,7 +132,6 @@ const NavBar = () => {
                   </RouterNavLink>
                 </NavItem>
                 <NavItem>
-                  <FontAwesomeIcon icon="power-off" className="mr-3" />
                   <RouterNavLink
                     to="#"
                     id="qsLogoutBtn"

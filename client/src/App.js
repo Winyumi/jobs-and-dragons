@@ -17,8 +17,8 @@ import history from './utils/history';
 import './App.css';
 
 // fontawesome
-import initFontAwesome from './utils/initFontAwesome';
-initFontAwesome();
+// import initFontAwesome from './utils/initFontAwesome';
+// initFontAwesome();
 
 const App = () => {
   const { loading } = useAuth0();
