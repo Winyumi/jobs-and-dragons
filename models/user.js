@@ -19,7 +19,8 @@ resume:{
   experience: String,
   education: String,
   skills: String,
-  Hobbies:String
+  projects:String,
+  expertise:String
 },
 coverLetter:{
   title: String,
@@ -37,7 +38,6 @@ jobsearch:{
     lat: Number,
   }
 }
-
 })
 const User = mongoose.model("User", UserSchema)
 
