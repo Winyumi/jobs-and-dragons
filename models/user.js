@@ -7,5 +7,4 @@ var User = mongoose.model('User', {
   created: Date
 });
 
-
 module.exports = User;
