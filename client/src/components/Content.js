@@ -10,7 +10,8 @@ class Content extends Component {
     return (
       <div className="next-steps my-5">
         <h2 className="my-5 text-center">What can I do next?</h2>
-        <Row className="d-flex justify-content-between">
+        
+        {/* <Row className="d-flex justify-content-between">
           {contentData.map((col, i) => (
             <Col key={i} md={5} className="mb-4">
               <h6 className="mb-3">
@@ -22,7 +23,14 @@ class Content extends Component {
               <p>{col.description}</p>
             </Col>
           ))}
-        </Row>
+        </Row> */}
+
+        <div class="row">
+          <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+          <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+          <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+          <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+        </div>
       </div>
     );
   }

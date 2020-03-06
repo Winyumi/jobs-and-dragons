@@ -1,12 +1,6 @@
 import React from "react";
 
 const Footer = () => (
-  // <footer className="bg-light p-3 text-center">
-  //   <div className="logo" />
-  //   <p>
-  //     JOBS & DRAGONS 
-  //   </p>
-  // </footer>
 
   <footer class="page-footer">
           <div class="container">

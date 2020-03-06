@@ -53,14 +53,15 @@ const NavBar = () => {
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>
+
                   <Button
                     id="qsLoginBtn"
-                    color="primary"
-                    className="btn-margin"
+                    className="btn-large"
                     onClick={() => loginWithRedirect({})}
                   >
                     Log in
                   </Button>
+
                 </NavItem>
               )}
               {isAuthenticated && (
@@ -100,8 +101,7 @@ const NavBar = () => {
                 <NavItem>
                   <Button
                     id="qsLoginBtn"
-                    color="primary"
-                    block
+                    // block
                     onClick={() => loginWithRedirect({})}
                   >
                     Log in
