@@ -5,8 +5,10 @@
   "main": "server.js",
   "scripts": {
     "lint": "eslint --fix /**/*.js --ignore-pattern node_modules/",
-    "dev": "nodemon server",
-    "start": "concurrently \"npm run dev\" \"cd client && npm start\""
+    "reload": "nodemon server",
+    "dev": "concurrently \"npm run reload\" \"cd client && npm start\"",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",

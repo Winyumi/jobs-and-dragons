@@ -8,10 +8,11 @@ const mongoose = require('mongoose');
 // Load env variables
 dotenv.config({ path: path.join(__dirname, 'config/config.env') });
 
-const PORT = process.env.PORT || 3001;
-
 const app = express();
 app.use(cors());
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Use development logging middleware
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
@@ -21,6 +22,8 @@ app.get('/', (req, res) => {
 		data: 'Hello from J&D!'
 	});
 });
+
+const PORT = process.env.PORT || 3001;
 
 app.listen(
 	PORT,
