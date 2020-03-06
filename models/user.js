@@ -1,11 +1,5 @@
 var mongoose = require('mongoose');
 
-// create a user model
-var User = mongoose.model('User', {
-  oauthID: Number,
-  name: String,
-  created: Date
-});
 
 // create a user schema 
 
@@ -25,7 +19,8 @@ resume:{
   experience: String,
   education: String,
   skills: String,
-  Hobbies:String
+  projects:String,
+  expertise:String
 },
 coverLetter:{
   title: String,
@@ -41,10 +36,14 @@ jobsearch:{
     area:[],
     long: Number,
     lat: Number,
-  }
+  },
+  applied:{type: Boolean, default: false},
+  
 }
-
 })
+const User = mongoose.model("User", UserSchema)
+
+
 
 
 module.exports = User;
