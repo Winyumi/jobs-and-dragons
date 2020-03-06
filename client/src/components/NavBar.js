@@ -31,6 +31,7 @@ const NavBar = () => {
     });
 
   return (
+
     <div className="nav-container">
       <Navbar color="light" light expand="md">
         <Container>

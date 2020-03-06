@@ -21,7 +21,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
