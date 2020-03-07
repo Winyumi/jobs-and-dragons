@@ -12,8 +12,9 @@ import World from './components/World';
 import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
+import UserInfo from './components/pages/userInfo';
 
-// styles
+// styles/
 import './App.css';
 
 // fontawesome
@@ -34,6 +35,7 @@ const App = () => {
         <Container className='flex-grow-1 mt-5'>
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/userinfo' component={UserInfo}/>
             <Route exact path='/game'>
               <PlayerProvider>
                 <World />
