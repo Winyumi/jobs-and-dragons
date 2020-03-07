@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class UserExp extends Component {
   render() {
-    const { experience, onChangeHanlder, id } = this.props;
+    const { experience, onChangeHandler, id } = this.props;
     const { name, start, end, description, designation } = experience;
     return (
       <div className="info" id={id}>
@@ -12,14 +12,14 @@ export default class UserExp extends Component {
             name="name"
             placeholder="Company Name"
             value={name}
-            onChange={onChangeHanlder('name', 'experience', id)}
+            onChange={onChangeHandler('name', 'experience', id)}
             required
           />
         </div>
         <div className="form-group">
           <textarea
             name="description"
-            onChange={onChangeHanlder('description', 'experience', id)}
+            onChange={onChangeHandler('description', 'experience', id)}
             value={description}
             placeholder="What you have done in your compnay ? (Provide answer in list)"
             rows="10"
@@ -31,7 +31,7 @@ export default class UserExp extends Component {
             value={designation}
             type="text"
             placeholder="Designation"
-            onChange={onChangeHanlder('designation', 'experience', id)}
+            onChange={onChangeHandler('designation', 'experience', id)}
             required
           />
         </div>
@@ -41,7 +41,7 @@ export default class UserExp extends Component {
             type="date"
             name="start"
             value={start}
-            onChange={onChangeHanlder('start', 'experience', id)}
+            onChange={onChangeHandler('start', 'experience', id)}
             required
           />
         </div>
@@ -51,7 +51,7 @@ export default class UserExp extends Component {
             type="date"
             name="end"
             value={end}
-            onChange={onChangeHanlder('end', 'experience', id)}
+            onChange={onChangeHandler('end', 'experience', id)}
             required
           />
         </div>
