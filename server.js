@@ -18,9 +18,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
 app.get('/', (_req, res) => {
-	res.status(200).json({
-		data: 'Hello from J&D!'
-	});
+	res.status(200).sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 // The "catchall" handler: for any request that doesn't
