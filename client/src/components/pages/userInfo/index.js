@@ -19,7 +19,7 @@ export default class index extends Component {
       this.setState(JSON.parse(localStorage.getItem('data')))
     }
   }
-  onChangeHanlder = (name, from, id) => e => {
+  onChangeHandler = (name, from, id) => e => {
     let value = e.target.value;
     let newState = { ...this.state };
     if (name && from && id !== undefined) {
@@ -75,7 +75,7 @@ export default class index extends Component {
     return (
       <form onSubmit={this.onSubmitHandler}>
         <section id="user-info">
-          <UserDetail onChangeHanlder={this.onChangeHanlder} values={values} />
+          <UserDetail onChangeHandler={this.onChangeHandler} values={values} />
         </section>
         <section id="education">
           <div className="util">
@@ -94,7 +94,7 @@ export default class index extends Component {
             </button>
               <UserEducation
                 values={values}
-                onChangeHanlder={this.onChangeHanlder}
+                onChangeHandler={this.onChangeHandler}
                 id={i}
                 education={formValue}
               />
@@ -116,7 +116,7 @@ export default class index extends Component {
             </button>
               <UserExp
                 values={values}
-                onChangeHanlder={this.onChangeHanlder}
+                onChangeHandler={this.onChangeHandler}
                 id={i}
                 experience={formValue}
               />
@@ -138,7 +138,7 @@ export default class index extends Component {
               </button>
               <UserProjects
                 values={values}
-                onChangeHanlder={this.onChangeHanlder}
+                onChangeHandler={this.onChangeHandler}
                 id={i}
                 projects={formValue}
               />

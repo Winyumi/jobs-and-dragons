@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class UserEducation extends Component {
   render() {
-    const { education, onChangeHanlder, id } = this.props;
+    const { education, onChangeHandler, id } = this.props;
     const { degree, from, start, end } = education;
 
     return (
@@ -13,7 +13,7 @@ export default class UserEducation extends Component {
             name="degree"
             placeholder="Degree"
             value={degree}
-            onChange={onChangeHanlder('degree', 'education', id)}
+            onChange={onChangeHandler('degree', 'education', id)}
             required
           />
         </div>
@@ -23,7 +23,7 @@ export default class UserEducation extends Component {
             name="from"
             placeholder="College or Univeristy Name"
             value={from}
-            onChange={onChangeHanlder('from', 'education', id)}
+            onChange={onChangeHandler('from', 'education', id)}
             required
           />
         </div>
@@ -33,7 +33,7 @@ export default class UserEducation extends Component {
             type="date"
             name="start"
             value={start}
-            onChange={onChangeHanlder('start', 'education', id)}
+            onChange={onChangeHandler('start', 'education', id)}
             required
           />
         </div>
@@ -43,7 +43,7 @@ export default class UserEducation extends Component {
             type="date"
             name="end"
             value={end}
-            onChange={onChangeHanlder('end', 'education', id)}
+            onChange={onChangeHandler('end', 'education', id)}
             required
           />
         </div>

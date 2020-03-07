@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class UserProjects extends Component {
   render() {
-    const { projects, onChangeHanlder, id } = this.props;
+    const { projects, onChangeHandler, id } = this.props;
     const { name, description } = projects;
     return (
       <div className="info" id={id}>
@@ -12,7 +12,7 @@ export default class UserProjects extends Component {
             name="name"
             placeholder="Project's Name"
             value={name}
-            onChange={onChangeHanlder('name', 'projects', id)}
+            onChange={onChangeHandler('name', 'projects', id)}
             required
           />
         </div>
@@ -22,7 +22,7 @@ export default class UserProjects extends Component {
             value={description}
             type="text"
             placeholder="Describe your project work"
-            onChange={onChangeHanlder('description', 'projects', id)}
+            onChange={onChangeHandler('description', 'projects', id)}
             required
           />
         </div>
