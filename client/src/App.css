@@ -107,6 +107,7 @@ button:hover {
   font-style: normal;
 }
 .remove-btn {
+  font-family: 'Retro Gaming'; 
   background-color: red;
   color: white;
   font-weight: bold;
