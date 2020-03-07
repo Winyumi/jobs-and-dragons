@@ -102,9 +102,13 @@ button:hover {
 }
 @font-face {
   font-family: 'Retro Gaming';
-  src: url('/client/src/assets/fonts/RetroGaming.woff2') format('woff2');
+  src: url('/fonts/RetroGaming.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+}
+
+.h4{
+  font-family: 'Retro Gaming';
 }
 .remove-btn {
   font-family: 'Retro Gaming'; 

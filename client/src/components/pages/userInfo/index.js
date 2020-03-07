@@ -79,7 +79,7 @@ export default class index extends Component {
         </section>
         <section id="education">
           <div className="util">
-            <h4>Education</h4>
+            <h4 font-family= 'Retro Gaming' >Education</h4>
             <button onClick={this.addMoreFormGrp('education')} className='btn-floating btn-medium waves-effect waves-light red'>
               +
             </button>
