@@ -2,7 +2,6 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
-const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 // Load env variables
@@ -15,7 +14,10 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Use development logging middleware
-if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'development') {
+	const morgan = require('morgan');
+	app.use(morgan('dev'));
+}
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
