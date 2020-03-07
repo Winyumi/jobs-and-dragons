@@ -17,14 +17,10 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // Use development logging middleware
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-app.get('/', (_req, res) => {
-	res.status(200).sendFile(path.join(__dirname + '/client/build/index.html'));
-});
-
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (_req, res) => {
-	res.sendFile(path.join(__dirname + '/client/build/index.html'));
+	res.sendFile(path.join(__dirname + 'client/build/index.html'));
 });
 
 const PORT = process.env.PORT || 3001;
