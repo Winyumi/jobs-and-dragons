@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class UserDetail extends Component {
   render() {
-    const { values, onChangeHanlder } = this.props;
+    const { values, onChangeHandler } = this.props;
     const { name, email, bio, phone } = values;
     return (
       <div className="info">
@@ -13,7 +13,7 @@ export default class UserDetail extends Component {
             name="name"
             placeholder="Your Name"
             value={name}
-            onChange={onChangeHanlder('name')}
+            onChange={onChangeHandler('name')}
             required
           />
         </div>
@@ -23,7 +23,7 @@ export default class UserDetail extends Component {
             name="email"
             placeholder="Your Email"
             value={email}
-            onChange={onChangeHanlder('email')}
+            onChange={onChangeHandler('email')}
             required
           />
         </div>
@@ -33,7 +33,7 @@ export default class UserDetail extends Component {
             name="bio"
             value={bio}
             placeholder="Tell me about your self"
-            onChange={onChangeHanlder('bio')}
+            onChange={onChangeHandler('bio')}
             required
           />
         </div>
@@ -43,7 +43,7 @@ export default class UserDetail extends Component {
             name="phone"
             value={phone}
             placeholder="Your Number"
-            onChange={onChangeHanlder('phone')}
+            onChange={onChangeHandler('phone')}
             required
           />
         </div>
