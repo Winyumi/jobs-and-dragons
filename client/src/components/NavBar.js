@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
+import 'materialize-css';
 
-import {
-  Collapse,
-  Container,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Button,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
+
+// import {
+//   Collapse,
+//   Container,
+//   Navbar,
+//   NavbarToggler,
+//   NavbarBrand,
+//   Nav,
+//   NavItem,
+//   NavLink,
+//   Button,
+//   UncontrolledDropdown,
+//   DropdownToggle,
+//   DropdownMenu,
+//   DropdownItem
+// } from "reactstrap";
 
 import { useAuth0 } from "../react-auth0-spa";
 
@@ -32,19 +34,14 @@ const NavBar = () => {
   return (
 
     <div className="nav-container">
-      <Navbar color="light" light expand="md">
+      {/* <Navbar color="light" light expand="md">
         <Container>
           <NavbarBrand className="logo" />
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink
-                  tag={RouterNavLink}
-                  to="/"
-                  exact
-                  activeClassName="router-link-exact-active"
-                >
+                <NavLink tag={RouterNavLink} to="/" exact activeClassName="router-link-exact-active" >
                   Home
                 </NavLink>
               </NavItem>
@@ -52,41 +49,21 @@ const NavBar = () => {
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>
-
-                  <Button
-                    id="qsLoginBtn"
-                    className="btn-large"
-                    onClick={() => loginWithRedirect({})}
-                  >
-                    Log in
+                  <Button id="qsLoginBtn" className="btn-large" onClick={() => loginWithRedirect({})}> Log in
                   </Button>
-
                 </NavItem>
               )}
               {isAuthenticated && (
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret id="profileDropDown">
-                    <img
-                      src={user.picture}
-                      alt="Profile"
-                      className="nav-user-profile rounded-circle"
-                      width="50"
-                    />
+                    <img src={user.picture} alt="Profile" className="nav-user-profile rounded-circle" width="50" />
                   </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem header>{user.name}</DropdownItem>
-                    <DropdownItem
-                      tag={RouterNavLink}
-                      to="/profile"
-                      className="dropdown-profile"
-                      activeClassName="router-link-exact-active"
-                    >
+                    <DropdownItem tag={RouterNavLink} to="/profile" className="dropdown-profile" activeClassName="router-link-exact-active">
                        Profile
                     </DropdownItem>
-                    <DropdownItem
-                      id="qsLogoutBtn"
-                      onClick={() => logoutWithRedirect()}
-                    >
+                    <DropdownItem id="qsLogoutBtn" onClick={() => logoutWithRedirect()} >
                        Logout
                     </DropdownItem>
                   </DropdownMenu>
@@ -96,47 +73,26 @@ const NavBar = () => {
             {!isAuthenticated && (
               <Nav className="d-md-none" navbar>
                 <NavItem>
-                  <Button
-                    id="qsLoginBtn"
-                    // block
-                    onClick={() => loginWithRedirect({})}
-                  >
-                    Log in
+                  <Button id="qsLoginBtn" block onClick={() => loginWithRedirect({})} > Log in
                   </Button>
                 </NavItem>
               </Nav>
             )}
             {isAuthenticated && (
-              <Nav
-                className="d-md-none justify-content-between"
-                navbar
-                style={{ minHeight: 170 }}
-              >
+              <Nav className="d-md-none justify-content-between" navbar style={{ minHeight: 170 }} >
                 <NavItem>
                   <span className="user-info">
-                    <img
-                      src={user.picture}
-                      alt="Profile"
-                      className="nav-user-profile d-inline-block rounded-circle mr-3"
-                      width="50"
-                    />
+                    <img src={user.picture} alt="Profile" className="nav-user-profile d-inline-block rounded-circle mr-3" width="50"/>
                     <h6 className="d-inline-block">{user.name}</h6>
                   </span>
                 </NavItem>
                 <NavItem>
-                  <RouterNavLink
-                    to="/profile"
-                    activeClassName="router-link-exact-active"
-                  >
+                  <RouterNavLink to="/profile" activeClassName="router-link-exact-active" >
                     Profile
                   </RouterNavLink>
                 </NavItem>
                 <NavItem>
-                  <RouterNavLink
-                    to="#"
-                    id="qsLogoutBtn"
-                    onClick={() => logoutWithRedirect()}
-                  >
+                  <RouterNavLink to="#" id="qsLogoutBtn" onClick={() => logoutWithRedirect()}>
                     Log out
                   </RouterNavLink>
                 </NavItem>
@@ -144,7 +100,21 @@ const NavBar = () => {
             )}
           </Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
+
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo right">Logo</a>
+      <ul class="left hide-on-med-and-down">
+        
+        <li to="/" id="qsLoginBtn" onClick={() => loginWithRedirect({})}><a href="/">LOGIN</a></li>
+        <li to="/profile"><a href="/profile">PROFILE</a></li>
+        <li to="/logout" id="qsLogoutBtn" onClick={() => logoutWithRedirect()}><a href="/logout">LOGOUT</a></li>
+      </ul>
+    </div>
+  </nav>
+
     </div>
   );
 };
