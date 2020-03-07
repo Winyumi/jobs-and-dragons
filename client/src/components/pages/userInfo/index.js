@@ -80,7 +80,7 @@ export default class index extends Component {
         <section id="education">
           <div className="util">
             <h4>Education</h4>
-            <button onClick={this.addMoreFormGrp('education')} class ='btn-floating btn-medium waves-effect waves-light red'>
+            <button onClick={this.addMoreFormGrp('education')} className='btn-floating btn-medium waves-effect waves-light red'>
               +
             </button>
           </div>
@@ -104,7 +104,9 @@ export default class index extends Component {
         <section id="exp">
           <div className="util">
             <h4>Experience</h4>
-            <button onClick={this.addMoreFormGrp('experience')} class ='btn-floating btn-medium waves-effect waves-light red'>+</button>
+            <button onClick={this.addMoreFormGrp('experience')} className='btn-floating btn-medium waves-effect waves-light red'>
+              +
+            </button>
           </div>
           {experience.map((formValue, i) => (
             <div key={i}>
@@ -126,7 +128,7 @@ export default class index extends Component {
         <section id="projects">
           <div className="util">
             <h4>Projects</h4>
-            <button onClick={this.addMoreFormGrp('projects')} class ='btn-floating btn-medium waves-effect waves-light red'>+</button>
+            <button onClick={this.addMoreFormGrp('projects')} className='btn-floating btn-medium waves-effect waves-light red'>+</button>
           </div>
           {projects.map((formValue, i) => (
             <div key={i}>
@@ -145,7 +147,7 @@ export default class index extends Component {
             </div>
           ))}
         </section>
-        <input type="submit" value="SUBMIT" class="btn waves-effect waves-light"/>
+        <input type="submit" value="SUBMIT" className="btn waves-effect waves-light" />
       </form>
     );
   }
