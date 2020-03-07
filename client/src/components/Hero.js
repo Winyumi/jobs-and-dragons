@@ -9,7 +9,14 @@ const Hero = () => (
     <p className='mb-5'>
       Job Hunt and Game using <a href='https://reactjs.org'>React.js</a>
     </p>
-    <button className='btn btn-danger btn-lg'>Play</button>
+    {/* <button className='btn btn-danger btn-lg'>Play</button> */}
+    <button
+      className='btn btn-large waves-effect waves-light'
+      type='submit'
+      name='action'
+    >
+      Materialize Button!
+    </button>
   </div>
 );
 
