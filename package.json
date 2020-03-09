@@ -5,8 +5,10 @@
   "main": "server.js",
   "scripts": {
     "lint": "eslint --fix /**/*.js --ignore-pattern node_modules/",
-    "dev": "nodemon server",
-    "start": "concurrently \"npm run dev\" \"cd client && npm start\""
+    "reload": "nodemon server",
+    "dev": "concurrently \"npm run reload\" \"cd client && npm start\"",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "materialize-css": "^1.0.0-rc.2"
+=======
+    "mongoose": "^5.9.3"
+>>>>>>> d8e0acd13451aa7983f72a8c637eacdcf7e3143f
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

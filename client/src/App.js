@@ -11,8 +11,9 @@ import World from './components/World';
 import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
+import UserInfo from './components/pages/userInfo';
 
-// styles
+// styles/
 import './App.css';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
 
       <div id="app">
         <NavBar />
+<<<<<<< HEAD
 
         <div class="row">
             <Switch>
@@ -41,6 +43,22 @@ const App = () => {
             </div>
         </div>
 
+=======
+        <Container className='flex-grow-1 mt-5'>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/userinfo' component={UserInfo}/>
+            <Route exact path='/game'>
+              <PlayerProvider>
+                <World />
+              </PlayerProvider>
+            </Route>
+            <PrivateRoute path='/profile' component={Profile} />
+          </Switch>
+        </Container>
+        <Footer />
+      </div>
+>>>>>>> d8e0acd13451aa7983f72a8c637eacdcf7e3143f
     </Router>
   );
 };
