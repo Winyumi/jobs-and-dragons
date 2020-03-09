@@ -8,10 +8,10 @@ class Content extends Component {
       <div class="next-steps">
         <h2 class="text-center">Explore : </h2>
         <div class="row">
-          <div class="col s12 m6"><p>s12 m6 </p></div>
-          <div class="col s12 m6"><p>s12 m6 </p></div>
-          <div class="col s12 m6"><p>s12 m6 </p></div>
-          <div class="col s12 m6"><p>s12 m6 </p></div>
+          <div class="col s12 m6"><p>s12 m6</p></div>
+          <div class="col s12 m6"><p>s12 m6</p></div>
+          <div class="col s12 m6"><p>s12 m6</p></div>
+          <div class="col s12 m6"><p>s12 m6</p></div>
         </div>
       </div>
     );

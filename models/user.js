@@ -1,9 +1,5 @@
 var mongoose = require('mongoose');
 
-
-<<<<<<< HEAD
-module.exports = User;
-=======
 // create a user schema 
 
 const UserSchema = new mongoose.Schema({
@@ -46,8 +42,4 @@ jobsearch:{
 })
 const User = mongoose.model("User", UserSchema)
 
-
-
-
 module.exports = User;
->>>>>>> d8e0acd13451aa7983f72a8c637eacdcf7e3143f

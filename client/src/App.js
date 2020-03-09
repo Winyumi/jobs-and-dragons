@@ -28,11 +28,11 @@ const App = () => {
 
       <div id="app">
         <NavBar />
-<<<<<<< HEAD
 
         <div class="row">
             <Switch>
                 <Route exact path='/' component={Home} />
+                <Route exact path='/userinfo' component={UserInfo}/>
                 <Route exact path='/game'>
                   <PlayerProvider>
                     <World />
@@ -43,22 +43,7 @@ const App = () => {
             </div>
         </div>
 
-=======
-        <Container className='flex-grow-1 mt-5'>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/userinfo' component={UserInfo}/>
-            <Route exact path='/game'>
-              <PlayerProvider>
-                <World />
-              </PlayerProvider>
-            </Route>
-            <PrivateRoute path='/profile' component={Profile} />
-          </Switch>
-        </Container>
         <Footer />
-      </div>
->>>>>>> d8e0acd13451aa7983f72a8c637eacdcf7e3143f
     </Router>
   );
 };

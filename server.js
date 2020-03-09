@@ -22,10 +22,10 @@ if (process.env.NODE_ENV === 'development') {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (_req, res) => {
-	res.sendFile(path.join(__dirname + '/client/build/index.html'));
+	res.sendFile(path.join(__dirname + '/client/public/index.html'));
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.listen(
 	PORT,
