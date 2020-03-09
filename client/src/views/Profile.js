@@ -14,7 +14,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="next-steps my-5">
+    <div className="my-5">
       
       <h2 className="my-5 text-center">Welcome {user.name}</h2>
       <p>{user.email}</p>

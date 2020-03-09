@@ -1,6 +1,8 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import { Container } from 'reactstrap';
+// import { Container } from 'reactstrap';
+import 'materialize-css';
+
 
 import PrivateRoute from './components/PrivateRoute';
 import Loading from './components/Loading';
@@ -25,21 +27,25 @@ const App = () => {
 
   return (
     <Router history={history}>
-      <div id='app' className='d-flex flex-column h-100'>
+
+      <div id="app">
         <NavBar />
-        <Container className='flex-grow-1 mt-5'>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/game'>
-              <PlayerProvider>
-                <World />
-              </PlayerProvider>
-            </Route>
-            <PrivateRoute path='/profile' component={Profile} />
-          </Switch>
-        </Container>
-        <Footer />
-      </div>
+
+        <div class="row">
+          <div class="col">
+            <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/game'>
+                  <PlayerProvider>
+                    <World />
+                  </PlayerProvider>
+                </Route>
+                <PrivateRoute path='/profile' component={Profile} />
+              </Switch>
+            </div>
+          </div>
+        </div>
+      
     </Router>
   );
 };
