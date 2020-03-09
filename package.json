@@ -24,11 +24,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
-    "materialize-css": "^1.0.0-rc.2"
-=======
+    "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.9.3"
->>>>>>> d8e0acd13451aa7983f72a8c637eacdcf7e3143f
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
