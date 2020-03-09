@@ -3,6 +3,11 @@ import UserDetail from './userDetail';
 import UserEducation from './userEducation';
 import UserExp from './userExp';
 import UserProjects from './userProjects';
+import UserExpertise from './userExpertise';
+import { Rating } from 'semantic-ui-react'
+// import App from "./example";
+
+
 
 export default class index extends Component {
   state = {
@@ -19,6 +24,7 @@ export default class index extends Component {
       this.setState(JSON.parse(localStorage.getItem('data')))
     }
   }
+  
   onChangeHandler = (name, from, id) => e => {
     let value = e.target.value;
     let newState = { ...this.state };
@@ -62,6 +68,8 @@ export default class index extends Component {
     }
     this.setState(newState);
   };
+
+  
 
 //   onSubmitHandler = e => {
 //     e.preventDefault();
@@ -123,6 +131,45 @@ export default class index extends Component {
             </div>
           ))}
         </section>
+
+
+
+        <section id="expertise">
+          <div className="util">
+            <h2>Expertise</h2>
+          </div>
+          <div>
+            <p>What is your area of interest?</p>
+          </div>      
+              <UserExpertise
+              />
+        </section>
+
+        <section id="skills">
+          <div className="util">
+            <h2>Skills</h2>
+          </div>
+          <div>
+            <p>Select your proficiency level to add a skill to your profile. </p>
+          </div>
+          <div>
+         <ul>
+           
+            <li class="divider" tabindex="-1"></li>
+            <li>Beginner: <Rating maxRating={4} defaultRating = "1" /></li>
+            <li class="divider" tabindex="-1"></li>
+            <li>Intermediate: <Rating maxRating={4} clearable = {true} defaultRating = "2" /></li>
+            <li class="divider" tabindex="-1"></li>
+            <li>Advanced: <Rating maxRating={4} clearable = {false} defaultRating = "3" /></li>
+            <li class="divider" tabindex="-1"></li>
+            <li>Expert: <Rating maxRating={4} clearable = {false} defaultRating = "4" /></li>
+          </ul>
+          </div>
+          <Rating maxRating={5} clearable = {false} defaultRating = "1" />
+        
+        </section>
+
+
         <section id="projects">
           <div className="util">
             <h2>Projects</h2>
