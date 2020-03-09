@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink as RouterNavLink } from "react-router-dom";
 import 'materialize-css';
 
 import { useAuth0 } from "../react-auth0-spa";

@@ -14,9 +14,9 @@ const Profile = () => {
   }
 
   return (
-    <div className="my-5">
+    <div class="my-5">
       
-      <h2 className="my-5 text-center">Welcome {user.name}</h2>
+      <h2 class="my-5">Welcome {user.name}</h2>
       <p>{user.email}</p>
       <img src={user.picture} alt="Profile" />
 

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 
+import 'materialize-css';
+
 class Content extends Component {
   render() {
     return (
-      <div className="next-steps my-5">
-        <h2 className="my-5 text-center">Explore : </h2>
+      <div class="next-steps">
+        <h2 class="text-center">Explore : </h2>
         <div class="row">
-          <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-          <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-          <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-          <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+          <div class="col s12 m6"><p>s12 m6 </p></div>
+          <div class="col s12 m6"><p>s12 m6 </p></div>
+          <div class="col s12 m6"><p>s12 m6 </p></div>
+          <div class="col s12 m6"><p>s12 m6 </p></div>
         </div>
       </div>
     );

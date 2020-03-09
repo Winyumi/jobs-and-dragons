@@ -1,13 +1,10 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-// import { Container } from 'reactstrap';
 import 'materialize-css';
-
 
 import PrivateRoute from './components/PrivateRoute';
 import Loading from './components/Loading';
 import NavBar from './components/NavBar';
-import Footer from './components/Footer';
 import Home from './views/Home';
 import Profile from './views/Profile';
 import World from './components/World';
@@ -32,7 +29,6 @@ const App = () => {
         <NavBar />
 
         <div class="row">
-          <div class="col">
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/game'>
@@ -43,9 +39,8 @@ const App = () => {
                 <PrivateRoute path='/profile' component={Profile} />
               </Switch>
             </div>
-          </div>
         </div>
-      
+
     </Router>
   );
 };
