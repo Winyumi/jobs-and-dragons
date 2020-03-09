@@ -4,10 +4,8 @@ import UserEducation from './userEducation';
 import UserExp from './userExp';
 import UserProjects from './userProjects';
 import UserExpertise from './userExpertise';
-import { Rating } from 'semantic-ui-react'
-// import App from "./example";
-
-
+import { Rating } from 'semantic-ui-react';
+import UserSkills from './userSkills';
 
 export default class index extends Component {
   state = {
@@ -87,8 +85,8 @@ export default class index extends Component {
         </section>
         <section id="education">
           <div className="util">
-            <h2>Education</h2>
-            <button onClick={this.addMoreFormGrp('education')}>
+            <h4>Education</h4>
+            <button onClick={this.addMoreFormGrp('education')} className='btn-floating btn-medium waves-effect waves-light red'>
               +
             </button>
           </div>
@@ -111,8 +109,10 @@ export default class index extends Component {
         </section>
         <section id="exp">
           <div className="util">
-            <h2>Experience</h2>
-            <button onClick={this.addMoreFormGrp('experience')}>+</button>
+            <h4>Experience</h4>
+            <button onClick={this.addMoreFormGrp('experience')} className='btn-floating btn-medium waves-effect waves-light red'>
+              +
+            </button>
           </div>
           {experience.map((formValue, i) => (
             <div key={i}>
@@ -143,6 +143,7 @@ export default class index extends Component {
           </div>      
               <UserExpertise
               />
+
         </section>
 
         <section id="skills">
@@ -154,26 +155,25 @@ export default class index extends Component {
           </div>
           <div>
          <ul>
-           
             <li class="divider" tabindex="-1"></li>
-            <li>Beginner: <Rating maxRating={4} defaultRating = "1" /></li>
+            <li>Beginner: <Rating maxRating={4} behaviour disabled defaultRating = "1" /></li>
             <li class="divider" tabindex="-1"></li>
-            <li>Intermediate: <Rating maxRating={4} clearable = {true} defaultRating = "2" /></li>
+            <li>Intermediate: <Rating maxRating={4} behaviour disabled defaultRating = "2" /></li>
             <li class="divider" tabindex="-1"></li>
-            <li>Advanced: <Rating maxRating={4} clearable = {false} defaultRating = "3" /></li>
+            <li>Advanced: <Rating maxRating={4} behaviour disabled defaultRating = "3" /></li>
             <li class="divider" tabindex="-1"></li>
-            <li>Expert: <Rating maxRating={4} clearable = {false} defaultRating = "4" /></li>
+            <li>Expert: <Rating maxRating={4} behaviour disabled defaultRating = "4" /></li>
           </ul>
           </div>
-          <Rating maxRating={5} clearable = {false} defaultRating = "1" />
-        
+          <UserSkills
+          />
         </section>
 
 
         <section id="projects">
           <div className="util">
-            <h2>Projects</h2>
-            <button onClick={this.addMoreFormGrp('projects')}>+</button>
+            <h4>Projects</h4>
+            <button onClick={this.addMoreFormGrp('projects')} className='btn-floating btn-medium waves-effect waves-light red'>+</button>
           </div>
           {projects.map((formValue, i) => (
             <div key={i}>
@@ -192,7 +192,7 @@ export default class index extends Component {
             </div>
           ))}
         </section>
-        <input type="submit" value="SAVE" />
+        <input type="submit" value="SUBMIT" className="btn waves-effect waves-light" />
       </form>
     );
   }

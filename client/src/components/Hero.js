@@ -1,22 +1,14 @@
 import React from 'react';
 
-import logo from '../assets/logo.svg';
+import 'materialize-css';
 
 const Hero = () => (
-  <div className='text-center hero my-5'>
-    <img className='mb-3 app-logo' src={logo} alt='React logo' width='120' />
-    <h1 className='mb-4'>JOBS & DRAGONS</h1>
-    <p className='mb-5'>
-      Job Hunt and Game using <a href='https://reactjs.org'>React.js</a>
+  <div class='hero'>
+    <h1>JOBS & DRAGONS</h1>
+    <p>
+      Job Hunt and Game using <a href='https://reactjs.org'>React.js and</a> and ..........
     </p>
-    {/* <button className='btn btn-danger btn-lg'>Play</button> */}
-    <button
-      className='btn btn-large waves-effect waves-light'
-      type='submit'
-      name='action'
-    >
-      Materialize Button!
-    </button>
+    <a class="btn-large" href="/game" type="submit" name="action">PLAY</a>
   </div>
 );
 

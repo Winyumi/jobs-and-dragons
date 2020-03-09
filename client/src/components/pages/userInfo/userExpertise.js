@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Checkbox from "./checkbox";
 
-const OPTIONS = ["Softeare Engineer", "Full Stack developer", "Auality Assurance", "Database management", "DevOps", "UI/UX Developer", "Front end Developer", "Web Services Developer", "Web Designer"];
+const EXPERTISE = ["Softeare Engineer", "Full Stack developer", "Auality Assurance", "Database management", "DevOps", "UI/UX Developer", "Front end Developer", "Web Services Developer", "Web Designer"];
 
 class userExpertise extends Component {
   state = {
-    checkboxes: OPTIONS.reduce(
+    checkboxes: EXPERTISE.reduce(
       (options, option) => ({
         ...options,
         [option]: false
@@ -44,7 +44,7 @@ class userExpertise extends Component {
     />
   );
 
-  createCheckboxes = () => OPTIONS.map(this.createCheckbox);
+  createCheckboxes = () => EXPERTISE.map(this.createCheckbox);
 
   render() {
     return (
