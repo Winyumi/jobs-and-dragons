@@ -7,6 +7,7 @@ import UserExpertise from './userExpertise';
 import { Rating } from 'semantic-ui-react';
 import UserSkills from './userSkills';
 
+
 export default class index extends Component {
   state = {
     name: '',
@@ -144,6 +145,7 @@ export default class index extends Component {
               <UserExpertise
               />
 
+
         </section>
 
         <section id="skills">
@@ -167,6 +169,7 @@ export default class index extends Component {
           </div>
           <UserSkills
           />
+         
         </section>
 
 
