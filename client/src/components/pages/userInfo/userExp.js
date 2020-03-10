@@ -21,7 +21,7 @@ export default class UserExp extends Component {
             name="description"
             onChange={onChangeHandler('description', 'experience', id)}
             value={description}
-            placeholder="What you have done in your compnay ? (Provide answer in list)"
+            placeholder="What you have done in your compayy ? (Provide answer in list)"
             rows="10"
           ></textarea>
         </div>

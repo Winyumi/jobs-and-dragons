@@ -1,46 +1,7 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   box-sizing: border-box;
 }
 
@@ -123,17 +84,17 @@ h3, h4{
 }
 
 .resume {
-  background: rgb(204, 204, 204);
+  background: rgb(248, 245, 245);
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 body {
-  background:white;
+  background: white;
 }
 .page {
-  background: white;
+  background:lightcyan;
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
@@ -154,8 +115,10 @@ ol {
   border: 2px solid;
 } */
 header h1 {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: normal;
+  font-family: Georgia, 'Times New Roman', Times, serif
+
 }
 header h1,
 p {
@@ -173,13 +136,14 @@ main .exp,
 }
 
 main h2 {
-  font-size: 10px;
+  font-size: 15px;
   margin-bottom: 10px;
   color: #212121;
   line-height: 30px;
+  font-weight: bold;
 }
 main p {
-  font-size: 13px;
+  font-size: 14px;
 }
 .email,
 .number {
@@ -214,6 +178,7 @@ main p {
   font-size: 13px;
   width: 95%;
   margin: 10px auto;
+
 }
 .description ul {
   list-style-type: circle;
@@ -225,7 +190,7 @@ main p {
 
 input[type='submit'] {
   border: 0;
-  background:lightseagreen;
+  background: lightseagreen;
   color: white;
   font-weight: bold;
   width: 40%;
@@ -235,5 +200,7 @@ input[type='submit'] {
 }
 .project-des {
   color: darkslategray;
-}
+  font-weight: normal;
+  font-size: 13px;
 
+}
