@@ -14,12 +14,12 @@ if (process.env.NODE_ENV === 'development') {
 	const morgan = require('morgan');
 	app.use(morgan('dev'));
 }
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (_req, res) => {
 	// res.sendFile(path.join(__dirname + '/client/public/index.html'));
-	res.sendFile(path.join(__dirname, "client/public", "index.html"));
-
+	res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
 });
 const PORT = process.env.PORT || 3001;
 app.listen(
@@ -36,4 +36,3 @@ const connection = mongoose.connection;
 connection.once('open', () => {
 	console.log('MongoDB database connection established successfully');
 });
-
