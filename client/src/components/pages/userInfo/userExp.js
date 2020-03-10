@@ -52,7 +52,7 @@ export default class UserExp extends Component {
             name="end"
             value={end}
             onChange={onChangeHandler('end', 'experience', id)}
-            required
+            
           />
         </div>
       </div>

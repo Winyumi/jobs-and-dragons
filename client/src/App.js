@@ -13,6 +13,7 @@ import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
 import UserInfo from './components/pages/userInfo';
+import resume from './components/pages/resume'
 
 // styles/
 import './App.css';
@@ -36,6 +37,7 @@ const App = () => {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/userinfo' component={UserInfo}/>
+            <Route exact path='/resume' component={resume}/>
             <Route exact path='/game'>
               <PlayerProvider>
                 <World />

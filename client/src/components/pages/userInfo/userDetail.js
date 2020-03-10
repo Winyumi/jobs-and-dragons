@@ -6,7 +6,7 @@ export default class UserDetail extends Component {
     const { name, email, bio, phone } = values;
     return (
       <div className="info">
-        <h2>Info</h2>
+        <h3>Info</h3>
         <div className="form-group">
           <input
             type="text"
@@ -34,7 +34,7 @@ export default class UserDetail extends Component {
             value={bio}
             placeholder="Tell me about your self"
             onChange={onChangeHandler('bio')}
-            required
+            
           />
         </div>
         <div className="form-group">

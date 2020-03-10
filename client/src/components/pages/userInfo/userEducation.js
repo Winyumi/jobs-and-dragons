@@ -44,7 +44,7 @@ export default class UserEducation extends Component {
             name="end"
             value={end}
             onChange={onChangeHandler('end', 'education', id)}
-            required
+            
           />
         </div>
       </div>

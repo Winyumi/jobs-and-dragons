@@ -73,6 +73,8 @@ textarea {
   font-size: 15px;
   font-weight: normal;
   width: 100%;
+  font-family: 'Alagard';
+
 }
 button {
   outline: 0;
@@ -108,7 +110,7 @@ button:hover {
   font-style: normal;
 }
 
-h4, h2{
+h3, h4{
   font-family: 'Alagard';
 }
 .remove-btn {

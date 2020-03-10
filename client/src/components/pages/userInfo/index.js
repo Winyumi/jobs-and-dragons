@@ -63,11 +63,11 @@ export default class index extends Component {
     this.setState(newState);
   };
 
-//   onSubmitHandler = e => {
-//     e.preventDefault();
-//     localStorage.setItem('data', JSON.stringify(this.state));
-//     this.props.history.push({ pathname: '/resume', state: this.state });
-//   };
+  onSubmitHandler = e => {
+    e.preventDefault();
+    localStorage.setItem('data', JSON.stringify(this.state));
+    this.props.history.push({ pathname: '/resume', state: this.state });
+  };
 
   render() {
     const values = { ...this.state };
