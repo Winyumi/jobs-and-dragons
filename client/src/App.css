@@ -66,6 +66,7 @@ form input {
   color: #212121;
   font-weight: normal;
   font-size: 14px;
+  font-family: 'Alagard';
 }
 textarea {
   border: 1px solid #46aef7;
@@ -101,17 +102,17 @@ button:hover {
   justify-content: space-between;
 }
 @font-face {
-  font-family: 'Retro Gaming';
-  src: url('/fonts/RetroGaming.woff2') format('woff2');
+  font-family: 'Alagard';
+  src: url('/fonts/Alagard.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
-.h4{
-  font-family: 'Retro Gaming';
+h4, h2{
+  font-family: 'Alagard';
 }
 .remove-btn {
-  font-family: 'Retro Gaming'; 
+  font-family: 'Alagard'; 
   background-color: red;
   color: white;
   font-weight: bold;
@@ -226,7 +227,7 @@ input[type='submit'] {
   color: white;
   font-weight: bold;
   width: 40%;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
   border-radius: 5px;
 }
