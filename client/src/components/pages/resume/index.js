@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
+
+
 export default class index extends Component {
+    onSubmitHandler = e => {
+        e.preventDefault();
+        this.props.history.push({ pathname: '/userinfo' });
+      };
   render() {
     const { state } = this.props.location;
     console.log(state);
     if (!state) {
       return <Redirect to="/"></Redirect>;
     }
+  
     return (
-      <div className="resume">
+
+        <div className="resume">
         <div className="page" size="A4">
           <header>
             <h1 className="name">{state.name}</h1>
@@ -77,7 +85,9 @@ export default class index extends Component {
                           {project.description}
                         </span>
                       </p>
+                      
                     </div>
+                    <input type="button" value="SUBMIT" className="btn waves-effect waves-light" onClick={this.onSubmitHandler} />
                   </React.Fragment>
                 ))}
               </div>
@@ -85,6 +95,9 @@ export default class index extends Component {
           </main>
         </div>
       </div>
-    );
+      
+      
+          );
   }
 }
+

@@ -91,10 +91,10 @@ h3, h4{
   align-items: center;
 }
 body {
-  background: white;
+
 }
 .page {
-  background:lightcyan;
+  background:rgb(235, 241, 241);
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
