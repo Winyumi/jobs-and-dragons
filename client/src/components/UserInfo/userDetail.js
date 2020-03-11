@@ -5,44 +5,43 @@ export default class UserDetail extends Component {
     const { values, onChangeHandler } = this.props;
     const { name, email, bio, phone } = values;
     return (
-      <div className="info">
-        <h2>Info</h2>
-        <div className="form-group">
+      <div className='info'>
+        <h3>Info</h3>
+        <div className='form-group'>
           <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
+            type='text'
+            name='name'
+            placeholder='Your Name'
             value={name}
             onChange={onChangeHandler('name')}
             required
           />
         </div>
-        <div className="form-group">
+        <div className='form-group'>
           <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
+            type='email'
+            name='email'
+            placeholder='Your Email'
             value={email}
             onChange={onChangeHandler('email')}
             required
           />
         </div>
-        <div className="form-group">
+        <div className='form-group'>
           <input
-            type="text"
-            name="bio"
+            type='text'
+            name='bio'
             value={bio}
-            placeholder="Tell me about your self"
+            placeholder='Tell me about your self'
             onChange={onChangeHandler('bio')}
-            required
           />
         </div>
-        <div className="form-group">
+        <div className='form-group'>
           <input
-            type="number"
-            name="phone"
+            type='number'
+            name='phone'
             value={phone}
-            placeholder="Your Number"
+            placeholder='Your Number'
             onChange={onChangeHandler('phone')}
             required
           />

@@ -34,6 +34,8 @@ textarea {
   font-size: 15px;
   font-weight: normal;
   width: 100%;
+  font-family: 'Alagard';
+
 }
 button {
   outline: 0;
@@ -69,7 +71,7 @@ button:hover {
   font-style: normal;
 }
 
-h4, h2{
+h3, h4{
   font-family: 'Alagard';
 }
 .remove-btn {
@@ -82,17 +84,17 @@ h4, h2{
 }
 
 .resume {
-  background: rgb(204, 204, 204);
+  background: rgb(248, 245, 245);
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 body {
-  background: white;
+
 }
 .page {
-  background: white;
+  background:rgb(235, 241, 241);
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
@@ -113,8 +115,10 @@ ol {
   border: 2px solid;
 } */
 header h1 {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: normal;
+  font-family: Georgia, 'Times New Roman', Times, serif
+
 }
 header h1,
 p {
@@ -132,13 +136,14 @@ main .exp,
 }
 
 main h2 {
-  font-size: 10px;
+  font-size: 15px;
   margin-bottom: 10px;
   color: #212121;
   line-height: 30px;
+  font-weight: bold;
 }
 main p {
-  font-size: 13px;
+  font-size: 14px;
 }
 .email,
 .number {
@@ -173,6 +178,7 @@ main p {
   font-size: 13px;
   width: 95%;
   margin: 10px auto;
+
 }
 .description ul {
   list-style-type: circle;
@@ -194,4 +200,7 @@ input[type='submit'] {
 }
 .project-des {
   color: darkslategray;
+  font-weight: normal;
+  font-size: 13px;
+
 }

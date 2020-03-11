@@ -16,7 +16,7 @@ export default class index extends Component {
   };
   componentDidMount() {
     if (localStorage.getItem('data')) {
-      this.setState(JSON.parse(localStorage.getItem('data')))
+      this.setState(JSON.parse(localStorage.getItem('data')));
     }
   }
   onChangeHandler = (name, from, id) => e => {
@@ -63,24 +63,27 @@ export default class index extends Component {
     this.setState(newState);
   };
 
-//   onSubmitHandler = e => {
-//     e.preventDefault();
-//     localStorage.setItem('data', JSON.stringify(this.state));
-//     this.props.history.push({ pathname: '/resume', state: this.state });
-//   };
+  onSubmitHandler = e => {
+    e.preventDefault();
+    localStorage.setItem('data', JSON.stringify(this.state));
+    this.props.history.push({ pathname: '/resume', state: this.state });
+  };
 
   render() {
     const values = { ...this.state };
     const { education, experience, projects } = this.state;
     return (
       <form onSubmit={this.onSubmitHandler}>
-        <section id="user-info">
+        <section id='user-info'>
           <UserDetail onChangeHandler={this.onChangeHandler} values={values} />
         </section>
-        <section id="education">
-          <div className="util">
+        <section id='education'>
+          <div className='util'>
             <h4>Education</h4>
-            <button onClick={this.addMoreFormGrp('education')} className='btn-floating btn-medium waves-effect waves-light red'>
+            <button
+              onClick={this.addMoreFormGrp('education')}
+              className='btn-floating btn-medium waves-effect waves-light red'
+            >
               +
             </button>
           </div>
@@ -88,10 +91,10 @@ export default class index extends Component {
             <div key={i}>
               <button
                 onClick={this.removeFormGrp('education', i)}
-                className="remove-btn"
+                className='remove-btn'
               >
                 Remove
-            </button>
+              </button>
               <UserEducation
                 values={values}
                 onChangeHandler={this.onChangeHandler}
@@ -101,10 +104,13 @@ export default class index extends Component {
             </div>
           ))}
         </section>
-        <section id="exp">
-          <div className="util">
+        <section id='exp'>
+          <div className='util'>
             <h4>Experience</h4>
-            <button onClick={this.addMoreFormGrp('experience')} className='btn-floating btn-medium waves-effect waves-light red'>
+            <button
+              onClick={this.addMoreFormGrp('experience')}
+              className='btn-floating btn-medium waves-effect waves-light red'
+            >
               +
             </button>
           </div>
@@ -112,10 +118,10 @@ export default class index extends Component {
             <div key={i}>
               <button
                 onClick={this.removeFormGrp('experience', i)}
-                className="remove-btn"
+                className='remove-btn'
               >
                 Remove
-            </button>
+              </button>
               <UserExp
                 values={values}
                 onChangeHandler={this.onChangeHandler}
@@ -125,16 +131,21 @@ export default class index extends Component {
             </div>
           ))}
         </section>
-        <section id="projects">
-          <div className="util">
+        <section id='projects'>
+          <div className='util'>
             <h4>Projects</h4>
-            <button onClick={this.addMoreFormGrp('projects')} className='btn-floating btn-medium waves-effect waves-light red'>+</button>
+            <button
+              onClick={this.addMoreFormGrp('projects')}
+              className='btn-floating btn-medium waves-effect waves-light red'
+            >
+              +
+            </button>
           </div>
           {projects.map((formValue, i) => (
             <div key={i}>
               <button
                 onClick={this.removeFormGrp('projects', i)}
-                className="remove-btn"
+                className='remove-btn'
               >
                 Remove
               </button>
@@ -147,7 +158,11 @@ export default class index extends Component {
             </div>
           ))}
         </section>
-        <input type="submit" value="SUBMIT" className="btn waves-effect waves-light" />
+        <input
+          type='submit'
+          value='SUBMIT'
+          className='btn waves-effect waves-light'
+        />
       </form>
     );
   }
