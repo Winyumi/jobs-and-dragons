@@ -34,65 +34,86 @@ const dispatchMove = (oldPosition, newPosition) => {
   }
 };
 
+const getSpriteLocation = (direction, walkIndex) => {
+  console.log(direction);
+  switch (direction) {
+    case 'east':
+      return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 1}px`;
+    case 'south':
+      return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 0}px`;
+    case 'north':
+      return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 3}px`;
+    case 'west':
+      return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 2}px`;
+    default:
+      return '0px 0px';
+  }
+};
+
+const getWalkIndex = oldWalkIndex => {
+  return oldWalkIndex >= 7 ? 0 : oldWalkIndex + 1;
+};
+
 const playerReducer = (state, action) => {
   const oldPosition = state.position;
   switch (action.type) {
     case 'moveleft':
       return {
-        // direction: "west",
+        direction: 'west',
         position: dispatchMove(oldPosition, [
           state.position[0] - SPRITE_SIZE,
           state.position[1]
-        ])
+        ]),
+        spritePosition: getSpriteLocation('west', state.walkIndex),
+        walkIndex: getWalkIndex(state.walkIndex)
       };
     case 'moveup':
       return {
-        // direction: "north",
+        direction: 'north',
         position: dispatchMove(oldPosition, [
           state.position[0],
           state.position[1] - SPRITE_SIZE
-        ])
+        ]),
+        spritePosition: getSpriteLocation('north', state.walkIndex),
+        walkIndex: getWalkIndex(state.walkIndex)
       };
     case 'moveright':
       return {
-        // direction: "east",
+        direction: 'east',
         position: dispatchMove(oldPosition, [
           state.position[0] + SPRITE_SIZE,
           state.position[1]
-        ])
+        ]),
+        spritePosition: getSpriteLocation('east', state.walkIndex),
+        walkIndex: getWalkIndex(state.walkIndex)
       };
     case 'movedown':
       return {
-        // direction: "south",
+        direction: 'south',
         position: dispatchMove(oldPosition, [
           state.position[0],
           state.position[1] + SPRITE_SIZE
-        ])
+        ]),
+        spritePosition: getSpriteLocation('south', state.walkIndex),
+        walkIndex: getWalkIndex(state.walkIndex)
       };
     default:
       return state;
   }
 };
 
-// const getSpriteLocation = (direction) => {
-//   console.log(direction)
-//   switch (direction) {
-//     case 'south':
-//       return '0px 0px'
-//     case 'north':
-//       return '0px 40px'
-//     case 'west':
-//       return '0px 80px'
-//     case 'east':
-//       return '0px 120px'
-//     default:
-//       return '0px 0px'
-//   }
-// };
-
-//replaced "value" with "playerReducer(direction)""
-const PlayerProvider = (direction, { value = [0, 40], ...props }) => {
-  const [state, dispatch] = useReducer(playerReducer, { position: playerReducer(direction) });
+const PlayerProvider = ({
+  value = {
+    position: [40, 40],
+    spritePosition: '0px 0px',
+    direction: 'east',
+    walkIndex: 0
+  },
+  ...props
+}) => {
+  const [state, dispatch] = useReducer(playerReducer, {
+    ...value
+  });
 
   return <Provider value={[state, dispatch]} {...props} />;
 };
