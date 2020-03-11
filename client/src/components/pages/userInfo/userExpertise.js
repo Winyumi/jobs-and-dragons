@@ -16,7 +16,6 @@ class userExpertise extends Component {
 
   handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
-
     this.setState(prevState => ({
       checkboxes: {
         ...prevState.checkboxes,
@@ -49,7 +48,7 @@ class userExpertise extends Component {
   render() {
     return (
       <div className = "row">
-            <form className = "col s12" onSubmit={this.handleFormSubmit}>
+            <form className = "col s6 m12" onSubmit={this.handleFormSubmit}>
               {this.createCheckboxes()}
                 <button type="submit" className="btn btn-primary">
                   Save

@@ -12,7 +12,7 @@
     "@testing-library/user-event": "^7.2.1",
     "highlight.js": "^9.18.1",
     "hljs": "^6.2.3",
-    "materialize-css": "^1.0.0",
+    "materialize-css": "^1.0.0-rc.2",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
     "passport-github2": "^0.1.11",
@@ -20,7 +20,8 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "semantic-ui": "^2.4.2"
   },
   "scripts": {
     "start": "react-scripts start",

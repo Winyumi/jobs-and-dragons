@@ -31,9 +31,9 @@ class userSkills extends Component {
       <div className = "row">
             <form className = "col s12" onSubmit={this.handleFormSubmit}>
               {this.createRating()}
-                <button type="submit" className="btn btn-primary">
+                {/* <button type="submit" className="btn btn-primary">
                   Save
-                </button>
+                </button> */}
             </form>
        </div>
     );
