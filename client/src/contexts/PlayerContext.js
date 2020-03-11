@@ -39,6 +39,7 @@ const playerReducer = (state, action) => {
   switch (action.type) {
     case 'moveleft':
       return {
+        // direction: "west",
         position: dispatchMove(oldPosition, [
           state.position[0] - SPRITE_SIZE,
           state.position[1]
@@ -46,6 +47,7 @@ const playerReducer = (state, action) => {
       };
     case 'moveup':
       return {
+        // direction: "north",
         position: dispatchMove(oldPosition, [
           state.position[0],
           state.position[1] - SPRITE_SIZE
@@ -53,6 +55,7 @@ const playerReducer = (state, action) => {
       };
     case 'moveright':
       return {
+        // direction: "east",
         position: dispatchMove(oldPosition, [
           state.position[0] + SPRITE_SIZE,
           state.position[1]
@@ -60,6 +63,7 @@ const playerReducer = (state, action) => {
       };
     case 'movedown':
       return {
+        // direction: "south",
         position: dispatchMove(oldPosition, [
           state.position[0],
           state.position[1] + SPRITE_SIZE
@@ -70,8 +74,25 @@ const playerReducer = (state, action) => {
   }
 };
 
-const PlayerProvider = ({ value = [0, 40], ...props }) => {
-  const [state, dispatch] = useReducer(playerReducer, { position: value });
+// const getSpriteLocation = (direction) => {
+//   console.log(direction)
+//   switch (direction) {
+//     case 'south':
+//       return '0px 0px'
+//     case 'north':
+//       return '0px 40px'
+//     case 'west':
+//       return '0px 80px'
+//     case 'east':
+//       return '0px 120px'
+//     default:
+//       return '0px 0px'
+//   }
+// };
+
+//replaced "value" with "playerReducer(direction)""
+const PlayerProvider = (direction, { value = [0, 40], ...props }) => {
+  const [state, dispatch] = useReducer(playerReducer, { position: playerReducer(direction) });
 
   return <Provider value={[state, dispatch]} {...props} />;
 };
