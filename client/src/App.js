@@ -10,6 +10,7 @@ import Home from './views/Home';
 import Profile from './views/Profile';
 import World from './components/World';
 import { PlayerProvider } from './contexts/PlayerContext';
+import { UserProvider } from './contexts/UserContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
 import UserInfo from './components/UserInfo';

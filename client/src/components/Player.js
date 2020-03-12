@@ -8,7 +8,7 @@ import walkSprite from '../assets/player_walk.png';
 //Put the direction as dispatch({direction: "direction"})?
 const Player = () => {
   const [state, dispatch] = usePlayerContext();
-  console.log(state);
+
   useEffect(() => {
     const handleMovement = e => {
       switch (e.keyCode) {
