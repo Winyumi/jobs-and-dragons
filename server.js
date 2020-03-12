@@ -26,7 +26,7 @@ app.listen(
 	PORT,
 	console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 );
-const uri = process.env.MLAB_URI;
+const uri = process.env.MONGO_ATLAS_URI;
 mongoose.connect(uri, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
