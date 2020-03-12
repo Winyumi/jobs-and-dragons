@@ -50,11 +50,13 @@ class userExpertise extends Component {
       <div className = "row">
             <form className = "col s6 m12" onSubmit={this.handleFormSubmit}>
               {this.createCheckboxes()}
-                <button type="submit" className="btn btn-primary">
-                  Save
+              <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                  <i class="material-icons right">SAVE</i>
                 </button>
+              </div>
             </form>
-       </div>
+      </div>
     );
   }
 }

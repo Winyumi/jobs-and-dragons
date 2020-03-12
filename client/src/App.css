@@ -1,54 +1,14 @@
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   box-sizing: border-box;
 }
 
 form {
   width: 90%;
   min-width: 300px;
-  /* max-width: 400px; */
+  max-width: 700px;
   margin: 40px auto;
   padding: 20px;
   border-radius: 4px;
@@ -67,6 +27,7 @@ form input {
   color: #212121;
   font-weight: normal;
   font-size: 14px;
+  font-family: 'Alagard';
 }
 textarea {
   border: 1px solid #46aef7;
@@ -101,7 +62,18 @@ button:hover {
   display: flex;
   justify-content: space-between;
 }
+@font-face {
+  font-family: 'Alagard';
+  src: url('/fonts/Alagard.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h4, h2{
+  font-family: 'Alagard';
+}
 .remove-btn {
+  font-family: 'Alagard'; 
   background-color: red;
   color: white;
   font-weight: bold;
@@ -117,7 +89,7 @@ button:hover {
   align-items: center;
 }
 body {
-  background:white;
+  background: white;
 }
 .page {
   background: white;
@@ -212,11 +184,11 @@ main p {
 
 input[type='submit'] {
   border: 0;
-  background:lightseagreen;
+  background: lightseagreen;
   color: white;
   font-weight: bold;
   width: 40%;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -224,3 +196,10 @@ input[type='submit'] {
   color: darkslategray;
 }
 
+.card-panel{
+  padding: 8px;
+}
+
+.btn{
+  margin-top: 20px;
+}

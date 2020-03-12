@@ -9,10 +9,9 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
         name={label}
         checked={isSelected === true}
         onChange={onCheckboxChange}
-        className="filled-in"
+        className="indeterminate-checkbox"
       />
-      <span></span>
-      {label}
+      <span>{label}</span>
     </label>
   </div>
 );

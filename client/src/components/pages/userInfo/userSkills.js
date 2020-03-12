@@ -4,7 +4,7 @@ import RateSkills from './rating';
 
 
 
-const SKILLS = ["Softeare Engineer", "Full Stack developer", "Auality Assurance", "Database management", "DevOps", "UI/UX Developer", "Front end Developer", "Web Services Developer", "Web Designer"];
+const SKILLS = ["HTML", "CSS", "BootStrap", "NodeJs", "Mongo", "React", "Express", "MySql", "jQuery"];
 
 class userSkills extends Component {
   state = {
@@ -31,9 +31,6 @@ class userSkills extends Component {
       <div className = "row">
             <form className = "col s12" onSubmit={this.handleFormSubmit}>
               {this.createRating()}
-                {/* <button type="submit" className="btn btn-primary">
-                  Save
-                </button> */}
             </form>
        </div>
     );
