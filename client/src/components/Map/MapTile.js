@@ -1,10 +1,11 @@
 import React from 'react';
-import wall from '../../assets/wall.png';
+// import wall from '../../assets/wall.png';
+import border from '../../assets/border.png';
 
 const MapTile = props => {
   const tileSprites = {
-    0: 'black',
-    1: wall
+    0: 'clear',
+    1: border
   };
   const getTileSprite = type => {
     switch (type) {
@@ -24,7 +25,7 @@ const MapTile = props => {
         background: getTileSprite(props.tile)
       }}
     >
-      {props.tile}
+      {/* {props.tile} */}<p></p>
     </div>
   );
 };

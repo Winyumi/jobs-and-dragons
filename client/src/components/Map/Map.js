@@ -8,7 +8,7 @@ const Map = props => {
         position: 'relative',
         top: 0,
         left: 0,
-        width: '800px',
+        width: '600px',
         height: '400px'
       }}
     >

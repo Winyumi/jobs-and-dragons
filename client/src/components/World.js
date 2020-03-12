@@ -1,6 +1,7 @@
 import React from 'react';
 import Player from './Player';
 import Map from './Map/Map';
+import dungeonBG from '../assets/dungeonBG.png';
 import { dungeon } from '../maps/dungeon';
 
 const World = () => {
@@ -8,9 +9,10 @@ const World = () => {
     <div
       style={{
         position: 'relative',
-        width: '800px',
+        width: '600px',
         height: '400px',
-        margin: '100px auto'
+        margin: '100px auto',
+        backgroundImage: `url( ${dungeonBG } )`
       }}
     >
       <Map tiles={dungeon} />
