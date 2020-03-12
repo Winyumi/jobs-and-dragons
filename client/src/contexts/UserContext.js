@@ -6,9 +6,12 @@ const { Provider } = UserContext;
 
 const userReducer = (state, action) => {
   switch (action.type) {
-    case 'add':
-      api.addUserInfo(action.user).then(res => ({ ...state, ...res }));
-      break;
+    case 'addUser':
+      return {
+        ...action.payload
+      };
+    // api.addUserInfo(action.user).then(res => ({ ...state, ...res }));
+    // break;
     default:
       console.log(action.user);
   }

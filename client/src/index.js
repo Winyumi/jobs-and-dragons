@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from './react-auth0-spa';
+import { UserProvider } from './contexts/UserContext';
 import config from './auth_config.json';
 import history from './utils/history';
 
@@ -16,14 +17,16 @@ const onRedirectCallback = appState => {
 };
 
 ReactDOM.render(
-  <Auth0Provider
-    domain={config.domain}
-    client_id={config.clientId}
-    redirect_uri={window.location.origin}
-    onRedirectCallback={onRedirectCallback}
-  >
-    <App />
-  </Auth0Provider>,
+  <UserProvider>
+    <Auth0Provider
+      domain={config.domain}
+      client_id={config.clientId}
+      redirect_uri={window.location.origin}
+      onRedirectCallback={onRedirectCallback}
+    >
+      <App />
+    </Auth0Provider>
+  </UserProvider>,
   document.getElementById('root')
 );
 

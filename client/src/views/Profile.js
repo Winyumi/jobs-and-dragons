@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
 import 'materialize-css';
 
-import Highlight from "../components/Highlight";
-import Loading from "../components/Loading";
-import { useAuth0 } from "../react-auth0-spa";
+import Highlight from '../components/Highlight';
+import Loading from '../components/Loading';
+import { useAuth0 } from '../react-auth0-spa';
 
 const Profile = () => {
   const { loading, user } = useAuth0();
@@ -14,23 +14,18 @@ const Profile = () => {
   }
 
   return (
-    <div class="my-5">
-      
-      <h2 class="my-5">Welcome {user.name}</h2>
+    <div class='my-5'>
+      <h2 class='my-5'>Welcome {user.name}</h2>
       <p>{user.email}</p>
-      <img src={user.picture} alt="Profile" />
+      <img src={user.picture} alt='Profile' />
 
-      <div class="row">
-        <div class="col">
+      <div class='row'>
+        <div class='col'>
           <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
         </div>
       </div>
-
-  </div>
+    </div>
   );
 };
 
 export default Profile;
-
-
-
