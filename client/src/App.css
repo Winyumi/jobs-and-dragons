@@ -35,7 +35,6 @@ textarea {
   font-weight: normal;
   width: 100%;
   font-family: 'Alagard';
-
 }
 button {
   outline: 0;
@@ -71,11 +70,12 @@ button:hover {
   font-style: normal;
 }
 
-h3, h4{
+h3,
+h4 {
   font-family: 'Alagard';
 }
 .remove-btn {
-  font-family: 'Alagard'; 
+  font-family: 'Alagard';
   background-color: red;
   color: white;
   font-weight: bold;
@@ -91,10 +91,9 @@ h3, h4{
   align-items: center;
 }
 body {
-
 }
 .page {
-  background:rgb(235, 241, 241);
+  background: rgb(235, 241, 241);
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
@@ -117,8 +116,7 @@ ol {
 header h1 {
   font-size: 32px;
   font-weight: normal;
-  font-family: Georgia, 'Times New Roman', Times, serif
-
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 header h1,
 p {
@@ -178,7 +176,6 @@ main p {
   font-size: 13px;
   width: 95%;
   margin: 10px auto;
-
 }
 .description ul {
   list-style-type: circle;
@@ -202,5 +199,4 @@ input[type='submit'] {
   color: darkslategray;
   font-weight: normal;
   font-size: 13px;
-
 }

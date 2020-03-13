@@ -1,16 +1,24 @@
 export const api = {
-  addUserInfo(userInfo) {
-    fetch('/api/v1/users', {
+  async addUserInfo(userInfo) {
+    const res = await fetch('/api/v1/users', {
       method: 'POST',
-      'Content-Type': 'application/json',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(userInfo)
-    })
-      .then(res => res.json())
-      .catch(err => console.log(err));
+    });
+
+    if (res.ok) {
+      const jsonRes = await res.json();
+      console.log(jsonRes);
+      return jsonRes;
+    }
   },
-  getUserInfo() {
-    fetch('/api/v1/user/:email')
-      .then(res => res.json())
-      .catch(err => console.log(err));
+  async getUserInfo(userEmail) {
+    const res = await fetch(`/api/v1/users/${userEmail}`);
+
+    const jsonRes = await res.json();
+    console.log(jsonRes);
+    return jsonRes;
   }
 };
