@@ -24,10 +24,10 @@ jobsearch:{
   Location:{
     area:[],
     long: Number,
-    lat: Number,
-  },
+    lat: Number
+    },
+},
   applied:{type: Boolean, default: false},
-  
 })
 const User = mongoose.model("User", UserSchema)
 
