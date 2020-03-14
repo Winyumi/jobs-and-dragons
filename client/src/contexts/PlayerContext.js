@@ -23,7 +23,7 @@ const observeObstacles = newPosition => {
 
   const nextTile = dungeon[y][x];
 
-  return nextTile <= 2;
+  return nextTile === 0;
 };
 
 const observeInteraction = newPosition => {
@@ -32,7 +32,7 @@ const observeInteraction = newPosition => {
 
   const nextTile = dungeon[y][x];
 
-  return nextTile === 3 ;
+  return nextTile === 2 ;
 };
 
 const dispatchMove = (oldPosition, newPosition) => {

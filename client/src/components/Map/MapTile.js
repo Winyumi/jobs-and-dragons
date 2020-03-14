@@ -6,18 +6,15 @@ import oracle from '../../assets/Oracle.png';
 const MapTile = props => {
   const tileSprites = {
     0: 'clear',
-    1: 'clear',
-    2: border,
-    3: oracle
+    1: border,
+    2: oracle
   };
   const getTileSprite = type => {
     switch (type) {
     case 1:
-      return `interact`;
+      return `url(${tileSprites['1']})`;
     case 2:
       return `url(${tileSprites['2']})`;
-    case 3:
-      return `url(${tileSprites['3']})`;
       default:
         return tileSprites[type];
     }
