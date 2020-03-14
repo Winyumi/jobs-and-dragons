@@ -34,40 +34,27 @@ const Profile = () => {
   }, [loading, user, dispatch]);
 
   return (
-    // <div className='my-5'>
-    //   <h2 className='my-5'>Welcome {user.name}</h2>
-    //   <p>{user.email}</p>
-    //   <img src={user.picture} alt='Profile' />
 
-    //   <div className='row'>
-    //     <div className='col'>
-    //       <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
-    //     </div>
-    //   </div>
-    // </div>
+  <div class="row">
 
+    <div class="center col s12 m6">
+      <img src={user.picture} alt='User Profile Picture' class="circle responsive-img" id="userImage"/>
+      <h3>USERNAME</h3>
+      <div class="card-panel grey">{ user.name }</div>
+    </div>
 
-<div class="row">
-
-  <div class="center col s12 m6">
-    <img src={user.picture} alt='User Profile Picture' class="circle responsive-img" id="userImage"/>
-    <h3>USERNAME</h3>
-    <div class="card-panel grey">{ user.name }</div>
-  </div>
-
-<div class="center col s12 m6">
-  <h3>Begin Your QUEST</h3>
-  <a class='btn-large' href='/game' type='submit' name='gameBtn'>GAME</a>
-  <br></br>  
-  <a class="btn-large" href='#' type='submit' name='gameBtn'>RESUME</a>
-  <br></br>
-  <a class="btn-large" href='#' type='submit' name='gameBtn'>Quest 3</a>
-  <br></br>
-  <a class="btn-large" href='#' type='submit' name='gameBtn'>Quest 4</a>
+    <div class="center col s12 m6">
+      <h3>Begin Your QUEST</h3>
+      <a class='btn-large' href='/game' type='submit' name='gameBtn'>GAME</a>
+      <br></br>  
+      <a class="btn-large" href='#' type='submit' name='gameBtn'>RESUME</a>
+      <br></br>
+      <a class="btn-large" href='#' type='submit' name='gameBtn'>Quest 3</a>
+      <br></br>
+      <a class="btn-large" href='#' type='submit' name='gameBtn'>Quest 4</a>
+    </div>
 
   </div>
-
-</div>
 
   );
 };
