@@ -4,7 +4,9 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
+const routes = require("./routes");
 const User = require('./models/user');
+
 // Load env variables
 dotenv.config({ path: path.join(__dirname, 'config/config.env') });
 const app = express();
@@ -17,12 +19,17 @@ app.use(bodyParser.json());
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
+
 // Use development logging middleware
 if (process.env.NODE_ENV === 'development') {
   const morgan = require('morgan');
   app.use(morgan('dev'));
 }
 
+// Add routes, both API and view
+app.use(routes);
+
+/*
 app.get('/api/v1/users/:email', (req, res) => {
   const email = req.params.email;
 
@@ -61,6 +68,10 @@ app.get('*', (_req, res) => {
   // res.sendFile(path.join(__dirname + '/client/public/index.html'));
   res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
 });
+*/
+
+
+
 const PORT = process.env.PORT || 3001;
 app.listen(
   PORT,
