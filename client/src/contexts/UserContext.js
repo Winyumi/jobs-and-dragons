@@ -1,21 +1,29 @@
 import React, { createContext, useReducer, useContext } from 'react';
-import { api } from '../utils/api';
 
 const UserContext = createContext();
 const { Provider } = UserContext;
 
 const userReducer = (state, action) => {
   switch (action.type) {
-    case 'add':
-      api.addUserInfo(action.user).then(res => ({ ...state, ...res }));
-      break;
+    case 'user':
+      console.log(action.payload);
+      return {
+        user: action.payload
+      };
     default:
-      console.log(action.user);
+      return {
+        ...state
+      };
   }
 };
 
-const UserProvider = ({ value = {}, ...props }) => {
-  const [state, dispatch] = useReducer(userReducer, { user: value });
+const UserProvider = ({
+  value = {
+    user: {}
+  },
+  ...props
+}) => {
+  const [state, dispatch] = useReducer(userReducer, { ...value });
 
   return <Provider value={[state, dispatch]} {...props} />;
 };

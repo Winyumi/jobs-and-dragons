@@ -29,8 +29,7 @@ const App = () => {
     <Router history={history}>
       <div id='app'>
         <NavBar />
-
-        <div class='row'>
+        <div className='row'>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/userinfo' component={UserInfo} />
@@ -40,7 +39,7 @@ const App = () => {
                 <World />
               </PlayerProvider>
             </Route>
-            <PrivateRoute path='/profile' component={Profile} />
+            <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
           </Switch>
         </div>
       </div>
