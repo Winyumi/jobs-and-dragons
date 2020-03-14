@@ -204,3 +204,7 @@ input[type='submit'] {
   font-size: 13px;
 
 }
+
+#back{
+  float:right;
+}

@@ -16,7 +16,6 @@ export default class index extends Component {
     }
   
     return (
-
         <div className="resume">
         <div className="page" size="A4">
           <header>
@@ -87,7 +86,6 @@ export default class index extends Component {
                       </p>
                       
                     </div>
-                    <input type="button" value="SUBMIT" className="btn waves-effect waves-light" onClick={this.onSubmitHandler} />
                   </React.Fragment>
                 ))}
               </div>
@@ -95,8 +93,6 @@ export default class index extends Component {
           </main>
         </div>
       </div>
-      
-      
           );
   }
 }
