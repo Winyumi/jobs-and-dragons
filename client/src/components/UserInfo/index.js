@@ -141,10 +141,10 @@ export default class index extends Component {
 
         <section id="expertise">
           <div className="util">
-            <h2>Expertise</h2>
+            <h4>Expertise</h4>
           </div>
           <div>
-            <p>What is your area of interest?</p>
+            <h3>What is your area of interest?</h3>
           </div>      
               <UserExpertise
               />
@@ -152,10 +152,10 @@ export default class index extends Component {
 
         <section id="skills">
           <div className="util">
-            <h2>Skills</h2>
+            <h4>Skills</h4>
           </div>
           <div>
-            <p>Select your proficiency level to add a skill to your profile. </p>
+            <h3>Select your proficiency level to add a skill to your profile. </h3>
           </div>
           <div>
          <ul>
