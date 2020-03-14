@@ -16,7 +16,7 @@ module.exports = {
   },
   findByEmail: function(req, res) {
     db.User
-      .findById({ email: req.params.email })
+      .findOne({ email: req.params.email })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
