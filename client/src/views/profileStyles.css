@@ -28,6 +28,6 @@
 
 }
 
-.btn-large :hover{
-
+.btn-large:hover{
+    background-color: darkblue;
 }
