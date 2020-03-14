@@ -1,16 +1,23 @@
 import React from 'react';
 // import wall from '../../assets/wall.png';
 import border from '../../assets/border.png';
+import oracle from '../../assets/Oracle.png';
 
 const MapTile = props => {
   const tileSprites = {
     0: 'clear',
-    1: border
+    1: 'clear',
+    2: border,
+    3: oracle
   };
   const getTileSprite = type => {
     switch (type) {
-      case 1:
-        return `url(${tileSprites['1']})`;
+    case 1:
+      return `interact`;
+    case 2:
+      return `url(${tileSprites['2']})`;
+    case 3:
+      return `url(${tileSprites['3']})`;
       default:
         return tileSprites[type];
     }
