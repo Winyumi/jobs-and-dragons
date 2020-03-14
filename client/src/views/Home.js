@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
+import React from 'react';
+import background from '../assets/dungeonBG.png'
 
 function Home() {
   return (
     <React.Fragment>
-      <h1 style={headerStyle}>Jobs & Dragons</h1>
-      <p> 
-        I am determined, capable, and hard-working and I love to rise to a challenge. <br/> 
-        I thoroughly enjoy working with people and am happy to find any place in the team. <br/> 
-        I've worked in a variety of positions in a large range of fields and I know I can always find a great way to contribute to a project. <br/>
-      </p>
+      <img style={{width: '100%', height: '100%', opacity: '0.8', position: 'relative'}} src={background} />
+      <h1 style={headerStyle}>Welcome!</h1>
     </React.Fragment>
   )
 }
 
 const headerStyle = {
-    background: '#333',
-    color: '#fff',
-    textAlign: 'center',
-    position: 'fixed',
-    top: '0px',
-    width: '100%',
-    padding: '5px'
-  }
+  position: 'absolute', 
+  top: '200px', 
+  width: '100%', 
+  textAlign: 'center', 
+  color: 'black',
+  textShadow: '2px 2px white'
+}
 
 export default Home;
