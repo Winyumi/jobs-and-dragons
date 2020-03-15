@@ -27,7 +27,6 @@
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.9.3",
-    "semantic-ui-react": "^0.88.2",
     "path": "^0.12.7"
   },
   "devDependencies": {
