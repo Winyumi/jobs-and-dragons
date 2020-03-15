@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
 import { api } from '../utils/api';
 
 import 'materialize-css';
+import './profileStyles.css';
 
-import Highlight from '../components/Highlight';
 import Loading from '../components/Loading';
 import { useAuth0 } from '../react-auth0-spa';
 
@@ -31,15 +32,35 @@ const Profile = () => {
   }, [loading, user, dispatch]);
 
   return (
-    <div className='my-5'>
-      <h2 className='my-5'>Welcome {user.name}</h2>
-      <p>{user.email}</p>
-      <img src={user.picture} alt='Profile' />
+    <div className='row'>
+      <div className='center col s12 m6'>
+        <img
+          src={user.picture}
+          alt='User Profile'
+          className='circle responsive-img'
+          id='userImage'
+        />
+        <h3>USERNAME</h3>
+        <div className='card-panel grey'>{user.name}</div>
+      </div>
 
-      <div className='row'>
-        <div className='col'>
-          <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
-        </div>
+      <div className='center col s12 m6'>
+        <h3>Begin Your QUEST</h3>
+        <Link className='btn-large' to='/game' name='gameBtn'>
+          Quest 1
+        </Link>
+        <br></br>
+        <Link className='btn-large' to='#' name='gameBtn'>
+          Quest 2
+        </Link>
+        <br></br>
+        <Link className='btn-large' to='#' name='gameBtn'>
+          Quest 3
+        </Link>
+        <br></br>
+        <Link className='btn-large' to='#' name='gameBtn'>
+          Quest 4
+        </Link>
       </div>
     </div>
   );
