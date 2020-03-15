@@ -10,12 +10,11 @@ import Home from './views/Home';
 import Profile from './views/Profile';
 import Game from './views/Game';
 // import World from './components/World';
-// import { PlayerProvider } from './contexts/PlayerContext';
+import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
 import UserInfo from './components/UserInfo';
 import resume from './components/Resume';
-
 
 // styles/
 import './App.css';
@@ -36,13 +35,15 @@ const App = () => {
             <Route exact path='/' component={Home} />
             <Route exact path='/userinfo' component={UserInfo} />
             <Route exact path='/resume' component={resume} />
-            <Route exact path='/game' component={Game} />
+            <PlayerProvider>
+              <Route exact path='/game' component={Game} />
+            </PlayerProvider>
             <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
           </Switch>
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };

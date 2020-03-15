@@ -32,7 +32,7 @@ const observeInteraction = newPosition => {
 
   const nextTile = dungeon[y][x];
 
-  return nextTile === 2 ;
+  return nextTile === 2;
 };
 
 const dispatchMove = (oldPosition, newPosition) => {
@@ -43,14 +43,13 @@ const dispatchMove = (oldPosition, newPosition) => {
   }
 };
 
-const startDialogue = newPosition => {
-  if (observeInteraction(newPosition)) {
-    alert("dialogue!")
-  }
-}
+// const startDialogue = newPosition => {
+//   if (observeInteraction(newPosition)) {
+//     alert('dialogue!');
+//   }
+// };
 
 const getSpriteLocation = (direction, walkIndex) => {
-  console.log(direction);
   switch (direction) {
     case 'east':
       return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 1}px`;
@@ -81,7 +80,7 @@ const playerReducer = (state, action) => {
         ]),
         spritePosition: getSpriteLocation('west', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
-        interact: startDialogue([
+        isInteracting: observeInteraction([
           state.position[0] - SPRITE_SIZE,
           state.position[1]
         ])
@@ -95,7 +94,7 @@ const playerReducer = (state, action) => {
         ]),
         spritePosition: getSpriteLocation('north', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
-        interact: startDialogue([
+        isInteracting: observeInteraction([
           state.position[0],
           state.position[1] - SPRITE_SIZE
         ])
@@ -109,7 +108,7 @@ const playerReducer = (state, action) => {
         ]),
         spritePosition: getSpriteLocation('east', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
-        interact: startDialogue([
+        isInteracting: observeInteraction([
           state.position[0] + SPRITE_SIZE,
           state.position[1]
         ])
@@ -123,7 +122,7 @@ const playerReducer = (state, action) => {
         ]),
         spritePosition: getSpriteLocation('south', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
-        interact: startDialogue([
+        isInteracting: observeInteraction([
           state.position[0],
           state.position[1] + SPRITE_SIZE
         ])
@@ -139,7 +138,7 @@ const PlayerProvider = ({
     spritePosition: '0px 0px',
     direction: 'east',
     walkIndex: 0,
-    interact: false
+    isInteracting: false
   },
   ...props
 }) => {
