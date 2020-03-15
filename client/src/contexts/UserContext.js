@@ -19,7 +19,9 @@ const userReducer = (state, action) => {
 
 const UserProvider = ({
   value = {
-    user: {}
+    user: {
+      name: 'Sal Tamay'
+    }
   },
   ...props
 }) => {

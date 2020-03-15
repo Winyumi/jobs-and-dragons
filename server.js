@@ -21,8 +21,8 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Use development logging middleware
 if (process.env.NODE_ENV === 'development') {
-	const morgan = require('morgan');
-	app.use(morgan('dev'));
+  const morgan = require('morgan');
+  app.use(morgan('dev'));
 }
 
 // Add routes, both API and view
@@ -31,22 +31,17 @@ app.use('api/v1', routes);
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (_req, res) => {
-	// res.sendFile(path.join(__dirname + '/client/public/index.html'));
-	res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+  // res.sendFile(path.join(__dirname + '/client/public/index.html'));
+  res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(
-	PORT,
-	console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
-);
 const uri = process.env.MONGO_ATLAS_URI;
 mongoose.connect(uri, {
-	useNewUrlParser: true,
-	useCreateIndex: true,
-	useUnifiedTopology: true
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
 });
 const connection = mongoose.connection;
 connection.once('open', () => {
-	console.log('MongoDB database connection established successfully');
+  console.log('MongoDB database connection established successfully');
 });
