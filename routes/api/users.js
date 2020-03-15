@@ -1,8 +1,9 @@
-const router = require("express").Router();
-const usersController = require("../../controllers/users");
+const router = require('express').Router();
+const usersController = require('../../controllers/users');
 
 // Matches with "/api/v1/users"
-router.route("/")
+router
+  .route('/')
   .get(usersController.findAll)
   .post(usersController.create);
 
@@ -16,7 +17,7 @@ router
 
 // Matches with "/api/v1/users/:email"
 router
-  .route("/:email")
+  .route('/:email')
   .get(usersController.findByEmail)
   .put(usersController.update);
 
