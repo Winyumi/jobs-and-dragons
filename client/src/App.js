@@ -8,7 +8,8 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './views/Home';
 import Profile from './views/Profile';
-import World from './components/World';
+import Game from './views/Game';
+// import World from './components/World';
 import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
@@ -34,17 +35,15 @@ const App = () => {
             <Route exact path='/' component={Home} />
             <Route exact path='/userinfo' component={UserInfo} />
             <Route exact path='/resume' component={resume} />
-            <Route exact path='/game'>
-              <PlayerProvider>
-                <World />
-              </PlayerProvider>
-            </Route>
+            <PlayerProvider>
+              <Route exact path='/game' component={Game} />
+            </PlayerProvider>
             <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
           </Switch>
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };
