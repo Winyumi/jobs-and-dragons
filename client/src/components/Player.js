@@ -2,10 +2,6 @@ import React, { useEffect } from 'react';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import walkSprite from '../assets/player_walk.png';
 
-// const spriteLocation = '0 0';
-// const direction = "west";
-
-//Put the direction as dispatch({direction: "direction"})?
 const Player = () => {
   const [state, dispatch] = usePlayerContext();
 

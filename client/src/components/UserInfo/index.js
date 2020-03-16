@@ -4,9 +4,8 @@ import UserEducation from './userEducation';
 import UserExp from './userExp';
 import UserProjects from './userProjects';
 import UserExpertise from './userExpertise';
-import { Rating } from 'semantic-ui-react';
+import StarRatings from 'react-star-ratings';
 import UserSkills from './userSkills';
-
 
 export default class index extends Component {
   state = {
@@ -23,7 +22,7 @@ export default class index extends Component {
       this.setState(JSON.parse(localStorage.getItem('data')));
     }
   }
-  
+
   onChangeHandler = (name, from, id) => e => {
     let value = e.target.value;
     let newState = { ...this.state };
@@ -137,44 +136,76 @@ export default class index extends Component {
           ))}
         </section>
 
-
-
-        <section id="expertise">
-          <div className="util">
+        <section id='expertise'>
+          <div className='util'>
             <h4>Expertise</h4>
           </div>
           <div>
             <h3>What is your area of interest?</h3>
-          </div>      
-              <UserExpertise
-              />
+          </div>
+          <UserExpertise />
         </section>
 
-        <section id="skills">
-          <div className="util">
+        <section id='skills'>
+          <div className='util'>
             <h4>Skills</h4>
           </div>
           <div>
-            <h3>Select your proficiency level to add a skill to your profile. </h3>
+            <h3>
+              Select your proficiency level to add a skill to your profile.{' '}
+            </h3>
           </div>
           <div>
-         <ul>
-            <li class="divider" tabindex="-1"></li>
-            <li>Beginner: <Rating maxRating={4} behaviour disabled defaultRating = "1" /></li>
-            <li class="divider" tabindex="-1"></li>
-            <li>Intermediate: <Rating maxRating={4} behaviour disabled defaultRating = "2" /></li>
-            <li class="divider" tabindex="-1"></li>
-            <li>Advanced: <Rating maxRating={4} behaviour disabled defaultRating = "3" /></li>
-            <li class="divider" tabindex="-1"></li>
-            <li>Expert: <Rating maxRating={4} behaviour disabled defaultRating = "4" /></li>
-          </ul>
+            <ul>
+              <li className='divider' tabIndex='-1'></li>
+              <li>
+                Beginner:{' '}
+                <StarRatings
+                  starDimension='20px'
+                  starSpacing='3px'
+                  rating={1}
+                  numberOfStars={4}
+                  disabled
+                />
+              </li>
+              <li className='divider' tabIndex='-1'></li>
+              <li>
+                Intermediate:{' '}
+                <StarRatings
+                  starDimension='20px'
+                  starSpacing='3px'
+                  rating={2}
+                  numberOfStars={4}
+                  disabled
+                />
+              </li>
+              <li className='divider' tabIndex='-1'></li>
+              <li>
+                Advanced:{' '}
+                <StarRatings
+                  starDimension='20px'
+                  starSpacing='3px'
+                  rating={3}
+                  numberOfStars={4}
+                  disabled
+                />
+              </li>
+              <li className='divider' tabIndex='-1'></li>
+              <li>
+                Expert:{' '}
+                <StarRatings
+                  starDimension='20px'
+                  starSpacing='3px'
+                  rating={4}
+                  numberOfStars={4}
+                  disabled
+                />
+              </li>
+            </ul>
           </div>
-          <UserSkills
-          />
+          <UserSkills />
         </section>
 
-
-        
         <section id='projects'>
           <div className='util'>
             <h4>Projects</h4>
