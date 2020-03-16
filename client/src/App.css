@@ -8,7 +8,7 @@
 form {
   width: 90%;
   min-width: 300px;
-  max-width: 400px;
+  max-width: 700px;
   margin: 40px auto;
   padding: 20px;
   border-radius: 4px;
@@ -201,6 +201,16 @@ input[type='submit'] {
   font-size: 13px;
 }
 
+<<<<<<< HEAD
 #back{
   float:right;
 }
+=======
+.card-panel{
+  padding: 8px;
+}
+
+.btn{
+  margin-top: 20px;
+}
+>>>>>>> e939897afe7a9e9742333e9c99a6193555e45654
