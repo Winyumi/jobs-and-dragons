@@ -72,39 +72,59 @@ import { useAuth0 } from '../react-auth0-spa';
 
 export default class jobListing extends React.Component {
     
-    state = {
-        jobs : []
-    } 
+    // state = {
+    //     jobs : []
+    // } 
     
-    // constructor(props) {
-    //   super(props);
-    //   this.state = {
-    //     error: null,
-    //     isLoaded: false,
-    //     items: []
-    //   };
-    // }
-  
-    componentDidMount() {
-
-    api.getJobListing().then(results => {
-
-        // console.log(results);
-        // let newState = { ...this.state };
-        // newState.push(results);
-        // console.log(newState);
-
-        this.setState({
-            isLoaded: true,
-            jobs: results.data.results,
-        });
-        console.log(results);
-
-        })
+    constructor(props) {
+      super(props);
+      this.state = {
+        error: null,
+        isLoaded: false,
+        items: []
+      };
     }
   
+    componentDidMount() {
+        let app_id='a69247c0';
+        let app_key='24fc9762a9d2f3a031f002f7afe14f75';
+    
+        fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id='+app_id+'&app_key='+app_key+'&results_per_page=1')
+
+        .then(res => res.json())
+
+        .then(
+            (result) => {
+              this.setState({
+                isLoaded: true,
+                items: result.items
+              });
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+          )
+    // api.getJobListing().then(results => {
+    //     this.setState({
+    //         isLoaded: true,
+    //         jobs: results.data.results,
+    //     });
+    //     console.log(results);
+    //     })
+
+
+    }
+
+
+  
     render() {
-      const { error, isLoaded, jobs } = this.state;
+      const { error, isLoaded, items } = this.state;
       if (error) {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
@@ -112,8 +132,9 @@ export default class jobListing extends React.Component {
       } else {
         return (
           <ul>
-            {jobs.map(item => (
-              <li key={item.title}>
+            {items.map(item => (
+              <li>
+                  {item.title}
               </li>
             ))}
           </ul>
