@@ -15,6 +15,7 @@ import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
 import UserInfo from './components/UserInfo';
 import resume from './components/Resume';
+import jobListing from './components/JobSearch';
 
 // styles/
 import './App.css';
@@ -35,6 +36,7 @@ const App = () => {
             <Route exact path='/' component={Home} />
             <Route exact path='/userinfo' component={UserInfo} />
             <Route exact path='/resume' component={resume} />
+            <Route exact path='/joblisting' component={jobListing}/>
             <PlayerProvider>
               <Route exact path='/game' component={Game} />
             </PlayerProvider>
