@@ -12,8 +12,8 @@ const Map = props => {
         height: '400px'
       }}
     >
-      {props.tiles.map(row => (
-        <MapRow tiles={row} />
+      {props.tiles.map((row, idx) => (
+        <MapRow key={`row-${idx}`} tiles={row} />
       ))}
     </div>
   );
