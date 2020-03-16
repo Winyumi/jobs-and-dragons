@@ -6,6 +6,19 @@ import Loading from '../components/Loading';
 
 export default class jobListing extends React.Component {
 
+    handleSearchChange = event => {
+        console.log(event.target.value);
+        const filter = event.target.value;
+        const filteredList = this.state.users.filter(item => {
+          // merge data together, then see if user input is anywhere inside
+          let values = Object.values(item)
+            .join("")
+            .toLowerCase();
+          return values.indexOf(filter.toLowerCase()) !== -1;
+        });
+        this.setState({ filteredUsers: filteredList });
+      }
+
     constructor(props) {
       super(props);
       this.state = {
@@ -53,13 +66,23 @@ export default class jobListing extends React.Component {
         return <div><Loading /></div>;
       } else {
         return (
-            <ul>
-            {items.map(item => (
-            <li key={item.name}>
-                {item.title} 
-            </li>
-            ))}
-            </ul>            
+
+            <div className='row'>
+                <div className='input-field col s6'>
+                    <i class="material-icons prefix">account_circle</i>
+                    <input value="Web Developer" id="first_name2" type="text" class="validate"></input>
+                    <label class="active" for="first_name2">Job Title</label>
+   
+                    <ul>
+                        {items.map(item => (
+                        <li key={item.name}>
+                            {item.title} 
+                        </li>
+                        ))}
+                    </ul>    
+                </div>
+            </div>
+    
         );
       }
     }
