@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import 'materialize-css';
 
-import { useAuth0 } from "../react-auth0-spa";
+import { useAuth0 } from '../react-auth0-spa';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,14 +14,26 @@ const NavBar = () => {
     });
 
   return (
-    <div className="nav-container">
+    <div className='nav-container'>
       <nav>
-        <div class="nav-wrapper">
-          <a href="/" class="brand-logo right">Logo</a>
-          <ul class="left">
-            <li to="/" id="qsLoginBtn" onClick={() => loginWithRedirect({})}><a href="/">HOME</a></li>
-            <li to="/profile"><a href="/profile">PROFILE</a></li>
-            <li to="/logout" id="qsLogoutBtn" onClick={() => logoutWithRedirect()}><a href="/">LOGOUT</a></li>
+        <div className='nav-wrapper'>
+          <a href='/' className='brand-logo right'>
+            Logo
+          </a>
+          <ul className='left'>
+            <li to='/' id='qsLoginBtn' onClick={() => loginWithRedirect({})}>
+              <a href='/'>HOME</a>
+            </li>
+            <li to='/profile'>
+              <a href='/profile'>PROFILE</a>
+            </li>
+            <li
+              to='/logout'
+              id='qsLogoutBtn'
+              onClick={() => logoutWithRedirect()}
+            >
+              <a href='/'>LOGOUT</a>
+            </li>
           </ul>
         </div>
       </nav>

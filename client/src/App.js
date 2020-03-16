@@ -12,9 +12,8 @@ import World from './components/World';
 import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
-import UserInfo from './components/pages/userInfo';
-import resume from './components/pages/resume'
-
+import UserInfo from './components/UserInfo';
+import resume from './components/Resume';
 
 // styles/
 import './App.css';
@@ -28,26 +27,24 @@ const App = () => {
 
   return (
     <Router history={history}>
-
-      <div id="app">
+      <div id='app'>
         <NavBar />
-
-        <div class="row">
-            <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/userinfo' component={UserInfo}/>
-                <Route exact path='/resume' component={resume}/>
-                <Route exact path='/game'>
-                  <PlayerProvider>
-                    <World />
-                  </PlayerProvider>
-                </Route>
-                <PrivateRoute path='/profile' component={Profile} />
-              </Switch>
-            </div>
+        <div className='row'>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/userinfo' component={UserInfo} />
+            <Route exact path='/resume' component={resume} />
+            <Route exact path='/game'>
+              <PlayerProvider>
+                <World />
+              </PlayerProvider>
+            </Route>
+            <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
+          </Switch>
         </div>
+      </div>
 
-        <Footer />
+      <Footer />
     </Router>
   );
 };
