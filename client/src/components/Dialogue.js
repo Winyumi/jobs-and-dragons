@@ -1,24 +1,49 @@
 import React from 'react';
+import OracleBox from '../assets/OracleBox.png';
+// import M from "materialize-css";
+import "materialize-css/dist/css/materialize.min.css";
 
+// Dialogue box content needs to be replaced with dynamic content determined by props
 const Dialogue = props => {
-  return (
-    <div
-      style={{
-        color: 'white',
-        backgroundColor: 'black',
-        position: 'absolute',
-        top: '33%',
-        left: '33%',
-        width: '600px',
-        height: '300px',
-        padding: '20px'
-      }}
-    >
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-      <a href='#!'>Agree</a>
-    </div>
-  );
+    const imgStyle = {
+        float:'right',
+        width: '100px'
+    }; 
+    return (
+        <div className="modal-content"
+            style={{
+                color: 'white',
+                backgroundColor: 'black',
+                position: 'absolute',
+                top: '33%',
+                left: '33%',
+                width: '700px',
+                height: '300px',
+                padding: '20px'
+            }}
+        >
+            <div
+                style={{
+
+                }}>
+                <div className="row"
+                            style={{
+                                // display: 'inline-block'
+                            }}>
+
+                    <img style={imgStyle} src={OracleBox} />
+                    <h4>The Oracle of Secivres Reerac</h4>
+                </div>
+                <div className="row">
+                <p>Welcome {props.username} to the beginning of your journey! I am the Oracle of Secrives Reerac and I am here to guide you on your quest. Are you ready to begin?</p>
+                    <ul>
+                        <li><a className="modal-close" href='#!'>Yes!</a></li>
+                        <li><a className="modal-close" href='#!'>Um...not yet...</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Dialogue;
