@@ -10,12 +10,13 @@ import Home from './views/Home';
 import Profile from './views/Profile';
 import Game from './views/Game';
 // import World from './components/World';
+import jobListing from  './views/jobListing';
+
 import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
 import UserInfo from './components/UserInfo';
 import resume from './components/Resume';
-import jobListing from './components/JobSearch';
 
 // styles/
 import './App.css';
