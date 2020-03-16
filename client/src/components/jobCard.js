@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
+import jobListing from '../views/jobListing'
 import 'materialize-css';
 
-const jobCard = () => (
-    <div class="card blue-grey darken-1">
-    <div class="card-content white-text">
-      <span class="card-title">Card Title</span>
-      <p>I am a very simple card. I am good at containing small bits of information.
-      I am convenient because I require little markup to use effectively.</p>
+const JobCard = () => (
+    <div className="card blue-grey darken-1">
+    <div className="card-content white-text">
+      <span className="card-title"></span>
+      <p>
+
+      </p>
     </div>
-    <div class="card-action">
-      <a href="#">This is a link</a>
+    <div className="card-action">
       <a href="#">This is a link</a>
     </div>
   </div>
 );
 
-export default jobCard;
+export default JobCard;
