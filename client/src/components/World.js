@@ -11,7 +11,6 @@ const World = () => {
         position: 'relative',
         width: '600px',
         height: '400px',
-        margin: '100px auto',
         backgroundImage: `url( ${dungeonBG } )`
       }}
     >

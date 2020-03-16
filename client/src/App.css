@@ -8,7 +8,7 @@
 form {
   width: 90%;
   min-width: 300px;
-  max-width: 400px;
+  max-width: 700px;
   margin: 40px auto;
   padding: 20px;
   border-radius: 4px;
@@ -204,4 +204,12 @@ input[type='submit'] {
   color: darkslategray;
   font-weight: normal;
   font-size: 13px;
+}
+
+.card-panel{
+  padding: 8px;
+}
+
+.btn{
+  margin-top: 20px;
 }

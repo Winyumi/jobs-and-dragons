@@ -5,8 +5,8 @@ import MapTile from './MapTile';
 const MapRow = props => {
   return (
     <div className='row-tile'>
-      {props.tiles.map(tile => (
-        <MapTile tile={tile} />
+      {props.tiles.map((tile, idx) => (
+        <MapTile key={`tile-${idx}`} tile={tile} />
       ))}
     </div>
   );
