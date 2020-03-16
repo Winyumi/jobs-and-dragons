@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Component } from 'react';
 import World from '../components/World';
 import Dialogue from '../components/Dialogue';
 import CharBox from '../components/CharBox';
@@ -6,7 +6,7 @@ import { usePlayerContext } from '../contexts/PlayerContext';
 
 import 'materialize-css';
 
-const Game = () => {
+const Game = (props) => {
   const [state, dispatch] = usePlayerContext();
 
   let styles;
@@ -50,7 +50,7 @@ const Game = () => {
             alignItems: 'center'
           }}
         >
-          <World />
+          <World path="/game/"/>
         </div>
       </div>
       <div style={{}}>{state.isInteracting && <Dialogue />}</div>

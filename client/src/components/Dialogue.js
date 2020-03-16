@@ -9,6 +9,8 @@ const Dialogue = props => {
         float:'right',
         width: '100px'
     }; 
+
+    console.log(props)
     return (
         <div className="modal-content"
             style={{
@@ -37,7 +39,7 @@ const Dialogue = props => {
                 <div className="row">
                 <p>Welcome {props.username} to the beginning of your journey! I am the Oracle of Secrives Reerac and I am here to guide you on your quest. Are you ready to begin?</p>
                     <ul>
-                        <li><a className="modal-close" href='#!'>Yes!</a></li>
+                        <li><a className="modal-close" href='q_one'>Yes!</a></li>
                         <li><a className="modal-close" href='#!'>Um...not yet...</a></li>
                     </ul>
                 </div>

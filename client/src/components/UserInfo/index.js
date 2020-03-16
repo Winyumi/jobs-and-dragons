@@ -4,7 +4,7 @@ import UserEducation from './userEducation';
 import UserExp from './userExp';
 import UserProjects from './userProjects';
 
-export default class index extends Component {
+export default class Index extends Component {
   state = {
     name: '',
     email: '',
