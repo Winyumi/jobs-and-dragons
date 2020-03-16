@@ -71,7 +71,7 @@ button:hover {
 }
 
 h3,
-h4 {
+h4,h5 {
   font-family: 'Alagard';
 }
 .remove-btn {
@@ -201,11 +201,6 @@ input[type='submit'] {
   font-size: 13px;
 }
 
-<<<<<<< HEAD
-#back{
-  float:right;
-}
-=======
 .card-panel{
   padding: 8px;
 }
@@ -213,4 +208,3 @@ input[type='submit'] {
 .btn{
   margin-top: 20px;
 }
->>>>>>> e939897afe7a9e9742333e9c99a6193555e45654
