@@ -80,18 +80,33 @@ export default class jobListing extends React.Component {
                         <input id="first_name2" type="text"></input>
                         <label className="active">Search Job Title</label>
                     </div>
+                    <input
+          type='submit'
+          value='SUBMIT'
+          className='btn-large'
+        />
                 </div>
 
                 <div className='center input-field col s12 m6'>
-                   
+                <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Card Title</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+      </div>
    
-                    <ul>
+                    {/* <ul>
                         {items.map(item => (
                         <li key={item.id}>
                             {item.title} 
                         </li>
                         ))}
-                    </ul>    
+                    </ul>     */}
                 </div>
 
 
