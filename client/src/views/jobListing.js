@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import 'materialize-css';
 
 import Loading from '../components/Loading';
+import { useAuth0 } from '../react-auth0-spa';
+
 
 export default class jobListing extends React.Component {
 
@@ -29,6 +31,7 @@ export default class jobListing extends React.Component {
     }
   
     componentDidMount() {
+
         let app_id='a69247c0';
         let app_key='24fc9762a9d2f3a031f002f7afe14f75';
     
@@ -68,19 +71,30 @@ export default class jobListing extends React.Component {
         return (
 
             <div className='row'>
-                <div className='input-field col s6'>
-                    <i class="material-icons prefix">account_circle</i>
-                    <input value="Web Developer" id="first_name2" type="text" class="validate"></input>
-                    <label class="active" for="first_name2">Job Title</label>
+                <div className='center col s12 m6'>
+                    
+                    <h3>JOB LISTINGS</h3>
+                    
+                    <div className='center input-field'>
+                        <i className="large material-icons prefix">work</i>
+                        <input id="first_name2" type="text"></input>
+                        <label className="active">Search Job Title</label>
+                    </div>
+                </div>
+
+                <div className='center input-field col s12 m6'>
+                   
    
                     <ul>
                         {items.map(item => (
-                        <li key={item.name}>
+                        <li key={item.id}>
                             {item.title} 
                         </li>
                         ))}
                     </ul>    
                 </div>
+
+
             </div>
     
         );
