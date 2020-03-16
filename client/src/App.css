@@ -70,8 +70,7 @@ button:hover {
   font-style: normal;
 }
 
-h3,
-h4 {
+h3, h4, h6 {
   font-family: 'Alagard';
 }
 .remove-btn {
@@ -207,4 +206,5 @@ input[type='submit'] {
 
 .btn{
   margin-top: 20px;
+  margin :5px;
 }

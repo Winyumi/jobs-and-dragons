@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import JobCard from '../components/jobCard'
 
 import 'materialize-css';
+import dateFormat from 'dateformat';
 
 import Loading from '../components/Loading';
 import { useAuth0 } from '../react-auth0-spa';
@@ -17,7 +18,7 @@ export default class jobListing extends React.Component {
         items: []
       };
     }
-  
+
     componentDidMount() {
         let app_id='a69247c0';
         let app_key='24fc9762a9d2f3a031f002f7afe14f75';
@@ -53,7 +54,7 @@ export default class jobListing extends React.Component {
 
             <div className='row'>
 
-                <div className='center col s12 m6'>
+                <div className='center col s12 m3'>
                     <h3>JOB LISTINGS</h3>
                     <div className='center input-field'>
                         <i className="large material-icons prefix">work</i>
@@ -67,7 +68,7 @@ export default class jobListing extends React.Component {
                     />
                 </div>
 
-                <div className='center col s12 m6'>
+                <div className='center col s12 m8'>
                     <ul>
                     {items.map(item => (
                         <li key={item.id}>
@@ -76,19 +77,25 @@ export default class jobListing extends React.Component {
                             id={item.id}
                         /> */}
 
-                            <div className="card blue-grey darken-1">
-                                <div className="card-content white-text">
-                                    <h6 className="card-title">{item.title}</h6>
-                                    <p>
-                                        {item.company.display_name}
-                                    </p>
-                                    <span>{ item.location.display_name}</span>
+                            <div className="card brown lighten-3">
 
+                                <div className="card-content">
+                                    <h6 className="card-title activator">{item.title}<i class="material-icons right">more_vert</i></h6>
+                                    <p> <b>Company :</b> {item.company.display_name} </p>
+                                    <span> <b>Location :</b> { item.location.display_name}</span>
+                                    <p> <b>Date :</b> { dateFormat( item.created , "dddd, mmmm dS, yyyy")  }</p>
                                 </div>
+
                                 <div className="card-action">
-                                <a href={ item.redirect_url} target='_blank'>Apply</a>
-
+                                    <a href={ item.redirect_url} target='_blank'className="btn brown darken-4 tooltipped" data-tooltip="I am a tooltip">Apply</a>
+                                    <a className="btn brown darken-4"><i className="material-icons">save</i></a>
                                 </div>
+
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                                    <p>{ item.description }</p>
+                                </div>
+
                             </div>
                         </li>
                     ))}     
@@ -100,9 +107,3 @@ export default class jobListing extends React.Component {
       }
     }
   }
-
-    // {items.map(item => (
-                        // <li key={item.id}>
-                        //     {item.title} 
-                        // </li>
-                        // ))}
