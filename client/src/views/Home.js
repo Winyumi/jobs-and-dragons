@@ -4,13 +4,17 @@ import background from '../assets/dungeonBG.png'
 function Home() {
   return (
     <React.Fragment>
-      <img style={{width: '100%', height: '100%', opacity: '0.8', position: 'relative'}} src={background} />
-      <h1 style={headerStyle}>Welcome!</h1>
+      <img style={{width: '100%', height: '100%', opacity: '0.5', position: 'relative'}} src={background} />
+      <div style={topStyle}>
+        <h1>Welcome!</h1>
+        <p>Jobs & Dragons is a fun new way to quest for your next tech job.</p> <br/>
+        <p>Sign in and get started finding your dream career!</p>
+      </div>
     </React.Fragment>
   )
 }
 
-const headerStyle = {
+const topStyle = {
   position: 'absolute', 
   top: '200px', 
   width: '100%', 
