@@ -34,19 +34,23 @@ const App = () => {
         <NavBar />
         <div className='row'>
           <Switch>
+
             <Route exact path='/' component={Home} />
             <Route exact path='/userinfo' component={UserInfo} />
             <Route exact path='/resume' component={resume} />
             <Route exact path='/joblisting' component={jobListing}/>
+
             <PlayerProvider>
               <Route exact path='/game' component={Game} />
             </PlayerProvider>
+
             <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
+
           </Switch>
         </div>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 };
