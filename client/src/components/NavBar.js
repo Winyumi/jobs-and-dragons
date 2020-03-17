@@ -23,51 +23,48 @@ const NavBar = () => {
   }, [isAuthenticated]);
 
   return (
-    <div>
-    <div style={{height: '4em'}} className='center grey darken-4'>
-        <img style={{height: '100%', padding: '5px'}}src={logo} alt="logo" />
-      </div>
-    <div className='nav-container'>
-      <nav>
-        <div className='nav-wrapper'>
-          <Link to='/' className='brand-logo right'>
-            Logo
-          </Link>
-          <ul className='left'>
-            <li to='/'>
-              <Link to='/'>HOME</Link>
+    <nav>
+      <div className='nav-wrapper grey darken-4'>
+        <a href='/' className='brand-logo'>
+          <img
+            style={{ width: '240px', margin: '20px 20px' }}
+            src={logo}
+            alt='logo'
+          />
+        </a>
+        <ul className='right'>
+          <li to='/'>
+            <Link to='/'>HOME</Link>
+          </li>
+          {!isOpen ? (
+            <li
+              to='/'
+              id='qsLoginBtn'
+              onClick={() => {
+                loginWithRedirect({});
+              }}
+            >
+              <Link to='/'>LOGIN</Link>
             </li>
-            {!isOpen ? (
+          ) : (
+            <>
+              <li to='/profile'>
+                <Link to='/profile'>PROFILE</Link>
+              </li>
               <li
-                to='/'
-                id='qsLoginBtn'
+                to='/logout'
+                id='qsLogoutBtn'
                 onClick={() => {
-                  loginWithRedirect({});
+                  logoutWithRedirect();
                 }}
               >
-                <Link to='/'>LOGIN</Link>
+                <Link to='/'>LOGOUT</Link>
               </li>
-            ) : (
-              <>
-                <li to='/profile'>
-                  <Link to='/profile'>PROFILE</Link>
-                </li>
-                <li
-                  to='/logout'
-                  id='qsLogoutBtn'
-                  onClick={() => {
-                    logoutWithRedirect();
-                  }}
-                >
-                  <Link to='/'>LOGOUT</Link>
-                </li>
-              </>
-            )}
-          </ul>
-        </div>
-      </nav>
-    </div>
-</div>
+            </>
+          )}
+        </ul>
+      </div>
+    </nav>
   );
 };
 
