@@ -1,11 +1,18 @@
+import 'dotenv/config';
+
+// import dotenv from 'dotenv';
+
+
 import React, { Component } from 'react';
-import JobCard from '../components/jobCard';
 
 import 'materialize-css';
 import dateFormat from 'dateformat';
 
 import Loading from '../components/Loading';
 // import { useAuth0 } from '../react-auth0-spa';
+
+const APP_ID = process.env.REACT_APP_APP_ID;
+const APP_KEY = process.env.REACT_APP_APP_KEY;
 
 
 export default class jobListing extends React.Component {
@@ -21,10 +28,10 @@ export default class jobListing extends React.Component {
     }
 
     componentDidMount() {
-        let app_id='a69247c0';
-        let app_key='24fc9762a9d2f3a031f002f7afe14f75';
+        // let app_id='a69247c0';
+        // let app_key='24fc9762a9d2f3a031f002f7afe14f75';
 
-        fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id='+app_id+'&app_key='+app_key+'&results_per_page=5')
+        fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id='+APP_ID+'&app_key='+APP_KEY+'&results_per_page=5')
         .then(res => res.json())
         .then(
             (result) => {
@@ -41,16 +48,15 @@ export default class jobListing extends React.Component {
               });
             }
           )
-
     }
 
     handleSubmitSearch = (e) => {
         e.preventDefault();
-        let app_id='a69247c0';
-        let app_key='24fc9762a9d2f3a031f002f7afe14f75';
+        // let app_id='a69247c0';
+        // let app_key='24fc9762a9d2f3a031f002f7afe14f75';
 
         const query=this.state.query;
-        fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id='+app_id+'&app_key='+app_key+'&results_per_page=5'+'&what='+query)
+        fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id='+APP_ID+'&app_key='+APP_KEY+'&results_per_page=5'+'&what='+query)
         .then(res => res.json())
         .then(
             (result) => {
