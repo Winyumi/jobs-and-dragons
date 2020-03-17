@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'materialize-css';
-
 import { useAuth0 } from '../react-auth0-spa';
+import logo from '../assets/J&D_Logo_BG_K.png';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState();
@@ -23,6 +23,10 @@ const NavBar = () => {
   }, [isAuthenticated]);
 
   return (
+    <div>
+    <div style={{height: '4em'}} className='center grey darken-4'>
+        <img style={{height: '100%', padding: '5px'}}src={logo} alt="logo" />
+      </div>
     <div className='nav-container'>
       <nav>
         <div className='nav-wrapper'>
@@ -63,6 +67,7 @@ const NavBar = () => {
         </div>
       </nav>
     </div>
+</div>
   );
 };
 
