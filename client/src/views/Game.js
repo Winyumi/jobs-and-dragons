@@ -1,16 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import World from '../components/World';
 import Dialogue from '../components/Dialogue';
 import CharBox from '../components/CharBox';
+import Quests from '../components/QuestsList';
 import { usePlayerContext } from '../contexts/PlayerContext';
 
-import 'materialize-css';
-
-const Game = () => {
+const Game = props => {
   const [state, dispatch] = usePlayerContext();
+  const [isInteracting, setIsInteracting] = useState();
+  const [isAccepted, setIsAccepted] = useState(false);
+
+  useEffect(() => {
+    setIsInteracting(state.isInteracting);
+  }, [state.isInteracting]);
 
   let styles;
-  if (state.isInteracting) {
+  if (isInteracting || isAccepted) {
     styles = {
       opacity: '0.25',
       padding: '100px 100px',
@@ -31,6 +36,19 @@ const Game = () => {
     };
   }
 
+  const handleQuestAccept = () => {
+    handleQuestDecline();
+    setIsAccepted(true);
+  };
+
+  const handleQuestDecline = () => {
+    setIsInteracting(!state.isInteracting);
+    dispatch({
+      action: 'toggleIsInteracting',
+      payload: !state.isInteracting
+    });
+  };
+
   return (
     <>
       <div className='row' style={styles}>
@@ -50,10 +68,16 @@ const Game = () => {
             alignItems: 'center'
           }}
         >
-          <World />
+          <World path='/game/' />
         </div>
       </div>
-      <div style={{}}>{state.isInteracting && <Dialogue />}</div>
+      {isInteracting && (
+        <Dialogue
+          handleDecline={handleQuestDecline}
+          handleAccept={handleQuestAccept}
+        />
+      )}
+      {isAccepted && <Quests />}
     </>
   );
 };
