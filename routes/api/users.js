@@ -21,4 +21,9 @@ router
   .get(usersController.findByEmail)
   .put(usersController.update);
 
+// Catchall
+router.route('/*').get((_req, res) => {
+  // res.sendFile(path.join(__dirname + '/client/public/index.html'));
+  res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+});
 module.exports = router;
