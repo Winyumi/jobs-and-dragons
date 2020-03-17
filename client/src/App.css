@@ -85,10 +85,12 @@ h4,h5 {
 .submit {
   font-family: 'Alagard';
 }
-
+.btn-floating{
+  background-color:#FF3333 !important;
+}
 .remove-btn {
   font-family: 'Alagard';
-  background-color: red;
+  background-color: #FF3333;
   color: white;
   font-weight: bold;
   border: 0;
@@ -156,7 +158,7 @@ main p {
 }
 
 .company-name, .college-name {
-  color: #0da19a;
+  color: #FF3333;
   font-weight: bold;
 }
 

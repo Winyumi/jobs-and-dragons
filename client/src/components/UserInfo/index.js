@@ -86,7 +86,7 @@ export default class Index extends Component {
             <h4>Education</h4>
             <button
               onClick={this.addMoreFormGrp('education')}
-              className='btn-floating btn-medium waves-effect waves-light red'
+              className='btn-floating btn-medium waves-effect waves-light'
             >
               +
             </button>
@@ -113,7 +113,7 @@ export default class Index extends Component {
             <h4>Experience</h4>
             <button
               onClick={this.addMoreFormGrp('experience')}
-              className='btn-floating btn-medium waves-effect waves-light red'
+              className='btn-floating btn-medium waves-effect waves-light'
             >
               +
             </button>
@@ -211,7 +211,7 @@ export default class Index extends Component {
             <h4>Projects</h4>
             <button
               onClick={this.addMoreFormGrp('projects')}
-              className='btn-floating btn-medium waves-effect waves-light black'
+              className='btn-floating btn-medium waves-effect waves-light'
             >
               +
             </button>
