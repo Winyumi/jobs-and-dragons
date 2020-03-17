@@ -3,6 +3,9 @@ import UserDetail from './userDetail';
 import UserEducation from './userEducation';
 import UserExp from './userExp';
 import UserProjects from './userProjects';
+import UserExpertise from './userExpertise';
+import StarRatings from 'react-star-ratings';
+import UserSkills from './userSkills';
 
 export default class Index extends Component {
   state = {
@@ -19,6 +22,7 @@ export default class Index extends Component {
       this.setState(JSON.parse(localStorage.getItem('data')));
     }
   }
+
   onChangeHandler = (name, from, id) => e => {
     let value = e.target.value;
     let newState = { ...this.state };
@@ -131,6 +135,77 @@ export default class Index extends Component {
             </div>
           ))}
         </section>
+
+        <section id='expertise'>
+          <div className='util'>
+            <h4>Expertise</h4>
+          </div>
+          <div>
+            <h3>What is your area of interest?</h3>
+          </div>
+          <UserExpertise />
+        </section>
+
+        <section id='skills'>
+          <div className='util'>
+            <h4>Skills</h4>
+          </div>
+          <div>
+            <h3>
+              Select your proficiency level to add a skill to your profile.{' '}
+            </h3>
+          </div>
+          <div>
+            <ul>
+              <li className='divider' tabIndex='-1'></li>
+              <li>
+                Beginner:{' '}
+                <StarRatings
+                  starDimension='20px'
+                  starSpacing='3px'
+                  rating={1}
+                  numberOfStars={4}
+                  disabled
+                />
+              </li>
+              <li className='divider' tabIndex='-1'></li>
+              <li>
+                Intermediate:{' '}
+                <StarRatings
+                  starDimension='20px'
+                  starSpacing='3px'
+                  rating={2}
+                  numberOfStars={4}
+                  disabled
+                />
+              </li>
+              <li className='divider' tabIndex='-1'></li>
+              <li>
+                Advanced:{' '}
+                <StarRatings
+                  starDimension='20px'
+                  starSpacing='3px'
+                  rating={3}
+                  numberOfStars={4}
+                  disabled
+                />
+              </li>
+              <li className='divider' tabIndex='-1'></li>
+              <li>
+                Expert:{' '}
+                <StarRatings
+                  starDimension='20px'
+                  starSpacing='3px'
+                  rating={4}
+                  numberOfStars={4}
+                  disabled
+                />
+              </li>
+            </ul>
+          </div>
+          <UserSkills />
+        </section>
+
         <section id='projects'>
           <div className='util'>
             <h4>Projects</h4>
