@@ -1,7 +1,7 @@
 import React from 'react';
 import Player from './Player';
 import Map from './Map/Map';
-import dungeonBG from '../assets/dungeonBG.png';
+import dungeonBG from '../assets/J&D_DungeonFloor.png';
 import { dungeon } from '../maps/dungeon';
 // import Index from '../components/UserInfo/index';
 
