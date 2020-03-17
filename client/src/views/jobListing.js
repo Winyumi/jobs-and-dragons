@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import JobCard from '../components/jobCard'
+import JobCard from '../components/jobCard';
 
 import 'materialize-css';
 import dateFormat from 'dateformat';
 
 import Loading from '../components/Loading';
-import { useAuth0 } from '../react-auth0-spa';
+// import { useAuth0 } from '../react-auth0-spa';
 
 
 export default class jobListing extends React.Component {
@@ -15,7 +15,8 @@ export default class jobListing extends React.Component {
       this.state = {
         error: null,
         isLoaded: false,
-        items: []
+        items: [],
+        query: ''
       };
     }
 
@@ -24,6 +25,32 @@ export default class jobListing extends React.Component {
         let app_key='24fc9762a9d2f3a031f002f7afe14f75';
 
         fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id='+app_id+'&app_key='+app_key+'&results_per_page=5')
+        .then(res => res.json())
+        .then(
+            (result) => {
+                console.log(result);
+              this.setState({
+                isLoaded: true,
+                items: result.results
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+          )
+
+    }
+
+    handleSubmitSearch = (e) => {
+        e.preventDefault();
+        let app_id='a69247c0';
+        let app_key='24fc9762a9d2f3a031f002f7afe14f75';
+
+        const query=this.state.query;
+        fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id='+app_id+'&app_key='+app_key+'&results_per_page=5'+'&what='+query)
         .then(res => res.json())
         .then(
             (result) => {
@@ -58,13 +85,15 @@ export default class jobListing extends React.Component {
                     <h3>JOB LISTINGS</h3>
                     <div className='center input-field'>
                         <i className="large material-icons prefix">work</i>
-                        <input id="first_name2" type="text"></input>
+                        <input id="searchBox" value={this.state.query} type="text" 
+                        onChange={e => this.setState({query:e.target.value})} ></input>
                         <label className="active">Search Job Title</label>
                     </div>
                     <input
                     type='submit'
                     value='SUBMIT'
-                    className='btn-large'
+                    className='item-large'
+                    onClick= { e => this.handleSubmitSearch(e) }
                     />
                 </div>
 
