@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
-const routes = require('./routes');
+const userRoutes = require('./routes/index');
 
 // Load env variables
 dotenv.config({ path: path.join(__dirname, 'config/config.env') });
@@ -26,14 +26,13 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Add routes, both API and view
-app.use('api/v1', routes);
+app.use('/', userRoutes);
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (_req, res) => {
-  // res.sendFile(path.join(__dirname + '/client/public/index.html'));
-  res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
-});
+const PORT = process.env.PORT || 3001;
+app.listen(
+  PORT,
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+);
 
 const uri = process.env.MONGO_ATLAS_URI;
 mongoose.connect(uri, {
