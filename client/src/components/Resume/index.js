@@ -8,15 +8,12 @@ export default class index extends Component {
   };
 
 
-
-  
   render() {
     const { state } = this.props.location;
     console.log(state);
     if (!state) {
       return <Redirect to='/userinfo'></Redirect>;
     }
-
     return (
       <div className='resume'>
         <div className='page' size='A4'>
