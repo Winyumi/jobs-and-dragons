@@ -20,7 +20,14 @@ const userReducer = (state, action) => {
 const UserProvider = ({
   value = {
     user: {
-      name: 'Sal Tamay'
+      name: 'Sal Tamay',
+      hp: 10,
+      jp: 2,
+      strength: 12,
+      speed: 3,
+      intelligence: 6,
+      scroll: true,
+      bow: false
     }
   },
   ...props
