@@ -212,19 +212,17 @@ input[type='submit'] {
 
 .btn{
   margin-top: 20px;
-  margin :5px;
+  margin: 5px;
 }
 
 .back {
-  position:absolute;
-  top:140px;
-  right:15px;
+  position: absolute;
+  top: 140px;
+  right: 15px;
 }
 
 .download {
-  position:absolute;
-  top:200px;
-  right:15px;
+  position: absolute;
+  top: 200px;
+  right: 15px;
 }
-
-
