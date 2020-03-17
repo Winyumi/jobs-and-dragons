@@ -209,3 +209,17 @@ input[type='submit'] {
   margin-top: 20px;
 }
 
+
+
+.back {
+  position:absolute;
+  top:90px;
+  right:10px;
+}
+
+.download {
+  position:absolute;
+  top:200px;
+  right:10px;
+
+}

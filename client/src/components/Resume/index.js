@@ -6,11 +6,15 @@ export default class index extends Component {
     e.preventDefault();
     this.props.history.push({ pathname: '/userinfo' });
   };
+
+
+
+  
   render() {
     const { state } = this.props.location;
     console.log(state);
     if (!state) {
-      return <Redirect to='/'></Redirect>;
+      return <Redirect to='/userinfo'></Redirect>;
     }
 
     return (
@@ -83,12 +87,13 @@ export default class index extends Component {
                         </span>
                       </p>
                     </div>
-                    <input
-                      type='button'
-                      value='SUBMIT'
-                      className='btn waves-effect waves-light'
-                      onClick={this.onSubmitHandler}
-                    />
+                    <button
+                      
+                      className='back btn-floating btn-medium waves-effect waves-light blue'
+                      onClick={this.onSubmitHandler}>
+                      <i class="small material-icons">edit</i>
+                      </button>
+                      
                   </React.Fragment>
                 ))}
               </div>
