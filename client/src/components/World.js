@@ -6,6 +6,7 @@ import { dungeon } from '../maps/dungeon';
 import Index from '../components/UserInfo/index';
 
 const World = (props) => {
+  
   if (props.path === "/game/") {
       return (
 
