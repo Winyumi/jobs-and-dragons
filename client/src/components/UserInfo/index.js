@@ -7,7 +7,7 @@ import UserExpertise from './userExpertise';
 import StarRatings from 'react-star-ratings';
 import UserSkills from './userSkills';
 
-export default class index extends Component {
+export default class Index extends Component {
   state = {
     name: '',
     email: '',
