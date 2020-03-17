@@ -23,7 +23,6 @@ import './App.css';
 
 const App = () => {
   const { loading } = useAuth0();
-
   if (loading) {
     return <Loading />;
   }
