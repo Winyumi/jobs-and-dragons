@@ -127,6 +127,11 @@ const playerReducer = (state, action) => {
           state.position[1] + SPRITE_SIZE
         ])
       };
+    case 'toggleIsInteracting':
+      return {
+        ...state,
+        isInteracting: action.payload
+      };
     default:
       return state;
   }
