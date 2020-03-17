@@ -11,7 +11,6 @@ import Loading from '../components/Loading';
 // const APP_ID = process.env.REACT_APP_APP_ID;
 // const APP_KEY = process.env.REACT_APP_APP_KEY;
 
-
 export default class jobListing extends React.Component {
 
     constructor(props) {
@@ -90,7 +89,7 @@ export default class jobListing extends React.Component {
             <div className='row'>
 
                 <div className='center col s12 m3'>
-                    <h3>JOB LISTINGS</h3>
+                    <h4>JOB LISTINGS</h4>
                     <div className='center input-field'>
                         <i className="large material-icons prefix">work</i>
                         <input id="searchBox" 
@@ -111,24 +110,24 @@ export default class jobListing extends React.Component {
                 <div className='center col s12 m8'>
                     <ul>
                     {items.map(item => (
-                        <li key={item.id}>
+                        <li key={ item.id }>
 
                             <div className="card brown lighten-3">
 
                                 <div className="card-content">
-                                    <h6 className="card-title activator">{item.title}<i class="material-icons right">more_vert</i></h6>
-                                    <p> <b>Company :</b> {item.company.display_name} </p>
+                                    <h6 className="card-title activator">{ item.title }<i className="material-icons right">more_vert</i></h6>
+                                    <p> <b>Company :</b> { item.company.display_name } </p>
                                     <span> <b>Location :</b> { item.location.display_name}</span>
-                                    <p> <b>Date :</b> { dateFormat( item.created , "dddd, mmmm dS, yyyy")  }</p>
+                                    <p> <b>Date :</b> { dateFormat( item.created , "dddd, mmmm dS, yyyy") }</p>
                                 </div>
 
                                 <div className="card-action">
-                                    <a href={ item.redirect_url} target='_blank'className="btn brown darken-4 tooltipped" data-tooltip="I am a tooltip">Apply</a>
+                                    <a href={ item.redirect_url} target='_blank'className="btn brown darken-4">Apply</a>
                                     <a className="btn brown darken-4"><i className="material-icons">save</i></a>
                                 </div>
 
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                                <div className="card-reveal">
+                                    <span className="card-title grey-text text-darken-4"><i className="material-icons right">close</i></span>
                                     <p>{ item.description }</p>
                                 </div>
 
