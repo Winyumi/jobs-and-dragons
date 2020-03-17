@@ -219,13 +219,7 @@ input[type='submit'] {
 
 .back {
   position:absolute;
-  top:90px;
-  right:10px;
+  top:140px;
+  right:15px;
 }
 
-.download {
-  position:absolute;
-  top:200px;
-  right:10px;
-
-}

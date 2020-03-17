@@ -89,7 +89,7 @@ export default class index extends Component {
                     </div>
                     <button
                       
-                      className='back btn-floating btn-medium waves-effect waves-light blue'
+                      className='back btn-floating btn-medium blue'
                       onClick={this.onSubmitHandler}>
                       <i class="small material-icons">edit</i>
                       </button>
