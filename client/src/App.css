@@ -15,6 +15,7 @@ form {
   background: white;
   position: relative;
 }
+
 form input {
   display: block;
   width: 100%;
@@ -29,6 +30,7 @@ form input {
   font-size: 14px;
   font-family: 'Alagard';
 }
+
 textarea {
   border: 1px solid #46aef7;
   font-size: 15px;
@@ -36,6 +38,7 @@ textarea {
   width: 100%;
   font-family: 'Alagard';
 }
+
 button {
   outline: 0;
   padding: 10px;
@@ -56,13 +59,16 @@ button {
 button:hover {
   opacity: 1;
 }
+
 .relative {
   position: relative;
 }
+
 .util {
   display: flex;
   justify-content: space-between;
 }
+
 @font-face {
   font-family: 'Alagard';
   src: url('/fonts/Alagard.woff2') format('woff2');
@@ -74,6 +80,7 @@ h3,
 h4,h5 {
   font-family: 'Alagard';
 }
+
 .remove-btn {
   font-family: 'Alagard';
   background-color: red;
@@ -90,8 +97,7 @@ h4,h5 {
   justify-content: center;
   align-items: center;
 }
-body {
-}
+
 .page {
   background: rgb(235, 241, 241);
   display: block;
@@ -100,26 +106,22 @@ body {
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   margin-top: 20px;
   padding: 20px 30px;
-}
-.page {
+
   width: 21cm;
   height: 29.7cm;
 }
-ul,
-ol {
+
+ul, ol {
   list-style-type: none;
 }
 
-/* header {
-  border: 2px solid;
-} */
 header h1 {
   font-size: 32px;
   font-weight: normal;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-header h1,
-p {
+
+header h1, p {
   margin-bottom: 10px;
 }
 
@@ -128,8 +130,7 @@ header p {
   color: darkslategray;
 }
 
-main .exp,
-.education {
+main .exp, .education {
   margin-top: 20px;
 }
 
@@ -143,16 +144,16 @@ main h2 {
 main p {
   font-size: 14px;
 }
-.email,
-.number {
+
+.email, .number {
   margin: 0;
 }
 
-.company-name,
-.college-name {
+.company-name, .college-name {
   color: #0d47a1;
   font-weight: bold;
 }
+
 .border {
   background: linear-gradient(to right, #ccc 2%, white 25%);
   height: 10px;
@@ -161,10 +162,12 @@ main p {
   opacity: 0.5;
   margin-bottom: 10px;
 }
+
 .dates {
   color: darkslategray;
   font-size: 13px;
 }
+
 .dates span {
   color: #999999;
   display: inline-block;
@@ -177,9 +180,11 @@ main p {
   width: 95%;
   margin: 10px auto;
 }
+
 .description ul {
   list-style-type: circle;
 }
+
 .description li {
   padding: 5px 0;
   color: darkslategray;
@@ -195,6 +200,7 @@ input[type='submit'] {
   cursor: pointer;
   border-radius: 5px;
 }
+
 .project-des {
   color: darkslategray;
   font-weight: normal;
