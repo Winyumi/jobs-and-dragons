@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { PDFExport } from "@progress/kendo-react-pdf"
 
 export default class index extends Component {
   onSubmitHandler = e => {
     e.preventDefault();
     this.props.history.push({ pathname: '/userinfo' });
   };
+  exportToPDF=() =>{
+    this.exportContents.save();
 
+};
 
   render() {
     const { state } = this.props.location;
@@ -15,6 +19,11 @@ export default class index extends Component {
       return <Redirect to='/userinfo'></Redirect>;
     }
     return (
+      <React.Fragment>
+      <PDFExport
+        ref ={contents => (this.exportContents=contents)}
+              paperSize="A4"
+        >
       <div className='resume'>
         <div className='page' size='A4'>
           <header>
@@ -84,13 +93,7 @@ export default class index extends Component {
                         </span>
                       </p>
                     </div>
-                    <button
-                      
-                      className='back btn-floating btn-medium blue'
-                      onClick={this.onSubmitHandler}>
-                      <i class="small material-icons">edit</i>
-                      </button>
-                      
+ 
                   </React.Fragment>
                 ))}
               </div>
@@ -98,6 +101,20 @@ export default class index extends Component {
           </main>
         </div>
       </div>
+      </PDFExport>
+      <div>
+      <button              
+      className='back btn-floating btn-medium blue'
+      onClick={this.onSubmitHandler}>
+      <i class="small material-icons">edit</i>
+      </button>
+      <button 
+      onClick={this.exportToPDF}
+      className='download btn-floating btn-medium blue'
+      ><i class="small material-icons">file_download</i>
+      </button>
+      </div>
+      </React.Fragment>      
     );
   }
 }
