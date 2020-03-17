@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Checkbox from './checkbox';
 
 const EXPERTISE = [
-  'Softeare Engineer',
+  'Software Engineer',
   'Full Stack developer',
-  'Auality Assurance',
+  'Quality Assurance',
   'Database management',
   'DevOps',
   'UI/UX Developer',
@@ -34,8 +34,8 @@ class userExpertise extends Component {
     }));
   };
 
-  handleFormSubmit = formSubmitEvent => {
-    formSubmitEvent.preventDefault();
+  handleFormSubmit = CheckBoxValue => {
+    CheckBoxValue.preventDefault();
     Object.keys(this.state.checkboxes)
       .filter(checkbox => this.state.checkboxes[checkbox])
       .forEach(checkbox => {
@@ -57,18 +57,18 @@ class userExpertise extends Component {
   render() {
     return (
       <div className='row'>
-        <form className='col s6 m12' onSubmit={this.handleFormSubmit}>
+        <div className="col">
           {this.createCheckboxes()}
-          <div className='row'>
+          </div>
+          <div>
             <button
               className='btn waves-effect waves-light'
-              type='submit'
+              onClick={this.handleFormSubmit}
               name='action'
             >
               <i className='material-icons right'>SAVE</i>
             </button>
           </div>
-        </form>
       </div>
     );
   }
