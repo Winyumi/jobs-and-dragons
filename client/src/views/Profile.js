@@ -17,7 +17,7 @@ const Profile = () => {
     if (loading || !user) {
       return <Loading />;
     }
-
+    console.log('object');
     api.getUserInfo(user.email).then(result => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
