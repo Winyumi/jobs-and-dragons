@@ -26,14 +26,8 @@ export default class jobListing extends React.Component {
     }
 
     componentDidMount() {
-        // let app_id='a69247c0';
-        // let app_key='24fc9762a9d2f3a031f002f7afe14f75';
 
-        // console.log(APP_ID); 
-        // console.log(APP_KEY);
         fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?&content-type=application/json&app_id='+APP_ID+'&app_key='+APP_KEY+'&results_per_page=5')
-
-        // fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?&content-type=application/json&app_id='+app_id+'&app_key='+app_key+'&results_per_page=5')
         .then(res => res.json())
         .then(
             (result) => {
@@ -54,13 +48,9 @@ export default class jobListing extends React.Component {
 
     handleSubmitSearch = (e) => {
         e.preventDefault();
-        // let app_id='a69247c0';
-        // let app_key='24fc9762a9d2f3a031f002f7afe14f75';
 
-        const query=this.state.query.toString();
+        const query=this.state.query;
         fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?&content-type=application/json&app_id='+APP_ID+'&app_key='+APP_KEY+'&results_per_page=5&what='+query)
-
-        // fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?&content-type=application/json&app_id='+app_id+'&app_key='+app_key+'&results_per_page=5&what='+query)
         .then(res => res.json())
         .then(
             (result) => {
