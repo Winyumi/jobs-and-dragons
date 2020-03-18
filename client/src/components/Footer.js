@@ -12,7 +12,6 @@ const footerStyle = {
   background: '#333',
   color: '#fff',
   textAlign: 'center',
-  position: 'fixed',
   bottom: '0px',
   height: '5px',
   width: '100%'
