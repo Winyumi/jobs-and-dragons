@@ -9,11 +9,8 @@ const Inventory=()=> {
     const [state, dispatch] = useUserContext();
     const imgStyle = {
         width:'40px',
-        height: '40px'
-    }
-    const tableStyle = {
-        border:'1px solid black',
-        width: '90%'
+        height: '40px',
+        align: 'center'
     }
     return (
     <div className="row"
@@ -35,7 +32,7 @@ const Inventory=()=> {
             <td></td>
             <td></td>
         </tr>
-        <tr>
+        {/* <tr>
             <td></td>
             <td></td>
             <td></td>
@@ -52,7 +49,7 @@ const Inventory=()=> {
             <td></td>
             <td></td>
             <td></td>
-        </tr>
+        </tr> */}
     </table>
     </div>
     )

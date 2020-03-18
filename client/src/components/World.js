@@ -1,42 +1,36 @@
 import React from 'react';
 import Player from './Player';
 import Map from './Map/Map';
-import dungeonBG from '../assets/dungeonBG.png';
+import dungeonBG from '../assets/J&D_DungeonFloor.png';
 import { dungeon } from '../maps/dungeon';
-import Index from '../components/UserInfo/index';
+// import Index from '../components/UserInfo/index';
 
 const World = (props) => {
-  
-  if (props.path === "/game/") {
-      return (
-
+  console.log(props)
+  return (
     <div
-      style={{
-        position: 'relative',
-        width: '600px',
-        height: '400px',
-        backgroundImage: `url( ${dungeonBG } )`
-      }}
+    style={{
+      color: "red",
+      textAlign: 'center'
+    }}
     >
-      <Map tiles={dungeon} />
-      <Player />
+      <h4>The Lair of the Oracle</h4>
+      <div
+        style={{
+          position: 'relative',
+          width: '600px',
+          height: '400px',
+          backgroundImage: `url( ${dungeonBG} )`
+        }}
+      >
+
+
+
+        <Map tiles={dungeon} />
+        <Player />
+      </div>
     </div>
   );
-  
-    } else if (props.path === "/game/q_one") {
-      return (
-      <div>
-       <Index />
-      </div>
-      )
-    }
-    else {
-      return (
-      <div>
-        <p>No content to show</p>
-      </div>
-      )
-    }
 };
 
 export default World;
