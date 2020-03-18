@@ -7,7 +7,8 @@ import UserExpertise from './userExpertise';
 import StarRatings from 'react-star-ratings';
 import UserSkills from './userSkills';
 
-export default class Index extends Component {
+
+export default class index extends Component {
   state = {
     name: '',
     email: '',
@@ -66,12 +67,41 @@ export default class Index extends Component {
     }
     this.setState(newState);
   };
-
+  
   onSubmitHandler = e => {
     e.preventDefault();
-    localStorage.setItem('data', JSON.stringify(this.state));
-    this.props.history.push({ pathname: '/resume', state: this.state });
+    console.log(this.state); 
+    let userInfo = {
+      name: this.state.name,
+      email:this.state.email,
+      bio:this.state.bio,
+      phone:this.state.phone,
+      education:this.state.education,
+      experience:this.state.experience,
+      descripiton:this.state.description,
+      designation:this.state.designation
+    };
+    
+    async function addUserInfo(userInfo) {
+      const res = await fetch('/api/v1/users', {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userInfo)
+      });
+      if (res.ok) {
+        const jsonRes = await res.json();
+        console.log(jsonRes);
+        return jsonRes.data;
+      }
   };
+  addUserInfo(userInfo);
+};
+
+
+
+  
 
   render() {
     const values = { ...this.state };
@@ -141,7 +171,7 @@ export default class Index extends Component {
             <h4>Expertise</h4>
           </div>
           <div>
-            <h5>What is your area of interest?</h5>
+            <h3>What is your area of interest?</h3>
           </div>
           <UserExpertise />
         </section>
@@ -151,9 +181,9 @@ export default class Index extends Component {
             <h4>Skills</h4>
           </div>
           <div>
-            <h5>
+            <h3>
               Select your proficiency level to add a skill to your profile.{' '}
-            </h5>
+            </h3>
           </div>
           <div>
             <ul>
