@@ -14,8 +14,6 @@ form {
   border-radius: 4px;
   background: white;
   position: relative;
-  
-  
 }
 
 form input {
@@ -78,15 +76,14 @@ button:hover {
   font-style: normal;
 }
 
-h3,
-h4,h5 {
+h3, h4, h5 {
   font-family: 'Alagard';
 }
 .submit {
   font-family: 'Alagard';
 }
-.btn-floating{
-  background-color:#FF3333 !important;
+.btn-floating {
+  background-color: #FF3333 !important;
 }
 .remove-btn {
   font-family: 'Alagard';
@@ -114,7 +111,7 @@ h4,h5 {
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   margin-top: 20px;
   padding: 20px 30px;
-  color:white;
+  color: white;
   width: 21cm;
   height: 29.7cm;
 }
@@ -215,28 +212,24 @@ input[type='submit'] {
   font-size: 13px;
 }
 
-.card-panel{
+.card-panel {
   padding: 8px;
 }
 
-.btn{
+.btn {
   margin-top: 20px;
 }
 
 
 
 .back {
-  position:absolute;
-  top:140px;
-  right:15px;
+  position: absolute;
+  top: 140px;
+  right: 15px;
 }
 
 .download {
-  position:absolute;
-  top:200px;
-  right:15px;
+  position: absolute;
+  top: 200px;
+  right: 15px;
 }
-
-
-
-
