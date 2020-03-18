@@ -1,13 +1,16 @@
 import React from 'react';
-// import wall from '../../assets/wall.png';
-import border from '../../assets/border.png';
+import wall from '../../assets/J&D_DungeonWall.png';
+import wallTorch from '../../assets/J&D_DungeonWallTorch.png';
+import chest from '../../assets/Chest.png';
 import oracle from '../../assets/Oracle.png';
 
 const MapTile = props => {
   const tileSprites = {
     0: 'clear',
-    1: border,
-    2: oracle
+    1: chest,
+    2: oracle,
+    3: wall,
+    4: wallTorch
   };
   const getTileSprite = type => {
     switch (type) {
@@ -15,6 +18,10 @@ const MapTile = props => {
       return `url(${tileSprites['1']})`;
     case 2:
       return `url(${tileSprites['2']})`;
+      case 3:
+        return `url(${tileSprites['3']})`;
+        case 4:
+          return `url(${tileSprites['4']})`;
       default:
         return tileSprites[type];
     }
