@@ -1,9 +1,7 @@
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
+// const dotenv = require('dotenv');
 
-// import scrubber from 'object-html-scrubber';
 
-
-import keys from './../config';
 
 import React, { Component } from 'react';
 
@@ -13,8 +11,11 @@ import dateFormat from 'dateformat';
 import Loading from '../components/Loading';
 // import { useAuth0 } from '../react-auth0-spa';
 
-const APP_ID = keys.REACT_APP_APP_ID;
-const APP_KEY = keys.REACT_APP_APP_KEY;
+// const APP_ID = keys.REACT_APP_APP_ID;
+// const APP_KEY = keys.REACT_APP_APP_KEY;
+dotenv.config();
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export default class jobListing extends React.Component {
 
@@ -32,6 +33,7 @@ export default class jobListing extends React.Component {
 
         // fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?&content-type=application/json&app_id='+APP_ID+'&app_key='+APP_KEY+'&results_per_page=5')
         fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key=885f51fcf0d78fe6f0d8f3a0420e4445&method=aj.jobs.search&format=JSON&keywords=Developer')
+        fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key='+API_KEY+'&method=aj.jobs.search&format=JSON&keywords=Developer')
 
         .then(res => res.json())
         .then(
@@ -58,7 +60,7 @@ export default class jobListing extends React.Component {
         const query=this.state.query;
         // fetch('https://api.adzuna.com/v1/api/jobs/ca/search/1?&content-type=application/json&app_id='+APP_ID+'&app_key='+APP_KEY+'&results_per_page=5&what='+query)
 
-        fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key=885f51fcf0d78fe6f0d8f3a0420e4445&method=aj.jobs.search&format=JSON&keywords='+query)
+        fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key='+API_KEY+'&method=aj.jobs.search&format=JSON&keywords='+query)
         
         
         .then(res => res.json())
