@@ -14,6 +14,19 @@ const jobSearchSchema = new mongoose.Schema({
     },
     applied:{type: Boolean, default: false}
 })
+const gameStatSchema = new mongoose.Schema({
+  hp: Number,
+  jp: Number,
+  strength:Number,
+  speed: Number,
+  intelligence: Number
+
+})
+
+const inventorySchema = new mongoose.Schema({
+  scroll:{type: Boolean, defualt: false  },
+  bow: {type: Boolean, default:false}
+})
 // create a user schema 
 
 const UserSchema = new mongoose.Schema({
@@ -24,12 +37,15 @@ const UserSchema = new mongoose.Schema({
   phone: Number,
   email: String,
   bio: String,
-  experience: String,
-  education: String,
-  skills: String,
-  projects:String,
-  expertise:String,
-jobsearch:[jobSearchSchema]
+  experience: [],
+  education: [],
+  skills: [],
+  projects:[],
+  expertise:[],
+jobsearch:[jobSearchSchema],
+gamestats:[gameStatSchema],
+inventory:[inventorySchema]
+
 })
   
 const User = mongoose.model("User", UserSchema)
