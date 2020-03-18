@@ -1,16 +1,16 @@
 import React from 'react';
 import wall from '../../assets/J&D_DungeonWall.png';
-import wallTorch from '../../assets/J&D_DungeonWallTorch.png';
+import guildwall from '../../assets/GuildWall.png';
 import chest from '../../assets/Chest.png';
-import oracle from '../../assets/Oracle.png';
+import guardian from '../../assets/Guardian.png';
 
 const MapTile = props => {
   const tileSprites = {
     0: 'clear',
     1: chest,
-    2: oracle,
+    2: guardian,
     3: wall,
-    4: wallTorch
+    4: guildwall
   };
   const getTileSprite = type => {
     switch (type) {
