@@ -3,5 +3,9 @@ table, th, td {
 }
 
 table {
-    width: 90%;
+    width: 100%;
+}
+
+td {
+    width: 25%;
 }

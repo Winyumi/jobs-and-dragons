@@ -16,12 +16,17 @@ export default class index extends Component {
     phone: '',
     education: [],
     experience: [],
+    expertise: [],
     projects: []
   };
   componentDidMount() {
     if (localStorage.getItem('data')) {
       this.setState(JSON.parse(localStorage.getItem('data')));
     }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('data', JSON.stringify(this.state));
   }
 
   onChangeHandler = (name, from, id) => e => {
@@ -104,6 +109,12 @@ export default class index extends Component {
 
   
 
+  handleExpertiseSubmit = expertise => {
+    this.setState(prevState => ({
+      expertise: [...prevState.expertise, ...expertise]
+    }));
+  };
+
   render() {
     const values = { ...this.state };
     const { education, experience, projects } = this.state;
@@ -117,7 +128,7 @@ export default class index extends Component {
             <h4>Education</h4>
             <button
               onClick={this.addMoreFormGrp('education')}
-              className='btn-floating btn-medium waves-effect waves-light red'
+              className='btn-floating btn-medium waves-effect waves-light'
             >
               +
             </button>
@@ -144,7 +155,7 @@ export default class index extends Component {
             <h4>Experience</h4>
             <button
               onClick={this.addMoreFormGrp('experience')}
-              className='btn-floating btn-medium waves-effect waves-light red'
+              className='btn-floating btn-medium waves-effect waves-light'
             >
               +
             </button>
@@ -174,7 +185,7 @@ export default class index extends Component {
           <div>
             <h3>What is your area of interest?</h3>
           </div>
-          <UserExpertise />
+          <UserExpertise handleFormSubmit={this.handleExpertiseSubmit} />
         </section>
 
         <section id='skills'>
@@ -242,7 +253,7 @@ export default class index extends Component {
             <h4>Projects</h4>
             <button
               onClick={this.addMoreFormGrp('projects')}
-              className='btn-floating btn-medium waves-effect waves-light red'
+              className='btn-floating btn-medium waves-effect waves-light'
             >
               +
             </button>
@@ -264,11 +275,14 @@ export default class index extends Component {
             </div>
           ))}
         </section>
-        <input
+        <button
           type='submit'
           value='SUBMIT'
-          className='btn waves-effect waves-light'
-        />
+          className='submit btn waves-effect waves-light'
+        >
+          Submit
+          <i class='material-icons right'>send</i>
+        </button>
       </form>
     );
   }
