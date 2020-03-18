@@ -15,6 +15,7 @@ export default class Index extends Component {
     phone: '',
     education: [],
     experience: [],
+    expertise: [],
     projects: []
   };
   componentDidMount() {
@@ -78,9 +79,8 @@ export default class Index extends Component {
   };
 
   handleExpertiseSubmit = expertise => {
-    console.log(expertise);
     this.setState(prevState => ({
-      experience: [...prevState.experience, ...expertise]
+      expertise: [...prevState.expertise, ...expertise]
     }));
   };
 
@@ -248,8 +248,9 @@ export default class Index extends Component {
           type='submit'
           value='SUBMIT'
           className='submit btn waves-effect waves-light'
-        >Submit
-        <i class="material-icons right">send</i>
+        >
+          Submit
+          <i class='material-icons right'>send</i>
         </button>
       </form>
     );

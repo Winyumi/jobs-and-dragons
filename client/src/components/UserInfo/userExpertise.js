@@ -61,7 +61,7 @@ class userExpertise extends Component {
         <div>
           <button
             className='btn waves-effect waves-light'
-            onClick={this.handleFormSubmit}
+            onClick={e => this.handleFormSubmit(e)}
             name='action'
           >
             <i className='material-icons right'>SAVE</i>
