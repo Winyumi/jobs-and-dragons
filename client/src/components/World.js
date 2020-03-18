@@ -23,9 +23,6 @@ const World = (props) => {
           backgroundImage: `url( ${dungeonBG} )`
         }}
       >
-
-
-
         <Map tiles={dungeon} />
         <Player />
       </div>

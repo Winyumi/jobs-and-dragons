@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import World from '../components/World';
 import Dialogue from '../components/Dialogue';
+import Chest from '../components/Chest';
 import CharBox from '../components/CharBox';
 import Quests from '../components/QuestsList';
 import { usePlayerContext } from '../contexts/PlayerContext';
@@ -8,11 +9,13 @@ import { usePlayerContext } from '../contexts/PlayerContext';
 const Game = props => {
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState();
+  const [isOpening, setIsOpening] = useState();
   const [isAccepted, setIsAccepted] = useState(false);
 
   useEffect(() => {
     setIsInteracting(state.isInteracting);
-  }, [state.isInteracting]);
+    setIsOpening(state.isOpening);
+  }, [state.isInteracting, state.isOpening]);
 
   let styles;
   if (isInteracting || isAccepted) {
@@ -49,6 +52,14 @@ const Game = props => {
     });
   };
 
+  const handleLinkDecline = () => {
+    setIsOpening(!state.isOpening);
+    dispatch({
+      action: 'toggleIsOpening',
+      payload: !state.isOpening
+    });
+  };
+
   return (
     <>
       <div className='row' style={styles}>
@@ -79,6 +90,12 @@ const Game = props => {
         />
       )}
       {isAccepted && <Quests />}
+      {isOpening && (
+        <Chest
+        handleDecline={handleLinkDecline}
+        />
+      )}
+
     </>
   );
 };

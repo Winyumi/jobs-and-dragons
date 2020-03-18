@@ -50,7 +50,7 @@ const Profile = () => {
           Quest 1
         </Link>
         <br></br>
-        <Link className='btn-large' to='#' name='gameBtn'>
+        <Link className='btn-large' to='/game' name='gameBtn'>
           Quest 2
         </Link>
         <br></br>

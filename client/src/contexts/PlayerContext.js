@@ -35,6 +35,15 @@ const observeInteraction = newPosition => {
   return nextTile === 2;
 };
 
+const observeOpening = newPosition => {
+  const x = newPosition[0] / SPRITE_SIZE;
+  const y = newPosition[1] / SPRITE_SIZE;
+
+  const nextTile = dungeon[y][x];
+
+  return nextTile === 1;
+};
+
 const dispatchMove = (oldPosition, newPosition) => {
   if (observeBoundries(newPosition) && observeObstacles(newPosition)) {
     return newPosition;
@@ -83,6 +92,10 @@ const playerReducer = (state, action) => {
         isInteracting: observeInteraction([
           state.position[0] - SPRITE_SIZE,
           state.position[1]
+        ]),
+        isOpening: observeOpening([
+          state.position[0] - SPRITE_SIZE,
+          state.position[1]
         ])
       };
     case 'moveup':
@@ -97,7 +110,12 @@ const playerReducer = (state, action) => {
         isInteracting: observeInteraction([
           state.position[0],
           state.position[1] - SPRITE_SIZE
+        ]),
+        isOpening: observeOpening([
+          state.position[0],
+          state.position[1] - SPRITE_SIZE
         ])
+        
       };
     case 'moveright':
       return {
@@ -109,6 +127,10 @@ const playerReducer = (state, action) => {
         spritePosition: getSpriteLocation('east', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
         isInteracting: observeInteraction([
+          state.position[0] + SPRITE_SIZE,
+          state.position[1]
+        ]),
+        isOpening: observeOpening([
           state.position[0] + SPRITE_SIZE,
           state.position[1]
         ])
@@ -125,7 +147,11 @@ const playerReducer = (state, action) => {
         isInteracting: observeInteraction([
           state.position[0],
           state.position[1] + SPRITE_SIZE
-        ])
+        ]),
+        isOpening: observeOpening([
+          state.position[0],
+          state.position[1] + SPRITE_SIZE
+        ]),
       };
     case 'toggleIsInteracting':
       return {
