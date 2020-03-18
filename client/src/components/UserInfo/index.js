@@ -97,6 +97,7 @@ export default class index extends Component {
       }
   };
   addUserInfo(userInfo);
+  this.props.history.push({ pathname: '/resume', state: this.state });
 };
 
 
