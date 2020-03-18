@@ -33,7 +33,7 @@ const Quests = () => {
         padding: '20px'
       }}
     >
-      <h4>Select YouR Quest</h4>
+      <h4>Select Your Quest</h4>
       <div
         className='quests-list'
         style={{
