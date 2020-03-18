@@ -34,9 +34,9 @@ class userSkills extends Component {
   render() {
     return (
       <div className='row'>
-        <form className='col s12' onSubmit={this.handleFormSubmit}>
+        {/* <form className='col s12' onSubmit={this.handleFormSubmit}> */}
           {this.createRating()}
-        </form>
+        {/* </form> */}
       </div>
     );
   }

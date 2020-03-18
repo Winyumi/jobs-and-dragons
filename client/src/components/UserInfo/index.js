@@ -7,7 +7,7 @@ import UserExpertise from './userExpertise';
 import StarRatings from 'react-star-ratings';
 import UserSkills from './userSkills';
 
-export default class Index extends Component {
+export default class index extends Component {
   state = {
     name: '',
     email: '',
@@ -141,7 +141,7 @@ export default class Index extends Component {
             <h4>Expertise</h4>
           </div>
           <div>
-            <h5>What is your area of interest?</h5>
+            <h3>What is your area of interest?</h3>
           </div>
           <UserExpertise />
         </section>
@@ -151,9 +151,9 @@ export default class Index extends Component {
             <h4>Skills</h4>
           </div>
           <div>
-            <h5>
+            <h3>
               Select your proficiency level to add a skill to your profile.{' '}
-            </h5>
+            </h3>
           </div>
           <div>
             <ul>

@@ -10,6 +10,7 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
         checked={isSelected === true}
         onChange={onCheckboxChange}
         className="indeterminate-checkbox"
+       
       />
       <span>{label}</span>
     </label>
