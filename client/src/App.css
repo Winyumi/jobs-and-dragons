@@ -76,13 +76,18 @@ button:hover {
   font-style: normal;
 }
 
-h3, h4, h6 {
+h3, h4, h5, h6 {
   font-family: 'Alagard';
 }
-
+.submit {
+  font-family: 'Alagard';
+}
+.btn-floating {
+  background-color: #FF3333 !important;
+}
 .remove-btn {
   font-family: 'Alagard';
-  background-color: red;
+  background-color: #FF3333;
   color: white;
   font-weight: bold;
   border: 0;
@@ -95,17 +100,18 @@ h3, h4, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .page {
-  background: rgb(235, 241, 241);
+  background: rgb(27, 27, 27);
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   margin-top: 20px;
   padding: 20px 30px;
-
+  color: white;
   width: 21cm;
   height: 29.7cm;
 }
@@ -126,7 +132,7 @@ header h1, p {
 
 header p {
   font-size: 13px;
-  color: darkslategray;
+  color: white;
 }
 
 main .exp, .education {
@@ -136,7 +142,7 @@ main .exp, .education {
 main h2 {
   font-size: 15px;
   margin-bottom: 10px;
-  color: #212121;
+  color: white;
   line-height: 30px;
   font-weight: bold;
 }
@@ -149,7 +155,7 @@ main p {
 }
 
 .company-name, .college-name {
-  color: #0d47a1;
+  color: #FF3333;
   font-weight: bold;
 }
 
@@ -163,7 +169,7 @@ main p {
 }
 
 .dates {
-  color: darkslategray;
+  color: #999999;
   font-size: 13px;
 }
 
@@ -186,7 +192,7 @@ main p {
 
 .description li {
   padding: 5px 0;
-  color: darkslategray;
+  color: white;
 }
 
 input[type='submit'] {
@@ -201,16 +207,16 @@ input[type='submit'] {
 }
 
 .project-des {
-  color: darkslategray;
+  color: white;
   font-weight: normal;
   font-size: 13px;
 }
 
-.card-panel{
+.card-panel {
   padding: 8px;
 }
 
-.btn{
+.btn {
   margin-top: 20px;
   margin: 5px;
 }

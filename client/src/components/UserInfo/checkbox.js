@@ -2,7 +2,7 @@ import React from "react";
 import 'materialize-css';
 
 const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
-  <div className="col s4">
+  <div className="col s6">
     <label>
       <input
         type="checkbox"
