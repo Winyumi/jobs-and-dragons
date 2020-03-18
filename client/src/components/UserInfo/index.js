@@ -15,12 +15,17 @@ export default class Index extends Component {
     phone: '',
     education: [],
     experience: [],
+    expertise: [],
     projects: []
   };
   componentDidMount() {
     if (localStorage.getItem('data')) {
       this.setState(JSON.parse(localStorage.getItem('data')));
     }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('data', JSON.stringify(this.state));
   }
 
   onChangeHandler = (name, from, id) => e => {
@@ -71,6 +76,12 @@ export default class Index extends Component {
     e.preventDefault();
     localStorage.setItem('data', JSON.stringify(this.state));
     this.props.history.push({ pathname: '/resume', state: this.state });
+  };
+
+  handleExpertiseSubmit = expertise => {
+    this.setState(prevState => ({
+      expertise: [...prevState.expertise, ...expertise]
+    }));
   };
 
   render() {
@@ -143,7 +154,7 @@ export default class Index extends Component {
           <div>
             <h5>What is your area of interest?</h5>
           </div>
-          <UserExpertise />
+          <UserExpertise handleFormSubmit={this.handleExpertiseSubmit} />
         </section>
 
         <section id='skills'>
@@ -237,8 +248,9 @@ export default class Index extends Component {
           type='submit'
           value='SUBMIT'
           className='submit btn waves-effect waves-light'
-        >Submit
-        <i class="material-icons right">send</i>
+        >
+          Submit
+          <i class='material-icons right'>send</i>
         </button>
       </form>
     );
