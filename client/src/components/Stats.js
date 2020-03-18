@@ -5,22 +5,6 @@ import 'materialize-css';
 
 const Stats=()=> {
     const [state, dispatch] = useUserContext();
-    console.log(state.user.hp)
-//     constructor(props) {
-
-//         super(props)
-// console.log(props)
-//         this.state = {
-//             hp: 10,
-//             jp: 1,
-//             strength: 20,
-//             speed: 12,
-//             intelligence: 44,
-//             scroll: false,
-//             bow: false
-//         }
-//     }
-
     return (
     <div className="row"
     style={{
