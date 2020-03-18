@@ -1,5 +1,4 @@
-var ids = {
- 
+const ids = {
     github: {
       clientID: 'ianasqazi',
       clientSecret: '***',

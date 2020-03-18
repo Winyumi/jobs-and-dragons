@@ -1,4 +1,6 @@
 export const api = {
+
+
   async addUserInfo(userInfo) {
     const res = await fetch('/api/v1/users', {
       method: 'POST',
@@ -14,6 +16,8 @@ export const api = {
       return jsonRes;
     }
   },
+
+
   async getUserInfo(userEmail) {
     console.log(userEmail);
     const res = await fetch(`/api/v1/users/${userEmail}`);
@@ -22,4 +26,5 @@ export const api = {
     console.log(jsonRes);
     return jsonRes;
   }
+
 };

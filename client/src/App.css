@@ -76,7 +76,7 @@ button:hover {
   font-style: normal;
 }
 
-h3, h4, h5 {
+h3, h4, h5, h6 {
   font-family: 'Alagard';
 }
 .submit {
@@ -218,9 +218,8 @@ input[type='submit'] {
 
 .btn {
   margin-top: 20px;
+  margin: 5px;
 }
-
-
 
 .back {
   position: absolute;
