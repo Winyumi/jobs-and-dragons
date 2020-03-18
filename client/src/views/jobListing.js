@@ -4,14 +4,13 @@ import dotenv from 'dotenv';
 import 'materialize-css';
 import dateFormat from 'dateformat';
 import Loading from '../components/Loading';
-// import { useAuth0 } from '../react-auth0-spa';
+import { useAuth0 } from '../react-auth0-spa';
 
 dotenv.config();
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export default class jobListing extends React.Component {
-
     constructor(props) {
       super(props);
       this.state = {
@@ -35,6 +34,7 @@ export default class jobListing extends React.Component {
                 isLoaded: true,
                 items: result.listings.listing
               });
+              console.log(this.state);
             },
             (error) => {
               this.setState({
@@ -47,7 +47,7 @@ export default class jobListing extends React.Component {
 
     handleSubmitSearch = (e) => {
         e.preventDefault();
-
+        
         const query=this.state.query;
 
         fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key='+API_KEY+'&method=aj.jobs.search&format=JSON&keywords='+query)
@@ -69,6 +69,11 @@ export default class jobListing extends React.Component {
             }
           )
 
+    }
+
+    handleSave= (e) =>{
+      // e.preventDefault();
+      console.log(e);
     }
 
     render() {
@@ -117,7 +122,7 @@ export default class jobListing extends React.Component {
 
                                 <div className="card-action">
                                     <a href={ item.url} target='_blank'className="btn brown darken-4">Apply</a>
-                                    {/* <a className="btn brown darken-4"><i className="material-icons">save</i></a> */}
+                                    <a id={ item.id } className="btn brown darken-4" onClick={ e => this.handleSave(item) }><i className="material-icons">save</i></a>
                                 </div>
 
                                 <div className="card-reveal brown darken-4">
