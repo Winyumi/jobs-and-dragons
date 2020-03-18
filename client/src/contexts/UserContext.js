@@ -26,7 +26,7 @@ const UserProvider = ({
       strength: 12,
       speed: 3,
       intelligence: 6,
-      scroll: true,
+      scroll: false,
       bow: false
     }
   },

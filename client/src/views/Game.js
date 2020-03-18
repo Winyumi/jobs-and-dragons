@@ -68,6 +68,7 @@ const Game = props => {
             alignItems: 'center'
           }}
         >
+
           <World path='/game/' />
         </div>
       </div>
