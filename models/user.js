@@ -24,7 +24,7 @@ const gameStatSchema = new mongoose.Schema({
 })
 
 const inventorySchema = new mongoose.Schema({
-  scroll:{type: Boolean, defualt: false  },
+  scroll:{type: Boolean, default: false  },
   bow: {type: Boolean, default:false}
 })
 // create a user schema 
