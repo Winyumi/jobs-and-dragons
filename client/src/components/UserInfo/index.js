@@ -23,6 +23,10 @@ export default class Index extends Component {
     }
   }
 
+  componentDidUpdate() {
+    localStorage.setItem('data', JSON.stringify(this.state));
+  }
+
   onChangeHandler = (name, from, id) => e => {
     let value = e.target.value;
     let newState = { ...this.state };
@@ -71,6 +75,13 @@ export default class Index extends Component {
     e.preventDefault();
     localStorage.setItem('data', JSON.stringify(this.state));
     this.props.history.push({ pathname: '/resume', state: this.state });
+  };
+
+  handleExpertiseSubmit = expertise => {
+    console.log(expertise);
+    this.setState(prevState => ({
+      experience: [...prevState.experience, ...expertise]
+    }));
   };
 
   render() {
@@ -143,7 +154,7 @@ export default class Index extends Component {
           <div>
             <h5>What is your area of interest?</h5>
           </div>
-          <UserExpertise />
+          <UserExpertise handleFormSubmit={this.handleExpertiseSubmit} />
         </section>
 
         <section id='skills'>

@@ -36,11 +36,11 @@ class userExpertise extends Component {
 
   handleFormSubmit = CheckBoxValue => {
     CheckBoxValue.preventDefault();
-    Object.keys(this.state.checkboxes)
-      .filter(checkbox => this.state.checkboxes[checkbox])
-      .forEach(checkbox => {
-        console.log(checkbox, 'is selected.');
-      });
+    const expertise = Object.keys(this.state.checkboxes).filter(
+      checkbox => this.state.checkboxes[checkbox]
+    );
+
+    this.props.handleFormSubmit(expertise);
   };
 
   createCheckbox = option => (
@@ -57,18 +57,16 @@ class userExpertise extends Component {
   render() {
     return (
       <div className='row'>
-        <div className="col">
-          {this.createCheckboxes()}
-          </div>
-          <div>
-            <button
-              className='btn waves-effect waves-light'
-              onClick={this.handleFormSubmit}
-              name='action'
-            >
-              <i className='material-icons right'>SAVE</i>
-            </button>
-          </div>
+        <div className='col'>{this.createCheckboxes()}</div>
+        <div>
+          <button
+            className='btn waves-effect waves-light'
+            onClick={this.handleFormSubmit}
+            name='action'
+          >
+            <i className='material-icons right'>SAVE</i>
+          </button>
+        </div>
       </div>
     );
   }
