@@ -4,7 +4,7 @@ import background from '../assets/dungeonBG.png'
 function Home() {
   return (
     <React.Fragment>
-      <img style={{width: '100%', height: '100%', opacity: '0.5', position: 'relative'}} src={background} />
+      <img style={bgStyle} src={background} />
       <div style={topStyle}>
         <h1>Welcome!</h1>
         <p>Jobs & Dragons is a fun new way to quest for your next tech job.</p> <br/>
@@ -21,6 +21,14 @@ const topStyle = {
   textAlign: 'center', 
   color: 'black',
   textShadow: '2px 2px white'
+}
+
+const bgStyle = { 
+  height: '100vh',
+  width: '100vw',
+  opacity: '0.5',
+  position: 'relative'
+
 }
 
 export default Home;
