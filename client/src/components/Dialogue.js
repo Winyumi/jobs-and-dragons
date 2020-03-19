@@ -4,12 +4,12 @@ import GuardianBox from '../assets/GuardianBox.png';
 import { useUserContext } from '../contexts/UserContext';
 // import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
+import { Link } from 'react-router-dom';
 
 // Dialogue box content needs to be replaced with dynamic content determined by props
 const Dialogue = props => {
   const [state, dispatch] = useUserContext();
-  console.log(state)
-  console.log(props)
+  console.log(state);
   const imgStyle = {
     float: 'right',
     width: '100px'
@@ -25,13 +25,9 @@ const Dialogue = props => {
     padding: '20px'
   };
   if (state.currentQuest === 'quest-01') {
-
-    console.log("dialogue", props);
+    console.log('dialogue', props);
     return (
-      <div
-        className='modal-content'
-        style={modalStyle}
-      >
+      <div className='modal-content' style={modalStyle}>
         <div style={{}}>
           <div className='row'>
             <img style={imgStyle} src={OracleBox} alt='Profile of the Oracle' />
@@ -39,22 +35,25 @@ const Dialogue = props => {
           </div>
           <div className='row'>
             <p>
-              Welcome {state.user.name} to the beginning of your journey! I am the
-            Oracle of Secrives Reerac and I am here to guide you on your quest.
-            Are you ready to begin?
-          </p>
+              Welcome {state.user.name} to the beginning of your journey! I am
+              the Oracle of Secrives Reerac and I am here to guide you on your
+              quest. Are you ready to begin?
+            </p>
             <ul>
               <li>
-                <a
-                  className='modal-close'
-                  href='#!'
-                  onClick={e => {
-                    e.preventDefault();
-                    props.handleAccept();
-                  }}
-                >
-                  Yes!
-              </a>
+                {state.currentQuest === 'quest-01' ? (
+                  <Link
+                    to='/userinfo'
+                    onClick={e => {
+                      // e.preventDefault();
+                      props.handleAccept();
+                    }}
+                  >
+                    Yes!
+                  </Link>
+                ) : state.currentQuest === 'quest-02' ? (
+                  <Link to='/joblisting'>Yes!</Link>
+                ) : null}
               </li>
               <li>
                 <a
@@ -66,7 +65,7 @@ const Dialogue = props => {
                   }}
                 >
                   Um...not yet...
-              </a>
+                </a>
               </li>
             </ul>
           </div>
@@ -75,19 +74,22 @@ const Dialogue = props => {
     );
   } else if (state.currentQuest === 'quest-02') {
     return (
-      <div
-        className='modal-content'
-        style={modalStyle}
-      >
+      <div className='modal-content' style={modalStyle}>
         <div style={{}}>
           <div className='row'>
-            <img style={imgStyle} src={GuardianBox} alt='Profile of the Guardian' />
+            <img
+              style={imgStyle}
+              src={GuardianBox}
+              alt='Profile of the Guardian'
+            />
             <h4>The Guardian of Namuh Secruoser</h4>
           </div>
           <div className='row'>
             <p>
-Well, you look like you're looking for some action...but are you ready? Guess there's only one way to find out! Are you up to hunting some of the finest game in the kingdom?
-                        </p>
+              Well, you look like you're looking for some action...but are you
+              ready? Guess there's only one way to find out! Are you up to
+              hunting some of the finest game in the kingdom?
+            </p>
             <ul>
               <li>
                 <a
@@ -99,7 +101,7 @@ Well, you look like you're looking for some action...but are you ready? Guess th
                   }}
                 >
                   Let's do it!!
-                            </a>
+                </a>
               </li>
               <li>
                 <a
@@ -111,7 +113,7 @@ Well, you look like you're looking for some action...but are you ready? Guess th
                   }}
                 >
                   You're scary, maybe next time.
-                            </a>
+                </a>
               </li>
             </ul>
           </div>
