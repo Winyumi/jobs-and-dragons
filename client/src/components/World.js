@@ -11,16 +11,19 @@ const World = props => {
   const [state, dispatch] = useUserContext();
   const [currentQuest, setCurrentQuest] = useState(dungeon);
   const [mapBackground, setMapBackground] = useState();
+  const [mapTitle, setMapTitle] = useState();
 
   useEffect(() => {
     const updateCurrentQuest = () => {
       switch (props.path) {
         case '/game/quest/01':
+          setMapTitle("Lair of the Oracle");
           setMapBackground(dungeonBG);
           setCurrentQuest(dungeon);
-          dispatch({ type: 'quest', payload: 'quest-01' });
+          dispatch({ type: 'quest', payload: 'quest-01'});
           break;
         case '/game/quest/02':
+          setMapTitle("Namuh Secruoser Guildhouse");
           setMapBackground(quildBG);
           setCurrentQuest(guild);
           dispatch({ type: 'quest', payload: 'quest-02' });
@@ -30,8 +33,8 @@ const World = props => {
       }
     };
     updateCurrentQuest();
-  }, [props.path, dispatch, currentQuest]);
-
+  }, [props.path, dispatch, currentQuest, mapTitle]);
+console.log(props)
   return (
     <div
       style={{
@@ -39,7 +42,7 @@ const World = props => {
         textAlign: 'center'
       }}
     >
-      <h4>The Lair of the Oracle</h4>
+      <h4>{mapTitle}</h4>
       <div
         style={{
           position: 'relative',
