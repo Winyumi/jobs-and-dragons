@@ -4,7 +4,7 @@ import { useUserContext } from '../contexts/UserContext';
 import { api } from '../utils/api';
 
 import 'materialize-css';
-import './profileStyles.css';
+// import './profileStyles.css';
 
 import Loading from '../components/Loading';
 import { useAuth0 } from '../react-auth0-spa';
@@ -47,10 +47,11 @@ const Profile = () => {
           src={user.picture}
           alt='User Profile'
           className='circle responsive-img'
-          id='userImage'
+          style = {userImageStyle}
+          // id='userImage'
         />
         <h3>USERNAME</h3>
-        <div className='card-panel grey'>{user.name}</div>
+        <div className='card-panel grey' style={cardStyle}>{user.name}</div>
       </div>
 
       <div className='center col s12 m6'>
@@ -74,7 +75,7 @@ const Profile = () => {
         to='/game' 
         quest='2' 
         name='gameBtn'>
-          Quest 2
+          Job Listings
         </Link>
         <br></br>
         <Link 
@@ -115,8 +116,17 @@ const BtnStyle = {
 
 }
 
-// const changeBackground = { 
-//   background: 'red'
-// }
+const userImageStyle = { 
+  width:'200px',
+  height: '200px',
+  marginTop: '50px'
+}
+
+const cardStyle = {
+  fontFamily: 'Alagard',
+  fontSize: 'xx-large',
+  color: 'darkblue',
+  margin:'20px',
+}
 
 export default Profile;
