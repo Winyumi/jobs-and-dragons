@@ -6,6 +6,8 @@ import chest from '../../assets/Chest.png';
 import oracle from '../../assets/Oracle.png';
 import guildwall from '../../assets/GuildWall.png';
 import guardian from '../../assets/Guardian.png';
+import barrel from '../../assets/barrel.png';
+import grate from '../../assets/grate.png';
 
 const MapTile = props => {
   const [state, dispatch] = useUserContext();
@@ -16,19 +18,23 @@ const MapTile = props => {
         case 'quest-01':
           setTileStripes({
             0: 'clear',
-            1: chest,
+            1: grate,
             2: oracle,
             3: wall,
-            4: wallTorch
+            4: wallTorch,
+            5: barrel,
+            6: chest,
           });
           break;
         case 'quest-02':
           setTileStripes({
             0: 'clear',
-            1: chest,
+            1: 'clear',
             2: guardian,
             3: wall,
-            4: guildwall
+            4: guildwall,
+            5: barrel,
+            6: chest
           });
           break;
         default:
@@ -48,6 +54,10 @@ const MapTile = props => {
         return `url(${tileSprites['3']})`;
       case 4:
         return `url(${tileSprites['4']})`;
+        case 5:
+          return `url(${tileSprites['5']})`;
+          case 6:
+            return `url(${tileSprites['6']})`;
       default:
         return tileSprites[type];
     }
