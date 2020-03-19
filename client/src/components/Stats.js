@@ -1,69 +1,70 @@
-import React, { Component, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { api } from '../utils/api';
 import { useUserContext } from '../contexts/UserContext';
 import 'materialize-css';
 
-const Stats=()=> {
-    const [state, dispatch] = useUserContext();
-    return (
-    <div className="row"
-    style={{
-        margin:'1rem'
-    }}>
-        <h4 className='center'>Stats</h4>
-        <div className="col"
-        >
+const Stats = () => {
+  const [state, dispatch] = useUserContext();
+  const [gamestats, setGamestats] = useState({});
+
+  useEffect(() => {
+    setGamestats(state.user.gamestats);
+  }, [state.user.gamestats]);
+  return (
+    <div
+      className='row'
+      style={{
+        margin: '1rem'
+      }}
+    >
+      <h4 className='center'>Stats</h4>
+      <div className='col'>
         <p>hp</p>
-        <StatsBar stat={state.user.hp} />
+        <StatsBar stat={gamestats.numOfStars * 10} />
         <p>jp</p>
-        <StatsBar stat={state.user.jp} />
+        <StatsBar stat={gamestats.jp} />
         <p>strength</p>
-        <StatsBar stat={state.user.strength} />
+        <StatsBar stat={gamestats.followers} />
         <p>speed</p>
-        <StatsBar stat={state.user.speed} />
-        <p>intelligence</p>
-        <StatsBar stat={state.user.intelligence} />
-        </div>
+        <StatsBar stat={gamestats.speed} />
+        <p>experience</p>
+        <StatsBar stat={gamestats.publicRepos} />
+      </div>
     </div>
-    )
-    
-}
+  );
+};
 
+const StatsBar = props => {
+  return (
+    <div
+      className='stats-bar'
+      style={{
+        position: 'relative',
+        height: '20px',
+        // width:'100px',
+        // borderRadius:'50px',
+        border: '1px solid #333'
+      }}
+    >
+      <Filler stat={props.stat} />
+    </div>
+  );
+};
 
-const StatsBar = (props) => {
-    const [state, dispatch] = useUserContext();
-    // console.log(state)
-    // api.getUserInfo(user.email).then(result => {
-    //     if (result.success) {
-    //       dispatch({ type: 'user', payload: result.data });
-    //     }
-    // }, [dispatch]);
-    return (
-        <div className="stats-bar"
-        style={{
-            position: "relative",
-            height: '20px',
-            width:'100px',
-            // borderRadius:'50px',
-            border: '1px solid #333'
-        }}
-        >
-            <Filler stat={props.stat}/>
-        </div>
-    )
-}
-
-const Filler = (props) => {
-    return <div className="filler" 
-    style={{
-        background: "#1DA598",
+const Filler = props => {
+  return (
+    <div
+      className='filler'
+      style={{
+        background: '#1DA598',
         height: '100%',
-        width: `${props.stat}px`,
+        width: `${props.stat}px`
         // transition: 'width .2s ease-in'
-    }}>
-        <p>{props.stat}/100</p>
-        </div>
-}
-
+      }}
+    >
+      <p>{props.stat}/100</p>
+    </div>
+  );
+};
 
 export default Stats;
