@@ -7,7 +7,7 @@ const Player = () => {
 
   useEffect(() => {
     const handleMovement = e => {
-      e.preventDefault();
+      if (/game/gi.test(window.location.pathname)) e.preventDefault();
       switch (e.keyCode) {
         case 37:
           dispatch({ type: 'moveleft' });
