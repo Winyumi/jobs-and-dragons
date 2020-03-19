@@ -1,29 +1,32 @@
 import React from 'react';
 // import Link from '../assets/Link.png';
 // import M from "materialize-css";
+import { useUserContext } from '../contexts/UserContext';
 import 'materialize-css/dist/css/materialize.min.css';
 
 // Dialogue box content needs to be replaced with dynamic content determined by props
 const Chest = props => {
+  const [state, dispatch] = useUserContext();
 //   const imgStyle = {
 //     float: 'right',
 //     width: '100px'
 //   };
+const chestStyle = {
+  color: 'white',
+  backgroundColor: 'black',
+  position: 'absolute',
+  top: '33%',
+  left: '33%',
+  width: '400px',
+  height: '400px',
+  padding: '20px'
+};
 
   console.log(props);
   return (
     <div
       className='modal-content'
-      style={{
-        color: 'white',
-        backgroundColor: 'black',
-        position: 'absolute',
-        top: '33%',
-        left: '33%',
-        width: '400px',
-        height: '400px',
-        padding: '20px'
-      }}
+      style={ chestStyle}
     >
       <div style={{}}>
         <div className='row'>
