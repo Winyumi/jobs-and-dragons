@@ -44,6 +44,13 @@ const App = () => {
                 <Game />
               </PlayerProvider>
             </Route>
+
+             
+            <Route exact path='/game/:quest'>
+              <PlayerProvider>
+                <Game />
+              </PlayerProvider>
+            </Route>
             <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
 
           </Switch>

@@ -81,9 +81,9 @@ const Game = props => {
             alignItems: 'center'
           }}
         >
+{window.location.pathname.indexOf("/1") > -1 ?  <World path='/game/' /> : window.location.pathname.indexOf("/2") > -1  ?  <Guild path='/game/' /> : "No game for you"}
+    
 
-          {/* <World path='/game/' /> */}
-          <Guild path='/game/' />
         </div>
       </div>
       {isInteracting && (

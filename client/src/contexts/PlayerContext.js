@@ -79,14 +79,15 @@ const getWalkIndex = oldWalkIndex => {
 
 const playerReducer = (state, action) => {
   const oldPosition = state.position;
+  const moveLeft = [
+    state.position[0] - SPRITE_SIZE,
+    state.position[1]
+  ];
   switch (action.type) {
     case 'moveleft':
       return {
         direction: 'west',
-        position: dispatchMove(oldPosition, [
-          state.position[0] - SPRITE_SIZE,
-          state.position[1]
-        ]),
+        position: dispatchMove(oldPosition, moveLeft),
         spritePosition: getSpriteLocation('west', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
         isInteracting: observeInteraction([

@@ -46,11 +46,11 @@ const Profile = () => {
 
       <div className='center col s12 m6'>
         <h3>Begin Your QUEST</h3>
-        <Link className='btn-large' to='/game' quest='1' name='gameBtn'>
+        <Link className='btn-large' to='/game/1' quest='1' name='gameBtn'>
           Quest 1
         </Link>
         <br></br>
-        <Link className='btn-large' to='/game' quest='2' name='gameBtn'>
+        <Link className='btn-large' to='/game/2' quest='2' name='gameBtn'>
           Quest 2
         </Link>
         <br></br>
