@@ -228,7 +228,7 @@ export default class index extends Component {
             <ul>
               <li className='divider' tabIndex='-1'></li>
               <li>
-                Beginner:{' '}
+                Beginner :{' '}
                 <StarRatings
                   starDimension='20px'
                   starSpacing='3px'
@@ -239,7 +239,7 @@ export default class index extends Component {
               </li>
               <li className='divider' tabIndex='-1'></li>
               <li>
-                Intermediate:{' '}
+                Intermediate :{' '}
                 <StarRatings
                   starDimension='20px'
                   starSpacing='3px'
@@ -250,7 +250,7 @@ export default class index extends Component {
               </li>
               <li className='divider' tabIndex='-1'></li>
               <li>
-                Advanced:{' '}
+                Advanced :{' '}
                 <StarRatings
                   starDimension='20px'
                   starSpacing='3px'
@@ -261,7 +261,7 @@ export default class index extends Component {
               </li>
               <li className='divider' tabIndex='-1'></li>
               <li>
-                Expert:{' '}
+                Expert :{' '}
                 <StarRatings
                   starDimension='20px'
                   starSpacing='3px'
