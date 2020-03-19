@@ -22,11 +22,31 @@ const Profile = () => {
         dispatch({ type: 'user', payload: result.data });
       } else {
         let newUser = {
-          name: user.name,
-          email: user.email,
-          picture: user.picture,
-          gamestats: {}
+          name: '',
+          email: '',
+          picture: '',
+          gamestats: {
+            publicRepos: 0,
+            followers: 0,
+            numOfStars: 0,
+            jp: 20,
+            speed: 75
+          },
+          inventory: {
+            scroll: false,
+            bow: false
+          },
+          experience: [],
+          education: [],
+          skills: [],
+          projects: [],
+          expertise: [],
+          jobsearch: []
         };
+        newUser.name = user.name;
+        newUser.email = user.email;
+        newUser.picture = user.picture;
+
         window
           .fetch(`https://api.github.com/users/${user.nickname}`)
           .then(res => res.json())

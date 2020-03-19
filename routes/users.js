@@ -11,12 +11,12 @@ router
 router
   .route('/id/:id')
   .get(User.findById)
-  .put(User.update);
+  .put(User.updateById);
 
 // Matches with "/api/v1/users/:email"
 router
   .route('/email/:email')
   .get(User.findByEmail)
-  .put(User.update);
+  .put(User.updateByEmail);
 
 module.exports = router;
