@@ -14,12 +14,17 @@ module.exports = {
   },
   findByEmail: function(req, res) {
     db.User.findOne({ email: req.params.email })
-      .then(user =>
-        res.json({
-          success: true,
-          data: user
-        })
-      )
+      .then(user => {
+        if (user) {
+          return res.json({
+            success: true,
+            data: user
+          });
+        }
+        return res.json({
+          success: false
+        });
+      })
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
