@@ -4,7 +4,6 @@ import { useUserContext } from '../contexts/UserContext';
 import { api } from '../utils/api';
 
 import 'materialize-css';
-// import './profileStyles.css';
 
 import Loading from '../components/Loading';
 import { useAuth0 } from '../react-auth0-spa';
@@ -17,7 +16,6 @@ const Profile = () => {
     if (loading || !user) {
       return <Loading />;
     }
-    // console.log(user);
     api.getUserInfo(user.email).then(result => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
@@ -104,8 +102,7 @@ const BtnStyle = {
   fontFamily: 'Alagard',
   margin:'10px',
   font: 'Alagard',
-  boxShadow: '0 8px #999',
-
+  boxShadow: '0 5px #999',
 }
 
 const userImageStyle = { 
