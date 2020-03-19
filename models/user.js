@@ -23,10 +23,10 @@ const jobSearchSchema = new mongoose.Schema({
 
 // })
 
-const inventorySchema = new mongoose.Schema({
-  scroll: { type: Boolean, default: false },
-  bow: { type: Boolean, default: false }
-});
+// const inventorySchema = new mongoose.Schema({
+//   scroll: { type: Boolean, default: false },
+//   bow: { type: Boolean, default: false }
+// });
 // create a user schema
 
 const UserSchema = new mongoose.Schema({
@@ -44,7 +44,7 @@ const UserSchema = new mongoose.Schema({
   expertise: [],
   jobsearch: [jobSearchSchema],
   gamestats: { type: Map },
-  inventory: [inventorySchema]
+  inventory: { type: Map }
 });
 
 const User = mongoose.model('User', UserSchema);
