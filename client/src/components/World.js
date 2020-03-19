@@ -18,7 +18,7 @@ const World = props => {
         case '/game/quest/01':
           setMapBackground(dungeonBG);
           setCurrentQuest(dungeon);
-          dispatch({ type: currentQuest, payload: 'quest-01' });
+          dispatch({ type: 'quest', payload: 'quest-01' });
           break;
         case '/game/quest/02':
           setMapBackground(quildBG);

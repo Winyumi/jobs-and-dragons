@@ -38,13 +38,6 @@ const MapTile = props => {
     updateCurrentQuest();
   }, [state.currentQuest]);
 
-  // const tileSprites = {
-  //   0: 'clear',
-  //   1: chest,
-  //   2: oracle,
-  //   3: wall,
-  //   4: wallTorch
-  // };
   const getTileSprite = type => {
     switch (type) {
       case 1:
@@ -69,7 +62,6 @@ const MapTile = props => {
         background: getTileSprite(props.tile)
       }}
     >
-      {/* {props.tile} */}
       <p></p>
     </div>
   );
