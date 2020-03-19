@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import RateSkills from './rating';
 
+import '../../App.css';
+
 const SKILLS = [
   'HTML',
   'CSS',

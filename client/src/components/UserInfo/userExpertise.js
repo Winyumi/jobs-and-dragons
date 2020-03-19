@@ -60,11 +60,11 @@ class userExpertise extends Component {
         <div className='col'>{this.createCheckboxes()}</div>
         <div>
           <button
-            className='btn waves-effect waves-light'
+            className='btn'
             onClick={e => this.handleFormSubmit(e)}
             name='action'
           >
-            <i className='material-icons right'>SAVE</i>
+            <i className='material-icons'>SAVE</i>
           </button>
         </div>
       </div>

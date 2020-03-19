@@ -305,7 +305,7 @@ export default class index extends Component {
         <button
           type='submit'
           value='SUBMIT'
-          className='submit remove-btn'
+          className='submit remove-btn btn-large center'
         >
           Submit
           <i class='material-icons right'>send</i>
