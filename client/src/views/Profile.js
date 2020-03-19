@@ -127,7 +127,7 @@ const Profile = () => {
         style= {BtnStyle} 
         onMouseOver={changeTo} 
         onMouseLeave={changeBack} 
-        to='#' 
+        to='/joblisting' 
         name='gameBtn'>
           Quest 3
         </Link>
