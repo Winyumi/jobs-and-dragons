@@ -88,27 +88,25 @@ export default class index extends Component {
       designation:this.state.designation
     };
     async function getUserInfo(email) {
-      console.log(email);
       const res = await fetch(`/api/v1/users/email/${email}`);
-
       return res;
     }
     async function updateUserInfo(data, email){
       const res= fetch(`/api/v1/users/email/${email}`,{
         method:'PUT',
         mode: "cors",
-    cache: "no-cache",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
-    if (res.ok) {
-    const jsonRes = await res.json();
-    console.log(jsonRes);
-    return jsonRes.data;
-  }
-}
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+      const jsonRes = await res.json();
+      console.log(jsonRes);
+      return jsonRes.data;
+      }
+    }
      async function addUserInfo(userInfo) {
       //check if user exisits 
       const res = await fetch('/api/v1/users', {
@@ -117,13 +115,13 @@ export default class index extends Component {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(userInfo)
-      });
+        });
       if (res.ok) {
         const jsonRes = await res.json();
         console.log(jsonRes);
         return jsonRes.data;
       }
-  };
+    };
   
   getUserInfo(this.state.email).then(result =>{
     if(result.data === null){
