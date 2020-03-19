@@ -27,16 +27,27 @@ const userReducer = (state, action) => {
 const UserProvider = ({
   value = {
     user: {
-      name: 'Sal Tamay',
-      hp: 10,
-      jp: 2,
-      strength: 12,
-      speed: 3,
-      intelligence: 6,
+      _id: '',
+      name: '',
+      email: '',
+      picture: '',
+      gamestats: {
+        publicRepos: 0,
+        followers: 0,
+        numOfStars: 0,
+        jp: 20,
+        speed: 75
+      },
       inventory: {
         scroll: false,
         bow: false
-      }
+      },
+      experience: [],
+      education: [],
+      skills: [],
+      projects: [],
+      expertise: [],
+      jobsearch: []
     },
     currentQuest: 'quest-01'
   },

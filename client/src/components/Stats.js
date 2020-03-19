@@ -1,10 +1,15 @@
-import React, { Component, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { api } from '../utils/api';
 import { useUserContext } from '../contexts/UserContext';
 import 'materialize-css';
 
 const Stats = () => {
   const [state, dispatch] = useUserContext();
+  const [gamestats, setGamestats] = useState({});
+
+  useEffect(() => {
+    setGamestats(state.user.gamestats);
+  }, [state.user.gamestats]);
   return (
     <div
       className='row'
@@ -15,15 +20,15 @@ const Stats = () => {
       <h4 className='center'>Stats</h4>
       <div className='col'>
         <p>hp</p>
-        <StatsBar stat={state.user.hp} />
+        <StatsBar stat={gamestats.numOfStars * 10} />
         <p>jp</p>
-        <StatsBar stat={state.user.jp} />
+        <StatsBar stat={gamestats.jp} />
         <p>strength</p>
-        <StatsBar stat={state.user.strength} />
+        <StatsBar stat={gamestats.followers} />
         <p>speed</p>
-        <StatsBar stat={state.user.speed} />
-        <p>intelligence</p>
-        <StatsBar stat={state.user.intelligence} />
+        <StatsBar stat={gamestats.speed} />
+        <p>experience</p>
+        <StatsBar stat={gamestats.publicRepos} />
       </div>
     </div>
   );
