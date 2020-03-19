@@ -54,7 +54,7 @@ const Profile = () => {
         <div className='card-panel grey' style={cardStyle}>{user.name}</div>
       </div>
 
-      <div className='center col s12 m6'>
+      <div className='center col s12 m6' style={{marginTop:'50px'}}>
         <h3>Begin Your QUEST</h3>
         <Link 
         className='btn-large' 
@@ -72,7 +72,7 @@ const Profile = () => {
         style= {BtnStyle} 
         onMouseOver={changeTo} 
         onMouseLeave={changeBack} 
-        to='/game' 
+        to='/joblisting' 
         quest='2' 
         name='gameBtn'>
           Job Listings
@@ -85,18 +85,9 @@ const Profile = () => {
         onMouseLeave={changeBack} 
         to='#' 
         name='gameBtn'>
-          Quest 3
+          Future Quest
         </Link>
         <br></br>
-        <Link 
-        className='btn-large' 
-        style= {BtnStyle} 
-        onMouseOver={changeTo} 
-        onMouseLeave={changeBack} 
-        to='#' 
-        name='gameBtn'>
-          Quest 4
-        </Link>
       </div>
     </div>
   );
@@ -107,6 +98,7 @@ const profileStyle = {
 }
 
 const BtnStyle = { 
+  width:'200px',
   background: '#333',
   borderRadius: '25%',
   fontFamily: 'Alagard',
