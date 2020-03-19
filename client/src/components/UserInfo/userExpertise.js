@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Checkbox from './checkbox';
 
+import '../../App.css';
+
 const EXPERTISE = [
   'Software Engineer',
   'Full Stack developer',
@@ -60,7 +62,7 @@ class userExpertise extends Component {
         <div className='col'>{this.createCheckboxes()}</div>
         <div>
           <button
-            className='btn waves-effect waves-light'
+            className='btn'
             onClick={e => this.handleFormSubmit(e)}
             name='action'
           >
