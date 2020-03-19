@@ -9,6 +9,10 @@
   margin-bottom: 0px;
   background-color: #F2F2F2;
 }
+
+.nav ul a {
+  font-size: 150px;
+}
 form {
   width: 90%;
   min-width: 300px;
