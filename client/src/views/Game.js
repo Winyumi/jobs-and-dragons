@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import World from '../components/World';
+import Guild from '../components/Guild';
 import Dialogue from '../components/Dialogue';
 import Chest from '../components/Chest';
 import CharBox from '../components/CharBox';
@@ -7,6 +8,7 @@ import Quests from '../components/QuestsList';
 import { usePlayerContext } from '../contexts/PlayerContext';
 
 const Game = props => {
+  console.log(props)
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState();
   const [isOpening, setIsOpening] = useState();
@@ -80,7 +82,8 @@ const Game = props => {
           }}
         >
 
-          <World path='/game/' />
+          {/* <World path='/game/' /> */}
+          <Guild path='/game/' />
         </div>
       </div>
       {isInteracting && (

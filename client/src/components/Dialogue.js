@@ -1,16 +1,19 @@
 import React from 'react';
 import OracleBox from '../assets/OracleBox.png';
+import { useUserContext } from '../contexts/UserContext';
 // import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
 
 // Dialogue box content needs to be replaced with dynamic content determined by props
 const Dialogue = props => {
+  const state = useUserContext();
+  console.log(state)
   const imgStyle = {
     float: 'right',
     width: '100px'
   };
 
-  console.log(props);
+  console.log("dialogue", props);
   return (
     <div
       className='modal-content'
@@ -32,7 +35,7 @@ const Dialogue = props => {
         </div>
         <div className='row'>
           <p>
-            Welcome {props.username} to the beginning of your journey! I am the
+            Welcome {state[0].user.name} to the beginning of your journey! I am the
             Oracle of Secrives Reerac and I am here to guide you on your quest.
             Are you ready to begin?
           </p>

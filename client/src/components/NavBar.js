@@ -27,7 +27,7 @@ const NavBar = () => {
       <div className='nav-wrapper grey darken-4'>
         <a href='/' className='brand-logo'>
           <img
-            style={{ width: '240px', margin: '20px 20px' }}
+            style={{ width: '25%', margin: '20px 20px' }}
             src={logo}
             alt='logo'
           />
