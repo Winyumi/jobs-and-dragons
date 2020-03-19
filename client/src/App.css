@@ -76,18 +76,21 @@ button:hover {
   font-style: normal;
 }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Alagard';
 }
 .submit {
   font-family: 'Alagard';
 }
 .btn-floating {
-  background-color: #FF3333 !important;
+  background-color: #ff3333 !important;
 }
 .remove-btn {
   font-family: 'Alagard';
-  background-color: #FF3333;
+  background-color: #ff3333;
   color: white;
   font-weight: bold;
   border: 0;
@@ -100,7 +103,6 @@ h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .page {
@@ -116,7 +118,8 @@ h3, h4, h5, h6 {
   height: 29.7cm;
 }
 
-ul, ol {
+ul,
+ol {
   list-style-type: none;
 }
 
@@ -126,7 +129,8 @@ header h1 {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-header h1, p {
+header h1,
+p {
   margin-bottom: 10px;
 }
 
@@ -135,7 +139,8 @@ header p {
   color: white;
 }
 
-main .exp, .education {
+main .exp,
+.education {
   margin-top: 20px;
 }
 
@@ -150,12 +155,14 @@ main p {
   font-size: 14px;
 }
 
-.email, .number {
+.email,
+.number {
   margin: 0;
 }
 
-.company-name, .college-name {
-  color: #FF3333;
+.company-name,
+.college-name {
+  color: #ff3333;
   font-weight: bold;
 }
 
@@ -230,5 +237,11 @@ input[type='submit'] {
 .download {
   position: absolute;
   top: 200px;
+  right: 15px;
+}
+
+.complete {
+  position: absolute;
+  top: 260px;
   right: 15px;
 }

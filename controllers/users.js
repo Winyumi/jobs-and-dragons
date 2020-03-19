@@ -37,9 +37,14 @@ module.exports = {
       )
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
+  updateById: function(req, res) {
     db.User.findOneAndUpdate({ id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(user => res.json(user))
+      .catch(err => res.status(422).json(err));
+  },
+  updateByEmail: function(req, res) {
+    db.User.findOneAndUpdate({ email: req.params.email }, req.body)
+      .then(user => res.json(user))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {

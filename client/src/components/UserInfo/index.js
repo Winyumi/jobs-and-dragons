@@ -7,7 +7,6 @@ import UserExpertise from './userExpertise';
 import StarRatings from 'react-star-ratings';
 import UserSkills from './userSkills';
 
-
 export default class index extends Component {
   state = {
     name: '',
@@ -72,71 +71,76 @@ export default class index extends Component {
     }
     this.setState(newState);
   };
-  
+
   onSubmitHandler = e => {
     e.preventDefault();
-   
+
     let userInfo = {
       name: this.state.name,
-      bio:this.state.bio,
-      phone:this.state.phone,
-      education:this.state.education,
-      experience:this.state.experience,
+      bio: this.state.bio,
+      phone: this.state.phone,
+      education: this.state.education,
+      experience: this.state.experience,
       expertise: this.state.expertise,
-      descripiton:this.state.description,
-      designation:this.state.designation
+      descripiton: this.state.description,
+      designation: this.state.designation
     };
     async function getUserInfo(userEmail) {
+      try {
+        const res = await fetch(`/api/v1/users/email/${userEmail}`);
 
-      const res = await fetch(`/api/v1/users/email/${userEmail}`);
-  
-      const jsonRes = await res.json();
-
-      return jsonRes;
+        if (res.ok) {
+          const jsonRes = await res.json();
+          return jsonRes;
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
-  
-    async function updateUserInfo(data, email){
-      const res= fetch(`/api/v1/users/email/${email}`,{
-        method:'PUT',
-        mode: "cors",
-        cache: "no-cache",
+
+    async function updateUserInfo(data, email) {
+      const res = fetch(`/api/v1/users/email/${email}`, {
+        method: 'PUT',
+        mode: 'cors',
+        cache: 'no-cache',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
       });
       if (res.ok) {
-      return res.data;
+        return res.data;
       }
     }
-     async function addUserInfo(userInfo) {
-      //check if user exisits 
+    async function addUserInfo(userInfo) {
+      //check if user exisits
       const res = await fetch('/api/v1/users', {
-        method: 'POST', 
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(userInfo)
-        });
+      });
       if (res.ok) {
         const jsonRes = await res.json();
         console.log(jsonRes);
         return jsonRes.data;
       }
+    }
+    console.log(this.state.email);
+    getUserInfo(this.state.email).then(result => {
+      console.log(result);
+      console.log(result.data.email);
+      console.log(this.state.email);
+      if (result.data.email === this.state.email) {
+        updateUserInfo(userInfo, result.data.email);
+      } else {
+        addUserInfo(userInfo);
+      }
+    });
+
+    this.props.history.push({ pathname: '/resume', state: this.state });
   };
-  
-  getUserInfo(this.state.email).then(result =>{
-    if(result.data.email === this.state.email){
-      updateUserInfo(userInfo, result.data.email)
-    }else{addUserInfo(userInfo);}
-  })
-  
-  this.props.history.push({ pathname: '/resume', state: this.state });
-};
-
-
-
-  
 
   handleExpertiseSubmit = expertise => {
     this.setState(prevState => ({
