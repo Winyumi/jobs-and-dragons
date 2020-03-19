@@ -6,7 +6,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 // Dialogue box content needs to be replaced with dynamic content determined by props
 const Chest = props => {
-  const state = useUserContext();
+  const [state] = useUserContext();
 //   const imgStyle = {
 //     float: 'right',
 //     width: '100px'
