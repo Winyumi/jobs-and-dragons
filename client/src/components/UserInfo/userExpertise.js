@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Checkbox from './checkbox';
 
+import '../../App.css';
+
+
 const EXPERTISE = [
   'Software Engineer',
   'Full Stack developer',
@@ -63,8 +66,7 @@ class userExpertise extends Component {
             className='btn'
             onClick={e => this.handleFormSubmit(e)}
             name='action'
-          >
-            <i className='material-icons'>SAVE</i>
+          >SAVE
           </button>
         </div>
       </div>
