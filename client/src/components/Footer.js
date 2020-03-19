@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer style={footerStyle}>
-        JOBS & DRAGONS © 2020
+        <h6>JOBS & DRAGONS © 2020</h6>
     </footer>
   )
 }
@@ -13,8 +13,10 @@ const footerStyle = {
   color: '#fff',
   textAlign: 'center',
   bottom: '0px',
-  height: '5px',
-  width: '100%'
+  textShadow: '2px 2px black'
+
+  // height: '5%',
+  // width: '100%'
 }
 
 export default Footer;
