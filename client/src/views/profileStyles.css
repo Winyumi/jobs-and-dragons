@@ -18,15 +18,15 @@
 
 /* RIGHT COLUMN  */
 
-.btn-large{
-    min-width: 150px;
-    background-color: #9C7B54;
-    border-radius: 25%;
-    margin:10px;
-    font-family: 'Alagard';
-    box-shadow: 0 8px #999;
+/* .btn-large{
+        min-width: 150px;
+        background-color: #9C7B54; 
+        border-radius: 25%;
+        margin:10px;
+        font-family: 'Alagard';
+        box-shadow: 0 8px #999;
 
-}
+} */
 
 .btn-large:hover{
     background-color: darkblue;

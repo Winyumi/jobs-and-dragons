@@ -25,8 +25,8 @@ const NavBar = () => {
   return (
     <nav>
       <div className='nav-wrapper grey darken-4'>
-        
-        <a href='/' className='brand-logo left'>
+        {/* <div > */}
+        <a href='/' className='brand-logo left' style={{maxWidth: "300px"}}>
             <img
               style={NavbarLogoStyle}
               className='responsive-img'
@@ -34,7 +34,7 @@ const NavBar = () => {
               alt='logo'
             />
         </a>
-
+        {/* </div> */}
         <ul className='right'>
           <li to='/'>
             <Link to='/'><h5>HOME</h5></Link>
@@ -73,7 +73,8 @@ const NavBar = () => {
 };
 
 const NavbarLogoStyle = {
-  width: '40%',
+  width: '70%',
+  maxWidth: '100',
   marginTop:'10px',
   marginLeft:'10px',
 }

@@ -17,7 +17,7 @@ const Profile = () => {
     if (loading || !user) {
       return <Loading />;
     }
-    console.log(user);
+    // console.log(user);
     api.getUserInfo(user.email).then(result => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
@@ -31,8 +31,17 @@ const Profile = () => {
     });
   }, [loading, user, dispatch]);
 
+  function changeTo(e) {
+    e.target.style.background = 'darkblue';
+    e.target.style.translate = '5px'
+  }
+
+  function changeBack(e) {
+    e.target.style.background = '#333';
+  }
+
   return (
-    <div className='row'>
+    <div className='row' style={profileStyle}>
       <div className='center col s12 m6'>
         <img
           src={user.picture}
@@ -46,24 +55,68 @@ const Profile = () => {
 
       <div className='center col s12 m6'>
         <h3>Begin Your QUEST</h3>
-        <Link className='btn-large' to='/game' quest='1' name='gameBtn'>
-          Quest 1
+        <Link 
+        className='btn-large' 
+        style= {BtnStyle} 
+        onMouseOver={changeTo} 
+        onMouseLeave={changeBack} 
+        to='/game' 
+        quest='1' 
+        name='gameBtn'>
+          Create Profile
         </Link>
         <br></br>
-        <Link className='btn-large' to='/game' quest='2' name='gameBtn'>
+        <Link 
+        className='btn-large' 
+        style= {BtnStyle} 
+        onMouseOver={changeTo} 
+        onMouseLeave={changeBack} 
+        to='/game' 
+        quest='2' 
+        name='gameBtn'>
           Quest 2
         </Link>
         <br></br>
-        <Link className='btn-large' to='#' name='gameBtn'>
+        <Link 
+        className='btn-large' 
+        style= {BtnStyle} 
+        onMouseOver={changeTo} 
+        onMouseLeave={changeBack} 
+        to='#' 
+        name='gameBtn'>
           Quest 3
         </Link>
         <br></br>
-        <Link className='btn-large' to='#' name='gameBtn'>
+        <Link 
+        className='btn-large' 
+        style= {BtnStyle} 
+        onMouseOver={changeTo} 
+        onMouseLeave={changeBack} 
+        to='#' 
+        name='gameBtn'>
           Quest 4
         </Link>
       </div>
     </div>
   );
 };
+
+const profileStyle = {
+  height: '80vh'
+}
+
+const BtnStyle = { 
+  background: '#333',
+  borderRadius: '25%',
+  fontFamily: 'Alagard',
+  margin:'10px',
+  font: 'Alagard',
+  boxShadow: '0 8px #999',
+
+}
+
+// const changeBackground = { 
+//   background: 'red'
+// }
 
 export default Profile;
