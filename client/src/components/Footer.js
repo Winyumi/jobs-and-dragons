@@ -15,8 +15,6 @@ const footerStyle = {
   bottom: '0px',
   textShadow: '2px 2px black'
 
-  // height: '5%',
-  // width: '100%'
 }
 
 export default Footer;

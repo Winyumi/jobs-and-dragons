@@ -25,13 +25,15 @@ const NavBar = () => {
   return (
     <nav>
       <div className='nav-wrapper grey darken-4'>
-        <a href='/' className='brand-logo'>
-          <img
-            style={{ width: '240', margin: '20px 20px' }}
-            className='responsive-img'
-            src={logo}
-            alt='logo'
-          />
+        <a href='/' className='brand-logo left'>
+          <div className='container'>
+            <img
+              style={NavbarLogoStyle}
+              className='responsive-img'
+              src={logo}
+              alt='logo'
+            />
+          </div>
         </a>
         <ul className='right'>
           <li to='/'>
@@ -69,4 +71,10 @@ const NavBar = () => {
   );
 };
 
+const NavbarLogoStyle = {
+  width: '40%',
+  marginTop:'10px',
+  marginLeft:'20px',
+  maxHeight:'30px',
+}
 export default NavBar;

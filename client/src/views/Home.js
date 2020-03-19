@@ -15,7 +15,7 @@ function Home() {
         </div>
 
         <div className='container' style={descStyle}>
-          <h3>Let the JOB HUNT begin</h3>
+          <h3>Let the JOB HUNT begin ...</h3>
         </div>
       </div>
     </React.Fragment>
@@ -27,8 +27,6 @@ const topStyle = {
   top: '100px', 
   width: '100%', 
   textAlign: 'center', 
-  // color: 'black',
-  // textShadow: '2px 2px white'
 }
 
 const bgStyle = { 

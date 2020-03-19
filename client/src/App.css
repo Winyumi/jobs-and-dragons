@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.row {
+  margin-bottom: 0px;
+  background-color: #F2F2F2;
+}
 form {
   width: 90%;
   min-width: 300px;
