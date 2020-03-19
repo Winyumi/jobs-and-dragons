@@ -7,13 +7,11 @@
 
 .row {
   margin-bottom: 0px;
-  background-color: #F2F2F2;
 }
 
 .btn,  .btn-medium, .btn-floating, .remove-btn {
   margin-top:'10px';
   font-family:'Alagard';
-  font-size:'xx-large';
   background-color: #333;
 }
 
