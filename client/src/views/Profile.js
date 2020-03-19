@@ -89,7 +89,7 @@ const Profile = () => {
         onMouseLeave={changeBack} 
         to='/game/quest/01'  
         name='gameBtn'>
-          Create Profile
+          Quest 1
         </Link>
         <br></br>
         <Link 
@@ -99,7 +99,7 @@ const Profile = () => {
         onMouseLeave={changeBack} 
         to='/game/quest/02' 
         name='gameBtn'>
-          Job Listings
+          Quest 2
         </Link>
         <br></br>
         <Link 
@@ -107,9 +107,9 @@ const Profile = () => {
         style= {BtnStyle} 
         onMouseOver={changeTo} 
         onMouseLeave={changeBack} 
-        to='#' 
+        to='/joblisting' 
         name='gameBtn'>
-          Future Quest
+          Quest 3
         </Link>
         <br></br>
       </div>
