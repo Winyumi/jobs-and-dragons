@@ -46,6 +46,7 @@ const NavBar = () => {
               onClick={() => {
                 loginWithRedirect({});
               }}
+              
             >
               <Link to='/'><h5>LOGIN</h5></Link>
             </li>

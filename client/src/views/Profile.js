@@ -86,7 +86,6 @@ const Profile = () => {
 
       <div className='center col s12 m6' style={{marginTop:'50px'}}>
         <h3>Begin Your QUEST</h3>
-<<<<<<< HEAD
         <Link 
         className='btn-large' 
         style= {BtnStyle} 
@@ -107,14 +106,6 @@ const Profile = () => {
         quest='2' 
         name='gameBtn'>
           Job Listings
-=======
-        <Link className='btn-large' to='/game/quest/01' name='gameBtn'>
-          Quest 1
-        </Link>
-        <br></br>
-        <Link className='btn-large' to='/game/quest/02' name='gameBtn'>
-          Quest 2
->>>>>>> 760517ca3506414cfd6ac071d60d0b4311d66b2e
         </Link>
         <br></br>
         <Link 
