@@ -25,16 +25,17 @@ const NavBar = () => {
   return (
     <nav>
       <div className='nav-wrapper grey darken-4'>
-        <a href='/' className='brand-logo'>
-          <img
-            style={{ width: '25%', margin: '20px 20px' }}
-            src={logo}
-            alt='logo'
-          />
-        </a>
+        <a href='/' className='brand-logo left' style={{maxWidth: "300px"}}>
+            <img
+              style={NavbarLogoStyle}
+              className='responsive-img'
+              src={logo}
+              alt='logo'
+            />
+          </a>
         <ul className='right'>
           <li to='/'>
-            <Link to='/'>HOME</Link>
+          <Link to='/'><h5>HOME</h5></Link>
           </li>
           {!isOpen ? (
             <li
@@ -44,12 +45,12 @@ const NavBar = () => {
                 loginWithRedirect({});
               }}
             >
-              <Link to='/'>LOGIN</Link>
+              <Link to='/'><h5>LOGIN</h5></Link>
             </li>
           ) : (
             <>
               <li to='/profile'>
-                <Link to='/profile'>PROFILE</Link>
+              <Link to='/profile'><h5>PROFILE</h5></Link>
               </li>
               <li
                 to='/logout'
@@ -58,7 +59,7 @@ const NavBar = () => {
                   logoutWithRedirect();
                 }}
               >
-                <Link to='/'>LOGOUT</Link>
+                <Link to='/'><h5>LOGOUT</h5></Link>
               </li>
             </>
           )}
@@ -67,5 +68,12 @@ const NavBar = () => {
     </nav>
   );
 };
+
+const NavbarLogoStyle = {
+  width: '70%',
+  maxWidth: '100',
+  marginTop:'10px',
+  marginLeft:'10px',
+}
 
 export default NavBar;
