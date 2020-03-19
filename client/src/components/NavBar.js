@@ -27,17 +27,15 @@ const NavBar = () => {
       <div className='nav-wrapper grey darken-4'>
         
         <a href='/' className='brand-logo left'>
-          {/* <div className='container'> */}
             <img
               style={NavbarLogoStyle}
               className='responsive-img'
               src={logo}
               alt='logo'
             />
-          {/* </div> */}
         </a>
 
-        <ul className='right' style={NavLinkStyle}>
+        <ul className='right'>
           <li to='/'>
             <Link to='/'><h5>HOME</h5></Link>
           </li>
@@ -80,7 +78,4 @@ const NavbarLogoStyle = {
   marginLeft:'10px',
 }
 
-const NavLinkStyle = { 
- fontSize: '100px'
-}
 export default NavBar;
