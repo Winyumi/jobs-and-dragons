@@ -22,6 +22,7 @@ const Inventory=()=> {
     <table
         // style={tableStyle}
         >
+    <tbody>
         <tr>
             <td>
                 {
@@ -50,6 +51,7 @@ const Inventory=()=> {
             <td></td>
             <td></td>
         </tr> */}
+        </tbody>
     </table>
     </div>
     )
