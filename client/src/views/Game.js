@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import World from '../components/World';
+import Guild from '../components/Guild';
 import Dialogue from '../components/Dialogue';
 import Chest from '../components/Chest';
 import CharBox from '../components/CharBox';

@@ -6,9 +6,16 @@ const { Provider } = UserContext;
 const userReducer = (state, action) => {
   switch (action.type) {
     case 'user':
-      console.log(action.payload);
       return {
-        user: action.payload
+        user: action.payload,
+        currentQuest: state.currentQuest
+      };
+    case 'quest':
+      return {
+        user: {
+          ...state.user
+        },
+        currentQuest: action.payload
       };
     default:
       return {
@@ -30,7 +37,8 @@ const UserProvider = ({
         scroll: false,
         bow: false
       }
-    }
+    },
+    currentQuest: 'quest-01'
   },
   ...props
 }) => {

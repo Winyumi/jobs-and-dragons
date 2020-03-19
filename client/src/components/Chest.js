@@ -5,10 +5,10 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 // Dialogue box content needs to be replaced with dynamic content determined by props
 const Chest = props => {
-  const imgStyle = {
-    float: 'right',
-    width: '100px'
-  };
+//   const imgStyle = {
+//     float: 'right',
+//     width: '100px'
+//   };
 
   console.log(props);
   return (
