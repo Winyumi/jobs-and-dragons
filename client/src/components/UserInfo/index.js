@@ -78,7 +78,6 @@ export default class index extends Component {
    
     let userInfo = {
       name: this.state.name,
-      email:this.state.email,
       bio:this.state.bio,
       phone:this.state.phone,
       education:this.state.education,
@@ -87,10 +86,15 @@ export default class index extends Component {
       descripiton:this.state.description,
       designation:this.state.designation
     };
-    async function getUserInfo(email) {
-      const res = await fetch(`/api/v1/users/email/${email}`);
-      return res;
+    async function getUserInfo(userEmail) {
+
+      const res = await fetch(`/api/v1/users/email/${userEmail}`);
+  
+      const jsonRes = await res.json();
+
+      return jsonRes;
     }
+  
     async function updateUserInfo(data, email){
       const res= fetch(`/api/v1/users/email/${email}`,{
         method:'PUT',
@@ -102,9 +106,7 @@ export default class index extends Component {
         body: JSON.stringify(data)
       });
       if (res.ok) {
-      const jsonRes = await res.json();
-      console.log(jsonRes);
-      return jsonRes.data;
+      return res.data;
       }
     }
      async function addUserInfo(userInfo) {
@@ -121,12 +123,12 @@ export default class index extends Component {
         console.log(jsonRes);
         return jsonRes.data;
       }
-    };
+  };
   
   getUserInfo(this.state.email).then(result =>{
-    if(result.data === null){
-      addUserInfo(userInfo);
-    }else{updateUserInfo(userInfo, this.state.email)}
+    if(result.data.email === this.state.email){
+      updateUserInfo(userInfo, result.data.email)
+    }else{addUserInfo(userInfo);}
   })
   
   this.props.history.push({ pathname: '/resume', state: this.state });

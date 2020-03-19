@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import 'materialize-css';
 import dateFormat from 'dateformat';
 import Loading from '../components/Loading';
-// import { useAuth0 } from '../react-auth0-spa';
+
 
 dotenv.config();
 
@@ -117,7 +117,7 @@ export default class jobListing extends React.Component {
 
                                 <div className="card-action">
                                     <a href={ item.url} target='_blank'className="btn brown darken-4">Apply</a>
-                                    {/* <a className="btn brown darken-4"><i className="material-icons">save</i></a> */}
+                                    <a className="btn brown darken-4"><i className="material-icons">save</i></a>
                                 </div>
 
                                 <div className="card-reveal brown darken-4">
