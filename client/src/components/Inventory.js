@@ -1,7 +1,8 @@
 import React, { Component, useState } from 'react';
 import { api } from '../utils/api';
 import { useUserContext } from '../contexts/UserContext';
-import Scroll from '../assets/Scroll.jpeg';
+import Scroll from '../assets/Scroll.png';
+import Bow from '../assets/Bow.png';
 import '../styles/table.css';
 import 'materialize-css';
 
@@ -30,7 +31,11 @@ const Inventory = () => {
                                 (state.user.inventory.scroll) ? <img src={Scroll} style={imgStyle} /> : null
                             }
                         </td>
-                        <td></td>
+                        <td>
+                            {
+                                (state.user.inventory.bow) ? <img src={Bow} style={imgStyle} /> : null
+                            }
+                        </td>
                         <td></td>
                         <td></td>
                     </tr>
