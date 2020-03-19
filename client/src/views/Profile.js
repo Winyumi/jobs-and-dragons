@@ -16,10 +16,7 @@ const Profile = () => {
     if (loading || !user) {
       return <Loading />;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 760517ca3506414cfd6ac071d60d0b4311d66b2e
     api.getUserInfo(user.email).then(result => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
