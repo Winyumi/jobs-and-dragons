@@ -5,13 +5,13 @@ import Chest from '../components/Chest';
 import CharBox from '../components/CharBox';
 import Quests from '../components/QuestsList';
 import { usePlayerContext } from '../contexts/PlayerContext';
+import history from '../utils/history';
 
-const Game = props => {
+const Game = () => {
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState();
   const [isOpening, setIsOpening] = useState();
   const [isAccepted, setIsAccepted] = useState(false);
-
   useEffect(() => {
     setIsInteracting(state.isInteracting);
     setIsOpening(state.isOpening);
@@ -79,8 +79,7 @@ const Game = props => {
             alignItems: 'center'
           }}
         >
-
-          <World path='/game/' />
+          <World path={history.location.pathname} />
         </div>
       </div>
       {isInteracting && (
@@ -90,12 +89,7 @@ const Game = props => {
         />
       )}
       {isAccepted && <Quests />}
-      {isOpening && (
-        <Chest
-        handleDecline={handleLinkDecline}
-        />
-      )}
-
+      {isOpening && <Chest handleDecline={handleLinkDecline} />}
     </>
   );
 };

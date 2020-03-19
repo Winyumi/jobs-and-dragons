@@ -26,8 +26,10 @@ const UserProvider = ({
       strength: 12,
       speed: 3,
       intelligence: 6,
-      scroll: false,
-      bow: false
+      inventory: {
+        scroll: false,
+        bow: false
+      }
     }
   },
   ...props
