@@ -6,7 +6,7 @@ const RateSkills = ({ label }) => {
   const [rating, setRating] = useState(0);
   return (
     <div className='col s4'>
-      <div className='card-panel #ef5350 red lighten-2'>
+      <div className='card-panel'>
         <span></span>
         {label}
         <div>
