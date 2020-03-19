@@ -75,7 +75,7 @@ export default class index extends Component {
   
   onSubmitHandler = e => {
     e.preventDefault();
-    console.log(this.state); 
+   
     let userInfo = {
       name: this.state.name,
       email:this.state.email,
@@ -83,25 +83,52 @@ export default class index extends Component {
       phone:this.state.phone,
       education:this.state.education,
       experience:this.state.experience,
+      expertise: this.state.expertise,
       descripiton:this.state.description,
       designation:this.state.designation
     };
-    
-    async function addUserInfo(userInfo) {
+    async function getUserInfo(email) {
+      const res = await fetch(`/api/v1/users/email/${email}`);
+      return res;
+    }
+    async function updateUserInfo(data, email){
+      const res= fetch(`/api/v1/users/email/${email}`,{
+        method:'PUT',
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+      const jsonRes = await res.json();
+      console.log(jsonRes);
+      return jsonRes.data;
+      }
+    }
+     async function addUserInfo(userInfo) {
+      //check if user exisits 
       const res = await fetch('/api/v1/users', {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(userInfo)
-      });
+        });
       if (res.ok) {
         const jsonRes = await res.json();
         console.log(jsonRes);
         return jsonRes.data;
       }
-  };
-  addUserInfo(userInfo);
+    };
+  
+  getUserInfo(this.state.email).then(result =>{
+    if(result.data === null){
+      addUserInfo(userInfo);
+    }else{updateUserInfo(userInfo, this.state.email)}
+  })
+  
   this.props.history.push({ pathname: '/resume', state: this.state });
 };
 
