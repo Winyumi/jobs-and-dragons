@@ -12,7 +12,6 @@ import { useAuth0 } from '../react-auth0-spa';
 const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
-
   useEffect(() => {
     if (loading || !user) {
       return <Loading />;
@@ -22,11 +21,39 @@ const Profile = () => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
       } else {
-        api.addUserInfo(user).then(result => {
-          if (result.success) {
-            dispatch({ type: 'user', payload: result.data });
-          }
-        });
+        let newUser = {
+          name: user.name,
+          email: user.email,
+          picture: user.picture,
+          gamestats: {}
+        };
+        window
+          .fetch(`https://api.github.com/users/${user.nickname}`)
+          .then(res => res.json())
+          .then(res => {
+            newUser.gamestats.publicRepos = res['public_repos'];
+            newUser.gamestats.followers = res['followers'];
+            return newUser;
+          })
+          .then(newUser => {
+            window
+              .fetch(`https://api.github.com/users/${user.nickname}/repos`)
+              .then(res => res.json())
+              .then(res => {
+                const numOfStars = res.reduce((acc, repo) => {
+                  return acc + repo['stargazers_count'];
+                }, 0);
+                newUser.gamestats.numOfStars = numOfStars;
+                return newUser;
+              })
+              .then(newUser => {
+                api.addUserInfo(newUser).then(result => {
+                  if (result.success) {
+                    dispatch({ type: 'user', payload: result.data });
+                  }
+                });
+              });
+          });
       }
     });
   }, [loading, user, dispatch]);
