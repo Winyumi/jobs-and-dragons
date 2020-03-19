@@ -1,5 +1,6 @@
 import React, { createContext, useReducer, useContext } from 'react';
 import { dungeon } from '../maps/dungeon';
+// import { guild } from '../maps/guild';
 
 const PlayerContext = createContext();
 const { Provider } = PlayerContext;
@@ -7,6 +8,11 @@ const { Provider } = PlayerContext;
 const SPRITE_SIZE = 40;
 const MAX_WIDTH = 600;
 const MAX_HEIGHT = 400;
+
+console.log()
+// const mapCheck = () => {
+//   if 
+// }
 
 const observeBoundries = newPosition => {
   return (
