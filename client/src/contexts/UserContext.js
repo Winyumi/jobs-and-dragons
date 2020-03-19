@@ -6,9 +6,16 @@ const { Provider } = UserContext;
 const userReducer = (state, action) => {
   switch (action.type) {
     case 'user':
-      console.log(action.payload);
       return {
-        user: action.payload
+        user: action.payload,
+        currentQuest: state.currentQuest
+      };
+    case 'quest':
+      return {
+        user: {
+          ...state.user
+        },
+        currentQuest: action.payload
       };
     default:
       return {
@@ -20,15 +27,29 @@ const userReducer = (state, action) => {
 const UserProvider = ({
   value = {
     user: {
-      name: 'Sal Tamay',
-      hp: 10,
-      jp: 2,
-      strength: 12,
-      speed: 3,
-      intelligence: 6,
-      scroll: false,
-      bow: false
-    }
+      _id: '',
+      name: '',
+      email: '',
+      picture: '',
+      gamestats: {
+        publicRepos: 0,
+        followers: 0,
+        numOfStars: 0,
+        jp: 20,
+        speed: 75
+      },
+      inventory: {
+        scroll: false,
+        bow: false
+      },
+      experience: [],
+      education: [],
+      skills: [],
+      projects: [],
+      expertise: [],
+      jobsearch: []
+    },
+    currentQuest: 'quest-01'
   },
   ...props
 }) => {

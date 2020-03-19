@@ -10,7 +10,7 @@ import Home from './views/Home';
 import Profile from './views/Profile';
 import Game from './views/Game';
 // import World from './components/World';
-import jobListing from  './views/jobListing';
+import jobListing from './views/jobListing';
 
 import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
@@ -33,19 +33,17 @@ const App = () => {
         <NavBar />
         <div className='row'>
           <Switch>
-
             <Route exact path='/' component={Home} />
             <Route exact path='/userinfo' component={UserInfo} />
             <Route exact path='/resume' component={resume} />
             <Route exact path='/joblisting' component={jobListing} />
-            
-            <Route exact path='/game'>
+
+            <Route path='/game'>
               <PlayerProvider>
                 <Game />
               </PlayerProvider>
             </Route>
             <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
-
           </Switch>
         </div>
       </div>

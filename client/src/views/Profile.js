@@ -11,20 +11,52 @@ import { useAuth0 } from '../react-auth0-spa';
 const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
-
+  console.log(state.user);
   useEffect(() => {
     if (loading || !user) {
       return <Loading />;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 760517ca3506414cfd6ac071d60d0b4311d66b2e
     api.getUserInfo(user.email).then(result => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
       } else {
-        api.addUserInfo(user).then(result => {
-          if (result.success) {
-            dispatch({ type: 'user', payload: result.data });
-          }
-        });
+        let newUser = {
+          name: user.name,
+          email: user.email,
+          picture: user.picture,
+          gamestats: {}
+        };
+        window
+          .fetch(`https://api.github.com/users/${user.nickname}`)
+          .then(res => res.json())
+          .then(res => {
+            newUser.gamestats.publicRepos = res['public_repos'];
+            newUser.gamestats.followers = res['followers'];
+            return newUser;
+          })
+          .then(newUser => {
+            window
+              .fetch(`https://api.github.com/users/${user.nickname}/repos`)
+              .then(res => res.json())
+              .then(res => {
+                const numOfStars = res.reduce((acc, repo) => {
+                  return acc + repo['stargazers_count'];
+                }, 0);
+                newUser.gamestats.numOfStars = numOfStars;
+                return newUser;
+              })
+              .then(newUser => {
+                api.addUserInfo(newUser).then(result => {
+                  if (result.success) {
+                    dispatch({ type: 'user', payload: result.data });
+                  }
+                });
+              });
+          });
       }
     });
   }, [loading, user, dispatch]);
@@ -54,6 +86,7 @@ const Profile = () => {
 
       <div className='center col s12 m6' style={{marginTop:'50px'}}>
         <h3>Begin Your QUEST</h3>
+<<<<<<< HEAD
         <Link 
         className='btn-large' 
         style= {BtnStyle} 
@@ -74,6 +107,14 @@ const Profile = () => {
         quest='2' 
         name='gameBtn'>
           Job Listings
+=======
+        <Link className='btn-large' to='/game/quest/01' name='gameBtn'>
+          Quest 1
+        </Link>
+        <br></br>
+        <Link className='btn-large' to='/game/quest/02' name='gameBtn'>
+          Quest 2
+>>>>>>> 760517ca3506414cfd6ac071d60d0b4311d66b2e
         </Link>
         <br></br>
         <Link 
