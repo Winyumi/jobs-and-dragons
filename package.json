@@ -4,6 +4,7 @@
   "description": "Job Search Game",
   "main": "server.js",
   "scripts": {
+    "test": "mocha --exit test/*.test.js",
     "lint": "eslint --fix /**/*.js --ignore-pattern node_modules/",
     "reload": "nodemon server",
     "dev": "concurrently \"npm run reload\" \"cd client && npm start\"",
