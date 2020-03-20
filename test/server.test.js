@@ -30,20 +30,32 @@ describe('API', () => {
     });
   });
 
-  describe('GET /api/v1/users/:email', () => {
+  describe('GET /api/v1/users/id/:id', () => {
     it('should get 200', done => {
       request(app)
-        .get('/api/v1/users/john.smith@example.com')
+        .get('/api/v1/users/id/5e74d179ba94f027f4344863')
         .expect(200, done);
     });
-    /*
     it('should get json', done => {
       request(app)
-        .get('/api/v1/users/john.smith@example.com')
+        .get('/api/v1/users/id/5e74d179ba94f027f4344863')
         .expect('Content-Type', /json/)
         .expect(200, done);
     });
-    */
+  });
+
+  describe('GET /api/v1/users/email/:email', () => {
+    it('should get 200', done => {
+      request(app)
+        .get('/api/v1/users/email/john.smith@example.com')
+        .expect(200, done);
+    });
+    it('should get json', done => {
+      request(app)
+        .get('/api/v1/users/email/john.smith@example.com')
+        .expect('Content-Type', /json/)
+        .expect(200, done);
+    });
   });
 
 });
