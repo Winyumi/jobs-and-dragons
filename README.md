@@ -80,11 +80,11 @@ SO THAT I be ready for the next opportunity
 
 ## Meet the Team
 
-[Anas Qazi](https://github.com/ianasqazi) worked on implementing authentication using auth0 and Job Listing api. Also in making the website mobile-responsive using google’s materialize css.
-[Anya Fareena](https://github.com/AnyaFareena) worked on the resume builder part of this project. Built react space where user is provided with form to enter details which in turns builds a resume with edit and download options
-[David Gehtman](https://github.com/davidgeht) worked on setting the Mongo Database, and creating the model schema. Also i worked on integrating the front end with the database.
-[Josh Fréchette](https://github.com/TwistedPixels) art direction and developing the gameplay of the app. Created mock-ups that determined the visual feel and flow of the app
-[Khalil Mouna](https://github.com/KhalilMouna) worked on frontend development as well as asset creation and helped create the overall look and feel of the app.
-[Sal Tamay](https://github.com/saltamay) implemented the Game Engine using React Hooks, and Context API. Designed and implemented how data (state) is managed within the app. Also, helped teammates when they get stuck with their parts.
-[Shaili Shah](https://github.com/sshaili) worked on the userinfo form for this project, Where user can enter their details that will help to match their profile for better job options.
-[Winson Quon](https://github.com/Winyumi) implemented the API controllers that access the database on the backend. Responsibilities also include overall code review, bug testing, Travis CI set up, Heroku deployment, and deployment testing.
+- [Anas Qazi](https://github.com/ianasqazi) worked on implementing authentication using auth0 and Job Listing api. Also in making the website mobile-responsive using google’s materialize css.
+- [Anya Fareena](https://github.com/AnyaFareena) worked on the resume builder part of this project. Built react space where user is provided with form to enter details which in turns builds a resume with edit and download options
+- [David Gehtman](https://github.com/davidgeht) worked on setting the Mongo Database, and creating the model schema. Also i worked on integrating the front end with the database.
+- [Josh Fréchette](https://github.com/TwistedPixels) art direction and developing the gameplay of the app. Created mock-ups that determined the visual feel and flow of the app
+- [Khalil Mouna](https://github.com/KhalilMouna) worked on frontend development as well as asset creation and helped create the overall look and feel of the app.
+- [Sal Tamay](https://github.com/saltamay) implemented the Game Engine using React Hooks, and Context API. Designed and implemented how data (state) is managed within the app. Also, helped teammates when they get stuck with their parts.
+- [Shaili Shah](https://github.com/sshaili) worked on the userinfo form for this project, Where user can enter their details that will help to match their profile for better job options.
+- [Winson Quon](https://github.com/Winyumi) implemented the API controllers that access the database on the backend. Responsibilities also include overall code review, bug testing, Travis CI set up, Heroku deployment, and deployment testing.
