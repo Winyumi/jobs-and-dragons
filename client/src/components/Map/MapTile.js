@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useUserContext } from '../../contexts/UserContext';
+import { usePlayerContext } from '../../contexts/PlayerContext';
 import wall from '../../assets/J&D_DungeonWall.png';
 import wallTorch from '../../assets/J&D_DungeonWallTorch.png';
 import chest from '../../assets/Chest.png';
@@ -9,13 +9,13 @@ import guardian from '../../assets/Guardian.png';
 import barrel from '../../assets/barrel.png';
 import grate from '../../assets/grate.png';
 
-const MapTile = props => {
-  const [state, dispatch] = useUserContext();
+const MapTile = (props) => {
+  const [state, dispatch] = usePlayerContext();
   const [tileSprites, setTileStripes] = useState({});
   useEffect(() => {
     const updateCurrentQuest = () => {
-      switch (state.currentQuest) {
-        case 'quest-01':
+      switch (state.currentMap) {
+        case 'dungeon':
           setTileStripes({
             0: 'clear',
             1: grate,
@@ -26,7 +26,7 @@ const MapTile = props => {
             6: chest,
           });
           break;
-        case 'quest-02':
+        case 'quild':
           setTileStripes({
             0: 'clear',
             1: 'clear',
@@ -34,7 +34,7 @@ const MapTile = props => {
             3: wall,
             4: guildwall,
             5: barrel,
-            6: chest
+            6: chest,
           });
           break;
         default:
@@ -42,9 +42,9 @@ const MapTile = props => {
       }
     };
     updateCurrentQuest();
-  }, [state.currentQuest]);
+  }, [state.currentMap]);
 
-  const getTileSprite = type => {
+  const getTileSprite = (type) => {
     switch (type) {
       case 1:
         return `url(${tileSprites['1']})`;
@@ -54,10 +54,10 @@ const MapTile = props => {
         return `url(${tileSprites['3']})`;
       case 4:
         return `url(${tileSprites['4']})`;
-        case 5:
-          return `url(${tileSprites['5']})`;
-          case 6:
-            return `url(${tileSprites['6']})`;
+      case 5:
+        return `url(${tileSprites['5']})`;
+      case 6:
+        return `url(${tileSprites['6']})`;
       default:
         return tileSprites[type];
     }
@@ -69,7 +69,7 @@ const MapTile = props => {
         width: 40,
         height: 40,
         display: 'inline-flex',
-        background: getTileSprite(props.tile)
+        background: getTileSprite(props.tile),
       }}
     >
       <p></p>

@@ -8,18 +8,18 @@ const userReducer = (state, action) => {
     case 'user':
       return {
         user: action.payload,
-        currentQuest: state.currentQuest
+        // currentQuest: state.currentQuest
       };
     case 'quest':
       return {
         user: {
-          ...state.user
+          ...state.user,
         },
-        currentQuest: action.payload
+        // currentQuest: action.payload
       };
     default:
       return {
-        ...state
+        ...state,
       };
   }
 };
@@ -36,20 +36,20 @@ const UserProvider = ({
         followers: 0,
         numOfStars: 0,
         jp: 20,
-        speed: 75
+        speed: 75,
       },
       inventory: {
         scroll: false,
-        bow: false
+        bow: false,
       },
       experience: [],
       education: [],
       skills: [],
       projects: [],
       expertise: [],
-      jobsearch: []
+      jobsearch: [],
     },
-    currentQuest: 'quest-01'
+    // currentQuest: 'quest-01'
   },
   ...props
 }) => {

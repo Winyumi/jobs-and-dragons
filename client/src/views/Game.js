@@ -9,7 +9,7 @@ import history from '../utils/history';
 
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
-  const [isInteracting, setIsInteracting] = useState();
+  const [isInteracting, setIsInteracting] = useState(false);
   const [isOpening, setIsOpening] = useState();
   const [isAccepted, setIsAccepted] = useState(false);
   useEffect(() => {
@@ -26,7 +26,7 @@ const Game = () => {
       height: '800px',
       margin: '0 auto',
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
     };
   } else {
     styles = {
@@ -35,7 +35,7 @@ const Game = () => {
       height: '800px',
       margin: '0 auto',
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
     };
   }
 
@@ -48,7 +48,7 @@ const Game = () => {
     setIsInteracting(!state.isInteracting);
     dispatch({
       action: 'toggleIsInteracting',
-      payload: !state.isInteracting
+      payload: !state.isInteracting,
     });
   };
 
@@ -56,7 +56,7 @@ const Game = () => {
     setIsOpening(!state.isOpening);
     dispatch({
       action: 'toggleIsOpening',
-      payload: !state.isOpening
+      payload: !state.isOpening,
     });
   };
 
@@ -66,7 +66,7 @@ const Game = () => {
         <div
           className='col s3 charnav'
           style={{
-            border: '1px solid black'
+            border: '1px solid black',
           }}
         >
           <CharBox />
@@ -76,7 +76,7 @@ const Game = () => {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
           }}
         >
           <World path={history.location.pathname} />
