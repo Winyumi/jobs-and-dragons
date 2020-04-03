@@ -39,9 +39,9 @@ const App = () => {
             <Route exact path='/joblisting' component={jobListing} />
 
             <Route path='/game'>
-              <PlayerProvider>
-                <Game />
-              </PlayerProvider>
+              {/* <PlayerProvider> */}
+              <Game />
+              {/* </PlayerProvider> */}
             </Route>
             <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
           </Switch>
