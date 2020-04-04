@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+
+import { Container, Row, Col } from 'react-materialize';
 import World from '../components/World';
 import Dialogue from '../components/Dialogue';
 import Chest from '../components/Chest';
@@ -62,16 +64,34 @@ const Game = () => {
 
   return (
     <>
-    <div class="container-fluid">
-    <div className='row' style={styles}>
-        <div
-          className='col s3 charnav'
-          style={{
-            border: '1px solid black',
-          }}
+    <Container>
+      <Row style={styles}>
+
+        <Col
+        className="charnav"
+        s={3}
+        style={CharBoxStyles}
         >
+        <CharBox />
+        </Col>
+
+        <Col
+        className=""
+        s={9}
+        >
+        <World path={history.location.pathname} /> 
+        </Col>
+
+
+      </Row>
+
+    </Container>
+    {/* <div className='row' style={styles}>
+
+        <div className='col s3 charnav' style={{ border: '1px solid black'}}>
           <CharBox />
         </div>
+        
         <div
           className='col s9'
           style={{
@@ -82,8 +102,7 @@ const Game = () => {
         >
           <World path={history.location.pathname} />
         </div>
-      </div>
-    </div>
+      </div> */}
       
 
       {isInteracting && (
@@ -97,4 +116,30 @@ const Game = () => {
     </>
   );
 };
+
+const CharBoxStyles = { 
+  background: 'pink',
+}
+
+const userImageStyle = { 
+  width:'200px',
+  background: '#333',
+  borderRadius: '25%',
+  fontFamily: 'Alagard',
+  margin:'10px',
+  font: 'Alagard',
+  boxShadow: '0 5px #999',
+
+  width:'200px',
+  height: '200px',
+  marginTop: '50px'
+}
+
+const cardStyle = {
+  fontFamily: 'Alagard',
+  fontSize: 'xx-large',
+  color: 'darkblue',
+  margin:'20px',
+}
+
 export default Game;
