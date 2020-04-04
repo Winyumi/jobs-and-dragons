@@ -62,7 +62,8 @@ const Game = () => {
 
   return (
     <>
-      <div className='row' style={styles}>
+    <div class="container-fluid">
+    <div className='row' style={styles}>
         <div
           className='col s3 charnav'
           style={{
@@ -82,6 +83,9 @@ const Game = () => {
           <World path={history.location.pathname} />
         </div>
       </div>
+    </div>
+      
+
       {isInteracting && (
         <Dialogue
           handleDecline={handleQuestDecline}
