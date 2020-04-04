@@ -23,21 +23,21 @@ const Game = () => {
   if (isInteracting || isAccepted) {
     styles = {
       opacity: '0.25',
-      padding: '100px 100px',
+      // padding: '100px 100px',
       width: '100%',
-      height: '800px',
-      margin: '0 auto',
+      height: '80vh',
+      // margin: '0 auto',
       display: 'flex',
-      justifyContent: 'center',
+      // justifyContent: 'center',
     };
   } else {
     styles = {
-      padding: '100px 100px',
+      // padding: '100px 100px',
       width: '100%',
-      height: '800px',
-      margin: '0 auto',
+      height: '80vh',
+      // margin: '0 auto',
       display: 'flex',
-      justifyContent: 'center',
+      // justifyContent: 'center',
     };
   }
 
@@ -64,8 +64,9 @@ const Game = () => {
 
   return (
     <>
-    <Container>
-      <Row style={styles}>
+    {/* <Container style={{ border: '1px solid black'}}> */}
+      <Row style={RowStyles}>
+
 
         <Col
         className="charnav"
@@ -78,6 +79,8 @@ const Game = () => {
         <Col
         className=""
         s={9}
+        style={GameBoxStyles}
+
         >
         <World path={history.location.pathname} /> 
         </Col>
@@ -85,7 +88,7 @@ const Game = () => {
 
       </Row>
 
-    </Container>
+    {/* </Container> */}
     {/* <div className='row' style={styles}>
 
         <div className='col s3 charnav' style={{ border: '1px solid black'}}>
@@ -117,11 +120,26 @@ const Game = () => {
   );
 };
 
-const CharBoxStyles = { 
-  background: 'pink',
+const RowStyles = { 
+  display:'flex',
+  justifyContent:'center',
 }
 
-const userImageStyle = { 
+const CharBoxStyles = { 
+  display:'flex',
+  justifyContent:'center',
+  background: 'pink',
+  margin: '20px'
+}
+
+const GameBoxStyles = { 
+  display:'flex',
+  justifyContent:'center',
+  margin: '20px'
+
+}
+
+const cardStyle = {
   width:'200px',
   background: '#333',
   borderRadius: '25%',
@@ -132,10 +150,8 @@ const userImageStyle = {
 
   width:'200px',
   height: '200px',
-  marginTop: '50px'
-}
+  marginTop: '50px',
 
-const cardStyle = {
   fontFamily: 'Alagard',
   fontSize: 'xx-large',
   color: 'darkblue',
