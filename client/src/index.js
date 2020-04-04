@@ -5,10 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from './react-auth0-spa';
 import { UserProvider } from './contexts/UserContext';
+import { PlayerProvider } from './contexts/PlayerContext';
 import config from './auth_config.json';
 import history from './utils/history';
 
-const onRedirectCallback = appState => {
+const onRedirectCallback = (appState) => {
   history.push(
     appState && appState.targetUrl
       ? appState.targetUrl
@@ -24,7 +25,9 @@ ReactDOM.render(
     onRedirectCallback={onRedirectCallback}
   >
     <UserProvider>
-      <App />
+      <PlayerProvider>
+        <App />
+      </PlayerProvider>
     </UserProvider>
   </Auth0Provider>,
   document.getElementById('root')

@@ -1,18 +1,20 @@
 import React from 'react';
 import OracleBox from '../assets/OracleBox.png';
 import GuardianBox from '../assets/GuardianBox.png';
+import { usePlayerContext } from '../contexts/PlayerContext';
 import { useUserContext } from '../contexts/UserContext';
 // import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
 import { Link } from 'react-router-dom';
 
 // Dialogue box content needs to be replaced with dynamic content determined by props
-const Dialogue = props => {
-  const [state, dispatch] = useUserContext();
-  console.log(state);
+const Dialogue = (props) => {
+  const [gameState] = usePlayerContext();
+  const [state] = useUserContext();
+  console.log(gameState);
   const imgStyle = {
     float: 'right',
-    width: '100px'
+    width: '100px',
   };
   const modalStyle = {
     color: 'white',
@@ -22,9 +24,9 @@ const Dialogue = props => {
     left: '33%',
     width: '700px',
     height: '300px',
-    padding: '20px'
+    padding: '20px',
   };
-  if (state.currentQuest === 'quest-01') {
+  if (gameState.currentMap === 'dungeon') {
     console.log('dialogue', props);
     return (
       <div className='modal-content' style={modalStyle}>
@@ -41,17 +43,17 @@ const Dialogue = props => {
             </p>
             <ul>
               <li>
-                {state.currentQuest === 'quest-01' ? (
+                {gameState.currentMap === 'dungeon' ? (
                   <Link
                     to='/userinfo'
-                    onClick={e => {
+                    onClick={(e) => {
                       // e.preventDefault();
                       props.handleAccept();
                     }}
                   >
                     Yes!
                   </Link>
-                ) : state.currentQuest === 'quest-02' ? (
+                ) : gameState.currentMap === 'guild' ? (
                   <Link to='/joblisting'>Yes!</Link>
                 ) : null}
               </li>
@@ -59,7 +61,7 @@ const Dialogue = props => {
                 <a
                   className='modal-close'
                   href='#!'
-                  onClick={e => {
+                  onClick={(e) => {
                     e.preventDefault();
                     props.handleDecline();
                   }}
@@ -72,7 +74,7 @@ const Dialogue = props => {
         </div>
       </div>
     );
-  } else if (state.currentQuest === 'quest-02') {
+  } else if (gameState.currentMap === 'guild') {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -95,7 +97,7 @@ const Dialogue = props => {
                 <a
                   className='modal-close'
                   href='#!'
-                  onClick={e => {
+                  onClick={(e) => {
                     e.preventDefault();
                     props.handleAccept();
                   }}
@@ -107,7 +109,7 @@ const Dialogue = props => {
                 <a
                   className='modal-close'
                   href='#!'
-                  onClick={e => {
+                  onClick={(e) => {
                     e.preventDefault();
                     props.handleDecline();
                   }}
