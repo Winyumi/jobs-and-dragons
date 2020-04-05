@@ -9,6 +9,8 @@ import Quests from '../components/QuestsList';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import history from '../utils/history';
 
+import background from '../assets/J&D_BG.png';
+
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState(false);
@@ -60,7 +62,7 @@ const Game = () => {
 
   return (
     <>
-    {/* <Container style={{ border: '1px solid black'}}> */}
+    <div style={PageStyles}>
       <Row style={RowStyles}>
 
 
@@ -84,7 +86,7 @@ const Game = () => {
 
       </Row>
 
-    {/* </Container> */}
+    </div>
     {/* <div className='row' style={styles}>
 
         <div className='col s3 charnav' style={{ border: '1px solid black'}}>
@@ -116,6 +118,13 @@ const Game = () => {
   );
 };
 
+const PageStyles = {
+  width: "100vw",
+  height: "80vh",
+  backgroundImage: `url(${background})`,
+  backgroundSize: 'cover'
+
+}
 
 const CharBoxStyles = { 
   display:'box',
