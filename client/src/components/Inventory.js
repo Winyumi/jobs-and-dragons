@@ -1,4 +1,7 @@
 import React, { Component, useState } from 'react';
+
+import { Table } from 'react-materialize';
+
 import { api } from '../utils/api';
 import { useUserContext } from '../contexts/UserContext';
 import Scroll from '../assets/Scroll.png';
@@ -16,14 +19,8 @@ const Inventory = () => {
     console.log(state)
     return (
         <>
-            <div className="row"
-                style={{
-                    margin: '1rem'
-                }}
-            >
-                <h4 className='center'>Inventory</h4>
-                <table
-                >
+            <h4 className='center'>INVENTORY</h4>
+                <Table>
                     <tbody>
                         <tr>
                             <td>
@@ -40,8 +37,7 @@ const Inventory = () => {
                             <td></td>
                         </tr>
                     </tbody>
-                </table>
-            </div>
+                </Table>
         </>
     )
 }
