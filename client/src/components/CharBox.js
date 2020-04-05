@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { useUserContext } from '../contexts/UserContext';
 import Stats from '../components/Stats';
 import Inventory from '../components/Inventory';
@@ -12,11 +13,13 @@ const CharBox = () => {
   }, [state.user.name]);
 
   return (
-    <div className='row'>
+
+    <>
       <h5 className='center'>{name}</h5>
       <Stats />
       <Inventory />
-    </div>
+    </>
+
   );
 };
 
