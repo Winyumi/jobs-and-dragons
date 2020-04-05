@@ -10,6 +10,7 @@ import { usePlayerContext } from '../contexts/PlayerContext';
 import history from '../utils/history';
 
 import background from '../assets/J&D_BG.png';
+import dungeonBG from '../assets/J&D_DungeonWall.png';
 
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
@@ -65,13 +66,14 @@ const Game = () => {
     <div style={PageStyles}>
       <Row style={RowStyles}>
 
-
         <Col
         className="charnav"
         s={3}
         style={CharBoxStyles}
         >
-          <div><CharBox /></div>
+          <div style={DoubleBox}>
+            <CharBox />
+          </div>
         
         </Col>
 
@@ -83,29 +85,10 @@ const Game = () => {
         <World path={history.location.pathname} /> 
         </Col>
 
-
       </Row>
 
     </div>
-    {/* <div className='row' style={styles}>
-
-        <div className='col s3 charnav' style={{ border: '1px solid black'}}>
-          <CharBox />
-        </div>
-        
-        <div
-          className='col s9'
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <World path={history.location.pathname} />
-        </div>
-      </div> */}
-      
-
+   
       {isInteracting && (
         <Dialogue
           handleDecline={handleQuestDecline}
@@ -118,29 +101,33 @@ const Game = () => {
   );
 };
 
+const DoubleBox = { 
+ margin: '30px',
+ padding: '30px',
+ paddingBottom: '100px',
+ background: 'white',
+}
+
 const PageStyles = {
   width: "100vw",
   height: "80vh",
   backgroundImage: `url(${background})`,
   backgroundSize: 'cover'
-
 }
 
 const CharBoxStyles = { 
   display:'box',
   justifyContent:'center',
-  background: 'red',
+  backgroundImage: `url(${dungeonBG})`,
   margin: '20px',
+  marginBotton: '100px',
   border: '2px solid',
-  // transform: 'translateX(-20%) translateY(-20%) rotate(-45deg)',
-  // animation: 'animate 20s linear infinite'
 }
 
 const GameBoxStyles = { 
   display:'flex',
   justifyContent:'center',
   margin: '20px'
-
 }
 
 export default Game;
