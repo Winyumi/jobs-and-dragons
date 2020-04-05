@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
 import { Container, Row, Col } from 'react-materialize';
+
 import World from '../components/World';
 import Dialogue from '../components/Dialogue';
 import Chest from '../components/Chest';
