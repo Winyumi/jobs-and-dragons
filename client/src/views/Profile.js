@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
 import { api } from '../utils/api';
 
+import background from '../assets/J&D_BG.png';
+
 import 'materialize-css';
 
 import Loading from '../components/Loading';
@@ -79,7 +81,7 @@ const Profile = () => {
   }, [loading, user, dispatch]);
 
   function changeTo(e) {
-    e.target.style.background = 'darkblue';
+    e.target.style.background = 'red';
     e.target.style.translate = '5px'
   }
 
@@ -96,12 +98,12 @@ const Profile = () => {
           className='circle responsive-img'
           style = {userImageStyle}
         />
-        <h3>USERNAME</h3>
-        <div className='card-panel grey' style={cardStyle}>{user.name}</div>
+        <h3 style={{color:'red'}}>USERNAME</h3>
+        <div className='card-panel' style={cardStyle}>{user.name}</div>
       </div>
 
       <div className='center col s12 m6' style={{marginTop:'50px'}}>
-        <h3>Begin Your QUEST</h3>
+        <h3 style={{color:'red'}}>Begin Your QUEST</h3>
         <Link 
         className='btn-large' 
         style= {BtnStyle} 
@@ -138,7 +140,10 @@ const Profile = () => {
 };
 
 const profileStyle = {
-  height: '80vh'
+  height: '80vh',
+  backgroundImage: `url(${background})`,
+  backgroundSize: 'cover'
+
 }
 
 const BtnStyle = { 
@@ -160,7 +165,7 @@ const userImageStyle = {
 const cardStyle = {
   fontFamily: 'Alagard',
   fontSize: 'xx-large',
-  color: 'darkblue',
+  color: 'white',
   margin:'20px',
 }
 
