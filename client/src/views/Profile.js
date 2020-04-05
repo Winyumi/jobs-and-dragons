@@ -140,7 +140,7 @@ const Profile = () => {
 };
 
 const profileStyle = {
-  height: '80vh',
+  height: '90vh',
   backgroundImage: `url(${background})`,
   backgroundSize: 'cover',
 }
