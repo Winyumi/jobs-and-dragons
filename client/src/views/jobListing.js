@@ -5,6 +5,9 @@ import 'materialize-css';
 import dateFormat from 'dateformat';
 import Loading from '../components/Loading';
 
+import background from '../assets/J&D_BG.png';
+
+
 
 dotenv.config();
 
@@ -81,11 +84,12 @@ export default class jobListing extends React.Component {
         return <div><Loading /></div>;
       } else {
         return (
-
+          <>
+          <div style={ListingStyles}>
             <div className='row'>
 
                 <div className='center col s12 m3'>
-                    <h4>JOB LISTINGS</h4>
+                    <h4 style={{color:'red'}}>JOB LISTINGS</h4>
                     <div className='center input-field'>
                         <i className="large material-icons prefix">work</i>
                         <input id="searchBox" 
@@ -98,7 +102,7 @@ export default class jobListing extends React.Component {
                     <input
                     type='submit'
                     value='SEARCH'
-                    className='btn brown darken-4'
+                    className='btn red darken-4'
                     onClick= { e => this.handleSubmitSearch(e) }
                     />
                 </div>
@@ -108,25 +112,25 @@ export default class jobListing extends React.Component {
                     {items.map(item => (
                         <li key={ item.id }>
 
-                            <div className="card brown lighten-3">
+                            <div className="card red lighten-3">
 
                                 <div className="card-content">
-                                    <h6 className="card-title activator">{ item.title }<i className="material-icons right">more_vert</i></h6>
+                                    <h4 className="card-title activator">{ item.title }<i className="material-icons right">more_vert</i></h4>
                                     <p> <b>Company :</b> { item.company.name } </p>
                                     <p> <b>Type :</b> { item.type.name }</p>
                                     <p> <b>Date :</b> { dateFormat( item.post_date , "dddd, mmmm dS, yyyy") }</p>
                                 </div>
 
                                 <div className="card-action">
-                                    <a href={ item.url} target='_blank'className="btn brown darken-4">Apply</a>
-                                    <a className="btn brown darken-4"><i className="material-icons">save</i></a>
+                                    <a href={ item.url } target='_blank'className="btn red darken-4">Apply</a>
+                                    {/* <a className="btn red darken-4"><i className="material-icons">save</i></a> */}
                                 </div>
 
-                                <div className="card-reveal brown darken-4">
-                                    <span className="card-title brown darken-4 brown lighten-3"><i className="material-icons right">close</i></span>
-                                    <p className="brown lighten-3"> <b>Category :</b> { item.category.name }</p>
-                                    <p className="brown lighten-3"> <b>Perks :</b> { item.perks }</p>
-                                    <p className="brown lighten-3"> <b>Description :</b> { item.description }</p>
+                                <div className="card-reveal red darken-4">
+                                    <span className="card-title red darken-4 red lighten-3"><i className="material-icons right">close</i></span>
+                                    <p className="red lighten-3"> <b>Category :</b> { item.category.name }</p>
+                                    <p className="red lighten-3"> <b>Perks :</b> { item.perks }</p>
+                                    <p className="red lighten-3"> <b>Description :</b> { item.description }</p>
 
 
                                 </div>
@@ -137,8 +141,17 @@ export default class jobListing extends React.Component {
                     </ul>    
                 </div>
             </div>
-    
+          </div>
+          </>
         );
       }
     }
+  }
+
+  const ListingStyles = { 
+    height: '90vh',
+
+    // backgroundImage: `url(${background})`,
+    backgroundSize: 'cover'
+
   }
