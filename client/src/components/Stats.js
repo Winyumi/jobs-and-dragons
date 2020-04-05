@@ -51,9 +51,9 @@ const Filler = props => {
     <div
       className='filler'
       style={{
-        background: '#1DA598',
+        background: 'red',
         height: '100%',
-        width: `${props.stat}px`
+        width: `${props.stat}px`,
       }}
     >
       <p>{props.stat}/100</p>
