@@ -30,9 +30,10 @@ const topStyle = {
 }
 
 const bgStyle = { 
-  height: '80vh',
+  height: '97vh',
   width: '100vw',
-  position: 'relative'
+  position: 'relative',
+
 }
 
 const brandLogoStyle = {
