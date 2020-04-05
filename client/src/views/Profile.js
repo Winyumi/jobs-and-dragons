@@ -142,8 +142,7 @@ const Profile = () => {
 const profileStyle = {
   height: '80vh',
   backgroundImage: `url(${background})`,
-  backgroundSize: 'cover'
-
+  backgroundSize: 'cover',
 }
 
 const BtnStyle = { 
