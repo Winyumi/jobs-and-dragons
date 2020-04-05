@@ -19,25 +19,21 @@ const Game = () => {
     setIsOpening(state.isOpening);
   }, [state.isInteracting, state.isOpening]);
 
-  let styles;
+  let RowStyles;
   if (isInteracting || isAccepted) {
-    styles = {
+    RowStyles = {
       opacity: '0.25',
-      // padding: '100px 100px',
-      width: '100%',
-      height: '80vh',
-      // margin: '0 auto',
       display: 'flex',
-      // justifyContent: 'center',
+      justifyContent: 'center',
+      height: '80vh',
+
     };
   } else {
-    styles = {
-      // padding: '100px 100px',
-      width: '100%',
-      height: '80vh',
-      // margin: '0 auto',
+    RowStyles = {
       display: 'flex',
-      // justifyContent: 'center',
+      justifyContent: 'center',
+      height: '80vh',
+
     };
   }
 
@@ -73,14 +69,14 @@ const Game = () => {
         s={3}
         style={CharBoxStyles}
         >
-        <CharBox />
+          <div><CharBox /></div>
+        
         </Col>
 
         <Col
         className=""
         s={9}
         style={GameBoxStyles}
-
         >
         <World path={history.location.pathname} /> 
         </Col>
@@ -120,16 +116,15 @@ const Game = () => {
   );
 };
 
-const RowStyles = { 
-  display:'flex',
-  justifyContent:'center',
-}
 
 const CharBoxStyles = { 
-  display:'flex',
+  display:'box',
   justifyContent:'center',
-  background: 'pink',
-  margin: '20px'
+  background: 'red',
+  margin: '20px',
+  border: '2px solid',
+  // transform: 'translateX(-20%) translateY(-20%) rotate(-45deg)',
+  // animation: 'animate 20s linear infinite'
 }
 
 const GameBoxStyles = { 
@@ -137,25 +132,6 @@ const GameBoxStyles = {
   justifyContent:'center',
   margin: '20px'
 
-}
-
-const cardStyle = {
-  width:'200px',
-  background: '#333',
-  borderRadius: '25%',
-  fontFamily: 'Alagard',
-  margin:'10px',
-  font: 'Alagard',
-  boxShadow: '0 5px #999',
-
-  width:'200px',
-  height: '200px',
-  marginTop: '50px',
-
-  fontFamily: 'Alagard',
-  fontSize: 'xx-large',
-  color: 'darkblue',
-  margin:'20px',
 }
 
 export default Game;
