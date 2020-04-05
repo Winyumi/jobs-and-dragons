@@ -104,7 +104,7 @@ const Game = () => {
 const DoubleBox = { 
  margin: '30px',
  padding: '30px',
- paddingBottom: '100px',
+ paddingBottom: '50px',
  background: 'white',
 }
 
@@ -120,7 +120,6 @@ const CharBoxStyles = {
   justifyContent:'center',
   backgroundImage: `url(${dungeonBG})`,
   margin: '20px',
-  marginBotton: '100px',
   border: '2px solid',
 }
 
