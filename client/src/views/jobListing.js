@@ -8,7 +8,9 @@ import Loading from '../components/Loading';
 
 dotenv.config();
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+// const API_KEY = process.env.REACT_APP_API_KEY;
+
+const API_KEY='885f51fcf0d78fe6f0d8f3a0420e4445';
 
 export default class jobListing extends React.Component {
 
@@ -30,7 +32,7 @@ export default class jobListing extends React.Component {
         .then(
 
             (result) => {
-                // console.log(result);
+                console.log(result);
               this.setState({
                 isLoaded: true,
                 items: result.listings.listing

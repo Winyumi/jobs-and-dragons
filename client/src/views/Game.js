@@ -28,14 +28,12 @@ const Game = () => {
       opacity: '0.25',
       display: 'flex',
       justifyContent: 'center',
-      height: '80vh',
 
     };
   } else {
     RowStyles = {
       display: 'flex',
       justifyContent: 'center',
-      height: '80vh',
 
     };
   }
@@ -110,7 +108,7 @@ const DoubleBox = {
 
 const PageStyles = {
   width: "100vw",
-  height: "80vh",
+  height: "100vh",
   backgroundImage: `url(${background})`,
   backgroundSize: 'cover'
 }
