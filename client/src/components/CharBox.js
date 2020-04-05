@@ -15,7 +15,7 @@ const CharBox = () => {
   return (
 
     <>
-      <h5 className='center'>{name}</h5>
+      <h4 className='center'>{name}</h4>
       <Stats />
       <Inventory />
     </>

@@ -15,33 +15,34 @@ const Inventory = () => {
     }
     console.log(state)
     return (
-        <div className="row"
-            style={{
-                margin: '1rem'
-            }}
-        >
-            <h4 className='center'>Inventory</h4>
-            <table
-            // style={tableStyle}
+        <>
+            <div className="row"
+                style={{
+                    margin: '1rem'
+                }}
             >
-                <tbody>
-                    <tr>
-                        <td>
-                            {
-                                (state.user.inventory.scroll) ? <img src={Scroll} style={imgStyle} /> : null
-                            }
-                        </td>
-                        <td>
-                            {
-                                (state.user.inventory.bow) ? <img src={Bow} style={imgStyle} /> : null
-                            }
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                <h4 className='center'>Inventory</h4>
+                <table
+                >
+                    <tbody>
+                        <tr>
+                            <td>
+                                {
+                                    (state.user.inventory.scroll) ? <img src={Scroll} style={imgStyle} /> : null
+                                }
+                            </td>
+                            <td>
+                                {
+                                    (state.user.inventory.bow) ? <img src={Bow} style={imgStyle} /> : null
+                                }
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </>
     )
 }
 
