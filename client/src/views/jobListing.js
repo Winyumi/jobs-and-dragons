@@ -102,7 +102,7 @@ export default class jobListing extends React.Component {
                     <input
                     type='submit'
                     value='SEARCH'
-                    className='btn red darken-4'
+                    className='btn btn-large red darken-4'
                     onClick= { e => this.handleSubmitSearch(e) }
                     />
                 </div>
