@@ -6,8 +6,8 @@ const PlayerContext = createContext();
 const { Provider } = PlayerContext;
 
 const SPRITE_SIZE = 40;
-const MAX_WIDTH = 600;
-const MAX_HEIGHT = 400;
+const MAX_WIDTH = 1200;
+const MAX_HEIGHT = 800;
 
 const setCurrentMap = (currentMap) => {
   let map;

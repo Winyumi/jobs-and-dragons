@@ -26,7 +26,7 @@ const MapTile = (props) => {
             6: chest,
           });
           break;
-        case 'quild':
+        case 'guild':
           setTileStripes({
             0: 'clear',
             1: 'clear',

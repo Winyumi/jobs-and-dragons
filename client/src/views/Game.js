@@ -3,7 +3,7 @@ import World from '../components/World';
 import Dialogue from '../components/Dialogue';
 import Chest from '../components/Chest';
 import CharBox from '../components/CharBox';
-import Quests from '../components/QuestsList';
+// import Quests from '../components/QuestsList';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import history from '../utils/history';
 
@@ -12,6 +12,7 @@ const Game = () => {
   const [isInteracting, setIsInteracting] = useState(false);
   const [isOpening, setIsOpening] = useState();
   const [isAccepted, setIsAccepted] = useState(false);
+  
   useEffect(() => {
     setIsInteracting(state.isInteracting);
     setIsOpening(state.isOpening);
@@ -23,8 +24,8 @@ const Game = () => {
       opacity: '0.25',
       padding: '100px 100px',
       width: '100%',
-      height: '800px',
-      margin: '0 auto',
+      height: '1000px',
+      margin: '1em 1em 1em 1em',
       display: 'flex',
       justifyContent: 'center',
     };
@@ -33,7 +34,7 @@ const Game = () => {
       padding: '100px 100px',
       width: '100%',
       height: '800px',
-      margin: '0 auto',
+      margin: '1em 1em 1em 1em',
       display: 'flex',
       justifyContent: 'center',
     };
@@ -77,6 +78,7 @@ const Game = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            margin: '2em'
           }}
         >
           <World path={history.location.pathname} />

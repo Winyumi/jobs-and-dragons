@@ -46,8 +46,8 @@ const World = (props) => {
       <div
         style={{
           position: 'relative',
-          width: '600px',
-          height: '400px',
+          width: '1200px',
+          height: '800px',
           backgroundImage: `url(${mapBackground})`,
         }}
       >
