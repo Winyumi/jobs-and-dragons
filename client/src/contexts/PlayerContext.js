@@ -40,7 +40,7 @@ const observeObstacles = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile <= 1;
+  return nextTile >= 11;
 };
 
 const observeInteraction = (newPosition, currentMap) => {
@@ -51,7 +51,7 @@ const observeInteraction = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile === 2;
+  return nextTile <= 5;
 };
 
 const observeOpening = (newPosition, currentMap) => {
@@ -62,7 +62,7 @@ const observeOpening = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile === 6;
+  return nextTile === 6 || 7 || 8 || 9 || 10;
 };
 
 const dispatchMove = (oldPosition, newPosition, currentMap) => {
