@@ -201,7 +201,7 @@ const playerReducer = (state, action) => {
 
 const PlayerProvider = ({
   value = {
-    position: [40, 40],
+    position: [120, 40],
     spritePosition: '0px 0px',
     direction: 'east',
     walkIndex: 0,
