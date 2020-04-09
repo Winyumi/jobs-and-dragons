@@ -3,11 +3,16 @@ import { usePlayerContext } from '../../contexts/PlayerContext';
 import wall from '../../assets/J&D_DungeonWall.png';
 import wallTorch from '../../assets/J&D_DungeonWallTorch.png';
 import chest from '../../assets/Chest.png';
-import oracle from '../../assets/Oracle.png';
+import oracle from '../../assets/Oracle-R.png';
 import guildwall from '../../assets/GuildWall.png';
 import guardian from '../../assets/Guardian.png';
 import barrel from '../../assets/barrel.png';
 import grate from '../../assets/grate.png';
+import crate from '../../assets/Crate.png';
+import plant from '../../assets/Plant.png';
+import bookcase from '../../assets/BookCase.png';
+import bed from '../../assets/Bed.png';
+import table from '../../assets/table.png';
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -19,11 +24,16 @@ const MapTile = (props) => {
           setTileStripes({
             0: 'clear',
             1: grate,
-            2: oracle,
-            3: wall,
+            11: oracle,
             4: wallTorch,
             5: barrel,
             6: chest,
+            16: wall,
+            17: crate,
+            18: plant,
+            19: bookcase,
+            20: bed,
+            21: table,
           });
           break;
         case 'guild':
@@ -58,6 +68,39 @@ const MapTile = (props) => {
         return `url(${tileSprites['5']})`;
       case 6:
         return `url(${tileSprites['6']})`;
+      case 7:
+        return `url(${tileSprites['8']})`;
+      case 8:
+        return `url(${tileSprites['8']})`;
+      case 9:
+        return `url(${tileSprites['9']})`;
+      case 10:
+        return `url(${tileSprites['10']})`;
+      case 11:
+        return `url(${tileSprites['11']})`;
+      case 12:
+        return `url(${tileSprites['12']})`;
+      case 13:
+        return `url(${tileSprites['14']})`;
+      case 14:
+        return `url(${tileSprites['14']})`;
+      case 15:
+        return `url(${tileSprites['15']})`;
+      case 16:
+        return `url(${tileSprites['16']})`;
+      case 17:
+        return `url(${tileSprites['17']})`;
+      case 18:
+        return `url(${tileSprites['18']})`;
+      case 19:
+        return `url(${tileSprites['19']})`;
+      case 20:
+        return `url(${tileSprites['20']})`;
+      case 21:
+        return `url(${tileSprites['21']})`;
+      case 22:
+        return `url(${tileSprites['22']})`;
+
       default:
         return tileSprites[type];
     }
