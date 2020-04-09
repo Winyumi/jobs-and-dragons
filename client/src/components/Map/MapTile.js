@@ -13,6 +13,7 @@ import plant from '../../assets/Plant.png';
 import bookcase from '../../assets/BookCase.png';
 import bed from '../../assets/Bed.png';
 import table from '../../assets/table.png';
+import door from '../../assets/DungeonDoor.png';
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -25,8 +26,8 @@ const MapTile = (props) => {
             0: 'clear',
             1: grate,
             11: oracle,
-            4: wallTorch,
-            5: barrel,
+            23: wallTorch,
+            24: barrel,
             6: chest,
             16: wall,
             17: crate,
@@ -34,6 +35,7 @@ const MapTile = (props) => {
             19: bookcase,
             20: bed,
             21: table,
+            22: door,
           });
           break;
         case 'guild':
@@ -100,6 +102,10 @@ const MapTile = (props) => {
         return `url(${tileSprites['21']})`;
       case 22:
         return `url(${tileSprites['22']})`;
+        case 23:
+          return `url(${tileSprites['23']})`;
+          case 24:
+            return `url(${tileSprites['24']})`;
 
       default:
         return tileSprites[type];

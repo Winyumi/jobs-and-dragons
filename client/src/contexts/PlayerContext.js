@@ -40,7 +40,7 @@ const observeObstacles = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile <= 1;
+  return nextTile <= 5;
 };
 
 const observeInteraction = (newPosition, currentMap) => {
