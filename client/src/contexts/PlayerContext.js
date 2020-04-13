@@ -76,12 +76,6 @@ const dispatchMove = (oldPosition, newPosition, currentMap) => {
   }
 };
 
-// const startDialogue = newPosition => {
-//   if (observeInteraction(newPosition)) {
-//     alert('dialogue!');
-//   }
-// };
-
 const getSpriteLocation = (direction, walkIndex) => {
   switch (direction) {
     case 'east':

@@ -14,6 +14,17 @@ import bookcase from '../../assets/BookCase.png';
 import bed from '../../assets/Bed.png';
 import table from '../../assets/table.png';
 import door from '../../assets/DungeonDoor.png';
+import redwall from '../../assets/RedBrick.png';
+import bardoor from '../../assets/BarsDoor.png';
+import crate2 from '../../assets/Crate2.png';
+import bartop from '../../assets/BarTop.png';
+import bartopdrink from '../../assets/BarTopDrink.png';
+import drinkbarrel from '../../assets/DrinkBarrel.png';
+import guilddoor from '../../assets/GuildDoor.png';
+import guildwallbanner from '../../assets/GuildWallBan.png';
+import rack from '../../assets/Rack.png';
+import tableext from '../../assets/tableExt.png';
+import barrel2 from '../../assets/barrel2.png';
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -41,12 +52,25 @@ const MapTile = (props) => {
         case 'guild':
           setTileStripes({
             0: 'clear',
-            1: 'clear',
-            2: guardian,
-            3: wall,
-            4: guildwall,
-            5: barrel,
+            1: grate,
+            2: bardoor,
             6: chest,
+            11: guardian,
+            16: redwall,
+            17: guildwall,
+            18: guildwallbanner,
+            19: plant,
+            20: bed,
+            21: table,
+            22: tableext,
+            23: rack,
+            24: barrel,
+            25: bartop,
+            26: bartopdrink,
+            27: guilddoor,
+            28: drinkbarrel,
+            29: crate2,
+            30: barrel2,
           });
           break;
         default:
@@ -102,10 +126,22 @@ const MapTile = (props) => {
         return `url(${tileSprites['21']})`;
       case 22:
         return `url(${tileSprites['22']})`;
-        case 23:
-          return `url(${tileSprites['23']})`;
-          case 24:
-            return `url(${tileSprites['24']})`;
+      case 23:
+        return `url(${tileSprites['23']})`;
+      case 24:
+        return `url(${tileSprites['24']})`;
+      case 25:
+        return `url(${tileSprites['25']})`;
+      case 26:
+        return `url(${tileSprites['26']})`;
+      case 27:
+        return `url(${tileSprites['27']})`;
+      case 28:
+        return `url(${tileSprites['28']})`;
+      case 29:
+        return `url(${tileSprites['29']})`;
+      case 30:
+        return `url(${tileSprites['30']})`;
 
       default:
         return tileSprites[type];

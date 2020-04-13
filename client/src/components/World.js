@@ -3,7 +3,7 @@ import { usePlayerContext } from '../contexts/PlayerContext';
 import Player from './Player';
 import Map from './Map/Map';
 import dungeonBG from '../assets/J&D_DungeonFloor.png';
-import quildBG from '../assets/GuildFloor.png';
+import quildBG from '../assets/GuildFloor2.png';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
 
