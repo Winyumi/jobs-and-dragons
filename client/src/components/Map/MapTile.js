@@ -73,6 +73,30 @@ const MapTile = (props) => {
             30: barrel2,
           });
           break;
+          case 'playhouse':
+            setTileStripes({
+              0: 'clear',
+              1: grate,
+              2: bardoor,
+              6: chest,
+              11: guardian,
+              16: redwall,
+              17: guildwall,
+              18: guildwallbanner,
+              19: plant,
+              20: bed,
+              21: table,
+              22: tableext,
+              23: rack,
+              24: barrel,
+              25: bartop,
+              26: bartopdrink,
+              27: guilddoor,
+              28: drinkbarrel,
+              29: crate2,
+              30: barrel2,
+            });
+            break;
         default:
           break;
       }
@@ -95,7 +119,7 @@ const MapTile = (props) => {
       case 6:
         return `url(${tileSprites['6']})`;
       case 7:
-        return `url(${tileSprites['8']})`;
+        return `url(${tileSprites['7']})`;
       case 8:
         return `url(${tileSprites['8']})`;
       case 9:

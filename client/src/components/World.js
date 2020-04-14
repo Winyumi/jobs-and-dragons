@@ -4,8 +4,10 @@ import Player from './Player';
 import Map from './Map/Map';
 import dungeonBG from '../assets/J&D_DungeonFloor.png';
 import quildBG from '../assets/GuildFloor2.png';
+import playBG from '../assets/playhouseBG.png';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
+import { playhouse } from '../maps/playhouse';
 
 const World = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -27,6 +29,12 @@ const World = (props) => {
           setMapBackground(quildBG);
           setCurrentQuest(guild);
           dispatch({ type: 'quest', payload: 'guild' });
+          break;
+          case '/game/quest/03':
+          setMapTitle('Javan Playhouse');
+          setMapBackground(playBG);
+          setCurrentQuest(playhouse);
+          dispatch({ type: 'quest', payload: 'playhouse' });
           break;
         default:
           break;
