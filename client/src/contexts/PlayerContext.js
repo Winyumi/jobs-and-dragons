@@ -6,8 +6,8 @@ const PlayerContext = createContext();
 const { Provider } = PlayerContext;
 
 const SPRITE_SIZE = 40;
-const MAX_WIDTH = 600;
-const MAX_HEIGHT = 400;
+const MAX_WIDTH = 1200;
+const MAX_HEIGHT = 800;
 
 const setCurrentMap = (currentMap) => {
   let map;
@@ -40,7 +40,7 @@ const observeObstacles = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile <= 1;
+  return nextTile <= 5;
 };
 
 const observeInteraction = (newPosition, currentMap) => {
@@ -51,7 +51,7 @@ const observeInteraction = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile === 2;
+  return nextTile === 11;
 };
 
 const observeOpening = (newPosition, currentMap) => {
@@ -75,12 +75,6 @@ const dispatchMove = (oldPosition, newPosition, currentMap) => {
     return oldPosition;
   }
 };
-
-// const startDialogue = newPosition => {
-//   if (observeInteraction(newPosition)) {
-//     alert('dialogue!');
-//   }
-// };
 
 const getSpriteLocation = (direction, walkIndex) => {
   switch (direction) {
@@ -201,7 +195,7 @@ const playerReducer = (state, action) => {
 
 const PlayerProvider = ({
   value = {
-    position: [40, 40],
+    position: [120, 40],
     spritePosition: '0px 0px',
     direction: 'east',
     walkIndex: 0,
