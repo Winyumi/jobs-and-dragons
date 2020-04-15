@@ -1,6 +1,7 @@
 import React, { createContext, useReducer, useContext } from 'react';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
+import { playhouse } from  '../maps/playhouse';
 
 const PlayerContext = createContext();
 const { Provider } = PlayerContext;
@@ -18,6 +19,9 @@ const setCurrentMap = (currentMap) => {
     case 'guild':
       map = guild;
       return map;
+      case 'playhouse':
+        map = playhouse;
+        return map;
     default:
       break;
   }

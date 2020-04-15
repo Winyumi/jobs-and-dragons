@@ -25,6 +25,15 @@ import guildwallbanner from '../../assets/GuildWallBan.png';
 import rack from '../../assets/Rack.png';
 import tableext from '../../assets/tableExt.png';
 import barrel2 from '../../assets/barrel2.png';
+import bard from '../../assets/Bard-R.png';
+import playstairs from '../../assets/Stairs.png';
+import playwall1 from '../../assets/PlayWall.png';
+import playwall2 from '../../assets/PlayWall2.png';
+import playdoor from '../../assets/PlayDoor.png';
+import playcurtains from '../../assets/Curtains.png';
+import woodfloor from '../../assets/WoodFloor.png';
+import woodslats from '../../assets/WoodSlats.png';
+import bench from '../../assets/Bench.png';
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -78,20 +87,21 @@ const MapTile = (props) => {
               0: 'clear',
               1: grate,
               2: bardoor,
+              3: playstairs,
               6: chest,
-              11: guardian,
-              16: redwall,
-              17: guildwall,
-              18: guildwallbanner,
+              11: bard,
+              16: woodslats,
+              17: playwall1,
+              18: playwall2,
               19: plant,
               20: bed,
               21: table,
               22: tableext,
-              23: rack,
+              23: playcurtains,
               24: barrel,
-              25: bartop,
-              26: bartopdrink,
-              27: guilddoor,
+              25: woodfloor,
+              26: bench,
+              27: playdoor,
               28: drinkbarrel,
               29: crate2,
               30: barrel2,
