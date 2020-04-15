@@ -54,8 +54,8 @@ const Dialogue = (props) => {
                   >
                     Yes!
                   </Link>
-                ) : gameState.currentMap === 'guild' ? (
-                  <Link to='/joblisting'>Yes!</Link>
+                // ) : gameState.currentMap === 'guild' ? (
+                //   <Link to='/joblisting'>Yes!</Link>
                 ) : null}
               </li>
               <li>
@@ -95,16 +95,15 @@ const Dialogue = (props) => {
             </p>
             <ul>
               <li>
-                <a
-                  className='modal-close'
-                  href='#!'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    props.handleAccept();
-                  }}
-                >
-                  Let's do it!!
-                </a>
+            <Link
+                    to='/joblisting'
+                    onClick={(e) => {
+                      // e.preventDefault();
+                      props.handleAccept();
+                    }}
+                  >
+                    Yes!
+                  </Link>
               </li>
               <li>
                 <a
@@ -115,7 +114,7 @@ const Dialogue = (props) => {
                     props.handleDecline();
                   }}
                 >
-                  You're scary, maybe next time.
+                  I think I need to work on my skills first.
                 </a>
               </li>
             </ul>
@@ -142,7 +141,7 @@ const Dialogue = (props) => {
             </p>
             <ul>
             <Link
-                    to='#!'
+                    to='#!' // link to cover letter when ready
                     onClick={(e) => {
                       // e.preventDefault();
                       props.handleAccept();
