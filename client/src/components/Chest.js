@@ -110,6 +110,49 @@ const Chest = (props) => {
       </div>
     );
   }
+  if (state.currentMap === 'playhouse') {
+    return (
+      <div className='modal-content' style={chestStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+            <h4>You Found a Javan Playhouse Link!</h4>
+          </div>
+          <div className='row'>
+            <p>Use this link to find helpful information for your quest!</p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='https://www.thebalancecareers.com/resume-and-cover-letter-examples-listed-by-job-2063586'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  // onClick={e => {
+                  //   e.preventDefault();
+                  //   props.handleAccept();
+                  // }}
+                >
+                  Sure!
+                </a>
+              </li>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  I'm good for now.
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default Chest;
