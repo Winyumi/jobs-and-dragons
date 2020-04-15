@@ -15,7 +15,8 @@ import bed from '../../assets/Bed.png';
 import table from '../../assets/table.png';
 import door from '../../assets/DungeonDoor.png';
 import redwall from '../../assets/RedBrick.png';
-import bardoor from '../../assets/BarsDoor.png';
+import cagedoor from '../../assets/BarsDoor.png';
+import cage from '../../assets/Bars.png';
 import crate2 from '../../assets/Crate2.png';
 import bartop from '../../assets/BarTop.png';
 import bartopdrink from '../../assets/BarTopDrink.png';
@@ -31,9 +32,12 @@ import playwall1 from '../../assets/PlayWall.png';
 import playwall2 from '../../assets/PlayWall2.png';
 import playdoor from '../../assets/PlayDoor.png';
 import playcurtains from '../../assets/Curtains.png';
+import curtainspart from '../../assets/CurtainsPart.png';
 import woodfloor from '../../assets/WoodFloor.png';
 import woodslats from '../../assets/WoodSlats.png';
 import bench from '../../assets/Bench.png';
+import desk from '../../assets/Desk.png';
+import costumerack from '../../assets/costumeRack.png';
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -62,7 +66,6 @@ const MapTile = (props) => {
           setTileStripes({
             0: 'clear',
             1: grate,
-            2: bardoor,
             6: chest,
             11: guardian,
             16: redwall,
@@ -82,31 +85,35 @@ const MapTile = (props) => {
             30: barrel2,
           });
           break;
-          case 'playhouse':
-            setTileStripes({
-              0: 'clear',
-              1: grate,
-              2: woodfloor,
-              3: playstairs,
-              6: chest,
-              11: bard,
-              16: woodslats,
-              17: playwall1,
-              18: playwall2,
-              19: plant,
-              20: bed,
-              21: table,
-              22: tableext,
-              23: playcurtains,
-              24: barrel,
-              25: woodfloor,
-              26: bench,
-              27: playdoor,
-              28: drinkbarrel,
-              29: crate2,
-              30: barrel2,
-            });
-            break;
+        case 'playhouse':
+          setTileStripes({
+            0: 'clear',
+            1: cagedoor,
+            2: woodfloor,
+            3: playstairs,
+            4: curtainspart,
+            6: chest,
+            11: bard,
+            16: woodslats,
+            17: playwall1,
+            18: playwall2,
+            19: plant,
+            20: bed,
+            21: table,
+            22: tableext,
+            23: playcurtains,
+            24: barrel,
+            25: woodfloor,
+            26: bench,
+            27: playdoor,
+            28: cage,
+            29: crate2,
+            30: barrel2,
+            31: desk,
+            32: bookcase,
+            33: costumerack,
+          });
+          break;
         default:
           break;
       }
@@ -176,6 +183,26 @@ const MapTile = (props) => {
         return `url(${tileSprites['29']})`;
       case 30:
         return `url(${tileSprites['30']})`;
+      case 31:
+        return `url(${tileSprites['31']})`;
+      case 32:
+        return `url(${tileSprites['32']})`;
+      case 33:
+        return `url(${tileSprites['33']})`;
+      case 34:
+        return `url(${tileSprites['34']})`;
+      case 35:
+        return `url(${tileSprites['35']})`;
+      case 36:
+        return `url(${tileSprites['36']})`;
+      case 37:
+        return `url(${tileSprites['37']})`;
+      case 38:
+        return `url(${tileSprites['38']})`;
+      case 39:
+        return `url(${tileSprites['39']})`;
+      case 40:
+        return `url(${tileSprites['40']})`;
 
       default:
         return tileSprites[type];
