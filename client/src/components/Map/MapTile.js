@@ -86,7 +86,7 @@ const MapTile = (props) => {
             setTileStripes({
               0: 'clear',
               1: grate,
-              2: bardoor,
+              2: woodfloor,
               3: playstairs,
               6: chest,
               11: bard,
