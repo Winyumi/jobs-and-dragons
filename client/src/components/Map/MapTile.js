@@ -39,6 +39,8 @@ import bench from '../../assets/Bench.png';
 import desk from '../../assets/Desk.png';
 import costumerack from '../../assets/costumeRack.png';
 
+import exclaim from '../../assets/E_bubble.gif';
+
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
   const [tileSprites, setTileStripes] = useState({});
@@ -49,6 +51,7 @@ const MapTile = (props) => {
           setTileStripes({
             0: 'clear',
             1: grate,
+            2: exclaim,
             11: oracle,
             23: wallTorch,
             24: barrel,
@@ -66,6 +69,7 @@ const MapTile = (props) => {
           setTileStripes({
             0: 'clear',
             1: grate,
+            2: exclaim,
             6: chest,
             11: guardian,
             16: redwall,
@@ -92,6 +96,7 @@ const MapTile = (props) => {
             2: woodfloor,
             3: playstairs,
             4: curtainspart,
+            5: exclaim,
             6: chest,
             11: bard,
             16: woodslats,
