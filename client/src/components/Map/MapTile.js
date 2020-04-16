@@ -3,7 +3,7 @@ import { usePlayerContext } from '../../contexts/PlayerContext';
 import wall from '../../assets/J&D_DungeonWall.png';
 import wallTorch from '../../assets/J&D_DungeonWallTorch.png';
 import chest from '../../assets/Chest.png';
-import oracle from '../../assets/Oracle-R.png';
+import oracle from '../../assets/Oracle.gif';
 import guildwall from '../../assets/GuildWall.png';
 import guardian from '../../assets/Guardian.png';
 import barrel from '../../assets/barrel.png';
