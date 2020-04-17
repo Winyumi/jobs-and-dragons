@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { usePlayerContext } from '../../contexts/PlayerContext';
 //Character sprites and modal interactions
 import oracle from '../../assets/Oracle.gif';
-import guardian from '../../assets/Guardian.png';
+import guardian from '../../assets/Guardian.gif';
 import bard from '../../assets/Bard-R.png';
 import acolyte from '../../assets/Acolyte.gif'
 import chest from '../../assets/Chest.png';
@@ -79,7 +79,7 @@ const MapTile = (props) => {
             1: grate,
             2: exclaim,
             6: chest,
-            11: guardian,
+            70: guardian,
             16: redwall,
             17: guildwall,
             18: guildwallbanner,

@@ -2,6 +2,8 @@ import React from 'react';
 import OracleBox from '../assets/OracleBox.png';
 import GuardianBox from '../assets/GuardianBox.png';
 import BardBox from '../assets/BardBox.png';
+import AcolyteBox from '../assets/AcolyteBox.png';
+
 import { usePlayerContext } from '../contexts/PlayerContext';
 import { useUserContext } from '../contexts/UserContext';
 // import M from "materialize-css";
@@ -12,7 +14,7 @@ import { Link } from 'react-router-dom';
 const Dialogue = (props) => {
   const [gameState] = usePlayerContext();
   const [state] = useUserContext();
-  console.log(gameState);
+  console.log("Dialogue", gameState);
   const imgStyle = {
     float: 'right',
     width: '100px',
@@ -27,7 +29,7 @@ const Dialogue = (props) => {
     height: '300px',
     padding: '20px',
   };
-  if (gameState.currentMap === 'dungeon') {
+  if (gameState.currentMap === 'dungeon' && gameState.interactTile === 70) {
     console.log('dialogue', props);
     return (
       <div className='modal-content' style={modalStyle}>
@@ -75,7 +77,42 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } else if (gameState.currentMap === 'guild') {
+  } else if (gameState.currentMap === 'dungeon' && gameState.interactTile === 71) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={AcolyteBox}
+              alt='Profile of an acolyte'
+            />
+            <h4>An Acolyte of Secivres Reerac</h4>
+          </div>
+          <div className='row'>
+            <p>
+              Is this your first time seeing the Oracle? I've been an acolyte here for 4 years and I've never seen him so disturbed...
+              It's worrying us all. Hopefully whatever is happening will be resolved soon...
+            </p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Interesting...
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (gameState.currentMap === 'guild' && gameState.interactTile === 70) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -166,7 +203,7 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  }
+  } 
 };
 
 export default Dialogue;
