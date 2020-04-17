@@ -1,157 +1,178 @@
-import React, { Component } from 'react';
-import dotenv from 'dotenv';
+import React, { Component } from "react";
 
-import 'materialize-css';
-import dateFormat from 'dateformat';
-import Loading from '../components/Loading';
+import dotenv from "dotenv";
 
-import background from '../assets/J&D_BG.png';
+import "materialize-css";
+import dateFormat from "dateformat";
+import Loading from "../components/Loading";
 
-
+import background from "../assets/J&D_BG.png";
+import { withRouter } from "react-router-dom";
 
 dotenv.config();
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-
-// const API_KEY='885f51fcf0d78fe6f0d8f3a0420e4445';
+const APP_ID = "a69247c0";
+const APP_KEY = "24fc9762a9d2f3a031f002f7afe14f75";
 
 export default class jobListing extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: [],
+      query: "",
+    };
+  }
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        error: null,
-        isLoaded: false,
-        items: [],
-        query: ''
-      };
-    }
+  componentDidMount() {
+    fetch(
+      "https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=" +
+        APP_ID +
+        "&app_key=" +
+        APP_KEY
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log(result);
+          this.setState({
+            isLoaded: true,
+            items: result.results,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        }
+      );
+  }
 
-    componentDidMount() {
+  handleSubmitSearch = (e) => {
+    e.preventDefault();
 
-        fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key='+API_KEY+'&method=aj.jobs.search&format=JSON&keywords=Developer')
+    const query = this.state.query;
 
-        .then(res => res.json())
-        .then(
+    fetch(
+      "https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=" +
+        APP_ID +
+        "&app_key=" +
+        APP_KEY +
+        "&what=" +
+        query
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result.results,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        }
+      );
+  };
 
-            (result) => {
-                console.log(result);
-              this.setState({
-                isLoaded: true,
-                items: result.listings.listing
-              });
-            },
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-          )
-    }
-
-    handleSubmitSearch = (e) => {
-        e.preventDefault();
-
-        const query=this.state.query;
-
-        fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key='+API_KEY+'&method=aj.jobs.search&format=JSON&keywords='+query)
-        
-        
-        .then(res => res.json())
-        .then(
-            (result) => {
-              this.setState({
-                isLoaded: true,
-                items: result.listings.listing
-              });
-            },
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-          )
-
-    }
-
-    render() {
-      const { error, isLoaded, items } = this.state;
-      if (error) {
-        return <div>Error: {error.message}</div>;
-      } else if (!isLoaded) {
-        return <div><Loading /></div>;
-      } else {
-        return (
-          <>
+  render() {
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return (
+        <div>
+          <Loading />
+        </div>
+      );
+    } else {
+      return (
+        <>
           <div style={ListingStyles}>
-            <div className='row'>
-
-                <div className='center col s12 m3'>
-                    <h4 style={{color:'red'}}>JOB LISTINGS</h4>
-                    <div className='center input-field'>
-                        <i className="large material-icons prefix">work</i>
-                        <input id="searchBox" 
-                        value={this.state.query} 
-                        type="text" 
-                        onChange={e => this.setState({query:e.target.value})} >
-                        </input>
-                        <label className="active">Search Job Title</label>
-                    </div>
-                    <input
-                    type='submit'
-                    value='SEARCH'
-                    className='btn btn-large red darken-4'
-                    onClick= { e => this.handleSubmitSearch(e) }
-                    />
+            <div className="row">
+              <div className="center col s12 m3">
+                <h4 style={{ color: "red" }}>JOB LISTINGS</h4>
+                <div className="center input-field">
+                  <i className="large material-icons prefix">work</i>
+                  <input
+                    id="searchBox"
+                    value={this.state.query}
+                    type="text"
+                    onChange={(e) => this.setState({ query: e.target.value })}
+                  ></input>
+                  <label className="active">Search Job Title</label>
                 </div>
+                <input
+                  type="submit"
+                  value="SEARCH"
+                  className="btn btn-large red darken-4"
+                  onClick={(e) => this.handleSubmitSearch(e)}
+                />
+              </div>
 
-                <div className='center col s12 m8'>
-                    <ul>
-                    {items.map(item => (
-                        <li key={ item.id }>
+              <div className="center col s12 m8">
+                <ul>
+                  {items.map((item) => (
+                    <li key={item.id}>
+                      <div className="card red darken-4">
+                        <div className="card-content">
+                          <h3
+                            className="card-title"
+                            style={{ fontSize: "4vh" }}
+                          >
+                            {item.title}
+                          </h3>
+                          <p>
+                            {" "}
+                            <b>Company :</b> {item.title}{" "}
+                          </p>
+                          <p>
+                            {" "}
+                            <b>Date :</b>{" "}
+                            {dateFormat(item.created, "dddd, mmmm dS, yyyy")}
+                          </p>
+                          <p>
+                            {" "}
+                            <b>Category :</b> {item.category.label}
+                          </p>
+                          <p>
+                            {" "}
+                            <b>Description :</b> {item.description}
+                          </p>
+                        </div>
 
-                            <div className="card red lighten-3">
-
-                                <div className="card-content">
-                                    <h4 className="card-title activator">{ item.title }<i className="material-icons right">more_vert</i></h4>
-                                    <p> <b>Company :</b> { item.company.name } </p>
-                                    <p> <b>Type :</b> { item.type.name }</p>
-                                    <p> <b>Date :</b> { dateFormat( item.post_date , "dddd, mmmm dS, yyyy") }</p>
-                                </div>
-
-                                <div className="card-action">
-                                    <a href={ item.url } target='_blank'className="btn red darken-4">Apply</a>
-                                    {/* <a className="btn red darken-4"><i className="material-icons">save</i></a> */}
-                                </div>
-
-                                <div className="card-reveal red darken-4">
-                                    <span className="card-title red darken-4 red lighten-3"><i className="material-icons right">close</i></span>
-                                    <p className="red lighten-3"> <b>Category :</b> { item.category.name }</p>
-                                    <p className="red lighten-3"> <b>Perks :</b> { item.perks }</p>
-                                    <p className="red lighten-3"> <b>Description :</b> { item.description }</p>
-
-
-                                </div>
-
-                            </div>
-                        </li>
-                    ))}     
-                    </ul>    
-                </div>
+                        <div className="card-action">
+                          <a
+                            href={item.redirect_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn red darken-4"
+                          >
+                            Apply
+                          </a>
+                          {/* <a className="btn red darken-4"><i className="material-icons">save</i></a> */}
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-          </>
-        );
-      }
+        </>
+      );
     }
   }
+}
 
-  const ListingStyles = { 
-    height: '90vh',
-
-    // backgroundImage: `url(${background})`,
-    backgroundSize: 'cover'
-
-  }
+const ListingStyles = {
+  backgroundColor: "black",
+  color: "white",
+  // backgroundImage: `url(${background})`,
+  backgroundSize: "cover",
+};
