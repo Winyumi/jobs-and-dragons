@@ -8,8 +8,8 @@ const Map = props => {
         position: 'relative',
         top: 0,
         left: 0,
-        width: '600px',
-        height: '400px'
+        width: '1200px',
+        height: '800px'
       }}
     >
       {props.tiles.map((row, idx) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import OracleBox from '../assets/OracleBox.png';
 import GuardianBox from '../assets/GuardianBox.png';
+import BardBox from '../assets/BardBox.png';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import { useUserContext } from '../contexts/UserContext';
 // import M from "materialize-css";
@@ -53,8 +54,8 @@ const Dialogue = (props) => {
                   >
                     Yes!
                   </Link>
-                ) : gameState.currentMap === 'guild' ? (
-                  <Link to='/joblisting'>Yes!</Link>
+                // ) : gameState.currentMap === 'guild' ? (
+                //   <Link to='/joblisting'>Yes!</Link>
                 ) : null}
               </li>
               <li>
@@ -94,16 +95,15 @@ const Dialogue = (props) => {
             </p>
             <ul>
               <li>
-                <a
-                  className='modal-close'
-                  href='#!'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    props.handleAccept();
-                  }}
-                >
-                  Let's do it!!
-                </a>
+            <Link
+                    to='/joblisting'
+                    onClick={(e) => {
+                      // e.preventDefault();
+                      props.handleAccept();
+                    }}
+                  >
+                    Yes!
+                  </Link>
               </li>
               <li>
                 <a
@@ -114,7 +114,51 @@ const Dialogue = (props) => {
                     props.handleDecline();
                   }}
                 >
-                  You're scary, maybe next time.
+                  I think I need to work on my skills first.
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (gameState.currentMap === 'playhouse') {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={BardBox}
+              alt='Profile of the Bard'
+            />
+            <h4>The Javan Playhouse Bard</h4>
+          </div>
+          <div className='row'>
+            <p>
+              Ah, welcome {state.user.name}! I've heard the rumours and I guessed that you would come seeking my aid.
+              I'm taking an ...intermission, in writing my next masterpiece. Are you ready to write your first script?
+            </p>
+            <ul>
+            <Link
+                    to='#!' // link to cover letter when ready
+                    onClick={(e) => {
+                      // e.preventDefault();
+                      props.handleAccept();
+                    }}
+                  >
+                    I'm ready!
+                  </Link>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  I think I need more practice first.
                 </a>
               </li>
             </ul>
