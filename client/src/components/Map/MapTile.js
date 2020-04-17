@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { usePlayerContext } from '../../contexts/PlayerContext';
-import wall from '../../assets/J&D_DungeonWall.png';
-import wallTorch from '../../assets/J&D_DungeonWallTorch.png';
-import chest from '../../assets/Chest.png';
+//Character sprites and modal interactions
 import oracle from '../../assets/Oracle.gif';
-import guildwall from '../../assets/GuildWall.png';
 import guardian from '../../assets/Guardian.png';
+import bard from '../../assets/Bard-R.png';
+import acolyte from '../../assets/Acolyte.gif'
+import chest from '../../assets/Chest.png';
+//bubbles
+import exclaim from '../../assets/E_bubble.gif';
+import talk from '../../assets/Talk_bubble.gif';
+//Normal tiles
+import wall from '../../assets/J&D_DungeonWall.png';
+import wallTorch from '../../assets/WallTorchFlicker.gif';
+import guildwall from '../../assets/GuildWall.png';
 import barrel from '../../assets/barrel.png';
 import grate from '../../assets/grate.png';
 import crate from '../../assets/Crate.png';
@@ -26,7 +33,6 @@ import guildwallbanner from '../../assets/GuildWallBan.png';
 import rack from '../../assets/Rack.png';
 import tableext from '../../assets/tableExt.png';
 import barrel2 from '../../assets/barrel2.png';
-import bard from '../../assets/Bard-R.png';
 import playstairs from '../../assets/Stairs.png';
 import playwall1 from '../../assets/PlayWall.png';
 import playwall2 from '../../assets/PlayWall2.png';
@@ -39,7 +45,7 @@ import bench from '../../assets/Bench.png';
 import desk from '../../assets/Desk.png';
 import costumerack from '../../assets/costumeRack.png';
 
-import exclaim from '../../assets/E_bubble.gif';
+
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -52,7 +58,9 @@ const MapTile = (props) => {
             0: 'clear',
             1: grate,
             2: exclaim,
+            3: talk,
             11: oracle,
+            12: acolyte,
             23: wallTorch,
             24: barrel,
             6: chest,
