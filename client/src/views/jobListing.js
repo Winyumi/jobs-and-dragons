@@ -11,9 +11,9 @@ import background from '../assets/J&D_BG.png';
 
 dotenv.config();
 
-// const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
-const API_KEY='885f51fcf0d78fe6f0d8f3a0420e4445';
+// const API_KEY='885f51fcf0d78fe6f0d8f3a0420e4445';
 
 export default class jobListing extends React.Component {
 

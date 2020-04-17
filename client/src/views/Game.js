@@ -109,7 +109,8 @@ const DoubleBox = {
 const PageStyles = {
   width: "100vw",
   height: "100vh",
-  backgroundImage: `url(${background})`,
+  backgroundColor : "black",
+  // backgroundImage: `url(${background})`,
   backgroundSize: 'cover'
 }
 
