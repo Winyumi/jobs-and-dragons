@@ -55,7 +55,7 @@ const observeInteraction = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile === 11;
+  return nextTile >= 70;
 };
 
 const observeOpening = (newPosition, currentMap) => {

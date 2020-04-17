@@ -59,8 +59,8 @@ const MapTile = (props) => {
             1: grate,
             2: exclaim,
             3: talk,
-            11: oracle,
-            12: acolyte,
+            70: oracle,
+            71: acolyte,
             23: wallTorch,
             24: barrel,
             6: chest,
@@ -216,7 +216,86 @@ const MapTile = (props) => {
         return `url(${tileSprites['39']})`;
       case 40:
         return `url(${tileSprites['40']})`;
-
+      case 41:
+        return `url(${tileSprites['41']})`;
+      case 42:
+        return `url(${tileSprites['42']})`;
+      case 43:
+        return `url(${tileSprites['43']})`;
+      case 44:
+        return `url(${tileSprites['44']})`;
+      case 45:
+        return `url(${tileSprites['45']})`;
+      case 46:
+        return `url(${tileSprites['46']})`;
+      case 47:
+        return `url(${tileSprites['47']})`;
+      case 48:
+        return `url(${tileSprites['48']})`;
+      case 49:
+        return `url(${tileSprites['49']})`;
+      case 50:
+        return `url(${tileSprites['40']})`;
+      case 51:
+        return `url(${tileSprites['51']})`;
+      case 52:
+        return `url(${tileSprites['52']})`;
+      case 53:
+        return `url(${tileSprites['53']})`;
+      case 54:
+        return `url(${tileSprites['54']})`;
+      case 55:
+        return `url(${tileSprites['55']})`;
+      case 56:
+        return `url(${tileSprites['56']})`;
+      case 57:
+        return `url(${tileSprites['57']})`;
+      case 58:
+        return `url(${tileSprites['58']})`;
+      case 59:
+        return `url(${tileSprites['59']})`;
+      case 60:
+        return `url(${tileSprites['60']})`;
+      case 61:
+        return `url(${tileSprites['61']})`;
+      case 62:
+        return `url(${tileSprites['62']})`;
+      case 63:
+        return `url(${tileSprites['63']})`;
+      case 64:
+        return `url(${tileSprites['64']})`;
+      case 65:
+        return `url(${tileSprites['65']})`;
+      case 66:
+        return `url(${tileSprites['66']})`;
+      case 67:
+        return `url(${tileSprites['67']})`;
+      case 68:
+        return `url(${tileSprites['68']})`;
+      case 69:
+        return `url(${tileSprites['69']})`;
+      case 70:
+        return `url(${tileSprites['70']})`;
+      case 71:
+        return `url(${tileSprites['71']})`;
+      case 72:
+        return `url(${tileSprites['72']})`;
+      case 73:
+        return `url(${tileSprites['73']})`;
+      case 74:
+        return `url(${tileSprites['74']})`;
+      case 75:
+        return `url(${tileSprites['75']})`;
+      case 76:
+        return `url(${tileSprites['76']})`;
+      case 77:
+        return `url(${tileSprites['77']})`;
+      case 78:
+        return `url(${tileSprites['78']})`;
+      case 79:
+        return `url(${tileSprites['79']})`;
+      case 80:
+        return `url(${tileSprites['80']})`;
       default:
         return tileSprites[type];
     }
