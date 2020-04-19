@@ -14,7 +14,6 @@ import { Link } from 'react-router-dom';
 const Dialogue = (props) => {
   const [gameState] = usePlayerContext();
   const [state] = useUserContext();
-  console.log("Dialogue", gameState);
   const imgStyle = {
     float: 'right',
     width: '100px',
@@ -30,7 +29,6 @@ const Dialogue = (props) => {
     padding: '20px',
   };
   if (gameState.currentMap === 'dungeon' && gameState.interactTile === 70) {
-    console.log('dialogue', props);
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -112,6 +110,41 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
+    } else if (gameState.currentMap === 'dungeon' && gameState.interactTile === 72) {
+      return (
+        <div className='modal-content' style={modalStyle}>
+          <div style={{}}>
+            <div className='row'>
+              <img
+                style={imgStyle}
+                src={AcolyteBox}
+                alt='Profile of an acolyte'
+              />
+              <h4>An Acolyte of Secivres Reerac</h4>
+            </div>
+            <div className='row'>
+              <p>
+                Is this your first time to the Oracle's Lair? Gninigeb City is also home to the Javan Playhouse and an Namuh Secruoser Guild outpost.
+                We acolyte's often visit them when our master gives us time off.
+              </p>
+              <ul>
+                <li>
+                  <a
+                    className='modal-close'
+                    href='#!'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      props.handleDecline();
+                    }}
+                  >
+                    Nope, but I'll be sure to check them out when I get a chance!
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
   } else if (gameState.currentMap === 'guild' && gameState.interactTile === 70) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -203,7 +236,8 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } 
+
+  }
 };
 
 export default Dialogue;

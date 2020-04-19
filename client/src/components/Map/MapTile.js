@@ -5,7 +5,7 @@ import oracle from '../../assets/Oracle.gif';
 import guardian from '../../assets/Guardian.gif';
 import bard from '../../assets/Bard-R.png';
 import acolyte from '../../assets/Acolyte.gif'
-import chest from '../../assets/Chest.png';
+import chest from '../../assets/Chest.gif';
 //bubbles
 import exclaim from '../../assets/E_bubble.gif';
 import talk from '../../assets/Talk_bubble.gif';
@@ -61,6 +61,7 @@ const MapTile = (props) => {
             3: talk,
             70: oracle,
             71: acolyte,
+            72: acolyte,
             23: wallTorch,
             24: barrel,
             6: chest,
