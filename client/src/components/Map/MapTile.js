@@ -119,7 +119,6 @@ const MapTile = (props) => {
             4: curtainspart,
             5: exclaim,
             6: chest,
-            11: bard,
             16: woodslats,
             17: playwall1,
             18: playwall2,
@@ -138,6 +137,7 @@ const MapTile = (props) => {
             31: desk,
             32: bookcase,
             33: costumerack,
+            70: bard,
           });
           break;
         default:

@@ -300,7 +300,7 @@ const Dialogue = (props) => {
         </div>
       );
 //Javan playhouse dialogue boxes****** 
-  } else if (gameState.currentMap === 'playhouse') {
+  } else if (gameState.currentMap === 'playhouse' && gameState.interactTile === 70) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
