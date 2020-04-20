@@ -5,6 +5,7 @@ import BardBox from '../assets/BardBox.png';
 import AcolyteBox from '../assets/AcolyteBox.png';
 import BartenderBox from '../assets/bartenderBox.png';
 import GuildGuardBox from '../assets/GuildGuardBox.png';
+import SingerBox from '../assets/SingerBox.png';
 
 import { usePlayerContext } from '../contexts/PlayerContext';
 import { useUserContext } from '../contexts/UserContext';
@@ -337,6 +338,40 @@ const Dialogue = (props) => {
                   }}
                 >
                   I think I need more practice first.
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (gameState.currentMap === 'playhouse' && gameState.interactTile === 71) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={SingerBox}
+              alt='Profile of the Chilly Sasquatch Singer'
+            />
+            <h4>Chilly Sasquatch Singer</h4>
+          </div>
+          <div className='row'>
+            <p>
+              I know it's strange enough to see a Sasquatch outside of Cascadia, nevermind that he's singing in a Javan play. I'm glad the Bard appreciates talent over politics!
+            </p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Good for you!
                 </a>
               </li>
             </ul>
