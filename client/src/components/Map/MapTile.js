@@ -46,6 +46,7 @@ import woodslats from '../../assets/WoodSlats.png';
 import bench from '../../assets/Bench.png';
 import desk from '../../assets/Desk.png';
 import costumerack from '../../assets/costumeRack.png';
+import sleeper from '../../assets/BedSleeper.gif';
 
 
 
@@ -103,6 +104,7 @@ const MapTile = (props) => {
             30: barrel2,
             31: cage,
             32: cagedoor,
+            33: sleeper,
           });
           break;
         case 'playhouse':
