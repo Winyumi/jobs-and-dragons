@@ -59,16 +59,17 @@ const MapTile = (props) => {
       switch (state.currentMap) {
         case 'dungeon':
           setTileStripes({
-            0: 'clear',
-            1: grate,
-            2: exclaim,
-            3: talk,
+             0: 'clear',
+             1: grate,
+             2: exclaim,
+             3: talk,
             70: oracle,
             71: acolyte,
             72: acolyte,
+            73: acolyte,
             23: wallTorch,
             24: barrel,
-            6: chest,
+             6: chest,
             16: wall,
             17: crate,
             18: plant,
@@ -84,6 +85,7 @@ const MapTile = (props) => {
             1: grate,
             2: exclaim,
             3: talk,
+            5: cagedoor,
             4: snore,
             6: chest,
             70: guardian,
@@ -105,7 +107,6 @@ const MapTile = (props) => {
             29: crate2,
             30: barrel2,
             31: cage,
-            32: cagedoor,
             33: sleeper,
           });
           break;

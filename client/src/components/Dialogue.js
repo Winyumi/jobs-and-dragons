@@ -4,6 +4,7 @@ import GuardianBox from '../assets/GuardianBox.png';
 import BardBox from '../assets/BardBox.png';
 import AcolyteBox from '../assets/AcolyteBox.png';
 import BartenderBox from '../assets/bartenderBox.png';
+import GuildGuardBox from '../assets/GuildGuardBox.png';
 
 import { usePlayerContext } from '../contexts/PlayerContext';
 import { useUserContext } from '../contexts/UserContext';
@@ -112,7 +113,7 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-    } else if (gameState.currentMap === 'dungeon' && gameState.interactTile === 72) {
+  } else if (gameState.currentMap === 'dungeon' && gameState.interactTile === 72) {
       return (
         <div className='modal-content' style={modalStyle}>
           <div style={{}}>
@@ -140,6 +141,40 @@ const Dialogue = (props) => {
                     }}
                   >
                     Nope, but I'll be sure to check them out when I get a chance!
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
+  } else if (gameState.currentMap === 'dungeon' && gameState.interactTile === 73) {
+      return (
+        <div className='modal-content' style={modalStyle}>
+          <div style={{}}>
+            <div className='row'>
+              <img
+                style={imgStyle}
+                src={AcolyteBox}
+                alt='Profile of an acolyte'
+              />
+              <h4>An Acolyte of Secivres Reerac</h4>
+            </div>
+            <div className='row'>
+              <p>
+                Ever since the The Gates of Tenretni have closed that chest has been banging around like crazy! I've been afraid to come in here for months!
+              </p>
+              <ul>
+                <li>
+                  <a
+                    className='modal-close'
+                    href='#!'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      props.handleDecline();
+                    }}
+                  >
+                    You're right, that is strange.
                   </a>
                 </li>
               </ul>
@@ -203,7 +238,7 @@ const Dialogue = (props) => {
             <img
               style={imgStyle}
               src={BartenderBox}
-              alt='Profile of an acolyte'
+              alt='Profile of the guild bartender'
             />
             <h4>Guild Bartender</h4>
           </div>
@@ -230,6 +265,40 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
+  } else if (gameState.currentMap === 'guild' && gameState.interactTile === 72) {
+      return (
+        <div className='modal-content' style={modalStyle}>
+          <div style={{}}>
+            <div className='row'>
+              <img
+                style={imgStyle}
+                src={GuildGuardBox}
+                alt='Profile of the guild armory guard'
+              />
+              <h4>Guild Armory Guard</h4>
+            </div>
+            <div className='row'>
+              <p>
+                So, you're looking to go on a Boj hunt? Well, I can't just GIVE weapons to anybody who walks in here. You'll have to get permission from our leader, the Guardian, first.
+              </p>
+              <ul>
+                <li>
+                  <a
+                    className='modal-close'
+                    href='#!'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      props.handleDecline();
+                    }}
+                  >
+                    Right...that makes sense... 
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
 //Javan playhouse dialogue boxes****** 
   } else if (gameState.currentMap === 'playhouse') {
     return (
