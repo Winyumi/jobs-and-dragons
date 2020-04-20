@@ -4,11 +4,13 @@ import { usePlayerContext } from '../../contexts/PlayerContext';
 import oracle from '../../assets/Oracle.gif';
 import guardian from '../../assets/Guardian.gif';
 import bard from '../../assets/Bard-R.png';
-import acolyte from '../../assets/Acolyte.gif'
+import acolyte from '../../assets/Acolyte.gif';
+import bartender from '../../assets/GuildBartender.gif';
 import chest from '../../assets/Chest.gif';
 //bubbles
 import exclaim from '../../assets/E_bubble.gif';
 import talk from '../../assets/Talk_bubble.gif';
+import snore from '../../assets/Snore_bubble.gif';
 //Normal tiles
 import wall from '../../assets/J&D_DungeonWall.png';
 import wallTorch from '../../assets/WallTorchFlicker.gif';
@@ -79,8 +81,11 @@ const MapTile = (props) => {
             0: 'clear',
             1: grate,
             2: exclaim,
+            3: talk,
+            4: snore,
             6: chest,
             70: guardian,
+            71: bartender,
             16: redwall,
             17: guildwall,
             18: guildwallbanner,
@@ -96,6 +101,8 @@ const MapTile = (props) => {
             28: drinkbarrel,
             29: crate2,
             30: barrel2,
+            31: cage,
+            32: cagedoor,
           });
           break;
         case 'playhouse':
