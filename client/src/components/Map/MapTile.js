@@ -6,6 +6,7 @@ import guardian from '../../assets/Guardian.gif';
 import bard from '../../assets/Bard-R.png';
 import acolyte from '../../assets/Acolyte.gif';
 import bartender from '../../assets/GuildBartender.gif';
+import guildguard from '../../assets/GuildGuardian.gif';
 import chest from '../../assets/Chest.gif';
 //bubbles
 import exclaim from '../../assets/E_bubble.gif';
@@ -87,6 +88,7 @@ const MapTile = (props) => {
             6: chest,
             70: guardian,
             71: bartender,
+            72: guildguard,
             16: redwall,
             17: guildwall,
             18: guildwallbanner,
