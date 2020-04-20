@@ -3,6 +3,7 @@ import OracleBox from '../assets/OracleBox.png';
 import GuardianBox from '../assets/GuardianBox.png';
 import BardBox from '../assets/BardBox.png';
 import AcolyteBox from '../assets/AcolyteBox.png';
+import BartenderBox from '../assets/bartenderBox.png';
 
 import { usePlayerContext } from '../contexts/PlayerContext';
 import { useUserContext } from '../contexts/UserContext';
@@ -28,6 +29,7 @@ const Dialogue = (props) => {
     height: '300px',
     padding: '20px',
   };
+  //Oracle's lair dialogue boxes****** 
   if (gameState.currentMap === 'dungeon' && gameState.interactTile === 70) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -145,6 +147,7 @@ const Dialogue = (props) => {
           </div>
         </div>
       );
+  //Guild dialogue boxes****** 
   } else if (gameState.currentMap === 'guild' && gameState.interactTile === 70) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -192,6 +195,42 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
+  } else if (gameState.currentMap === 'guild' && gameState.interactTile === 71) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={BartenderBox}
+              alt='Profile of an acolyte'
+            />
+            <h4>Guild Bartender</h4>
+          </div>
+          <div className='row'>
+            <p>
+              Hey!!! You can't be behind here! If you're looking for the Guardian of this Guild, she's in her private dining room.
+              Now get out of here!
+            </p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Yikes! Sorry! 
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+//Javan playhouse dialogue boxes****** 
   } else if (gameState.currentMap === 'playhouse') {
     return (
       <div className='modal-content' style={modalStyle}>
