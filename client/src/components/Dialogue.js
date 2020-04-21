@@ -7,6 +7,7 @@ import BartenderBox from '../assets/bartenderBox.png';
 import GuildGuardBox from '../assets/GuildGuardBox.png';
 import SingerBox from '../assets/SingerBox.png';
 import ActressBox from '../assets/ActressBox.png';
+import ManagerBox from '../assets/PlayHouseMgrBox.png';
 
 import { usePlayerContext } from '../contexts/PlayerContext';
 import { useUserContext } from '../contexts/UserContext';
@@ -414,7 +415,40 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-
+  } else if (gameState.currentMap === 'playhouse' && gameState.interactTile === 73) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={ManagerBox}
+              alt='Profile of the Javan Playhouse Manager'
+            />
+            <h4>Javan Playhouse Manager</h4>
+          </div>
+          <div className='row'>
+            <p>
+              With the borders closed in Upper Clientia, business has been horrible! I hope that somehow all three kingdoms sort out their problems.
+            </p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Tought times for all of us.
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
   }
 };
 
