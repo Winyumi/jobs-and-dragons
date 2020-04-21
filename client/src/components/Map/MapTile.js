@@ -3,7 +3,7 @@ import { usePlayerContext } from '../../contexts/PlayerContext';
 //Character sprites and modal interactions
 import oracle from '../../assets/Oracle.gif';
 import guardian from '../../assets/Guardian.gif';
-import bard from '../../assets/Bard-R.png';
+import bard from '../../assets/Bard.gif';
 import acolyte from '../../assets/Acolyte.gif';
 import bartender from '../../assets/GuildBartender.gif';
 import guildguard from '../../assets/GuildGuardian.gif';
@@ -14,6 +14,7 @@ import exclaim from '../../assets/E_bubble.gif';
 import talk from '../../assets/Talk_bubble.gif';
 import snore from '../../assets/Snore_bubble.gif';
 import notes from '../../assets/Notes_bubble.gif';
+import stagetalk from '../../assets/StageTalk_bubble.gif';
 //Normal tiles
 import wall from '../../assets/J&D_DungeonWall.png';
 import wallTorch from '../../assets/WallTorchFlicker.gif';
@@ -140,6 +141,7 @@ const MapTile = (props) => {
             32: bookcase,
             33: costumerack,
             34: notes,
+            35: stagetalk,
             70: bard,
             71: singer,
           });

@@ -379,6 +379,40 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
+  } else if (gameState.currentMap === 'playhouse' && gameState.interactTile === 72) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={SingerBox}
+              alt='Profile of the Javan Actress'
+            />
+            <h4>Javan Actress</h4>
+          </div>
+          <div className='row'>
+            <p>
+              I know the Bard is reknowned througout Upper Clientia, but sometimes I don't understand the function of his Javan Scripts!
+            </p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Sounds like some kind of code to me...
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
 
   }
 };
