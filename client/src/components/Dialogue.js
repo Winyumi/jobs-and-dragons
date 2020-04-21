@@ -441,7 +441,7 @@ const Dialogue = (props) => {
                     props.handleDecline();
                   }}
                 >
-                  Tought times for all of us.
+                  Tough times for all of us.
                 </a>
               </li>
             </ul>
