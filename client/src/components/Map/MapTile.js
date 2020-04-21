@@ -8,6 +8,9 @@ import acolyte from '../../assets/Acolyte.gif';
 import bartender from '../../assets/GuildBartender.gif';
 import guildguard from '../../assets/GuildGuardian.gif';
 import singer from '../../assets/Singer.gif';
+import actress from '../../assets/JavanActress.gif';
+import manager from '../../assets/PlayHouseMgr.gif';
+//Interactive objects
 import chest from '../../assets/Chest.gif';
 //bubbles
 import exclaim from '../../assets/E_bubble.gif';
@@ -144,6 +147,9 @@ const MapTile = (props) => {
             35: stagetalk,
             70: bard,
             71: singer,
+            72: actress,
+            73: manager,
+            74: talk,
           });
           break;
         default:

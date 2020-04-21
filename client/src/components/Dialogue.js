@@ -6,6 +6,7 @@ import AcolyteBox from '../assets/AcolyteBox.png';
 import BartenderBox from '../assets/bartenderBox.png';
 import GuildGuardBox from '../assets/GuildGuardBox.png';
 import SingerBox from '../assets/SingerBox.png';
+import ActressBox from '../assets/ActressBox.png';
 
 import { usePlayerContext } from '../contexts/PlayerContext';
 import { useUserContext } from '../contexts/UserContext';
@@ -386,7 +387,7 @@ const Dialogue = (props) => {
           <div className='row'>
             <img
               style={imgStyle}
-              src={SingerBox}
+              src={ActressBox}
               alt='Profile of the Javan Actress'
             />
             <h4>Javan Actress</h4>
