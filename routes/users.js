@@ -18,5 +18,10 @@ router
   .route('/email/:email')
   .get(User.findByEmail)
   .put(User.updateByEmail);
+  
+// matches with "/api/v1/users/:email"
+router
+.route('/emailjs/:email')
+.put(User.updateByEmailPush);
 
 module.exports = router;

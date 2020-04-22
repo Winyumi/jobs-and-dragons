@@ -6,7 +6,7 @@ import createAuth0Client from '@auth0/auth0-spa-js';
 const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
 
-export const Auth0Context = React.createContext();
+export  const Auth0Context = React.createContext();
 export const useAuth0 = () => useContext(Auth0Context);
 export const Auth0Provider = ({
   children,
@@ -91,3 +91,5 @@ export const Auth0Provider = ({
     </Auth0Context.Provider>
   );
 };
+
+export default Auth0Context;

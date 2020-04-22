@@ -5,7 +5,8 @@ import dotenv from "dotenv";
 import "materialize-css";
 import dateFormat from "dateformat";
 import Loading from "../components/Loading";
-
+import useUserContext from "../contexts/UserContext";
+import Auth0Context from "../react-auth0-spa";
 import background from "../assets/J&D_BG.png";
 import { withRouter } from "react-router-dom";
 
@@ -24,6 +25,10 @@ export default class jobListing extends React.Component {
       query: "",
     };
   }
+
+  static contextType = Auth0Context; 
+  
+
 
   componentDidMount() {
     fetch(
@@ -49,6 +54,7 @@ export default class jobListing extends React.Component {
         }
       );
   }
+ 
 
   handleSubmitSearch = (e) => {
     e.preventDefault();
@@ -79,6 +85,44 @@ export default class jobListing extends React.Component {
         }
       );
   };
+
+  handleSubmitSave = (item) => {
+    const jobInfo={
+      id:item.id,
+      title:item.title,
+      description:item.description,
+      url:item.redirect_url,
+      company:item.company.display_name,
+      location:{
+        area:item.location.area,
+        latitude: item.latitude,
+        longitude:item.longitude
+    }
+    }
+    
+    const userEmail = this.context.user.email;
+
+    async function updateUserInfo(data, email) {
+      const res = fetch(`/api/v1/users/emailjs/${email}`, {
+        method: 'PUT',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        return res.data;
+      }
+    }
+
+    updateUserInfo(jobInfo,userEmail);
+
+    
+    
+  }
+
 
   render() {
     const { error, isLoaded, items } = this.state;
@@ -144,6 +188,13 @@ export default class jobListing extends React.Component {
                             {" "}
                             <b>Description :</b> {item.description}
                           </p>
+                        </div>
+
+                        <div className="card-action">
+                          <button onClick ={(e)=>this.handleSubmitSave(item)}
+                          value="Save"
+                          className="btn btn-large red darken-4"
+                          >Save</button>
                         </div>
 
                         <div className="card-action">

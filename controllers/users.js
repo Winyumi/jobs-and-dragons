@@ -46,6 +46,13 @@ module.exports = {
     db.User.findOneAndUpdate({ email: req.params.email }, req.body)
       .then(user => res.json(user))
       .catch(err => res.status(422).json(err));
+
+  },
+  updateByEmailPush: function(req, res){
+    db.User.findOneAndUpdate({email: req.params.email},{$push:{jobsearch:req.body}})
+    .then(user => res.json(user))
+    .catch(err => res.status(422).json(err));
+
   },
   remove: function(req, res) {
     db.User.findOneAndDelete({ id: req.params.id })
