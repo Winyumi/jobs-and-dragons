@@ -9,6 +9,7 @@ const { Provider } = PlayerContext;
 const SPRITE_SIZE = 40;
 const MAX_WIDTH = 1200;
 const MAX_HEIGHT = 800;
+let tileInteract;
 
 const setCurrentMap = (currentMap) => {
   let map;
@@ -44,6 +45,7 @@ const observeObstacles = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
+
   return nextTile <= 5;
 };
 
@@ -54,8 +56,9 @@ const observeInteraction = (newPosition, currentMap) => {
   const y = newPosition[1] / SPRITE_SIZE;
 
   const nextTile = map[y][x];
-
-  return nextTile === 11;
+  tileInteract = nextTile;
+  console.log("interact", nextTile)
+  return nextTile >= 70;
 };
 
 const observeOpening = (newPosition, currentMap) => {
@@ -117,6 +120,7 @@ const playerReducer = (state, action) => {
           [state.position[0] - SPRITE_SIZE, state.position[1]],
           state.currentMap
         ),
+        interactTile: tileInteract,
         isOpening: observeOpening(
           [state.position[0] - SPRITE_SIZE, state.position[1]],
           state.currentMap
@@ -137,6 +141,7 @@ const playerReducer = (state, action) => {
           [state.position[0], state.position[1] - SPRITE_SIZE],
           state.currentMap
         ),
+        interactTile: tileInteract,
         isOpening: observeOpening(
           [state.position[0], state.position[1] - SPRITE_SIZE],
           state.currentMap
@@ -157,6 +162,7 @@ const playerReducer = (state, action) => {
           [state.position[0] + SPRITE_SIZE, state.position[1]],
           state.currentMap
         ),
+        interactTile: tileInteract,
         isOpening: observeOpening(
           [state.position[0] + SPRITE_SIZE, state.position[1]],
           state.currentMap
@@ -177,6 +183,7 @@ const playerReducer = (state, action) => {
           [state.position[0], state.position[1] + SPRITE_SIZE],
           state.currentMap
         ),
+        interactTile: tileInteract,
         isOpening: observeOpening(
           [state.position[0], state.position[1] + SPRITE_SIZE],
           state.currentMap
