@@ -1,11 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { usePlayerContext } from '../../contexts/PlayerContext';
+//Character sprites and modal interactions
+import oracle from '../../assets/Oracle.gif';
+import guardian from '../../assets/Guardian.gif';
+import bard from '../../assets/Bard.gif';
+import acolyte from '../../assets/Acolyte.gif';
+import bartender from '../../assets/GuildBartender.gif';
+import guildguard from '../../assets/GuildGuardian.gif';
+import singer from '../../assets/Singer.gif';
+import actress from '../../assets/JavanActress.gif';
+import manager from '../../assets/PlayHouseMgr.gif';
+//Interactive objects
+import chest from '../../assets/Chest.gif';
+//bubbles
+import exclaim from '../../assets/E_bubble.gif';
+import talk from '../../assets/Talk_bubble.gif';
+import snore from '../../assets/Snore_bubble.gif';
+import notes from '../../assets/Notes_bubble.gif';
+import stagetalk from '../../assets/StageTalk_bubble.gif';
+//Normal tiles
 import wall from '../../assets/J&D_DungeonWall.png';
-import wallTorch from '../../assets/J&D_DungeonWallTorch.png';
-import chest from '../../assets/Chest.png';
-import oracle from '../../assets/Oracle-R.png';
+import wallTorch from '../../assets/WallTorchFlicker.gif';
 import guildwall from '../../assets/GuildWall.png';
-import guardian from '../../assets/Guardian.png';
 import barrel from '../../assets/barrel.png';
 import grate from '../../assets/grate.png';
 import crate from '../../assets/Crate.png';
@@ -26,7 +42,6 @@ import guildwallbanner from '../../assets/GuildWallBan.png';
 import rack from '../../assets/Rack.png';
 import tableext from '../../assets/tableExt.png';
 import barrel2 from '../../assets/barrel2.png';
-import bard from '../../assets/Bard-R.png';
 import playstairs from '../../assets/Stairs.png';
 import playwall1 from '../../assets/PlayWall.png';
 import playwall2 from '../../assets/PlayWall2.png';
@@ -38,6 +53,9 @@ import woodslats from '../../assets/WoodSlats.png';
 import bench from '../../assets/Bench.png';
 import desk from '../../assets/Desk.png';
 import costumerack from '../../assets/costumeRack.png';
+import sleeper from '../../assets/BedSleeper.gif';
+
+
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -47,12 +65,17 @@ const MapTile = (props) => {
       switch (state.currentMap) {
         case 'dungeon':
           setTileStripes({
-            0: 'clear',
-            1: grate,
-            11: oracle,
+             0: 'clear',
+             1: grate,
+             2: exclaim,
+             3: talk,
+            70: oracle,
+            71: acolyte,
+            72: acolyte,
+            73: acolyte,
             23: wallTorch,
             24: barrel,
-            6: chest,
+             6: chest,
             16: wall,
             17: crate,
             18: plant,
@@ -66,8 +89,14 @@ const MapTile = (props) => {
           setTileStripes({
             0: 'clear',
             1: grate,
+            2: exclaim,
+            3: talk,
+            5: cagedoor,
+            4: snore,
             6: chest,
-            11: guardian,
+            70: guardian,
+            71: bartender,
+            72: guildguard,
             16: redwall,
             17: guildwall,
             18: guildwallbanner,
@@ -83,6 +112,8 @@ const MapTile = (props) => {
             28: drinkbarrel,
             29: crate2,
             30: barrel2,
+            31: cage,
+            33: sleeper,
           });
           break;
         case 'playhouse':
@@ -92,8 +123,8 @@ const MapTile = (props) => {
             2: woodfloor,
             3: playstairs,
             4: curtainspart,
+            5: exclaim,
             6: chest,
-            11: bard,
             16: woodslats,
             17: playwall1,
             18: playwall2,
@@ -112,6 +143,13 @@ const MapTile = (props) => {
             31: desk,
             32: bookcase,
             33: costumerack,
+            34: notes,
+            35: stagetalk,
+            70: bard,
+            71: singer,
+            72: actress,
+            73: manager,
+            74: talk,
           });
           break;
         default:
@@ -203,7 +241,86 @@ const MapTile = (props) => {
         return `url(${tileSprites['39']})`;
       case 40:
         return `url(${tileSprites['40']})`;
-
+      case 41:
+        return `url(${tileSprites['41']})`;
+      case 42:
+        return `url(${tileSprites['42']})`;
+      case 43:
+        return `url(${tileSprites['43']})`;
+      case 44:
+        return `url(${tileSprites['44']})`;
+      case 45:
+        return `url(${tileSprites['45']})`;
+      case 46:
+        return `url(${tileSprites['46']})`;
+      case 47:
+        return `url(${tileSprites['47']})`;
+      case 48:
+        return `url(${tileSprites['48']})`;
+      case 49:
+        return `url(${tileSprites['49']})`;
+      case 50:
+        return `url(${tileSprites['40']})`;
+      case 51:
+        return `url(${tileSprites['51']})`;
+      case 52:
+        return `url(${tileSprites['52']})`;
+      case 53:
+        return `url(${tileSprites['53']})`;
+      case 54:
+        return `url(${tileSprites['54']})`;
+      case 55:
+        return `url(${tileSprites['55']})`;
+      case 56:
+        return `url(${tileSprites['56']})`;
+      case 57:
+        return `url(${tileSprites['57']})`;
+      case 58:
+        return `url(${tileSprites['58']})`;
+      case 59:
+        return `url(${tileSprites['59']})`;
+      case 60:
+        return `url(${tileSprites['60']})`;
+      case 61:
+        return `url(${tileSprites['61']})`;
+      case 62:
+        return `url(${tileSprites['62']})`;
+      case 63:
+        return `url(${tileSprites['63']})`;
+      case 64:
+        return `url(${tileSprites['64']})`;
+      case 65:
+        return `url(${tileSprites['65']})`;
+      case 66:
+        return `url(${tileSprites['66']})`;
+      case 67:
+        return `url(${tileSprites['67']})`;
+      case 68:
+        return `url(${tileSprites['68']})`;
+      case 69:
+        return `url(${tileSprites['69']})`;
+      case 70:
+        return `url(${tileSprites['70']})`;
+      case 71:
+        return `url(${tileSprites['71']})`;
+      case 72:
+        return `url(${tileSprites['72']})`;
+      case 73:
+        return `url(${tileSprites['73']})`;
+      case 74:
+        return `url(${tileSprites['74']})`;
+      case 75:
+        return `url(${tileSprites['75']})`;
+      case 76:
+        return `url(${tileSprites['76']})`;
+      case 77:
+        return `url(${tileSprites['77']})`;
+      case 78:
+        return `url(${tileSprites['78']})`;
+      case 79:
+        return `url(${tileSprites['79']})`;
+      case 80:
+        return `url(${tileSprites['80']})`;
       default:
         return tileSprites[type];
     }
