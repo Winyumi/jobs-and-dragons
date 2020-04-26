@@ -19,4 +19,13 @@ router
   .get(User.findByEmail)
   .put(User.updateByEmail);
 
+  // Matches with "/api/v1/users/emailjs"
+router
+.route('/emailjs/:email')
+.put(User.updateByEmailPush);
+// matches with "/api/v1/users/emaildj"
+router
+.route('/emaildj/:email')
+.put(User.findOneByEmailDel);
+
 module.exports = router;
