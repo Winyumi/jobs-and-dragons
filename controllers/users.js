@@ -48,8 +48,13 @@ module.exports = {
       .catch(err => res.status(422).json(err));
 
   },
+  findOneByEmailDel: function(req, res){
+    db.User.findOneAndUpdate({email: req.params.email}, {$pull: {jobsearch: {id:req.body.id}}},{  new: true})
+    .then(user => res.json(user))
+    .catch(err => res.status(422).json(err));
+  },
   updateByEmailPush: function(req, res){
-    db.User.findOneAndUpdate({email: req.params.email},{$push:{jobsearch:req.body}})
+    db.User.findOneAndUpdate({email: req.params.email}, {$push:{jobsearch:req.body}})
     .then(user => res.json(user))
     .catch(err => res.status(422).json(err));
 

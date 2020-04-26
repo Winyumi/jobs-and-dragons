@@ -24,4 +24,8 @@ router
 .route('/emailjs/:email')
 .put(User.updateByEmailPush);
 
+router
+.route('/emaildj/:email')
+.put(User.findOneByEmailDel);
+
 module.exports = router;

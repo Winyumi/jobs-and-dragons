@@ -9,6 +9,7 @@ import useUserContext from "../contexts/UserContext";
 import Auth0Context from "../react-auth0-spa";
 import background from "../assets/J&D_BG.png";
 import { withRouter } from "react-router-dom";
+import SavedJobs from '../components/SavedJobs/index'
 
 dotenv.config();
 
@@ -102,7 +103,7 @@ export default class jobListing extends React.Component {
     
     const userEmail = this.context.user.email;
 
-    async function updateUserInfo(data, email) {
+    async function updateJobInfo(data, email) {
       const res = fetch(`/api/v1/users/emailjs/${email}`, {
         method: 'PUT',
         mode: 'cors',
@@ -117,7 +118,7 @@ export default class jobListing extends React.Component {
       }
     }
 
-    updateUserInfo(jobInfo,userEmail);
+    updateJobInfo(jobInfo,userEmail);
 
     
     
@@ -157,6 +158,9 @@ export default class jobListing extends React.Component {
                   className="btn btn-large red darken-4"
                   onClick={(e) => this.handleSubmitSearch(e)}
                 />
+              </div>
+              <div>
+                <SavedJobs/>
               </div>
 
               <div className="center col s12 m8">
