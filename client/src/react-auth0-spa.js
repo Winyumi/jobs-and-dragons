@@ -91,3 +91,5 @@ export const Auth0Provider = ({
     </Auth0Context.Provider>
   );
 };
+
+export default Auth0Context;
