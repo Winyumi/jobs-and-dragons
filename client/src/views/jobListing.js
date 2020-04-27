@@ -137,7 +137,7 @@ export default class jobListing extends Component {
                         type="text" 
                         onChange={e => this.setState({query:e.target.value})} >
                         </input>
-                        <label className="active">Search Job Title</label>
+                        <label for="searchBox">Search Job Title</label>
                     </div>
                     <input
                     type='submit'
