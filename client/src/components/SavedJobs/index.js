@@ -45,9 +45,9 @@ async function deleteJobListing(id, email){
             'Content-Type':'application/json'
         },
         body:JSON.stringify({id:id})
-    
+
               });
-        
+
 }
 deleteJobListing(id,userEmail);
 this.componentDidMount();
@@ -61,7 +61,7 @@ render(){
                 <h4>Saved Listings</h4>
                 <Link to='/joblisting'>Return to Job Search</Link>
             </div>
-    
+
 
             <div className="center col s12 m8">
                 <ul>
@@ -73,11 +73,11 @@ render(){
                             {item.title}
                           </h6>
                           <p>
-              
+
                             <b>Company :</b> {item.title}
                           </p>
                           <p>
-                          
+
                             <b>Date :</b>
                             {dateFormat(item.created, "dddd, mmmm dS, yyyy")}
                           </p>
@@ -102,5 +102,3 @@ render(){
     )
 }
 }
-    
-    
