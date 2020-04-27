@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./savedjobs.css";
 import Auth0Context from "../../react-auth0-spa";
 import dateFormat from "dateformat";
@@ -46,6 +47,22 @@ export default class SavedJobs extends React.Component {
         body: JSON.stringify({ id: id }),
       });
     }
+  };
+  handleSubmitDelete = (item, state) => {
+    const id = item.id;
+    console.log(item.id);
+    const userEmail = this.context.user.email;
+    async function deleteJobListing(id, email) {
+      fetch(`/api/v1/users/emaildj/${email}`, {
+        method: "PUT",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: id }),
+      });
+    }
     deleteJobListing(id, userEmail);
     this.componentDidMount();
   };
@@ -53,48 +70,46 @@ export default class SavedJobs extends React.Component {
     const { items } = this.state;
     return (
       <>
-        <div>
-          <div className="row">
-            <div className="center col">
-              <h4 style={{ color: "red" }}>SAVED LISTINGS</h4>
-            </div>
+        <div className="row">
+          <div className="center col s12 m3">
+            <h4>Saved Listings</h4>
+            <Link to="/joblisting">Return to Job Search</Link>
           </div>
-          <div className="row">
-            <div className="center col">
-              <ul>
-                {items.map((item) => (
-                  <li key={item.id}>
-                    <div className="card grey">
-                      <div className="card-content">
-                        <h6 className="card-title">{item.title}</h6>
-                        <p>
-                          <b>Company :</b> {item.title}
-                        </p>
-                        <p>
-                          <b>Date :</b>
-                          {dateFormat(item.created, "dddd, mmmm dS, yyyy")}
-                        </p>
-                        {/* <p>
+
+          <div className="center col s12 m8">
+            <ul>
+              {items.map((item) => (
+                <li key={item.id}>
+                  <div className="card brown lighten-3">
+                    <div className="card-content">
+                      <h6 className="card-title activator">{item.title}</h6>
+                      <p>
+                        <b>Company :</b> {item.title}
+                      </p>
+                      <p>
+                        <b>Date :</b>
+                        {dateFormat(item.created, "dddd, mmmm dS, yyyy")}
+                      </p>
+                      {/* <p>
                             {" "}
                             <b>Description :</b> {item.description}
                           </p> */}
-                      </div>
-                      <div className="card-action">
-                        <button
-                          onClick={(e) =>
-                            this.handleSubmitDelete(item, this.state)
-                          }
-                          value="delete"
-                          className="btn red darken-4"
-                        >
-                          Delete
-                        </button>
-                      </div>
                     </div>
-                  </li>
-                ))}{" "}
-              </ul>
-            </div>
+                    <div className="card-action">
+                      <button
+                        onClick={(e) =>
+                          this.handleSubmitDelete(item, this.state)
+                        }
+                        value="delete"
+                        className="btn red darken-4"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              ))}{" "}
+            </ul>
           </div>
         </div>
       </>
