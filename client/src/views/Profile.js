@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { useUserContext } from "../contexts/UserContext";
 import { api } from "../utils/api";
 
-// import "materialize-css";
+import background from "../assets/dark-honeycomb.png";
+
+import "materialize-css";
 
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
@@ -79,31 +81,31 @@ const Profile = () => {
   }, [loading, user, dispatch]);
 
   function changeTo(e) {
-    e.target.style.background = "darkblue";
+    e.target.style.background = "red";
     e.target.style.translate = "5px";
   }
 
   function changeBack(e) {
-    e.target.style.background = "#333";
+    e.target.style.background = "#535456";
   }
 
   return (
     <div className="row" style={profileStyle}>
-      <div className="center col s12 m6">
+      <div className="center col s12 m6" style={{ marginTop: "50px" }}>
         <img
           src={user.picture}
           alt="User Profile"
           className="circle responsive-img"
           style={userImageStyle}
         />
-        <h3>USERNAME</h3>
-        <div className="card-panel grey" style={cardStyle}>
+        <h3 style={h3Style}>USERNAME</h3>
+        <div className="card-panel red" style={cardStyle}>
           {user.name}
         </div>
       </div>
 
       <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-        <h3>Begin Your QUEST</h3>
+        <h3 style={h3Style}>Begin Your QUEST</h3>
         <Link
           className="btn-large"
           style={BtnStyle}
@@ -144,15 +146,20 @@ const Profile = () => {
 
 const profileStyle = {
   height: "90vh",
+  backgroundImage: `url(${background})`,
+};
+
+const h3Style = {
+  color: "red",
+  marginBottom: "100px",
 };
 
 const BtnStyle = {
   width: "200px",
-  background: "#333",
+  background: "#535456",
   borderRadius: "25%",
   fontFamily: "Alagard",
   margin: "10px",
-  font: "Alagard",
   boxShadow: "0 5px #999",
 };
 
@@ -165,7 +172,8 @@ const userImageStyle = {
 const cardStyle = {
   fontFamily: "Alagard",
   fontSize: "xx-large",
-  color: "darkblue",
+  color: "whitesmoke",
+  textShadow: "2px 2px darkred",
   margin: "20px",
 };
 
