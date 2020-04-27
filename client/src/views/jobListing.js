@@ -128,6 +128,7 @@ export default class jobListing extends Component {
           <div style={ListingStyles}>
             <div className="row">
               <div className="center col s12 m3">
+                <br></br>
                 <h4 style={{ color: "red" }}>JOB LISTINGS</h4>
                 <div className="center input-field">
                   <input
@@ -144,6 +145,8 @@ export default class jobListing extends Component {
                   className="btn btn-large red darken-4"
                   onClick={(e) => this.handleSubmitSearch(e)}
                 />
+                <br></br>
+                <br></br>
                 <SavedJobs />
               </div>
 
