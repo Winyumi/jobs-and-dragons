@@ -1,7 +1,5 @@
 import React from "react";
 
-import "materialize-css";
-
 function Footer() {
   return (
     <footer style={footerStyle} copyrights="copy 2015 Copyright Text">
@@ -13,7 +11,7 @@ function Footer() {
 }
 
 const footerStyle = {
-  display: "block",
+  // display: "block",
   position: "relative",
   width: "100%",
   background: "#333",
