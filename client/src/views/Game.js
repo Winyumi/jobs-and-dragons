@@ -1,42 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import World from '../components/World';
-import Dialogue from '../components/Dialogue';
-import Chest from '../components/Chest';
-import CharBox from '../components/CharBox';
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-materialize";
+
+import World from "../components/World";
+import Dialogue from "../components/Dialogue";
+import Chest from "../components/Chest";
+import CharBox from "../components/CharBox";
 // import Quests from '../components/QuestsList';
-import { usePlayerContext } from '../contexts/PlayerContext';
-import history from '../utils/history';
+import { usePlayerContext } from "../contexts/PlayerContext";
+import history from "../utils/history";
+
+import backgroundDark from "../assets/dark-honeycomb.png";
+import backgroundLight from "../assets/light_honeycomb.png";
+import dungeonBG from "../assets/J&D_DungeonWall.png";
 
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState(false);
   const [isOpening, setIsOpening] = useState();
   const [isAccepted, setIsAccepted] = useState(false);
-  
+
   useEffect(() => {
     setIsInteracting(state.isInteracting);
     setIsOpening(state.isOpening);
   }, [state.isInteracting, state.isOpening]);
 
-  let styles;
+  let RowStyles;
   if (isInteracting || isAccepted) {
-    styles = {
-      opacity: '0.25',
-      padding: '100px 100px',
-      width: '100%',
-      height: '1000px',
-      margin: '1em 1em 1em 1em',
-      display: 'flex',
-      justifyContent: 'center',
+    RowStyles = {
+      opacity: "0.25",
+      display: "flex",
+      justifyContent: "center",
     };
   } else {
-    styles = {
-      padding: '100px 100px',
-      width: '100%',
-      height: '800px',
-      margin: '1em 1em 1em 1em',
-      display: 'flex',
-      justifyContent: 'center',
+    RowStyles = {
+      padding: "100px 100px",
+      width: "100%",
+      height: "800px",
+      display: "flex",
+      justifyContent: "center",
     };
   }
 
@@ -48,7 +49,7 @@ const Game = () => {
   const handleQuestDecline = () => {
     setIsInteracting(!state.isInteracting);
     dispatch({
-      action: 'toggleIsInteracting',
+      action: "toggleIsInteracting",
       payload: !state.isInteracting,
     });
   };
@@ -56,34 +57,27 @@ const Game = () => {
   const handleLinkDecline = () => {
     setIsOpening(!state.isOpening);
     dispatch({
-      action: 'toggleIsOpening',
+      action: "toggleIsOpening",
       payload: !state.isOpening,
     });
   };
 
   return (
     <>
-      <div className='row' style={styles}>
-        <div
-          className='col s3 charnav'
-          style={{
-            border: '1px solid black',
-          }}
-        >
-          <CharBox />
-        </div>
-        <div
-          className='col s9'
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            margin: '2em'
-          }}
-        >
-          <World path={history.location.pathname} />
-        </div>
+      <div style={PageStyles}>
+        <Row style={RowStyles}>
+          <Col className="charnav" s={3} style={{ marginTop: "50px" }}>
+            <div style={charBoxStyles}>
+              <CharBox />
+            </div>
+          </Col>
+
+          <Col className="" s={9} style={GameBoxStyles}>
+            <World path={history.location.pathname} />
+          </Col>
+        </Row>
       </div>
+
       {isInteracting && (
         <Dialogue
           handleDecline={handleQuestDecline}
@@ -96,3 +90,26 @@ const Game = () => {
   );
 };
 export default Game;
+
+const charBoxStyles = {
+  margin: "30px",
+  padding: "30px",
+  paddingBottom: "100px",
+  // background: "white",
+  backgroundImage: `url(${backgroundLight})`,
+};
+
+const PageStyles = {
+  display: "block",
+  top: "0px",
+  width: "100vw",
+  height: "100vh",
+  // backgroundColor: "black",
+  backgroundImage: `url(${backgroundDark})`,
+};
+
+const GameBoxStyles = {
+  display: "flex",
+  justifyContent: "center",
+  // margin: "20px",
+};
