@@ -234,6 +234,12 @@ input[type='submit'] {
   right: 15px;
 }
 
+.listSavedJobs {
+  top: 200px;
+  right: 30px;
+
+}
+
 .cpsummary {
   font-family: 'Alagard';
   font-size: small;

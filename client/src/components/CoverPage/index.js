@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactToPrint from "react-to-print";
 import Home from './HomePage';
-
+import ListSavedJobs from './ListSavedJobs'
 export default class index extends Component {
 
   state = {
@@ -34,11 +34,13 @@ export default class index extends Component {
 							/>
 				</div>
 			</div>
-	)
+  )
+  
     
   render() {
     console.log(this.state)
     return (
+      <React.Fragment>
       <div className="logContainer">
         <form>
           <h2>Cover Letter Generator</h2>
@@ -104,6 +106,14 @@ export default class index extends Component {
 					</button>
         </form>
       </div>
+
+      <div classname ="listSavedJobs">
+      <ListSavedJobs
+      >
+      
+      </ListSavedJobs>
+        </div>
+      </React.Fragment>
     );
   }
 }
