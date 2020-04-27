@@ -11,7 +11,6 @@ import history from "../utils/history";
 
 import backgroundDark from "../assets/dark-honeycomb.png";
 import backgroundLight from "../assets/light_honeycomb.png";
-import dungeonBG from "../assets/J&D_DungeonWall.png";
 
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
@@ -33,9 +32,7 @@ const Game = () => {
     };
   } else {
     RowStyles = {
-      padding: "100px 100px",
       width: "100%",
-      height: "800px",
       display: "flex",
       justifyContent: "center",
     };
@@ -95,21 +92,17 @@ const charBoxStyles = {
   margin: "30px",
   padding: "30px",
   paddingBottom: "100px",
-  // background: "white",
   backgroundImage: `url(${backgroundLight})`,
 };
 
 const PageStyles = {
-  display: "block",
   top: "0px",
-  width: "100vw",
-  height: "100vh",
-  // backgroundColor: "black",
+  width: "100%",
+  height: "90vh",
   backgroundImage: `url(${backgroundDark})`,
 };
 
 const GameBoxStyles = {
   display: "flex",
   justifyContent: "center",
-  // margin: "20px",
 };
