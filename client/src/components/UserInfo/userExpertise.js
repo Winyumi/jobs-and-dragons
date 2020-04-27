@@ -7,12 +7,13 @@ const EXPERTISE = [
   'Software Engineer',
   'Full Stack developer',
   'Quality Assurance',
-  'Database management',
+  'Database Management',
   'DevOps',
   'UI/UX Developer',
-  'Front end Developer',
+  'Front End Developer',
   'Web Services Developer',
-  'Web Designer'
+  'Web Designer',
+  'Software Support Engineer'
 ];
 
 class userExpertise extends Component {
@@ -64,9 +65,9 @@ class userExpertise extends Component {
           <button
             className='btn'
             onClick={e => this.handleFormSubmit(e)}
-            name='action'
-          >
-            <i className='material-icons right'>SAVE</i>
+            name='action'>
+            Save
+            <i className='material-icons right'>check</i>
           </button>
         </div>
       </div>
