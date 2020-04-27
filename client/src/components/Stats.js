@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { api } from '../utils/api';
-import { useUserContext } from '../contexts/UserContext';
-import 'materialize-css';
+import React, { useState, useEffect } from "react";
+import { api } from "../utils/api";
+import { useUserContext } from "../contexts/UserContext";
+import "materialize-css";
 
 const Stats = () => {
   const [state, dispatch] = useUserContext();
@@ -11,39 +11,33 @@ const Stats = () => {
     setGamestats(state.user.gamestats);
   }, [state.user.gamestats]);
   return (
-    <div
-      className='row'
-      style={{
-        margin: '1rem'
-      }}
-    >
-      <h4 className='center'>Stats</h4>
-      <div className='col'>
-        <p>hp</p>
+    <>
+      <div>
+        <h4 className="center">STATS</h4>
+
+        <h6 className="center">HP</h6>
         <StatsBar stat={gamestats.numOfStars * 10} />
-        <p>jp</p>
+        <h6 className="center">JP</h6>
         <StatsBar stat={gamestats.jp} />
-        <p>strength</p>
+        <h6 className="center">STRENGTH</h6>
         <StatsBar stat={gamestats.followers} />
-        <p>speed</p>
+        <h6 className="center">SPEED</h6>
         <StatsBar stat={gamestats.speed} />
-        <p>experience</p>
+        <h6 className="center">EXPERIENCE</h6>
         <StatsBar stat={gamestats.publicRepos} />
       </div>
-    </div>
+    </>
   );
 };
 
-const StatsBar = props => {
+const StatsBar = (props) => {
   return (
     <div
-      className='stats-bar'
+      className="stats-bar"
       style={{
-        position: 'relative',
-        height: '20px',
-        // width:'100px',
-        // borderRadius:'50px',
-        border: '1px solid #333'
+        position: "relative",
+        height: "30px",
+        border: "1px solid black",
       }}
     >
       <Filler stat={props.stat} />
@@ -51,15 +45,14 @@ const StatsBar = props => {
   );
 };
 
-const Filler = props => {
+const Filler = (props) => {
   return (
     <div
-      className='filler'
+      className="filler"
       style={{
-        background: '#1DA598',
-        height: '100%',
-        width: `${props.stat}px`
-        // transition: 'width .2s ease-in'
+        background: "red",
+        height: "100%",
+        width: `${props.stat}px`,
       }}
     >
       <p>{props.stat}/100</p>
