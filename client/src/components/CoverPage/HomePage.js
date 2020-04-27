@@ -12,10 +12,9 @@ export default class Home extends Component {
     return <Document classname="cpsummary">
                 <Page size="A4">
                     <header>
-						<h4>{props.sender}</h4>
-						<h4>{props.position}</h4>
+						<h4>{props.sender} | {props.position}</h4>
                     </header>
-					<div className="page">
+					<div className="page" style={{fontSize: '12px'}}>
                             <div>
                                 <p>{monthNames[today.getMonth()]} {today.getDate()}, {today.getFullYear()}</p>
 								<p style={{color: '#ff3333'}}>To</p>
@@ -23,15 +22,17 @@ export default class Home extends Component {
 								<p>{props.receiverCompany}</p>
                             </div>
 							<div>
-								<p><span style={{color: '#ff3333'}}>From: </span>{props.sender}</p>
-								<p><span style={{color: '#ff3333'}}>Address: </span> {props.address}</p>
-								<p><span style={{color: '#ff3333'}}>Phone: </span> {props.phone}</p>
-								<p><span style={{color: '#ff3333'}}>E-mail: </span> {props.email}</p>
+								<p><span style={{color: '#ff3333', fontSize: '12px'}}>From: </span>{props.sender}</p>
+								<p><span style={{color: '#ff3333', fontSize: '12px'}}>Address: </span> {props.address}</p>
+								<p><span style={{color: '#ff3333', fontSize: '12px'}}>Phone: </span> {props.phone}</p>
+								<p><span style={{color: '#ff3333', fontSize: '12px'}}>E-mail: </span> {props.email}</p>
 							</div>
 					    <div>
-							<p style={{marginBottom: '50px'}}>Hi {props.receiver},</p>
-							<p style={{fontSize: '14px'}}>{props.message}</p>
-							<p style={{ marginTop: '50px' }}>Sincerely,</p>
+							<p style={{marginTop: '25px'}}>Hi {props.receiver},</p>
+							<p style={{fontSize: '12px'}}>{props.intro}</p>
+							<p style={{fontSize: '12px'}}>{props.body}</p>
+							<p style={{fontSize: '12px'}}>{props.close}</p>
+							<p style={{ marginTop: '25px' }}>Sincerely,</p>
 							<p>{props.sender}</p>
 						</div>
 					</div>

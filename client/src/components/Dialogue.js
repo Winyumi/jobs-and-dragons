@@ -322,7 +322,7 @@ const Dialogue = (props) => {
             </p>
             <ul>
             <Link
-                    to='#!' // link to cover letter when ready
+                    to='/coverpage' // link to cover letter when ready
                     onClick={(e) => {
                       // e.preventDefault();
                       props.handleAccept();
@@ -333,7 +333,7 @@ const Dialogue = (props) => {
               <li>
                 <a
                   className='modal-close'
-                  href='#!'
+                  href='/coverpage'
                   onClick={(e) => {
                     e.preventDefault();
                     props.handleDecline();

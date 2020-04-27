@@ -11,6 +11,7 @@ import { playhouse } from '../maps/playhouse';
 
 const World = (props) => {
   const [state, dispatch] = usePlayerContext();
+  // const [startPosition, setStartPosition] = useState();
   const [currentQuest, setCurrentQuest] = useState(dungeon);
   const [mapBackground, setMapBackground] = useState();
   const [mapTitle, setMapTitle] = useState();
@@ -19,18 +20,21 @@ const World = (props) => {
     const updateCurrentQuest = () => {
       switch (props.path) {
         case '/game/quest/01':
+          console.log("quest1", state)
           setMapTitle('Lair of the Oracle');
           setMapBackground(dungeonBG);
           setCurrentQuest(dungeon);
           dispatch({ type: 'quest', payload: 'dungeon' });
           break;
         case '/game/quest/02':
+          console.log("quest2", state)
           setMapTitle('Namuh Secruoser Guildhouse');
           setMapBackground(quildBG);
           setCurrentQuest(guild);
           dispatch({ type: 'quest', payload: 'guild' });
           break;
           case '/game/quest/03':
+          console.log("quest3", state)
           setMapTitle('Javan Playhouse');
           setMapBackground(playBG);
           setCurrentQuest(playhouse);
@@ -42,7 +46,7 @@ const World = (props) => {
     };
     updateCurrentQuest();
   }, [props.path, dispatch, currentQuest, mapTitle]);
-  console.log(currentQuest);
+
   return (
     <div
       style={{
