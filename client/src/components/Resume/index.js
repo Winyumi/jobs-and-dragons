@@ -72,11 +72,11 @@ export default class index extends Component {
                       <React.Fragment key={i}>
                         <div>
                           <p className='company-name'>
-                            {exp.name}| <span>{exp.designation}</span>
+                            {exp.name} | <span>{exp.designation}</span>
                           </p>
                           <div className='dates'>
-                            From<span className='from'>{exp.start}</span>
-                            To<span className='to'>{exp.end}</span>
+                            <p>From<span className='from'>{exp.start}</span></p>
+                            <p>To<span className='to'>{exp.end}</span></p>
                           </div>
                           <div className='description'>
                             <ul>
@@ -98,11 +98,11 @@ export default class index extends Component {
                       <React.Fragment key={i}>
                         <div>
                           <p className='college-name'>
-                            {edu.degree.toUpperCase()}|<span>{edu.from}</span>
+                            {edu.degree} | <span>{edu.from}</span>
                           </p>
                           <div className='dates'>
-                            From<span className='from'>{edu.start}</span>
-                            To<span className='to'>{edu.end}</span>
+                          <p>From<span className='from'>{edu.start}</span></p>
+                          <p>To<span className='to'>{edu.end}</span></p>
                           </div>
                         </div>
                       </React.Fragment>

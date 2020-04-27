@@ -74,10 +74,15 @@ textarea {
   font-style: normal;
 }
 
+h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+span,
+ul,
+li {
   font-family: 'Alagard';
 }
 
@@ -99,7 +104,6 @@ h6 {
   padding: 20px 30px;
   color: white;
   width: 21cm;
-  height: 29.7cm;
 }
 
 ul,
@@ -110,7 +114,7 @@ ol {
 header h1 {
   font-size: 32px;
   font-weight: normal;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Alagard';
 }
 
 header h1,
@@ -207,6 +211,9 @@ input[type='submit'] {
   color:white;
   padding: 8px;
   background-color: #333;
+  font-family: 'Alagard';
+  
+
 }
 
 .back {
@@ -226,3 +233,122 @@ input[type='submit'] {
   top: 260px;
   right: 15px;
 }
+
+.cpsummary {
+  font-family: 'Alagard';
+  font-size: small;
+
+}
+
+header {
+  margin: 30px 30px;
+  padding-bottom: 30px;
+  padding: 30px;
+  border-bottom: 0.5px solid gray;
+
+}
+
+.corecp{
+  display: flex;
+
+}
+
+h4{
+  line-height: 0.5;
+}
+
+.datecp {
+  margin-bottom: 20px;
+
+}
+
+.leftcp {
+  margin: 30px;
+  max-width: 30%;
+
+}
+
+.rightcp {
+  margin: 30px;
+  padding-left: 40px;
+  line-height: 2;
+  border-left: 0.5px solid gray;
+
+}
+
+.receivercp {
+  margin-top: 60px;
+
+}
+
+.sendercp {
+  margin-top: 60px;
+
+}
+
+.linecp {
+  line-height: 0.5;
+
+}
+
+
+.logContainer {
+    width:80%;
+    margin:0 auto;
+    padding-top:50px;
+    font-family: 'Alagard';
+
+}
+
+.logContainer h2 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 50px;
+    font-family: 'Alagard';
+}
+
+.logContainer p {
+    margin-top: 20px;
+    color: darkslategray;
+    font-family: 'Alagard';
+}
+
+.logContainer input {
+    font-size: 17px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    font-weight: 300;
+    font-family: 'Alagard';
+}
+
+
+
+
+.logContainer textarea {
+    font-size: 17px;
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    font-weight: 300;
+    font-family: 'Alagard';
+}
+
+.home-hidden {
+  display: none;
+
+}
+
+.print {
+  font-size: 17px;
+  font-weight: 300;
+  color:white;
+}
+
+
+
+
