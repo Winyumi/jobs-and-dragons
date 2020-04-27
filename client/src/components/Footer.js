@@ -11,7 +11,6 @@ function Footer() {
 }
 
 const footerStyle = {
-  // display: "block",
   position: "relative",
   width: "100%",
   background: "#333",
