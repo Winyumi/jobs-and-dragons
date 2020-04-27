@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import "./savedjobs.css";
 import Auth0Context from "../../react-auth0-spa";
 import dateFormat from "dateformat";
@@ -58,6 +59,7 @@ render(){
             <div className="row">
               <div className="center col s12 m3">
                 <h4>Saved Listings</h4>
+                <Link to='/joblisting'>Return to Job Search</Link>
             </div>
     
 

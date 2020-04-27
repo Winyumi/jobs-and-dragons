@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import dotenv from 'dotenv';
 import Auth0Context from "../react-auth0-spa";
 import 'materialize-css';
@@ -145,7 +146,9 @@ export default class jobListing extends Component {
                     className='btn brown darken-4'
                     onClick= { e => this.handleSubmitSearch(e) }
                     />
-                    <SavedJobs/>
+                    <div class="input-field">
+                      <Link to='/joblisting/saved'>View Saved Jobs</Link>
+                    </div>
                 </div>
 
                 <div className='center col s12 m8'>
