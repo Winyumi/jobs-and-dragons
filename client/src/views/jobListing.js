@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import dotenv from 'dotenv';
-
+import Auth0Context from "../react-auth0-spa";
 import 'materialize-css';
 import dateFormat from 'dateformat';
 import Loading from '../components/Loading';
-
+import SavedJobs from '../components/SavedJobs/index';
 
 dotenv.config();
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const APP_ID = "a69247c0";
+const APP_KEY = "24fc9762a9d2f3a031f002f7afe14f75";
 
-export default class jobListing extends React.Component {
+export default class jobListing extends Component {
 
     constructor(props) {
       super(props);
@@ -21,10 +22,14 @@ export default class jobListing extends React.Component {
         query: ''
       };
     }
-
+    static contextType = Auth0Context; 
     componentDidMount() {
 
-        fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key='+API_KEY+'&method=aj.jobs.search&format=JSON&keywords=Developer')
+        fetch("https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=" +
+        APP_ID +
+        "&app_key=" +
+        APP_KEY
+    )
 
         .then(res => res.json())
         .then(
@@ -33,7 +38,7 @@ export default class jobListing extends React.Component {
                 // console.log(result);
               this.setState({
                 isLoaded: true,
-                items: result.listings.listing
+                items: result.results,
               });
             },
             (error) => {
@@ -44,32 +49,73 @@ export default class jobListing extends React.Component {
             }
           )
     }
+
+    handleSubmitSave = (item) => {
+      const jobInfo={
+        id:item.id,
+        title:item.title,
+        description:item.description,
+        url:item.redirect_url,
+        company:item.company.display_name,
+        location:{
+          area:item.location.area,
+          latitude: item.latitude,
+          longitude:item.longitude
+      }
+      }
+      
+      const userEmail = this.context.user.email;
+  
+      async function updateJobInfo(data, email) {
+        const res = fetch(`/api/v1/users/emailjs/${email}`, {
+          method: 'PUT',
+          mode: 'cors',
+          cache: 'no-cache',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+          if (res.ok) {
+          return res.data;
+        }
+      }
+  
+        updateJobInfo(jobInfo,userEmail);
+    
+    }
+  
 
     handleSubmitSearch = (e) => {
         e.preventDefault();
 
         const query=this.state.query;
 
-        fetch('https://cors-anywhere.herokuapp.com/https://authenticjobs.com/api/?api_key='+API_KEY+'&method=aj.jobs.search&format=JSON&keywords='+query)
-        
-        
-        .then(res => res.json())
-        .then(
+        fetch(
+          "https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=" +
+            APP_ID +
+            "&app_key=" +
+            APP_KEY +
+            "&what=" +
+            query
+        )
+          .then((res) => res.json())
+          .then(
             (result) => {
               this.setState({
                 isLoaded: true,
-                items: result.listings.listing
+                items: result.results,
               });
             },
             (error) => {
               this.setState({
                 isLoaded: true,
-                error
+                error,
               });
             }
-          )
-
-    }
+          );
+      };
+    
 
     render() {
       const { error, isLoaded, items } = this.state;
@@ -99,6 +145,7 @@ export default class jobListing extends React.Component {
                     className='btn brown darken-4'
                     onClick= { e => this.handleSubmitSearch(e) }
                     />
+                    <SavedJobs/>
                 </div>
 
                 <div className='center col s12 m8'>
@@ -110,20 +157,20 @@ export default class jobListing extends React.Component {
 
                                 <div className="card-content">
                                     <h6 className="card-title activator">{ item.title }<i className="material-icons right">more_vert</i></h6>
-                                    <p> <b>Company :</b> { item.company.name } </p>
-                                    <p> <b>Type :</b> { item.type.name }</p>
-                                    <p> <b>Date :</b> { dateFormat( item.post_date , "dddd, mmmm dS, yyyy") }</p>
+                                    <p> <b>Company :</b> { item.title } </p>
+                                    <p> <b>Date :</b> { dateFormat( item.created , "dddd, mmmm dS, yyyy") }</p>
                                 </div>
 
                                 <div className="card-action">
-                                    <a href={ item.url} target='_blank'className="btn brown darken-4">Apply</a>
-                                    <a className="btn brown darken-4"><i className="material-icons">save</i></a>
+                                    <a href={ item.redirect_url} target='_blank' className="btn brown darken-4">Apply</a>
+                                    <button onClick ={(e)=>this.handleSubmitSave(item)}
+                                     value="Save" className="btn brown darken-4">Save</button>
                                 </div>
 
                                 <div className="card-reveal brown darken-4">
                                     <span className="card-title brown darken-4 brown lighten-3"><i className="material-icons right">close</i></span>
-                                    <p className="brown lighten-3"> <b>Category :</b> { item.category.name }</p>
-                                    <p className="brown lighten-3"> <b>Perks :</b> { item.perks }</p>
+                                    <p className="brown lighten-3"> <b>Category :</b> { item.category.label }</p>
+                      
                                     <p className="brown lighten-3"> <b>Description :</b> { item.description }</p>
 
 
