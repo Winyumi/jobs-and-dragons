@@ -1,19 +1,26 @@
-import React from 'react';
+import React from "react";
+
+import "materialize-css";
 
 function Footer() {
   return (
-    <footer style={footerStyle}>
-      <h6>JOBS & DRAGONS © 2020</h6>
+    <footer style={footerStyle} copyrights="copy 2015 Copyright Text">
+      <div>
+        <h5>JOBS & DRAGONS © 2020</h5>
+      </div>
     </footer>
-  )
+  );
 }
 
 const footerStyle = {
-  background: '#333',
-  color: '#fff',
-  textAlign: 'center',
-  bottom: '0px',
-  textShadow: '2px 2px black'
-}
+  display: "block",
+  position: "relative",
+  width: "100%",
+  background: "#333",
+  color: "#fff",
+  textAlign: "center",
+  bottom: "0px",
+  textShadow: "2px 2px black",
+};
 
 export default Footer;
