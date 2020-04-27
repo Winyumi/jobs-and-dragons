@@ -158,7 +158,9 @@ export default class jobListing extends React.Component {
                 <br></br>
                 <div class="input-field">
                   <Link to="/joblisting/saved">
-                    <h4 style={{ color: "grey" }}>View Saved Jobs</h4>
+                    <button className="btn btn-large red darken-4">
+                      View Saved Jobs
+                    </button>
                   </Link>
                 </div>
               </div>

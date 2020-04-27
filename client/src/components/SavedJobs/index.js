@@ -77,7 +77,9 @@ export default class SavedJobs extends React.Component {
             <div className="center col s12 m3">
               <h4 style={{ color: "red" }}>SAVED JOBS LISTINGS</h4>
               <Link to="/joblisting">
-                <h4 style={{ color: "grey" }}>Return to Job Search</h4>
+                <button className="btn btn-large red darken-4">
+                  Return to Job Search
+                </button>
               </Link>
             </div>
 
