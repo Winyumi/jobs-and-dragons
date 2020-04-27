@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import dotenv from 'dotenv';
 import Auth0Context from "../react-auth0-spa";
 import 'materialize-css';
@@ -22,7 +23,7 @@ export default class jobListing extends Component {
         query: ''
       };
     }
-    static contextType = Auth0Context; 
+    static contextType = Auth0Context;
     componentDidMount() {
 
         fetch("https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=" +
@@ -63,9 +64,9 @@ export default class jobListing extends Component {
           longitude:item.longitude
       }
       }
-      
+
       const userEmail = this.context.user.email;
-  
+
       async function updateJobInfo(data, email) {
         const res = fetch(`/api/v1/users/emailjs/${email}`, {
           method: 'PUT',
@@ -80,11 +81,11 @@ export default class jobListing extends Component {
           return res.data;
         }
       }
-  
+
         updateJobInfo(jobInfo,userEmail);
-    
+
     }
-  
+
 
     handleSubmitSearch = (e) => {
         e.preventDefault();
@@ -115,7 +116,7 @@ export default class jobListing extends Component {
             }
           );
       };
-    
+
 
     render() {
       const { error, isLoaded, items } = this.state;
@@ -132,12 +133,12 @@ export default class jobListing extends Component {
                     <h4>JOB LISTINGS</h4>
                     <div className='center input-field'>
                         <i className="large material-icons prefix">work</i>
-                        <input id="searchBox" 
-                        value={this.state.query} 
-                        type="text" 
+                        <input id="searchBox"
+                        value={this.state.query}
+                        type="text"
                         onChange={e => this.setState({query:e.target.value})} >
                         </input>
-                        <label className="active">Search Job Title</label>
+                        <label for="searchBox">Search Job Title</label>
                     </div>
                     <input
                     type='submit'
@@ -145,7 +146,9 @@ export default class jobListing extends Component {
                     className='btn brown darken-4'
                     onClick= { e => this.handleSubmitSearch(e) }
                     />
-                    <SavedJobs/>
+                    <div class="input-field">
+                      <Link to='/joblisting/saved'>View Saved Jobs</Link>
+                    </div>
                 </div>
 
                 <div className='center col s12 m8'>
@@ -170,7 +173,7 @@ export default class jobListing extends Component {
                                 <div className="card-reveal brown darken-4">
                                     <span className="card-title brown darken-4 brown lighten-3"><i className="material-icons right">close</i></span>
                                     <p className="brown lighten-3"> <b>Category :</b> { item.category.label }</p>
-                      
+
                                     <p className="brown lighten-3"> <b>Description :</b> { item.description }</p>
 
 
@@ -178,11 +181,11 @@ export default class jobListing extends Component {
 
                             </div>
                         </li>
-                    ))}     
-                    </ul>    
+                    ))}
+                    </ul>
                 </div>
             </div>
-    
+
         );
       }
     }

@@ -11,6 +11,7 @@ import Profile from './views/Profile';
 import Game from './views/Game';
 // import World from './components/World';
 import jobListing from './views/jobListing';
+import SavedJobs from './views/SavedJobs';
 
 import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
@@ -37,6 +38,7 @@ const App = () => {
             <Route exact path='/' component={Home} />
             <Route exact path='/userinfo' component={UserInfo} />
             <Route exact path='/joblisting' component={jobListing} />
+            <Route exact path='/joblisting/saved' component={SavedJobs} />
             <Route exact path='/coverpage' component={CoverPage}/>
             <Route exact path='/resume' component={Resume}/>
 
