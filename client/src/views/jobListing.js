@@ -11,7 +11,7 @@ dotenv.config();
 const APP_ID = "a69247c0";
 const APP_KEY = "24fc9762a9d2f3a031f002f7afe14f75";
 
-export default class jobListing extends React.Component {
+export default class jobListing extends Component {
 
     constructor(props) {
       super(props);
