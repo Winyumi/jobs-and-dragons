@@ -9,16 +9,24 @@
   margin-bottom: 0px;
 }
 
-.btn,  .btn-medium, .btn-floating, .remove-btn {
-  margin-top:'10px';
-  font-family:'Alagard';
+.btn,
+.btn-medium,
+.btn-floating,
+.remove-btn {
+  margin-top: '10px';
+  font-family: 'Alagard';
   background-color: #333;
+}
+
+#app {
+  height: calc(100vh);
+  width: 100%;
 }
 
 button {
   color: white;
-  padding : 10px;
-  margin : 10px;
+  padding: 10px;
+  margin: 10px;
   background: '#333';
   font-family: 'Alagard';
   box-shadow: '0 5px #999';
@@ -208,12 +216,10 @@ input[type='submit'] {
 }
 
 .card-panel {
-  color:white;
+  color: white;
   padding: 8px;
   background-color: #333;
   font-family: 'Alagard';
-  
-
 }
 
 .back {
@@ -237,7 +243,6 @@ input[type='submit'] {
 .cpsummary {
   font-family: 'Alagard';
   font-size: small;
-
 }
 
 header {
@@ -245,27 +250,23 @@ header {
   padding-bottom: 30px;
   padding: 30px;
   border-bottom: 0.5px solid gray;
-
 }
 
-.corecp{
+.corecp {
   display: flex;
-
 }
 
-h4{
+h4 {
   line-height: 0.5;
 }
 
 .datecp {
   margin-bottom: 20px;
-
 }
 
 .leftcp {
   margin: 30px;
   max-width: 30%;
-
 }
 
 .rightcp {
@@ -273,82 +274,68 @@ h4{
   padding-left: 40px;
   line-height: 2;
   border-left: 0.5px solid gray;
-
 }
 
 .receivercp {
   margin-top: 60px;
-
 }
 
 .sendercp {
   margin-top: 60px;
-
 }
 
 .linecp {
   line-height: 0.5;
-
 }
 
-
 .logContainer {
-    width:80%;
-    margin:0 auto;
-    padding-top:50px;
-    font-family: 'Alagard';
-
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 50px;
+  font-family: 'Alagard';
 }
 
 .logContainer h2 {
-    font-weight: 300;
-    text-align: center;
-    font-size: 35px;
-    margin-bottom: 50px;
-    font-family: 'Alagard';
+  font-weight: 300;
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 50px;
+  font-family: 'Alagard';
 }
 
 .logContainer p {
-    margin-top: 20px;
-    color: darkslategray;
-    font-family: 'Alagard';
+  margin-top: 20px;
+  color: darkslategray;
+  font-family: 'Alagard';
 }
 
 .logContainer input {
-    font-size: 17px;
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px 10px;
-    box-sizing: border-box;
-    font-weight: 300;
-    font-family: 'Alagard';
+  font-size: 17px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 10px;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-family: 'Alagard';
 }
 
-
-
-
 .logContainer textarea {
-    font-size: 17px;
-    width: 100%;
-    height: 200px;
-    margin-top: 10px;
-    padding: 12px 10px;
-    box-sizing: border-box;
-    font-weight: 300;
-    font-family: 'Alagard';
+  font-size: 17px;
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+  padding: 12px 10px;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-family: 'Alagard';
 }
 
 .home-hidden {
   display: none;
-
 }
 
 .print {
   font-size: 17px;
   font-weight: 300;
-  color:white;
+  color: white;
 }
-
-
-
-
