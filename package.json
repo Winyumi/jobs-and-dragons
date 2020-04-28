@@ -29,6 +29,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.3",
     "path": "^0.12.7",
+    "react-materialize": "^3.8.10",
     "react-to-print": "^2.6.3"
   },
   "devDependencies": {

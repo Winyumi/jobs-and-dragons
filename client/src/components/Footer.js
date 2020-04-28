@@ -11,8 +11,8 @@ function Footer() {
 }
 
 const footerStyle = {
-  position: 'absolute',
-  bottom: 0,
+  position: 'fixed',
+  bottom: '0px',
   width: '100%',
   background: '#333',
   color: '#fff',
