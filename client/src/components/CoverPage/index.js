@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactToPrint from "react-to-print";
 import Home from './HomePage';
+import { Link } from "react-router-dom";
+
 export default class index extends Component {
 
   state = {
@@ -39,10 +41,11 @@ export default class index extends Component {
 			</div>
   )
   
-  onSubmitHandler = (e) => {
+/*   onSubmitHandler = (e) => {
     e.preventDefault();
-    this.props.history.push({ pathname: "/joblisting/saved" });
-  };
+    <Link to ='/joblisting/saved' target="_blank" />
+  } */
+  
 
     
   render() {
@@ -129,16 +132,17 @@ export default class index extends Component {
 					</button>
         </form>
       </div>
-
+      <Link to ='/joblisting/saved' target="_blank" >
       <div>
       <button
       className="info btn-floating btn-medium black"
-      onClick={this.onSubmitHandler}
+      //onClick={this.onSubmitHandler}
     >
       <i class="small material-icons">visibility</i>
 
     </button>
         </div>
+        </Link>
       </React.Fragment>
     );
   }
