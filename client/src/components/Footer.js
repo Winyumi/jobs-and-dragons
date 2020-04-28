@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function Footer() {
   return (
-    <footer style={footerStyle} copyrights="copy 2015 Copyright Text">
+    <footer style={footerStyle} copyrights='copy 2015 Copyright Text'>
       <div>
         <h5>JOBS & DRAGONS © 2020</h5>
       </div>
@@ -11,13 +11,16 @@ function Footer() {
 }
 
 const footerStyle = {
-  position: "relative",
-  width: "100%",
-  background: "#333",
-  color: "#fff",
-  textAlign: "center",
-  bottom: "0px",
-  textShadow: "2px 2px black",
+  position: 'absolute',
+  bottom: 0,
+  width: '100%',
+  background: '#333',
+  color: '#fff',
+  textAlign: 'center',
+  textShadow: '2px 2px black',
+  padding: '16px',
+  maxHeight: 65,
+  minHeight: 65,
 };
 
 export default Footer;
