@@ -227,6 +227,11 @@ input[type='submit'] {
   top: 140px;
   right: 15px;
 }
+.info {
+  position: absolute;
+  top: 140px;
+  right: 20px;
+}
 
 .download {
   position: absolute;

@@ -40,6 +40,11 @@ export default class index extends Component {
 			</div>
   )
   
+  onSubmitHandler = (e) => {
+    e.preventDefault();
+    this.props.history.push({ pathname: "/joblisting/saved" });
+  };
+
     
   render() {
     console.log(this.state)
@@ -126,11 +131,16 @@ export default class index extends Component {
         </form>
       </div>
 
-      <div classname ="listSavedJobs">
-      <ListSavedJobs
-      >
-      
-      </ListSavedJobs>
+      <div>
+      <button
+      className="info btn-floating btn-medium black"
+      data-tooltip='Go to Saved Jobs'
+      data-position="bottom" 
+      onClick={this.onSubmitHandler}
+    >
+      <i class="small material-icons">visibility</i>
+
+    </button>
         </div>
       </React.Fragment>
     );
