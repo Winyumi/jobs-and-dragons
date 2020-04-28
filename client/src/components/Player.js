@@ -7,7 +7,7 @@ const Player = () => {
   const [state, dispatch] = usePlayerContext();
 
   useEffect(() => {
-    const handleMovement = e => {
+    const handleMovement = (e) => {
       switch (e.keyCode) {
         case 37:
           dispatch({ type: 'moveleft' });
@@ -27,7 +27,7 @@ const Player = () => {
     };
     window.addEventListener('keydown', handleMovement);
     return () => {
-      window.removeEventListener('mousemove', handleMovement);
+      window.removeEventListener('keydown', handleMovement);
     };
   }, [dispatch]);
 
@@ -40,7 +40,7 @@ const Player = () => {
         backgroundImage: `url('${walkSprite}')`,
         backgroundPosition: state.spritePosition,
         width: '40px',
-        height: '40px'
+        height: '40px',
       }}
     />
   );
