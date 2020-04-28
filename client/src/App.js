@@ -13,7 +13,7 @@ import Game from './views/Game';
 import jobListing from './views/jobListing';
 import SavedJobs from './views/SavedJobs';
 
-import { PlayerProvider } from './contexts/PlayerContext';
+// import { PlayerProvider } from './contexts/PlayerContext';
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
 import UserInfo from './components/UserInfo';
@@ -21,7 +21,17 @@ import CoverPage from './components/CoverPage';
 import Resume from './components/Resume';
 
 // styles/
+import background from './assets/J&D_Dungeon_dark.jpg';
 import './App.css';
+
+const bgStyle = {
+  background: `url(${background})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  display: 'cover',
+  width: '100%',
+};
 
 const App = () => {
   const { loading } = useAuth0();
@@ -31,7 +41,7 @@ const App = () => {
 
   return (
     <Router history={history}>
-      <div id='app'>
+      <div id='app' style={bgStyle}>
         <NavBar />
         <div className='row'>
           <Switch>
@@ -39,8 +49,8 @@ const App = () => {
             <Route exact path='/userinfo' component={UserInfo} />
             <Route exact path='/joblisting' component={jobListing} />
             <Route exact path='/joblisting/saved' component={SavedJobs} />
-            <Route exact path='/coverpage' component={CoverPage}/>
-            <Route exact path='/resume' component={Resume}/>
+            <Route exact path='/coverpage' component={CoverPage} />
+            <Route exact path='/resume' component={Resume} />
 
             <Route path='/game'>
               {/* <PlayerProvider> */}
@@ -50,9 +60,8 @@ const App = () => {
             <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
           </Switch>
         </div>
+        <Footer />
       </div>
-
-      <Footer />
     </Router>
   );
 };

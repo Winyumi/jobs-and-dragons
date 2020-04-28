@@ -12,7 +12,9 @@ export default class index extends Component {
     address: 'Sender Address',
     phone: '+44 7777 777 777',
     email: 'test@test.com',
-    message: 'Message'
+    intro: 'intro',
+    body: 'body',
+    close: 'close'
   }
 
 	submitButton = () => (
@@ -30,7 +32,9 @@ export default class index extends Component {
 							address={this.state.address}
 							phone={this.state.phone}
 							email={this.state.email}
-							message={this.state.message}
+              intro={this.state.intro}
+              body={this.state.body}
+              close={this.state.close}
 							/>
 				</div>
 			</div>
@@ -94,10 +98,25 @@ export default class index extends Component {
 							email: element.target.value
 						})}
 					/>
-          <p>Message</p>
+          <p>Intro</p>
           <textarea
+            placeholder="This is your opportunity to introduce yourself and includes why you are writing to them"
             onBlur={(element) => this.setState({
-              message: element.target.value
+              intro: element.target.value
+            })}
+          />
+           <p>Body</p>
+          <textarea
+            placeholder="Discuss your relevant qualifications according to the job description"
+            onBlur={(element) => this.setState({
+              body: element.target.value
+            })}
+          />
+           <p>Close</p>
+          <textarea
+            placeholder="Thank the recipient and provide contact information and follow-up details"        
+            onBlur={(element) => this.setState({
+              close: element.target.value
             })}
           />
           <button className='print waves-effect waves-light btn'>

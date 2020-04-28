@@ -2,18 +2,25 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer style={footerStyle}>
-      <h6>JOBS & DRAGONS © 2020</h6>
+    <footer style={footerStyle} copyrights='copy 2015 Copyright Text'>
+      <div>
+        <h5>JOBS & DRAGONS © 2020</h5>
+      </div>
     </footer>
-  )
+  );
 }
 
 const footerStyle = {
+  position: 'absolute',
+  bottom: 0,
+  width: '100%',
   background: '#333',
   color: '#fff',
   textAlign: 'center',
-  bottom: '0px',
-  textShadow: '2px 2px black'
-}
+  textShadow: '2px 2px black',
+  padding: '16px',
+  maxHeight: 65,
+  minHeight: 65,
+};
 
 export default Footer;
