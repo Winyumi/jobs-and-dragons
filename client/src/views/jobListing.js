@@ -142,7 +142,7 @@ export default class jobListing extends Component {
                     </div>
                     <input
                     type='submit'
-                    value='SEARCH'
+                    value='Search'
                     className='btn brown darken-4'
                     onClick= { e => this.handleSubmitSearch(e) }
                     />
