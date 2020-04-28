@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from 'react';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
-import { playhouse } from  '../maps/playhouse';
+import { playhouse } from '../maps/playhouse';
 
 const PlayerContext = createContext();
 const { Provider } = PlayerContext;
@@ -20,9 +20,9 @@ const setCurrentMap = (currentMap) => {
     case 'guild':
       map = guild;
       return map;
-      case 'playhouse':
-        map = playhouse;
-        return map;
+    case 'playhouse':
+      map = playhouse;
+      return map;
     default:
       break;
   }
@@ -45,7 +45,6 @@ const observeObstacles = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-
   return nextTile <= 5;
 };
 
@@ -57,7 +56,7 @@ const observeInteraction = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
   tileInteract = nextTile;
-  console.log("interact", nextTile)
+  console.log('interact', nextTile);
   return nextTile >= 70;
 };
 
@@ -195,6 +194,11 @@ const playerReducer = (state, action) => {
         isInteracting: action.payload,
       };
     case 'quest':
+      state.position = [120, 40];
+      state.spritePosition = '0px 0px';
+      state.direction = 'east';
+      state.walkIndex = 0;
+      state.isInteracting = false;
       return {
         ...state,
         currentMap: action.payload,
