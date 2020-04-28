@@ -130,7 +130,7 @@ export default class jobListing extends Component {
             <div className='row'>
 
                 <div className='center col s12 m3'>
-                    <h4>JOB LISTINGS</h4>
+                    <h4>Job Listings</h4>
                     <div className='center input-field'>
                         <i className="large material-icons prefix">work</i>
                         <input id="searchBox"
