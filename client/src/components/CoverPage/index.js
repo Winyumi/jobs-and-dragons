@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactToPrint from "react-to-print";
 import Home from './HomePage';
-import ListSavedJobs from './ListSavedJobs'
 export default class index extends Component {
 
   state = {
@@ -134,8 +133,6 @@ export default class index extends Component {
       <div>
       <button
       className="info btn-floating btn-medium black"
-      data-tooltip='Go to Saved Jobs'
-      data-position="bottom" 
       onClick={this.onSubmitHandler}
     >
       <i class="small material-icons">visibility</i>
