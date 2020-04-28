@@ -138,7 +138,7 @@ export default class jobListing extends Component {
                         type="text"
                         onChange={e => this.setState({query:e.target.value})} >
                         </input>
-                        <label for="searchBox">Search Job Title</label>
+                        <label htmlFor="searchBox">Search Job Title</label>
                     </div>
                     <input
                     type='submit'
@@ -146,7 +146,7 @@ export default class jobListing extends Component {
                     className='btn brown darken-4'
                     onClick= { e => this.handleSubmitSearch(e) }
                     />
-                    <div class="input-field">
+                    <div className="input-field">
                       <Link to='/joblisting/saved'>View Saved Jobs</Link>
                     </div>
                 </div>
