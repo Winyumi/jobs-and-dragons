@@ -67,7 +67,7 @@ export default class SavedJobs extends React.Component {
   };
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, items } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!items.length) {

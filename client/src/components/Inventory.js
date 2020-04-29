@@ -1,8 +1,8 @@
-import React, { Component, useState } from "react";
+import React from "react";
 
 import { Table } from "react-materialize";
 
-import { api } from "../utils/api";
+// import { api } from "../utils/api";
 import { useUserContext } from "../contexts/UserContext";
 import Scroll from "../assets/Scroll.png";
 import Bow from "../assets/Bow.png";
