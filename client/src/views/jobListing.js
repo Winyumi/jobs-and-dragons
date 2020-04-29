@@ -35,15 +35,19 @@ export default class jobListing extends React.Component {
       "https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=" +
         APP_ID +
         "&app_key=" +
-        APP_KEY
+        APP_KEY +
+        "&what=Web Developer"
     )
       .then((res) => res.json())
       .then(
         (result) => {
-          // console.log(result);
+          let { results } = result;
+          results = JSON.parse(
+            JSON.stringify(results).replace(/\<strong\>|\<\/strong\>/g, "")
+          );
           this.setState({
             isLoaded: true,
-            items: result.results,
+            items: results,
           });
         },
         (error) => {
@@ -158,7 +162,12 @@ export default class jobListing extends React.Component {
                 <br></br>
                 <div class="input-field">
                   <Link to="/joblisting/saved">
-                    <h4 style={{ color: "grey" }}>View Saved Jobs</h4>
+                    <button
+                      rel="noopener noreferrer"
+                      className="btn btn-large red darken-4"
+                    >
+                      View Saved Jobs
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -225,7 +234,6 @@ export default class jobListing extends React.Component {
 }
 
 const ListingStyles = {
-  // backgroundColor: "black",
   backgroundImage: `url(${backgroundDark})`,
 };
 
