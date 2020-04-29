@@ -20,21 +20,18 @@ const World = (props) => {
     const updateCurrentQuest = () => {
       switch (props.path) {
         case '/game/quest/01':
-          console.log("quest1", state)
           setMapTitle('Lair of the Oracle');
           setMapBackground(dungeonBG);
           setCurrentQuest(dungeon);
           dispatch({ type: 'quest', payload: 'dungeon' });
           break;
         case '/game/quest/02':
-          console.log("quest2", state)
           setMapTitle('Namuh Secruoser Guildhouse');
           setMapBackground(quildBG);
           setCurrentQuest(guild);
           dispatch({ type: 'quest', payload: 'guild' });
           break;
-          case '/game/quest/03':
-          console.log("quest3", state)
+        case '/game/quest/03':
           setMapTitle('Javan Playhouse');
           setMapBackground(playBG);
           setCurrentQuest(playhouse);

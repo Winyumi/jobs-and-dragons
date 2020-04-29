@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-materialize";
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'react-materialize';
 
-import World from "../components/World";
-import Dialogue from "../components/Dialogue";
-import Chest from "../components/Chest";
-import CharBox from "../components/CharBox";
+import World from '../components/World';
+import Dialogue from '../components/Dialogue';
+import Chest from '../components/Chest';
+import CharBox from '../components/CharBox';
 // import Quests from '../components/QuestsList';
-import { usePlayerContext } from "../contexts/PlayerContext";
-import history from "../utils/history";
+import { usePlayerContext } from '../contexts/PlayerContext';
+import history from '../utils/history';
 
-import backgroundDark from "../assets/dark-honeycomb.png";
-import backgroundLight from "../assets/light_honeycomb.png";
+import backgroundDark from '../assets/dark-honeycomb.png';
+import backgroundLight from '../assets/light_honeycomb.png';
 
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
@@ -26,15 +26,15 @@ const Game = () => {
   let RowStyles;
   if (isInteracting || isAccepted) {
     RowStyles = {
-      opacity: "0.25",
-      display: "flex",
-      justifyContent: "center",
+      opacity: '0.25',
+      display: 'flex',
+      justifyContent: 'center',
     };
   } else {
     RowStyles = {
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
     };
   }
 
@@ -46,7 +46,7 @@ const Game = () => {
   const handleQuestDecline = () => {
     setIsInteracting(!state.isInteracting);
     dispatch({
-      action: "toggleIsInteracting",
+      type: 'toggleIsInteracting',
       payload: !state.isInteracting,
     });
   };
@@ -54,7 +54,7 @@ const Game = () => {
   const handleLinkDecline = () => {
     setIsOpening(!state.isOpening);
     dispatch({
-      action: "toggleIsOpening",
+      type: 'toggleIsOpening',
       payload: !state.isOpening,
     });
   };
@@ -63,13 +63,13 @@ const Game = () => {
     <>
       <div style={PageStyles}>
         <Row style={RowStyles}>
-          <Col className="charnav" s={3} style={{ marginTop: "50px" }}>
+          <Col className='charnav' s={3} style={{ marginTop: '50px' }}>
             <div style={charBoxStyles}>
               <CharBox />
             </div>
           </Col>
 
-          <Col className="" s={9} style={GameBoxStyles}>
+          <Col className='' s={9} style={GameBoxStyles}>
             <World path={history.location.pathname} />
           </Col>
         </Row>
@@ -89,20 +89,20 @@ const Game = () => {
 export default Game;
 
 const charBoxStyles = {
-  margin: "30px",
-  padding: "30px",
-  paddingBottom: "100px",
+  margin: '30px',
+  padding: '30px',
+  paddingBottom: '100px',
   backgroundImage: `url(${backgroundLight})`,
 };
 
 const PageStyles = {
-  top: "0px",
-  width: "100%",
-  height: "90vh",
+  top: '0px',
+  width: '100%',
+  height: '90vh',
   backgroundImage: `url(${backgroundDark})`,
 };
 
 const GameBoxStyles = {
-  display: "flex",
-  justifyContent: "center",
+  display: 'flex',
+  justifyContent: 'center',
 };
