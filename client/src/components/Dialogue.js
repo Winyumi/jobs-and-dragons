@@ -33,7 +33,7 @@ const Dialogue = (props) => {
     height: '300px',
     padding: '20px',
   };
-  //Oracle's lair dialogue boxes****** 
+  //Oracle's lair dialogue boxes******
   if (gameState.currentMap === 'dungeon' && gameState.interactTile === 70) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -52,7 +52,13 @@ const Dialogue = (props) => {
               <li>
                 {gameState.currentMap === 'dungeon' ? (
                   <Link
-                    to='/userinfo'
+                    to={{
+                      pathname: '/userinfo',
+                      state: {
+                        ...state.user,
+                      },
+                    }}
+                    // to='/userinfo'
                     onClick={(e) => {
                       // e.preventDefault();
                       props.handleAccept();
@@ -60,9 +66,9 @@ const Dialogue = (props) => {
                   >
                     Yes!
                   </Link>
-                // ) : gameState.currentMap === 'guild' ? (
+                ) : // ) : gameState.currentMap === 'guild' ? (
                 //   <Link to='/joblisting'>Yes!</Link>
-                ) : null}
+                null}
               </li>
               <li>
                 <a
@@ -81,7 +87,10 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } else if (gameState.currentMap === 'dungeon' && gameState.interactTile === 71) {
+  } else if (
+    gameState.currentMap === 'dungeon' &&
+    gameState.interactTile === 71
+  ) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -95,8 +104,10 @@ const Dialogue = (props) => {
           </div>
           <div className='row'>
             <p>
-              Is this your first time seeing the Oracle? I've been an acolyte here for 4 years and I've never seen him so disturbed...
-              It's worrying us all. Hopefully whatever is happening will be resolved soon...
+              Is this your first time seeing the Oracle? I've been an acolyte
+              here for 4 years and I've never seen him so disturbed... It's
+              worrying us all. Hopefully whatever is happening will be resolved
+              soon...
             </p>
             <ul>
               <li>
@@ -116,77 +127,90 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } else if (gameState.currentMap === 'dungeon' && gameState.interactTile === 72) {
-      return (
-        <div className='modal-content' style={modalStyle}>
-          <div style={{}}>
-            <div className='row'>
-              <img
-                style={imgStyle}
-                src={AcolyteBox}
-                alt='Profile of an acolyte'
-              />
-              <h4>An Acolyte of Secivres Reerac</h4>
-            </div>
-            <div className='row'>
-              <p>
-                Is this your first time to the Oracle's Lair? Gninigeb City is also home to the Javan Playhouse and an Namuh Secruoser Guild outpost.
-                We acolyte's often visit them when our master gives us time off.
-              </p>
-              <ul>
-                <li>
-                  <a
-                    className='modal-close'
-                    href='#!'
-                    onClick={(e) => {
-                      e.preventDefault();
-                      props.handleDecline();
-                    }}
-                  >
-                    Nope, but I'll be sure to check them out when I get a chance!
-                  </a>
-                </li>
-              </ul>
-            </div>
+  } else if (
+    gameState.currentMap === 'dungeon' &&
+    gameState.interactTile === 72
+  ) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={AcolyteBox}
+              alt='Profile of an acolyte'
+            />
+            <h4>An Acolyte of Secivres Reerac</h4>
+          </div>
+          <div className='row'>
+            <p>
+              Is this your first time to the Oracle's Lair? Gninigeb City is
+              also home to the Javan Playhouse and an Namuh Secruoser Guild
+              outpost. We acolyte's often visit them when our master gives us
+              time off.
+            </p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Nope, but I'll be sure to check them out when I get a chance!
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      );
-  } else if (gameState.currentMap === 'dungeon' && gameState.interactTile === 73) {
-      return (
-        <div className='modal-content' style={modalStyle}>
-          <div style={{}}>
-            <div className='row'>
-              <img
-                style={imgStyle}
-                src={AcolyteBox}
-                alt='Profile of an acolyte'
-              />
-              <h4>An Acolyte of Secivres Reerac</h4>
-            </div>
-            <div className='row'>
-              <p>
-                Ever since the The Gates of Tenretni have closed that chest has been banging around like crazy! I've been afraid to come in here for months!
-              </p>
-              <ul>
-                <li>
-                  <a
-                    className='modal-close'
-                    href='#!'
-                    onClick={(e) => {
-                      e.preventDefault();
-                      props.handleDecline();
-                    }}
-                  >
-                    You're right, that is strange.
-                  </a>
-                </li>
-              </ul>
-            </div>
+      </div>
+    );
+  } else if (
+    gameState.currentMap === 'dungeon' &&
+    gameState.interactTile === 73
+  ) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={AcolyteBox}
+              alt='Profile of an acolyte'
+            />
+            <h4>An Acolyte of Secivres Reerac</h4>
+          </div>
+          <div className='row'>
+            <p>
+              Ever since the The Gates of Tenretni have closed that chest has
+              been banging around like crazy! I've been afraid to come in here
+              for months!
+            </p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  You're right, that is strange.
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      );
-  //Guild dialogue boxes****** 
-  } else if (gameState.currentMap === 'guild' && gameState.interactTile === 70) {
+      </div>
+    );
+    //Guild dialogue boxes******
+  } else if (
+    gameState.currentMap === 'guild' &&
+    gameState.interactTile === 70
+  ) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -206,15 +230,15 @@ const Dialogue = (props) => {
             </p>
             <ul>
               <li>
-            <Link
-                    to='/joblisting'
-                    onClick={(e) => {
-                      // e.preventDefault();
-                      props.handleAccept();
-                    }}
-                  >
-                    Yes!
-                  </Link>
+                <Link
+                  to='/joblisting'
+                  onClick={(e) => {
+                    // e.preventDefault();
+                    props.handleAccept();
+                  }}
+                >
+                  Yes!
+                </Link>
               </li>
               <li>
                 <a
@@ -233,7 +257,10 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } else if (gameState.currentMap === 'guild' && gameState.interactTile === 71) {
+  } else if (
+    gameState.currentMap === 'guild' &&
+    gameState.interactTile === 71
+  ) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -247,8 +274,9 @@ const Dialogue = (props) => {
           </div>
           <div className='row'>
             <p>
-              Hey!!! You can't be behind here! If you're looking for the Guardian of this Guild, she's in her private dining room.
-              Now get out of here!
+              Hey!!! You can't be behind here! If you're looking for the
+              Guardian of this Guild, she's in her private dining room. Now get
+              out of here!
             </p>
             <ul>
               <li>
@@ -260,7 +288,7 @@ const Dialogue = (props) => {
                     props.handleDecline();
                   }}
                 >
-                  Yikes! Sorry! 
+                  Yikes! Sorry!
                 </a>
               </li>
             </ul>
@@ -268,68 +296,74 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } else if (gameState.currentMap === 'guild' && gameState.interactTile === 72) {
-      return (
-        <div className='modal-content' style={modalStyle}>
-          <div style={{}}>
-            <div className='row'>
-              <img
-                style={imgStyle}
-                src={GuildGuardBox}
-                alt='Profile of the guild armory guard'
-              />
-              <h4>Guild Armory Guard</h4>
-            </div>
-            <div className='row'>
-              <p>
-                So, you're looking to go on a Boj hunt? Well, I can't just GIVE weapons to anybody who walks in here. You'll have to get permission from our leader, the Guardian, first.
-              </p>
-              <ul>
-                <li>
-                  <a
-                    className='modal-close'
-                    href='#!'
-                    onClick={(e) => {
-                      e.preventDefault();
-                      props.handleDecline();
-                    }}
-                  >
-                    Right...that makes sense... 
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      );
-//Javan playhouse dialogue boxes****** 
-  } else if (gameState.currentMap === 'playhouse' && gameState.interactTile === 70) {
+  } else if (
+    gameState.currentMap === 'guild' &&
+    gameState.interactTile === 72
+  ) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
           <div className='row'>
             <img
               style={imgStyle}
-              src={BardBox}
-              alt='Profile of the Bard'
+              src={GuildGuardBox}
+              alt='Profile of the guild armory guard'
             />
+            <h4>Guild Armory Guard</h4>
+          </div>
+          <div className='row'>
+            <p>
+              So, you're looking to go on a Boj hunt? Well, I can't just GIVE
+              weapons to anybody who walks in here. You'll have to get
+              permission from our leader, the Guardian, first.
+            </p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Right...that makes sense...
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+    //Javan playhouse dialogue boxes******
+  } else if (
+    gameState.currentMap === 'playhouse' &&
+    gameState.interactTile === 70
+  ) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img style={imgStyle} src={BardBox} alt='Profile of the Bard' />
             <h4>The Javan Playhouse Bard</h4>
           </div>
           <div className='row'>
             <p>
-              Ah, welcome {state.user.name}! I've heard the rumours and I guessed that you would come seeking my aid.
-              I'm taking an ...intermission, in writing my next masterpiece. Are you ready to write your first script?
+              Ah, welcome {state.user.name}! I've heard the rumours and I
+              guessed that you would come seeking my aid. I'm taking an
+              ...intermission, in writing my next masterpiece. Are you ready to
+              write your first script?
             </p>
             <ul>
-            <Link
-                    to='/coverpage' // link to cover letter when ready
-                    onClick={(e) => {
-                      // e.preventDefault();
-                      props.handleAccept();
-                    }}
-                  >
-                    I'm ready!
-                  </Link>
+              <Link
+                to='/coverpage' // link to cover letter when ready
+                onClick={(e) => {
+                  // e.preventDefault();
+                  props.handleAccept();
+                }}
+              >
+                I'm ready!
+              </Link>
               <li>
                 <a
                   className='modal-close'
@@ -347,7 +381,10 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } else if (gameState.currentMap === 'playhouse' && gameState.interactTile === 71) {
+  } else if (
+    gameState.currentMap === 'playhouse' &&
+    gameState.interactTile === 71
+  ) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -361,7 +398,9 @@ const Dialogue = (props) => {
           </div>
           <div className='row'>
             <p>
-              I know it's strange enough to see a Sasquatch outside of Cascadia, nevermind that he's singing in a Javan play. I'm glad the Bard appreciates talent over politics!
+              I know it's strange enough to see a Sasquatch outside of Cascadia,
+              nevermind that he's singing in a Javan play. I'm glad the Bard
+              appreciates talent over politics!
             </p>
             <ul>
               <li>
@@ -381,7 +420,10 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } else if (gameState.currentMap === 'playhouse' && gameState.interactTile === 72) {
+  } else if (
+    gameState.currentMap === 'playhouse' &&
+    gameState.interactTile === 72
+  ) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -395,7 +437,8 @@ const Dialogue = (props) => {
           </div>
           <div className='row'>
             <p>
-              I know the Bard is reknowned througout Upper Clientia, but sometimes I don't understand the function of his Javan Scripts!
+              I know the Bard is reknowned througout Upper Clientia, but
+              sometimes I don't understand the function of his Javan Scripts!
             </p>
             <ul>
               <li>
@@ -415,7 +458,10 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  } else if (gameState.currentMap === 'playhouse' && gameState.interactTile === 73) {
+  } else if (
+    gameState.currentMap === 'playhouse' &&
+    gameState.interactTile === 73
+  ) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -429,7 +475,9 @@ const Dialogue = (props) => {
           </div>
           <div className='row'>
             <p>
-              With the borders closed in Upper Clientia, business has been horrible! I hope that somehow all three kingdoms sort out their problems.
+              With the borders closed in Upper Clientia, business has been
+              horrible! I hope that somehow all three kingdoms sort out their
+              problems.
             </p>
             <ul>
               <li>

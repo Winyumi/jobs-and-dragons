@@ -8,19 +8,44 @@ import StarRatings from 'react-star-ratings';
 import UserSkills from './userSkills';
 
 export default class index extends Component {
-  state = {
-    name: '',
-    email: '',
-    bio: '',
-    phone: '',
-    education: [],
-    experience: [],
-    expertise: [],
-    projects: []
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: '',
+      email: '',
+      bio: '',
+      phone: '',
+      education: [],
+      experience: [],
+      expertise: [],
+      projects: [],
+    };
+  }
+
   componentDidMount() {
-    if (localStorage.getItem('data')) {
-      this.setState(JSON.parse(localStorage.getItem('data')));
+    if (this.props.location.state) {
+      const {
+        name,
+        email,
+        bio,
+        phone,
+        education,
+        experience,
+        expertise,
+        projects,
+      } = this.props.location.state;
+      console.log(this.props.location.state);
+      this.setState({
+        name: name,
+        email: email,
+        bio: bio,
+        phone: phone,
+        education: education,
+        experience: experience,
+        expertise: expertise,
+        projects: projects,
+      });
     }
   }
 
@@ -28,7 +53,7 @@ export default class index extends Component {
     localStorage.setItem('data', JSON.stringify(this.state));
   }
 
-  onChangeHandler = (name, from, id) => e => {
+  onChangeHandler = (name, from, id) => (e) => {
     let value = e.target.value;
     let newState = { ...this.state };
     if (name && from && id !== undefined) {
@@ -38,7 +63,7 @@ export default class index extends Component {
     }
     this.setState(newState);
   };
-  addMoreFormGrp = grp => e => {
+  addMoreFormGrp = (grp) => (e) => {
     e.preventDefault();
     let newState = { ...this.state };
     if (grp === 'education') {
@@ -46,24 +71,24 @@ export default class index extends Component {
         degree: '',
         from: '',
         start: '',
-        end: ''
+        end: '',
       });
     } else if (grp === 'experience') {
       newState[grp].push({
         name: '',
         start: '',
         end: '',
-        description: ''
+        description: '',
       });
     } else if (grp === 'projects') {
       newState[grp].push({
         name: '',
-        description: ''
+        description: '',
       });
     }
     this.setState(newState);
   };
-  removeFormGrp = (grp, id) => e => {
+  removeFormGrp = (grp, id) => (e) => {
     e.preventDefault();
     let newState = { ...this.state };
     if (grp && id !== undefined) {
@@ -72,7 +97,7 @@ export default class index extends Component {
     this.setState(newState);
   };
 
-  onSubmitHandler = e => {
+  onSubmitHandler = (e) => {
     e.preventDefault();
 
     let userInfo = {
@@ -83,7 +108,7 @@ export default class index extends Component {
       experience: this.state.experience,
       expertise: this.state.expertise,
       descripiton: this.state.description,
-      designation: this.state.designation
+      designation: this.state.designation,
     };
     async function getUserInfo(userEmail) {
       try {
@@ -104,9 +129,9 @@ export default class index extends Component {
         mode: 'cors',
         cache: 'no-cache',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
       if (res.ok) {
         return res.data;
@@ -117,9 +142,9 @@ export default class index extends Component {
       const res = await fetch('/api/v1/users', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userInfo)
+        body: JSON.stringify(userInfo),
       });
       if (res.ok) {
         const jsonRes = await res.json();
@@ -128,7 +153,7 @@ export default class index extends Component {
       }
     }
     console.log(this.state.email);
-    getUserInfo(this.state.email).then(result => {
+    getUserInfo(this.state.email).then((result) => {
       console.log(result);
       console.log(result.data.email);
       console.log(this.state.email);
@@ -142,15 +167,15 @@ export default class index extends Component {
     this.props.history.push({ pathname: '/resume', state: this.state });
   };
 
-  handleExpertiseSubmit = expertise => {
-    this.setState(prevState => ({
-      expertise: [...prevState.expertise, ...expertise]
+  handleExpertiseSubmit = (expertise) => {
+    this.setState((prevState) => ({
+      expertise: [...prevState.expertise, ...expertise],
     }));
   };
 
   render() {
     const values = { ...this.state };
-    const { education, experience, projects } = this.state;
+    const { education, experience, expertise, projects } = this.state;
     return (
       <form onSubmit={this.onSubmitHandler}>
         <section id='user-info'>
@@ -218,7 +243,10 @@ export default class index extends Component {
           <div>
             <h5>What is your area of interest?</h5>
           </div>
-          <UserExpertise handleFormSubmit={this.handleExpertiseSubmit} />
+          <UserExpertise
+            handleFormSubmit={this.handleExpertiseSubmit}
+            expertise={expertise}
+          />
         </section>
 
         <section id='skills'>
@@ -314,7 +342,7 @@ export default class index extends Component {
           className='submit remove-btn btn-large center'
         >
           Submit
-          <i class='material-icons right'>send</i>
+          <i className='material-icons right'>send</i>
         </button>
       </form>
     );

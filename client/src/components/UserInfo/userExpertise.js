@@ -13,7 +13,7 @@ const EXPERTISE = [
   'Front End Developer',
   'Web Services Developer',
   'Web Designer',
-  'Software Support Engineer'
+  'Software Support Engineer',
 ];
 
 class userExpertise extends Component {
@@ -21,35 +21,35 @@ class userExpertise extends Component {
     checkboxes: EXPERTISE.reduce(
       (options, option) => ({
         ...options,
-        [option]: false
+        [option]: false,
       }),
       {}
-    )
+    ),
   };
 
-  handleCheckboxChange = changeEvent => {
+  handleCheckboxChange = (changeEvent) => {
     const { name } = changeEvent.target;
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       checkboxes: {
         ...prevState.checkboxes,
-        [name]: !prevState.checkboxes[name]
-      }
+        [name]: !prevState.checkboxes[name],
+      },
     }));
   };
 
-  handleFormSubmit = CheckBoxValue => {
+  handleFormSubmit = (CheckBoxValue) => {
     CheckBoxValue.preventDefault();
     const expertise = Object.keys(this.state.checkboxes).filter(
-      checkbox => this.state.checkboxes[checkbox]
+      (checkbox) => this.state.checkboxes[checkbox]
     );
 
     this.props.handleFormSubmit(expertise);
   };
 
-  createCheckbox = option => (
+  createCheckbox = (option) => (
     <Checkbox
       label={option}
-      isSelected={this.state.checkboxes[option]}
+      isSelected={this.props.expertise.includes(option)}
       onCheckboxChange={this.handleCheckboxChange}
       key={option}
     />
@@ -58,14 +58,16 @@ class userExpertise extends Component {
   createCheckboxes = () => EXPERTISE.map(this.createCheckbox);
 
   render() {
+    console.log(this.props);
     return (
       <div className='row'>
         <div className='col'>{this.createCheckboxes()}</div>
         <div>
           <button
             className='btn'
-            onClick={e => this.handleFormSubmit(e)}
-            name='action'>
+            onClick={(e) => this.handleFormSubmit(e)}
+            name='action'
+          >
             Save
             <i className='material-icons right'>check</i>
           </button>
