@@ -35,15 +35,19 @@ export default class jobListing extends React.Component {
       "https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=" +
         APP_ID +
         "&app_key=" +
-        APP_KEY
+        APP_KEY +
+        "&what=Web Developer"
     )
       .then((res) => res.json())
       .then(
         (result) => {
-          // console.log(result);
+          let { results } = result;
+          results = JSON.parse(
+            JSON.stringify(results).replace(/\<strong\>|\<\/strong\>/g, "")
+          );
           this.setState({
             isLoaded: true,
-            items: result.results,
+            items: results,
           });
         },
         (error) => {
