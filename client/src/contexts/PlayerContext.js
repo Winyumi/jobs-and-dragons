@@ -56,7 +56,6 @@ const observeInteraction = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
   tileInteract = nextTile;
-  console.log('interact', nextTile);
   return nextTile >= 70;
 };
 

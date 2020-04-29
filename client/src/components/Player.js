@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { usePlayerContext } from '../contexts/PlayerContext';
-// import walkSprite from '../assets/player_walk.png';
 import walkSprite from '../assets/avatar_walk.png';
 
 const Player = () => {
@@ -26,10 +25,16 @@ const Player = () => {
       }
     };
     window.addEventListener('keydown', handleMovement);
+
+    // Stop listening for key events if the modal is open
+    if (state.isInteracting) {
+      window.removeEventListener('keydown', handleMovement);
+    }
+
     return () => {
       window.removeEventListener('keydown', handleMovement);
     };
-  }, [dispatch]);
+  }, [dispatch, state]);
 
   return (
     <div

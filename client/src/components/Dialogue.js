@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 const Dialogue = (props) => {
   const [gameState] = usePlayerContext();
   const [state] = useUserContext();
+
   const imgStyle = {
     float: 'right',
     width: '100px',
@@ -58,17 +59,13 @@ const Dialogue = (props) => {
                         ...state.user,
                       },
                     }}
-                    // to='/userinfo'
                     onClick={(e) => {
-                      // e.preventDefault();
                       props.handleAccept();
                     }}
                   >
                     Yes!
                   </Link>
-                ) : // ) : gameState.currentMap === 'guild' ? (
-                //   <Link to='/joblisting'>Yes!</Link>
-                null}
+                ) : null}
               </li>
               <li>
                 <a
