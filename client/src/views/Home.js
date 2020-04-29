@@ -13,7 +13,7 @@ function Home() {
           class='responsive-img'
           style={bgStyle}
           src={background}
-          alt='Background Image'
+          alt='Background'
         />
         <div style={topStyle}>
           <div className='container'>
