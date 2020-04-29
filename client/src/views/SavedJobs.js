@@ -6,9 +6,11 @@ import backgroundDark from "../assets/dark-honeycomb.png";
 
 const SavedJobsView = () => {
   return (
-    <div className="row" style={ListingStyles}>
-      <div className="center col s12">
-        <SavedJobs />
+    <div style={ListingStyles}>
+      <div className="row">
+        <div className="center col s12">
+          <SavedJobs />
+        </div>
       </div>
     </div>
   );

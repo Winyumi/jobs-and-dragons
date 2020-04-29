@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./savedjobs.css";
 import Auth0Context from "../../react-auth0-spa";
 import dateFormat from "dateformat";
-import Loading from "../Loading";
 
 import backgroundDark from "../../assets/dark-honeycomb.png";
 
@@ -79,7 +78,12 @@ export default class SavedJobs extends React.Component {
               <div className="col s12 m3">
                 <h4 style={{ color: "red" }}>SAVED JOBS LISTINGS</h4>
                 <Link to="/joblisting">
-                  <h4 style={{ color: "grey" }}>Return to Job Search</h4>
+                  <button
+                    rel="noopener noreferrer"
+                    className="btn btn-large red darken-4"
+                  >
+                    Return to Job Search
+                  </button>
                 </Link>
               </div>
 
@@ -130,7 +134,12 @@ export default class SavedJobs extends React.Component {
               <div className="col s12 m3">
                 <h4 style={{ color: "red" }}>SAVED JOBS LISTINGS</h4>
                 <Link to="/joblisting">
-                  <h4 style={{ color: "grey" }}>Return to Job Search</h4>
+                  <button
+                    rel="noopener noreferrer"
+                    className="btn btn-large red darken-4"
+                  >
+                    Return to Job Search
+                  </button>
                 </Link>
               </div>
 
