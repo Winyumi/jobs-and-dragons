@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactToPrint from "react-to-print";
 import Home from './HomePage';
+import { Link } from "react-router-dom";
 
 export default class index extends Component {
 
@@ -38,11 +39,19 @@ export default class index extends Component {
 							/>
 				</div>
 			</div>
-	)
+  )
+  
+/*   onSubmitHandler = (e) => {
+    e.preventDefault();
+    <Link to ='/joblisting/saved' target="_blank" />
+  } */
+  
+
     
   render() {
     console.log(this.state)
     return (
+      <React.Fragment>
       <div className="logContainer">
         <form>
           <h2>Cover Letter Generator</h2>
@@ -123,6 +132,18 @@ export default class index extends Component {
 					</button>
         </form>
       </div>
+      <Link to ='/joblisting/saved' target="_blank" >
+      <div>
+      <button
+      className="info btn-floating btn-medium black"
+      //onClick={this.onSubmitHandler}
+    >
+      <i class="small material-icons">visibility</i>
+
+    </button>
+        </div>
+        </Link>
+      </React.Fragment>
     );
   }
 }

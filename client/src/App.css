@@ -227,6 +227,11 @@ input[type='submit'] {
   top: 140px;
   right: 15px;
 }
+.info {
+  position: absolute;
+  top: 140px;
+  right: 20px;
+}
 
 .download {
   position: absolute;
@@ -238,6 +243,12 @@ input[type='submit'] {
   position: absolute;
   top: 260px;
   right: 15px;
+}
+
+.listSavedJobs {
+  top: 200px;
+  right: 30px;
+
 }
 
 .cpsummary {
