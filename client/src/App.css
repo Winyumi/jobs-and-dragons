@@ -227,7 +227,7 @@ input[type='submit'] {
   top: 140px;
   right: 15px;
 }
-.info {
+.info-visible {
   position: absolute;
   top: 140px;
   right: 20px;
@@ -248,7 +248,6 @@ input[type='submit'] {
 .listSavedJobs {
   top: 200px;
   right: 30px;
-
 }
 
 .cpsummary {
