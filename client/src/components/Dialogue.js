@@ -206,7 +206,7 @@ const Dialogue = (props) => {
     //Guild dialogue boxes******
   } else if (
     gameState.currentMap === 'guild' &&
-    gameState.interactTile === 70
+    gameState.interactTile === 75
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -256,7 +256,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'guild' &&
-    gameState.interactTile === 71
+    gameState.interactTile === 76
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -295,7 +295,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'guild' &&
-    gameState.interactTile === 72
+    gameState.interactTile === 77
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
