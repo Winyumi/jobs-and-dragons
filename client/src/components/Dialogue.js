@@ -35,7 +35,7 @@ const Dialogue = (props) => {
     padding: '20px',
   };
   //Oracle's lair dialogue boxes******
-  if (gameState.currentMap === 'dungeon' && gameState.interactTile === 70) {
+  if (gameState.currentMap === 'dungeon' && gameState.interactTile === 75) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -86,7 +86,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'dungeon' &&
-    gameState.interactTile === 71
+    gameState.interactTile === 76
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -126,7 +126,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'dungeon' &&
-    gameState.interactTile === 72
+    gameState.interactTile === 77
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -166,7 +166,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'dungeon' &&
-    gameState.interactTile === 73
+    gameState.interactTile === 78
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
