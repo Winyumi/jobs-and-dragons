@@ -39,8 +39,11 @@ const UserProvider = ({
         speed: 75,
       },
       inventory: {
+        brand: false,
         scroll: false,
         bow: false,
+        quill: false,
+        net: false,
       },
       experience: [],
       education: [],

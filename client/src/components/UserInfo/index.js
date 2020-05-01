@@ -152,11 +152,11 @@ export default class index extends Component {
         return jsonRes.data;
       }
     }
-    console.log(this.state.email);
+    // console.log(this.state.email);
     getUserInfo(this.state.email).then((result) => {
-      console.log(result);
-      console.log(result.data.email);
-      console.log(this.state.email);
+      // console.log(result);
+      // console.log(result.data.email);
+      // console.log(this.state.email);
       if (result.data.email === this.state.email) {
         updateUserInfo(userInfo, result.data.email);
       } else {

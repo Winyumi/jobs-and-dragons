@@ -45,9 +45,9 @@ const observeObstacles = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile <= 5;
+  return nextTile <= 25;
 };
-
+//Amalgamate with "observeOpening"?
 const observeInteraction = (newPosition, currentMap) => {
   const map = setCurrentMap(currentMap);
 
@@ -56,9 +56,9 @@ const observeInteraction = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
   tileInteract = nextTile;
-  return nextTile >= 70;
+  return nextTile >= 75;
 };
-
+//Add Orb opening here? How to do the range?
 const observeOpening = (newPosition, currentMap) => {
   const map = setCurrentMap(currentMap);
 
@@ -66,8 +66,8 @@ const observeOpening = (newPosition, currentMap) => {
   const y = newPosition[1] / SPRITE_SIZE;
 
   const nextTile = map[y][x];
-
-  return nextTile === 6;
+  tileInteract = nextTile;
+  return nextTile === 26;
 };
 
 const dispatchMove = (oldPosition, newPosition, currentMap) => {
