@@ -101,6 +101,10 @@ const getWalkIndex = (oldWalkIndex) => {
 };
 
 const playerReducer = (state, action) => {
+  let leftVal = [state.position[0] - SPRITE_SIZE, state.position[1]];
+  let upVal = [state.position[0], state.position[1] - SPRITE_SIZE];
+  let rightVal = [state.position[0] + SPRITE_SIZE, state.position[1]];
+  let downVal = [state.position[0], state.position[1] + SPRITE_SIZE];
   const oldPosition = state.position;
   switch (action.type) {
     case 'moveleft':
