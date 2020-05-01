@@ -335,7 +335,7 @@ const Dialogue = (props) => {
     //Javan playhouse dialogue boxes******
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 70
+    gameState.interactTile === 75
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -380,7 +380,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 71
+    gameState.interactTile === 76
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -419,7 +419,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 72
+    gameState.interactTile === 77
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -457,7 +457,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 73
+    gameState.interactTile === 78
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
