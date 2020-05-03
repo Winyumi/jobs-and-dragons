@@ -10,6 +10,7 @@ import guildguard from '../../assets/GuildGuardian.gif';
 import singer from '../../assets/Singer.gif';
 import actress from '../../assets/JavanActress.gif';
 import manager from '../../assets/PlayHouseMgr.gif';
+import headmaster from '../../assets/headmaster.png';
 //Interactive objects
 import chest from '../../assets/Chest.gif';
 //bubbles
@@ -54,6 +55,9 @@ import bench from '../../assets/Bench.png';
 import desk from '../../assets/Desk.png';
 import costumerack from '../../assets/costumeRack.png';
 import sleeper from '../../assets/BedSleeper.gif';
+import academywall from '../../assets/academyWall.png';
+import pillar from '../../assets/pillar2.png';
+
 
 
 
@@ -154,8 +158,18 @@ const MapTile = (props) => {
             79: talk,
           });
           break;
+        case 'academy':
+          setTileStripes({
+            0: 'clear',
+            26: chest,
+            27: academywall,
+            29: pillar,
+            31: bed,
+            32: bench,
+            75: headmaster,
+          });
         default:
-          break;
+          break; 
       }
     };
     updateCurrentQuest();

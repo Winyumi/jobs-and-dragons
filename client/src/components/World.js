@@ -5,6 +5,8 @@ import Map from './Map/Map';
 import dungeonBG from '../assets/J&D_DungeonFloor.png';
 import quildBG from '../assets/GuildFloor2.png';
 import playBG from '../assets/playhouseBG.png';
+import academyBG from '../assets/marble.png';
+import { academy } from '../maps/academy';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
 import { playhouse } from '../maps/playhouse';
@@ -19,6 +21,12 @@ const World = (props) => {
   useEffect(() => {
     const updateCurrentQuest = () => {
       switch (props.path) {
+        case '/game/quest/00':
+          setMapTitle('The Academy');
+          setMapBackground(academyBG);
+          setCurrentQuest(academy);
+          dispatch({ type: 'quest', payload: 'academy' });
+          break;
         case '/game/quest/01':
           setMapTitle('Lair of the Oracle');
           setMapBackground(dungeonBG);

@@ -2,6 +2,7 @@ import React, { createContext, useReducer, useContext } from 'react';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
 import { playhouse } from '../maps/playhouse';
+import { academy} from '../maps/academy';
 
 const PlayerContext = createContext();
 const { Provider } = PlayerContext;
@@ -14,6 +15,9 @@ let tileInteract;
 const setCurrentMap = (currentMap) => {
   let map;
   switch (currentMap) {
+    case 'academy':
+      map = academy;
+      return map;
     case 'dungeon':
       map = dungeon;
       return map;
