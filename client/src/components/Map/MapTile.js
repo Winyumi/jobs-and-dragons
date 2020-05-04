@@ -11,6 +11,7 @@ import singer from '../../assets/Singer.gif';
 import actress from '../../assets/JavanActress.gif';
 import manager from '../../assets/PlayHouseMgr.gif';
 import headmaster from '../../assets/headmaster.png';
+import captain from '../../assets/captain.png';
 //Interactive objects
 import chest from '../../assets/Chest.gif';
 //bubbles
@@ -58,6 +59,8 @@ import sleeper from '../../assets/BedSleeper.gif';
 import academywall from '../../assets/academyWall.png';
 import pillar from '../../assets/pillar.png';
 import pillar2 from '../../assets/pillar2.png';
+import water from '../../assets/water.png';
+import pier from '../../assets/pier.png';
 
 
 
@@ -178,7 +181,11 @@ const MapTile = (props) => {
               0: 'clear',
               2: exclaim,
               3: talk,
+              4: woodfloor,
               26: chest,
+              27: 'clear',
+              28: pier,
+              29: water,
               75: captain,
             });
         default:

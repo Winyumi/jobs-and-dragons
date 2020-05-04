@@ -2,7 +2,8 @@ import React, { createContext, useReducer, useContext } from 'react';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
 import { playhouse } from '../maps/playhouse';
-import { academy} from '../maps/academy';
+import { academy } from '../maps/academy';
+import { fishvillage } from '../maps/fishvillage';
 
 const PlayerContext = createContext();
 const { Provider } = PlayerContext;
@@ -27,6 +28,9 @@ const setCurrentMap = (currentMap) => {
     case 'playhouse':
       map = playhouse;
       return map;
+      case 'fishvillage':
+        map = fishvillage;
+        return map;
     default:
       break;
   }
