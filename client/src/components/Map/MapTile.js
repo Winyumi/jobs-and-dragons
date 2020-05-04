@@ -56,7 +56,8 @@ import desk from '../../assets/Desk.png';
 import costumerack from '../../assets/costumeRack.png';
 import sleeper from '../../assets/BedSleeper.gif';
 import academywall from '../../assets/academyWall.png';
-import pillar from '../../assets/pillar2.png';
+import pillar from '../../assets/pillar.png';
+import pillar2 from '../../assets/pillar2.png';
 
 
 
@@ -161,13 +162,25 @@ const MapTile = (props) => {
         case 'academy':
           setTileStripes({
             0: 'clear',
+            2: exclaim,
+            3: talk,
             26: chest,
             27: academywall,
             29: pillar,
+            30: pillar2,
             31: bed,
             32: bench,
             75: headmaster,
           });
+          break;
+          case 'fishvillage':
+            setTileStripes({
+              0: 'clear',
+              2: exclaim,
+              3: talk,
+              26: chest,
+              75: captain,
+            });
         default:
           break; 
       }

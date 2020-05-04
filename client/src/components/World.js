@@ -6,10 +6,12 @@ import dungeonBG from '../assets/J&D_DungeonFloor.png';
 import quildBG from '../assets/GuildFloor2.png';
 import playBG from '../assets/playhouseBG.png';
 import academyBG from '../assets/marble.png';
+import villageBG from '../assets/dirt.png';
 import { academy } from '../maps/academy';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
 import { playhouse } from '../maps/playhouse';
+import { fishvillage } from '../maps/fishvillage';
 
 const World = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -44,6 +46,12 @@ const World = (props) => {
           setMapBackground(playBG);
           setCurrentQuest(playhouse);
           dispatch({ type: 'quest', payload: 'playhouse' });
+          break;
+        case '/game/quest/04':
+          setMapTitle('Fishing Village');
+          setMapBackground(villageBG);
+          setCurrentQuest(fishvillage);
+          dispatch({ type: 'quest', payload: 'fishvillage' });
           break;
         default:
           break;
