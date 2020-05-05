@@ -14,6 +14,7 @@ import headmaster from '../../assets/headmaster.png';
 import captain from '../../assets/captain.png';
 //Interactive objects
 import chest from '../../assets/Chest.gif';
+import orb from '../../assets/Orb.gif';
 //bubbles
 import exclaim from '../../assets/E_bubble.gif';
 import talk from '../../assets/Talk_bubble.gif';
@@ -73,10 +74,10 @@ const MapTile = (props) => {
       switch (state.currentMap) {
         case 'dungeon':
           setTileStripes({
-             0: 'clear',
-             1: grate,
-             2: exclaim,
-             3: talk,
+            0: 'clear',
+            1: grate,
+            2: exclaim,
+            3: talk,
             28: wallTorch,
             29: wall,
             30: barrel,
@@ -160,6 +161,7 @@ const MapTile = (props) => {
             77: actress,
             78: manager,
             79: talk,
+            80: chest,
           });
           break;
         case 'academy':
@@ -167,29 +169,31 @@ const MapTile = (props) => {
             0: 'clear',
             2: exclaim,
             3: talk,
-            26: chest,
-            27: academywall,
+
             29: pillar,
             30: pillar2,
             31: bed,
             32: bench,
+            33: academywall,
             75: headmaster,
+            76: chest,
+            77: orb,
           });
           break;
-          case 'fishvillage':
-            setTileStripes({
-              0: 'clear',
-              2: exclaim,
-              3: talk,
-              4: woodfloor,
-              26: chest,
-              27: 'clear',
-              28: pier,
-              29: water,
-              75: captain,
-            });
+        case 'fishvillage':
+          setTileStripes({
+            0: 'clear',
+            2: exclaim,
+            3: talk,
+            4: woodfloor,
+            26: chest,
+            27: 'clear',
+            28: pier,
+            29: water,
+            75: captain,
+          });
         default:
-          break; 
+          break;
       }
     };
     updateCurrentQuest();
@@ -357,6 +361,56 @@ const MapTile = (props) => {
         return `url(${tileSprites['79']})`;
       case 80:
         return `url(${tileSprites['80']})`;
+      case 81:
+        return `url(${tileSprites['81']})`;
+      case 82:
+        return `url(${tileSprites['82']})`;
+      case 83:
+        return `url(${tileSprites['83']})`;
+      case 84:
+        return `url(${tileSprites['84']})`;
+      case 85:
+        return `url(${tileSprites['85']})`;
+      case 86:
+        return `url(${tileSprites['86']})`;
+      case 87:
+        return `url(${tileSprites['87']})`;
+      case 88:
+        return `url(${tileSprites['88']})`;
+      case 89:
+        return `url(${tileSprites['89']})`;
+      case 90:
+        return `url(${tileSprites['90']})`;
+      case 91:
+        return `url(${tileSprites['91']})`;
+      case 92:
+        return `url(${tileSprites['92']})`;
+      case 93:
+        return `url(${tileSprites['93']})`;
+      case 94:
+        return `url(${tileSprites['94']})`;
+      case 95:
+        return `url(${tileSprites['95']})`;
+      case 96:
+        return `url(${tileSprites['96']})`;
+      case 97:
+        return `url(${tileSprites['97']})`;
+      case 98:
+        return `url(${tileSprites['98']})`;
+      case 99:
+        return `url(${tileSprites['99']})`;
+      case 100:
+        return `url(${tileSprites['100']})`;
+      case 101:
+        return `url(${tileSprites['101']})`;
+      case 102:
+        return `url(${tileSprites['102']})`;
+      case 103:
+        return `url(${tileSprites['103']})`;
+      case 104:
+        return `url(${tileSprites['104']})`;
+      case 105:
+        return `url(${tileSprites['105']})`;
       default:
         return tileSprites[type];
     }

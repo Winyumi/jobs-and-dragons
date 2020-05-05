@@ -34,6 +34,16 @@ const Dialogue = (props) => {
     height: '300px',
     padding: '20px',
   };
+  const chestStyle = {
+    color: 'white',
+    backgroundColor: 'black',
+    position: 'absolute',
+    top: '33%',
+    left: '33%',
+    width: '400px',
+    height: '400px',
+    padding: '20px',
+  };
   //Oracle's lair dialogue boxes******
   if (gameState.currentMap === 'dungeon' && gameState.interactTile === 75) {
     return (
@@ -333,6 +343,50 @@ const Dialogue = (props) => {
       </div>
     );
     //Javan playhouse dialogue boxes******
+    } else if (
+      gameState.currentMap === 'playhouse' && 
+      gameState.interactTile === 80) {
+      return (
+        <div className='modal-content' style={chestStyle}>
+          <div style={{}}>
+            <div className='row'>
+              {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+              <h4>You Found a Javan Playhouse Link!</h4>
+            </div>
+            <div className='row'>
+              <p>Use this link to find helpful information for your quest!</p>
+              <ul>
+                <li>
+                  <a
+                    className='modal-close'
+                    href='https://www.thebalancecareers.com/resume-and-cover-letter-examples-listed-by-job-2063586'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    // onClick={e => {
+                    //   e.preventDefault();
+                    //   props.handleAccept();
+                    // }}
+                  >
+                    Sure!
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className='modal-close'
+                    href='#!'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      props.handleDecline();
+                    }}
+                  >
+                    I'm good for now.
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
   } else if (
     gameState.currentMap === 'playhouse' &&
     gameState.interactTile === 75
@@ -364,7 +418,7 @@ const Dialogue = (props) => {
               <li>
                 <a
                   className='modal-close'
-                  href='/coverpage'
+                  // href='/coverpage'
                   onClick={(e) => {
                     e.preventDefault();
                     props.handleDecline();
@@ -494,7 +548,54 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
+  } else if (
+    gameState.currentMap === 'academy' &&
+    gameState.interactTile === 75
+  ) {
+    return (
+      <div className='modal-content' style={modalStyle}>
+        <div style={{}}>
+          <div className='row'>
+            <img
+              style={imgStyle}
+              src={ManagerBox}
+              alt='Profile of the Headmaster of the Academy'
+            />
+            <h4>Academy Headmaster</h4>
+          </div>
+          <div className='row'>
+            <p>
+            Hello, {state.user.name}! Are you excited to be graduating from the Academy and exploring the World beyond?
+            Of course, there is one task left: your Brand Statement! Once you do, you'll earn the Academy's Seal of Approval!
+            </p>
+                    <ul>
+              <Link
+                to='!#' // link to brand statement page
+                onClick={(e) => {
+                  // e.preventDefault();
+                  props.handleAccept();
+                }}
+              >
+                Let's do this!
+              </Link>
+              <li>
+                <a
+                  className='modal-close'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  I think I need more practice first.
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
   }
+
 };
 
 export default Dialogue;

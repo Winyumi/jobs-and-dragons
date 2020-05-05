@@ -80,9 +80,9 @@ const Game = () => {
           handleDecline={handleQuestDecline}
           handleAccept={handleQuestAccept}
         />
-      )}
+      )} ?
       {/* {isAccepted && <Quests />} */}
-      {isOpening && <Chest handleDecline={handleLinkDecline} />}
+      {isInteracting && <Chest handleDecline={handleLinkDecline} />}
     </>
   );
 };
