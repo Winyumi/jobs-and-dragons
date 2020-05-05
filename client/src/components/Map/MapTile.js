@@ -81,7 +81,6 @@ const MapTile = (props) => {
             28: wallTorch,
             29: wall,
             30: barrel,
-            26: chest,
             31: crate,
             32: plant,
             33: bookcase,
@@ -92,6 +91,7 @@ const MapTile = (props) => {
             76: acolyte,
             77: acolyte,
             78: acolyte,
+            79: chest,
           });
           break;
         case 'guild':
@@ -102,7 +102,6 @@ const MapTile = (props) => {
             3: talk,
             5: cagedoor,
             4: snore,
-            26: chest,
             27: redwall,
             28: guildwall,
             29: guildwallbanner,
@@ -111,7 +110,6 @@ const MapTile = (props) => {
             32: table,
             33: tableext,
             34: rack,
-
             35: barrel,
             36: bartop,
             37: bartopdrink,
@@ -124,6 +122,7 @@ const MapTile = (props) => {
             75: guardian,
             76: bartender,
             77: guildguard,
+            78: chest,
           });
           break;
         case 'playhouse':
@@ -137,7 +136,6 @@ const MapTile = (props) => {
             6: notes,
             7: stagetalk,
             8: talk,
-            26: chest,
             27: woodslats,
             28: playwall1,
             29: playwall2,
@@ -169,7 +167,6 @@ const MapTile = (props) => {
             0: 'clear',
             2: exclaim,
             3: talk,
-
             29: pillar,
             30: pillar2,
             31: bed,
@@ -191,6 +188,8 @@ const MapTile = (props) => {
             28: pier,
             29: water,
             75: captain,
+            76: chest,
+            77: orb,
           });
         default:
           break;

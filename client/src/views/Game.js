@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-materialize';
 
 import World from '../components/World';
 import Dialogue from '../components/Dialogue';
-import Chest from '../components/Chest';
+// import Chest from '../components/Chest';
 import CharBox from '../components/CharBox';
 // import Quests from '../components/QuestsList';
 import { usePlayerContext } from '../contexts/PlayerContext';
@@ -15,13 +15,13 @@ import backgroundLight from '../assets/light_honeycomb.png';
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState(false);
-  const [isOpening, setIsOpening] = useState();
+  // const [isOpening, setIsOpening] = useState();
   const [isAccepted, setIsAccepted] = useState(false);
 
   useEffect(() => {
     setIsInteracting(state.isInteracting);
-    setIsOpening(state.isOpening);
-  }, [state.isInteracting, state.isOpening]);
+    // setIsOpening(state.isOpening);
+  }, [state.isInteracting]);
 
   let RowStyles;
   if (isInteracting || isAccepted) {
@@ -51,13 +51,13 @@ const Game = () => {
     });
   };
 
-  const handleLinkDecline = () => {
-    setIsOpening(!state.isOpening);
-    dispatch({
-      type: 'toggleIsOpening',
-      payload: !state.isOpening,
-    });
-  };
+  // const handleLinkDecline = () => {
+  //   setIsOpening(!state.isOpening);
+  //   dispatch({
+  //     type: 'toggleIsOpening',
+  //     payload: !state.isOpening,
+  //   });
+  // };
 
   return (
     <>
@@ -80,9 +80,9 @@ const Game = () => {
           handleDecline={handleQuestDecline}
           handleAccept={handleQuestAccept}
         />
-      )} ?
+      )} 
       {/* {isAccepted && <Quests />} */}
-      {isInteracting && <Chest handleDecline={handleLinkDecline} />}
+      {/* {isInteracting && <Chest handleDecline={handleLinkDecline} />} */}
     </>
   );
 };

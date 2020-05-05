@@ -45,7 +45,9 @@ const Dialogue = (props) => {
     padding: '20px',
   };
   //Oracle's lair dialogue boxes******
-  if (gameState.currentMap === 'dungeon' && gameState.interactTile === 75) {
+  if (
+    gameState.currentMap === 'dungeon' && 
+    gameState.interactTile === 75) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -213,6 +215,50 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
+  } else if (
+    state.currentMap === 'dungeon' && 
+    state.interactTile === 79) {
+    return (
+      <div className='modal-content' style={chestStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+            <h4>You Found a Link of Secivres Reerac!</h4>
+          </div>
+          <div className='row'>
+            <p>Use this link to find helpful information for your quest!</p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='https://www.smashingmagazine.com/2018/06/web-developer-resume/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  onClick={e => {
+                    e.preventDefault();
+                    props.handleAccept();
+                  }}
+                >
+                  Sure!
+                              </a>
+              </li>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  I'm good for now.
+                              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
     //Guild dialogue boxes******
   } else if (
     gameState.currentMap === 'guild' &&
@@ -342,51 +388,93 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-    //Javan playhouse dialogue boxes******
-    } else if (
-      gameState.currentMap === 'playhouse' && 
-      gameState.interactTile === 80) {
-      return (
-        <div className='modal-content' style={chestStyle}>
-          <div style={{}}>
-            <div className='row'>
-              {/* <img style={imgStyle} src={Link} alt='Link' /> */}
-              <h4>You Found a Javan Playhouse Link!</h4>
-            </div>
-            <div className='row'>
-              <p>Use this link to find helpful information for your quest!</p>
-              <ul>
-                <li>
-                  <a
-                    className='modal-close'
-                    href='https://www.thebalancecareers.com/resume-and-cover-letter-examples-listed-by-job-2063586'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    // onClick={e => {
-                    //   e.preventDefault();
-                    //   props.handleAccept();
-                    // }}
-                  >
-                    Sure!
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className='modal-close'
-                    href='#!'
-                    onClick={(e) => {
-                      e.preventDefault();
-                      props.handleDecline();
-                    }}
-                  >
-                    I'm good for now.
-                  </a>
-                </li>
-              </ul>
-            </div>
+  } else if (state.currentMap === 'guild' && state.interactTile === 26) {
+    return (
+      <div className='modal-content' style={chestStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+            <h4>You Found a Link of Namuh Secruoser!</h4>
+          </div>
+          <div className='row'>
+            <p>Use this link to find helpful information for your quest!</p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='https://www.themuse.com/advice/how-to-organize-track-job-search'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                // onClick={e => {
+                //   e.preventDefault();
+                //   props.handleAccept();
+                // }}
+                >
+                  Sure!
+                              </a>
+              </li>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  I'm good for now.
+                              </a>
+              </li>
+            </ul>
           </div>
         </div>
-      );
+      </div>
+    );
+    //Javan playhouse dialogue boxes******
+  } else if (
+    gameState.currentMap === 'playhouse' &&
+    gameState.interactTile === 80) {
+    return (
+      <div className='modal-content' style={chestStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+            <h4>You Found a Javan Playhouse Link!</h4>
+          </div>
+          <div className='row'>
+            <p>Use this link to find helpful information for your quest!</p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='https://www.thebalancecareers.com/resume-and-cover-letter-examples-listed-by-job-2063586'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                // onClick={e => {
+                //   e.preventDefault();
+                //   props.handleAccept();
+                // }}
+                >
+                  Sure!
+                  </a>
+              </li>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  I'm good for now.
+                  </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
   } else if (
     gameState.currentMap === 'playhouse' &&
     gameState.interactTile === 75
@@ -548,6 +636,95 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
+// Academy Modals
+  } else if (
+    gameState.currentMap === 'academy' && 
+    gameState.interactTile === 76) {
+    return (
+      <div className='modal-content' style={chestStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+            <h4>You Found a Link of the Academy!</h4>
+          </div>
+          <div className='row'>
+            <p>Use this link to find helpful information for your quest!</p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='https://www.smashingmagazine.com/2018/06/web-developer-resume/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  onClick={e => {
+                    e.preventDefault();
+                    props.handleAccept();
+                  }}
+                >
+                  Sure!
+                              </a>
+              </li>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  I'm good for now.
+                              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (
+    gameState.currentMap === 'academy' && 
+    gameState.interactTile === 77) {
+    return (
+      <div className='modal-content' style={chestStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+            <h4>You Found an Academy Oediv Orb!</h4>
+          </div>
+          <div className='row'>
+            <p>Peer into the orb for helpful information for your quest!</p>
+            <ul>
+              <li>
+                <a
+                  className='modal-close'
+                  href='https://www.youtube.com/watch?v=SDIrz5M5dhE'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  onClick={e => {
+                    e.preventDefault();
+                    props.handleAccept();
+                  }}
+                >
+                  Sure!
+                                            </a>
+              </li>
+              <li>
+                <a
+                  className='modal-close'
+                  href='#!'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  I'll check my fortune later...
+                                            </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
   } else if (
     gameState.currentMap === 'academy' &&
     gameState.interactTile === 75
@@ -565,10 +742,10 @@ const Dialogue = (props) => {
           </div>
           <div className='row'>
             <p>
-            Hello, {state.user.name}! Are you excited to be graduating from the Academy and exploring the World beyond?
+              Hello, {state.user.name}! Are you excited to be graduating from the Academy and exploring the World beyond?
             Of course, there is one task left: your Brand Statement! Once you do, you'll earn the Academy's Seal of Approval!
             </p>
-                    <ul>
+            <ul>
               <Link
                 to='!#' // link to brand statement page
                 onClick={(e) => {
