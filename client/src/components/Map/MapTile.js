@@ -62,18 +62,44 @@ import pillar from '../../assets/pillar.png';
 import pillar2 from '../../assets/pillar2.png';
 import water from '../../assets/water.png';
 import pier from '../../assets/pier.png';
+// World map tiles
+import base from '../../assets/WorldMapTiles/mapbase.png';
+import baseNE from '../../assets/WorldMapTiles/mapNE.png';
+import baseNW from '../../assets/WorldMapTiles/mapNW.png';
+import baseSE from '../../assets/WorldMapTiles/mapSE.png';
+import baseSW from '../../assets/WorldMapTiles/mapSW.png';
+import mapacademy from '../../assets/WorldMapTiles/academy.png';
+import mapcity from '../../assets/WorldMapTiles/City.png';
+import fvillage from '../../assets/WorldMapTiles/fishvillage.png';
 
+let refreshPage = () => {
+  window.location.reload(false)
+;}
 
 
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
-  const [tileSprites, setTileStripes] = useState({});
+  const [tileSprites, setTileSprites] = useState({});
   useEffect(() => {
     const updateCurrentQuest = () => {
       switch (state.currentMap) {
+        case 'worldmap':
+          setTileSprites({
+            0: 'clear',
+            1: base,
+            2: baseNE,
+            3: baseNW,
+            4: baseSW,
+            5: baseSE,
+            26: 'clear',
+            75: mapacademy,
+            76: mapcity,
+            77: fvillage,
+          });
+          break;
         case 'dungeon':
-          setTileStripes({
+          setTileSprites({
             0: 'clear',
             1: grate,
             2: exclaim,
@@ -95,7 +121,7 @@ const MapTile = (props) => {
           });
           break;
         case 'guild':
-          setTileStripes({
+          setTileSprites({
             0: 'clear',
             1: grate,
             2: exclaim,
@@ -126,7 +152,7 @@ const MapTile = (props) => {
           });
           break;
         case 'playhouse':
-          setTileStripes({
+          setTileSprites({
             0: 'clear',
             1: cagedoor,
             2: woodfloor,
@@ -163,7 +189,7 @@ const MapTile = (props) => {
           });
           break;
         case 'academy':
-          setTileStripes({
+          setTileSprites({
             0: 'clear',
             2: exclaim,
             3: talk,
@@ -178,7 +204,7 @@ const MapTile = (props) => {
           });
           break;
         case 'fishvillage':
-          setTileStripes({
+          setTileSprites({
             0: 'clear',
             2: exclaim,
             3: talk,
@@ -191,6 +217,7 @@ const MapTile = (props) => {
             76: chest,
             77: orb,
           });
+          break;
         default:
           break;
       }

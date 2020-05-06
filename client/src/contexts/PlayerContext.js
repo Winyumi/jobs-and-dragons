@@ -4,6 +4,7 @@ import { guild } from '../maps/guild';
 import { playhouse } from '../maps/playhouse';
 import { academy } from '../maps/academy';
 import { fishvillage } from '../maps/fishvillage';
+import { worldmap } from '../maps/map';
 
 const PlayerContext = createContext();
 const { Provider } = PlayerContext;
@@ -16,6 +17,9 @@ let tileInteract;
 const setCurrentMap = (currentMap) => {
   let map;
   switch (currentMap) {
+    case 'worldmap':
+      map = worldmap;
+      return map;
     case 'academy':
       map = academy;
       return map;
@@ -34,6 +38,7 @@ const setCurrentMap = (currentMap) => {
     default:
       break;
   }
+
 };
 
 const observeBoundries = (newPosition) => {
@@ -55,7 +60,7 @@ const observeObstacles = (newPosition, currentMap) => {
 
   return nextTile <= 25;
 };
-//Amalgamate with "observeOpening"?
+
 const observeInteraction = (newPosition, currentMap) => {
   const map = setCurrentMap(currentMap);
 
@@ -65,17 +70,6 @@ const observeInteraction = (newPosition, currentMap) => {
   const nextTile = map[y][x];
   tileInteract = nextTile;
   return nextTile >= 75;
-};
-//Add Orb opening here? How to do the range?
-const observeOpening = (newPosition, currentMap) => {
-  const map = setCurrentMap(currentMap);
-
-  const x = newPosition[0] / SPRITE_SIZE;
-  const y = newPosition[1] / SPRITE_SIZE;
-
-  const nextTile = map[y][x];
-  tileInteract = nextTile;
-  return nextTile === 26;
 };
 
 const dispatchMove = (oldPosition, newPosition, currentMap) => {
@@ -121,20 +115,16 @@ const playerReducer = (state, action) => {
         direction: 'west',
         position: dispatchMove(
           oldPosition,
-          [state.position[0] - SPRITE_SIZE, state.position[1]],
+          leftVal,
           state.currentMap
         ),
         spritePosition: getSpriteLocation('west', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
         isInteracting: observeInteraction(
-          [state.position[0] - SPRITE_SIZE, state.position[1]],
+          leftVal,
           state.currentMap
         ),
         interactTile: tileInteract,
-        isOpening: observeOpening(
-          [state.position[0] - SPRITE_SIZE, state.position[1]],
-          state.currentMap
-        ),
       };
     case 'moveup':
       return {
@@ -142,20 +132,16 @@ const playerReducer = (state, action) => {
         direction: 'north',
         position: dispatchMove(
           oldPosition,
-          [state.position[0], state.position[1] - SPRITE_SIZE],
+          upVal,
           state.currentMap
         ),
         spritePosition: getSpriteLocation('north', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
         isInteracting: observeInteraction(
-          [state.position[0], state.position[1] - SPRITE_SIZE],
+          upVal,
           state.currentMap
         ),
         interactTile: tileInteract,
-        isOpening: observeOpening(
-          [state.position[0], state.position[1] - SPRITE_SIZE],
-          state.currentMap
-        ),
       };
     case 'moveright':
       return {
@@ -163,20 +149,16 @@ const playerReducer = (state, action) => {
         direction: 'east',
         position: dispatchMove(
           oldPosition,
-          [state.position[0] + SPRITE_SIZE, state.position[1]],
+          rightVal,
           state.currentMap
         ),
         spritePosition: getSpriteLocation('east', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
         isInteracting: observeInteraction(
-          [state.position[0] + SPRITE_SIZE, state.position[1]],
+          rightVal,
           state.currentMap
         ),
         interactTile: tileInteract,
-        isOpening: observeOpening(
-          [state.position[0] + SPRITE_SIZE, state.position[1]],
-          state.currentMap
-        ),
       };
     case 'movedown':
       return {
@@ -184,20 +166,16 @@ const playerReducer = (state, action) => {
         direction: 'south',
         position: dispatchMove(
           oldPosition,
-          [state.position[0], state.position[1] + SPRITE_SIZE],
+          downVal,
           state.currentMap
         ),
         spritePosition: getSpriteLocation('south', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
         isInteracting: observeInteraction(
-          [state.position[0], state.position[1] + SPRITE_SIZE],
+          downVal,
           state.currentMap
         ),
         interactTile: tileInteract,
-        isOpening: observeOpening(
-          [state.position[0], state.position[1] + SPRITE_SIZE],
-          state.currentMap
-        ),
       };
     case 'toggleIsInteracting':
       return {
@@ -214,6 +192,16 @@ const playerReducer = (state, action) => {
         ...state,
         currentMap: action.payload,
       };
+      case 'map':
+        state.position = [320, 320];
+        // state.spritePosition = '0px 0px';
+        // state.direction = 'east';
+        // state.walkIndex = 0;
+        // state.isInteracting = false;
+        return {
+          ...state,
+          currentMap: action.payload,
+        };
     default:
       return state;
   }

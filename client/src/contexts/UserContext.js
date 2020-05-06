@@ -8,14 +8,12 @@ const userReducer = (state, action) => {
     case 'user':
       return {
         user: action.payload,
-        // currentQuest: state.currentQuest
       };
     case 'quest':
       return {
         user: {
           ...state.user,
         },
-        // currentQuest: action.payload
       };
     default:
       return {
@@ -52,7 +50,6 @@ const UserProvider = ({
       expertise: [],
       jobsearch: [],
     },
-    // currentQuest: 'quest-01'
   },
   ...props
 }) => {
