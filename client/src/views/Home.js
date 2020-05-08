@@ -39,9 +39,6 @@ function Home() {
 }
 const mainStyle = {
   backgroundImage: `url(${fullBackground})`,
-  backgroundRepeat: "repeat",
-  backgroundPosition: "center",
-  position: "relative",
 };
 
 const bgStyle = {
