@@ -3,6 +3,7 @@ import "materialize-css";
 
 import background from "../../assets/light_honeycomb.png";
 import worldMap from "../../assets/J&D_World.png";
+import gameMap1 from "../../assets/GameMap1.png";
 
 export default class LandingDescription extends React.Component {
   // componentDidMount() {}
@@ -39,10 +40,10 @@ export default class LandingDescription extends React.Component {
           <div className="row" style={descStyle}>
             <div className="center col s12 m6" style={{ marginTop: "50px" }}>
               <img
-                src={worldMap}
+                src={gameMap1}
                 alt="World Map"
                 className="responsive-img"
-                style={imageStyle}
+                style={gameMapStyle}
               />
             </div>
             <div className="center col s12 m6" style={{ marginTop: "50px" }}>
@@ -51,22 +52,6 @@ export default class LandingDescription extends React.Component {
                 way to make searching for a job, building career materials, and
                 keeping coding skills sharp a fun and engaging experience?
               </h3>
-            </div>
-          </div>
-
-          <div className="row" style={descStyle}>
-            {/* <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-              <img
-                src="../../assets/dark-honeycomb.png"
-                alt="World Map"
-                className="responsive-img"
-                style={imageStyle}
-              />
-            </div> */}
-            <div
-              className="center col s12"
-              style={{ marginTop: "50px", marginBottom: "200px" }}
-            >
               <h3>
                 Jobs & Dragons is a FULL STACK application that reproduces the
                 methods necessary to become employed and infuses them into a
@@ -99,4 +84,11 @@ const imageStyle = {
   width: "500px",
   height: "600px",
   marginTop: "50px",
+};
+
+const gameMapStyle = {
+  // width: "500px",
+  // height: "600px",
+  margin: "50px",
+  padding: "50px",
 };
