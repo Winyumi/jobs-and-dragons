@@ -2,6 +2,7 @@ import React from "react";
 import "materialize-css";
 
 import background from "../../assets/light_honeycomb.png";
+// import background from "../../assets/dark-honeycomb.png";
 import worldMap from "../../assets/J&D_World.png";
 import gameMap1 from "../../assets/GameMap1.png";
 
@@ -11,57 +12,22 @@ export default class LandingDescription extends React.Component {
   render() {
     return (
       <>
-        <div style={descStyle}>
+        <div>
           <div className="row">
             <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-              <h2>
-                Securing a job in the web development industry can be very
-                challenging.
-              </h2>
+              <h2>Explore the World of Fantasy</h2>
               <br></br>
               <br></br>
-              <h3>
-                Having been recipients of the Bootcamp’s Career Services, we
-                realize how much work and effort is needed to become competitive
-                candidates.
-              </h3>
+              <span style={spanStyle}>
+                Guide your character through the turbulent lands of Codera, a
+                once peaceful land now mysteriously divided.
+                <br></br>
+                Can you unite all the people of Codera together once again?
+              </span>
             </div>
 
-            <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-              <img
-                src={worldMap}
-                alt="World Map"
-                className="responsive-img"
-                style={imageStyle}
-              />
-            </div>
-          </div>
-
-          <div className="row" style={descStyle}>
-            <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-              <img
-                src={gameMap1}
-                alt="World Map"
-                className="responsive-img"
-                style={gameMapStyle}
-              />
-            </div>
-            <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-              <h3>
-                This process can be repetitive and arduous. What if there was a
-                way to make searching for a job, building career materials, and
-                keeping coding skills sharp a fun and engaging experience?
-              </h3>
-              <h3>
-                Jobs & Dragons is a FULL STACK application that reproduces the
-                methods necessary to become employed and infuses them into a
-                dungeon crawler/RPG game. Through GitHub account authentication,
-                the user is provided with their initial character stats which
-                improve as they finish quests. Each quest reflects a step in
-                preparing for entering the web development job market, including
-                creating a resume, searching for a job online, and crafting a
-                cover letter.
-              </h3>
+            <div className="center col s12 m6" style={imageBoxStyle}>
+              <img src={worldMap} alt="World Map" className="responsive-img" />
             </div>
           </div>
         </div>
@@ -70,25 +36,10 @@ export default class LandingDescription extends React.Component {
   }
 }
 
-const descStyle = {
-  backgroundImage: `url(${background})`,
-  backgroundRepeat: "repeat",
-  backgroundPosition: "center",
-  // backgroundSize: "cover",
-  position: "relative",
-  width: "100%",
-  height: "100%",
+const imageBoxStyle = {
+  padding: "100px",
 };
 
-const imageStyle = {
-  width: "500px",
-  height: "600px",
-  marginTop: "50px",
-};
-
-const gameMapStyle = {
-  // width: "500px",
-  // height: "600px",
-  margin: "50px",
-  padding: "50px",
+const spanStyle = {
+  fontSize: "1.5rem",
 };
