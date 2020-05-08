@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import dotenv from "dotenv";
@@ -10,7 +10,6 @@ import useUserContext from "../contexts/UserContext";
 import Auth0Context from "../react-auth0-spa";
 import backgroundDark from "../assets/dark-honeycomb.png";
 import { withRouter } from "react-router-dom";
-import SavedJobs from "../components/SavedJobs/index";
 
 dotenv.config();
 
