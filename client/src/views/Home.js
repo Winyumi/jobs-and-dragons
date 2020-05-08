@@ -2,6 +2,7 @@ import React from "react";
 
 import brandLogo from "../assets/J&D_newLogo.png";
 import background from "../assets/J&D_Dungeon_dark.jpg";
+import fullBackground from "../assets/light_honeycomb.png";
 
 import LandingDescription from "../components/LandingDescription";
 
@@ -10,7 +11,7 @@ import "materialize-css";
 function Home() {
   return (
     <>
-      <div>
+      <div style={mainStyle}>
         <img
           class="responsive-img"
           style={bgStyle}
@@ -36,6 +37,12 @@ function Home() {
     </>
   );
 }
+const mainStyle = {
+  backgroundImage: `url(${fullBackground})`,
+  backgroundRepeat: "repeat",
+  backgroundPosition: "center",
+  position: "relative",
+};
 
 const bgStyle = {
   backgroundImage: `url(${background}) fixed`,
