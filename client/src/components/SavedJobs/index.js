@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./savedjobs.css";
 import Auth0Context from "../../react-auth0-spa";
@@ -33,21 +33,7 @@ export default class SavedJobs extends React.Component {
         }
       );
   }
-  handleSubmitDelete = (item, state) => {
-    const id = item.id;
-    const userEmail = this.context.user.email;
-    async function deleteJobListing(id, email) {
-      fetch(`/api/v1/users/emaildj/${email}`, {
-        method: "PUT",
-        mode: "cors",
-        cache: "no-cache",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: id }),
-      });
-    }
-  };
+
   handleSubmitDelete = (item, state) => {
     const id = item.id;
     const userEmail = this.context.user.email;
@@ -67,7 +53,7 @@ export default class SavedJobs extends React.Component {
   };
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, items } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!items.length) {

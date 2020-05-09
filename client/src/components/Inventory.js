@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 
 import { Table } from "react-materialize";
 
@@ -25,12 +25,12 @@ const Inventory = () => {
           <tr>
             <td>
               {state.user.inventory.scroll ? (
-                <img src={Scroll} style={imgStyle} />
+                <img src={Scroll} style={imgStyle} alt="progressLogos1" />
               ) : null}
             </td>
             <td>
               {state.user.inventory.bow ? (
-                <img src={Bow} style={imgStyle} />
+                <img src={Bow} style={imgStyle} alt="progressLogo2" />
               ) : null}
             </td>
             <td></td>

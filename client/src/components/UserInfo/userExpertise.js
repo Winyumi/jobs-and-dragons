@@ -49,7 +49,7 @@ class userExpertise extends Component {
   createCheckbox = (option) => (
     <Checkbox
       label={option}
-      isSelected={this.props.expertise.includes(option)}
+      isSelected={this.state.checkboxes[option]}
       onCheckboxChange={this.handleCheckboxChange}
       key={option}
     />
@@ -58,7 +58,6 @@ class userExpertise extends Component {
   createCheckboxes = () => EXPERTISE.map(this.createCheckbox);
 
   render() {
-    console.log(this.props);
     return (
       <div className='row'>
         <div className='col'>{this.createCheckboxes()}</div>
