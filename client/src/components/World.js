@@ -25,7 +25,7 @@ const World = (props) => {
   useEffect(() => {
     const updateCurrentQuest = () => {
       switch (props.path) {
-        case '/game/map': 
+        case '/game/map':
           setMapTitle('Upper Clientia Map');
           setMapBackground(mapBG);
           setCurrentQuest(worldmap);

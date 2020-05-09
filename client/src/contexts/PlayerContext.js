@@ -32,13 +32,12 @@ const setCurrentMap = (currentMap) => {
     case 'playhouse':
       map = playhouse;
       return map;
-      case 'fishvillage':
-        map = fishvillage;
-        return map;
+    case 'fishvillage':
+      map = fishvillage;
+      return map;
     default:
       break;
   }
-
 };
 
 const observeBoundries = (newPosition) => {
@@ -113,68 +112,40 @@ const playerReducer = (state, action) => {
       return {
         ...state,
         direction: 'west',
-        position: dispatchMove(
-          oldPosition,
-          leftVal,
-          state.currentMap
-        ),
+        position: dispatchMove(oldPosition, leftVal, state.currentMap),
         spritePosition: getSpriteLocation('west', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
-        isInteracting: observeInteraction(
-          leftVal,
-          state.currentMap
-        ),
+        isInteracting: observeInteraction(leftVal, state.currentMap),
         interactTile: tileInteract,
       };
     case 'moveup':
       return {
         ...state,
         direction: 'north',
-        position: dispatchMove(
-          oldPosition,
-          upVal,
-          state.currentMap
-        ),
+        position: dispatchMove(oldPosition, upVal, state.currentMap),
         spritePosition: getSpriteLocation('north', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
-        isInteracting: observeInteraction(
-          upVal,
-          state.currentMap
-        ),
+        isInteracting: observeInteraction(upVal, state.currentMap),
         interactTile: tileInteract,
       };
     case 'moveright':
       return {
         ...state,
         direction: 'east',
-        position: dispatchMove(
-          oldPosition,
-          rightVal,
-          state.currentMap
-        ),
+        position: dispatchMove(oldPosition, rightVal, state.currentMap),
         spritePosition: getSpriteLocation('east', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
-        isInteracting: observeInteraction(
-          rightVal,
-          state.currentMap
-        ),
+        isInteracting: observeInteraction(rightVal, state.currentMap),
         interactTile: tileInteract,
       };
     case 'movedown':
       return {
         ...state,
         direction: 'south',
-        position: dispatchMove(
-          oldPosition,
-          downVal,
-          state.currentMap
-        ),
+        position: dispatchMove(oldPosition, downVal, state.currentMap),
         spritePosition: getSpriteLocation('south', state.walkIndex),
         walkIndex: getWalkIndex(state.walkIndex),
-        isInteracting: observeInteraction(
-          downVal,
-          state.currentMap
-        ),
+        isInteracting: observeInteraction(downVal, state.currentMap),
         interactTile: tileInteract,
       };
     case 'toggleIsInteracting':
@@ -192,16 +163,16 @@ const playerReducer = (state, action) => {
         ...state,
         currentMap: action.payload,
       };
-      case 'map':
-        state.position = [320, 320];
-        // state.spritePosition = '0px 0px';
-        // state.direction = 'east';
-        // state.walkIndex = 0;
-        // state.isInteracting = false;
-        return {
-          ...state,
-          currentMap: action.payload,
-        };
+    case 'map':
+      state.position = [320, 320];
+      // state.spritePosition = '0px 0px';
+      // state.direction = 'east';
+      // state.walkIndex = 0;
+      // state.isInteracting = false;
+      return {
+        ...state,
+        currentMap: action.payload,
+      };
     default:
       return state;
   }

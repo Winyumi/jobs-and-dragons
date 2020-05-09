@@ -72,15 +72,16 @@ import mapacademy from '../../assets/WorldMapTiles/academy.png';
 import mapcity from '../../assets/WorldMapTiles/City.png';
 import fvillage from '../../assets/WorldMapTiles/fishvillage.png';
 
+import marble from '../../assets/marble.png';
+
 let refreshPage = () => {
-  window.location.reload(false)
-;}
-
-
+  window.location.reload(false);
+};
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
   const [tileSprites, setTileSprites] = useState({});
+
   useEffect(() => {
     const updateCurrentQuest = () => {
       switch (state.currentMap) {
@@ -190,12 +191,12 @@ const MapTile = (props) => {
           break;
         case 'academy':
           setTileSprites({
-            0: 'clear',
-            2: exclaim,
-            3: talk,
-            29: pillar,
-            30: pillar2,
-            31: bed,
+            0: marble,
+            1: exclaim,
+            2: talk,
+            3: pillar,
+            4: pillar2,
+            5: bed,
             32: bench,
             33: academywall,
             75: headmaster,
@@ -205,7 +206,7 @@ const MapTile = (props) => {
           break;
         case 'fishvillage':
           setTileSprites({
-            0: 'clear',
+            1: 'clear',
             2: exclaim,
             3: talk,
             4: woodfloor,
@@ -227,6 +228,8 @@ const MapTile = (props) => {
 
   const getTileSprite = (type) => {
     switch (type) {
+      case 0:
+        return `url(${tileSprites['0']})`;
       case 1:
         return `url(${tileSprites['1']})`;
       case 2:
