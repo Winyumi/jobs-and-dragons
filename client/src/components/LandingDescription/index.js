@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Slider, Slide } from "react-materialize";
+import { ScrollTo } from "react-scroll-to";
 
 import "materialize-css";
 
@@ -62,8 +63,8 @@ export default class LandingDescription extends React.Component {
               </Slider>
             </div>
             <div
-              className="col s12 m5"
-              style={{ paddingTop: "30px", paddingBottom: "30px" }}
+              className="center col s12 m5"
+              style={{ paddingTop: "60px", paddingBottom: "30px" }}
             >
               <h3>The Lair of the Oracle</h3>
               <span style={spanStyle}>
@@ -120,7 +121,13 @@ export default class LandingDescription extends React.Component {
           <div className="row">
             <div className="col s12">
               <div className="container" style={descStyle}>
-                <h3>LOGIN to begin JOB HUNT ...</h3>
+                <ScrollTo>
+                  {({ scroll }) => (
+                    <h3 onClick={() => scroll({ x: 0, y: 0 })}>
+                      LOGIN to begin JOB HUNT ...
+                    </h3>
+                  )}
+                </ScrollTo>
               </div>
             </div>
           </div>
@@ -131,11 +138,11 @@ export default class LandingDescription extends React.Component {
 }
 
 const imageBoxStyle = {
-  padding: "80px",
+  padding: "50px",
 };
 
 const spanStyle = {
-  fontSize: "2rem",
+  fontSize: "1.5rem",
 };
 
 const descStyle = {
