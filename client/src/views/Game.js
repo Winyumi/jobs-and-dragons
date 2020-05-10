@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-materialize";
 
-import World from "../components/World";
-import Dialogue from "../components/Dialogue";
-import Chest from "../components/Chest";
-import CharBox from "../components/CharBox";
-// import Quests from '../components/QuestsList';
-import { usePlayerContext } from "../contexts/PlayerContext";
-import history from "../utils/history";
+
+import World from '../components/World';
+import Dialogue from '../components/Dialogue';
+import CharBox from '../components/CharBox';
+import { usePlayerContext } from '../contexts/PlayerContext';
+import history from '../utils/history';
+
 
 import backgroundDark from "../assets/dark-honeycomb.png";
 import backgroundLight from "../assets/light_honeycomb.png";
@@ -15,13 +15,11 @@ import backgroundLight from "../assets/light_honeycomb.png";
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState(false);
-  const [isOpening, setIsOpening] = useState();
   const [isAccepted, setIsAccepted] = useState(false);
 
   useEffect(() => {
     setIsInteracting(state.isInteracting);
-    setIsOpening(state.isOpening);
-  }, [state.isInteracting, state.isOpening]);
+  }, [state.isInteracting]);
 
   let RowStyles;
   if (isInteracting || isAccepted) {
@@ -51,13 +49,14 @@ const Game = () => {
     });
   };
 
-  const handleLinkDecline = () => {
-    setIsOpening(!state.isOpening);
-    dispatch({
-      type: "toggleIsOpening",
-      payload: !state.isOpening,
-    });
-  };
+//   const handleLinkDecline = () => {
+//     setIsOpening(!state.isOpening);
+//     dispatch({
+//       type: "toggleIsOpening",
+//       payload: !state.isOpening,
+//     });
+//   };
+
 
   return (
     <>
@@ -80,9 +79,7 @@ const Game = () => {
           handleDecline={handleQuestDecline}
           handleAccept={handleQuestAccept}
         />
-      )}
-      {/* {isAccepted && <Quests />} */}
-      {isOpening && <Chest handleDecline={handleLinkDecline} />}
+      )} 
     </>
   );
 };

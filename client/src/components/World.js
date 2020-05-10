@@ -5,13 +5,19 @@ import Map from './Map/Map';
 import dungeonBG from '../assets/J&D_DungeonFloor.png';
 import quildBG from '../assets/GuildFloor2.png';
 import playBG from '../assets/playhouseBG.png';
+import academyBG from '../assets/marble.png';
+import villageBG from '../assets/dirt.png';
+import mapBG from '../assets/water.png';
+import { academy } from '../maps/academy';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
 import { playhouse } from '../maps/playhouse';
+import { fishvillage } from '../maps/fishvillage';
+import { worldmap } from '../maps/map';
 
 const World = (props) => {
   const [state, dispatch] = usePlayerContext();
-  // const [startPosition, setStartPosition] = useState();
+  // const [currentMap, setCurrentMap] = useState();
   const [currentQuest, setCurrentQuest] = useState(dungeon);
   const [mapBackground, setMapBackground] = useState();
   const [mapTitle, setMapTitle] = useState();
@@ -19,6 +25,19 @@ const World = (props) => {
   useEffect(() => {
     const updateCurrentQuest = () => {
       switch (props.path) {
+        case '/game/map':
+          setMapTitle('Upper Clientia Map');
+          setMapBackground(mapBG);
+          setCurrentQuest(worldmap);
+          dispatch({ type: 'map', payload: 'worldmap' });
+          break;
+        case '/game/quest/00':
+          setMapTitle('The Academy');
+          // setCurrentMap('academy');
+          setMapBackground(academyBG);
+          setCurrentQuest(academy);
+          dispatch({ type: 'quest', payload: 'academy' });
+          break;
         case '/game/quest/01':
           setMapTitle('Lair of the Oracle');
           setMapBackground(dungeonBG);
@@ -36,6 +55,12 @@ const World = (props) => {
           setMapBackground(playBG);
           setCurrentQuest(playhouse);
           dispatch({ type: 'quest', payload: 'playhouse' });
+          break;
+        case '/game/quest/04':
+          setMapTitle('Fishing Village');
+          setMapBackground(villageBG);
+          setCurrentQuest(fishvillage);
+          dispatch({ type: 'quest', payload: 'fishvillage' });
           break;
         default:
           break;
