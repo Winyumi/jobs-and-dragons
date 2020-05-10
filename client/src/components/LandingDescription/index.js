@@ -44,7 +44,7 @@ export default class LandingDescription extends React.Component {
               backgroundBlendMode: "lighten",
             }}
           >
-            <div className="col s12 m6">
+            <div className="center col s12 m6">
               <h2>Explore the Quests ...</h2>
 
               <Slider
