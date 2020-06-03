@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import Player from './Player';
 import Map from './Map/Map';
-import dungeonBG from '../assets/J&D_DungeonFloor.png';
-import quildBG from '../assets/GuildFloor2.png';
-import playBG from '../assets/playhouseBG.png';
+import townBG from '../assets/GninnigebCity.png';
+import dungeonBG from '../assets/AltLair.png';
+import quildBG from '../assets/AltGuild.png';
+import playBG from '../assets/AltPlay.png';
 import academyBG from '../assets/marble.png';
 import villageBG from '../assets/dirt.png';
 import mapBG from '../assets/water.png';
+import { town } from '../maps/town';
 import { academy } from '../maps/academy';
 import { dungeon } from '../maps/dungeon';
 import { guild } from '../maps/guild';
@@ -25,6 +27,12 @@ const World = (props) => {
   useEffect(() => {
     const updateCurrentQuest = () => {
       switch (props.path) {
+        case '/userinfo':
+          setMapTitle('Gninnigeb City');
+          setMapBackground(townBG);
+          setCurrentQuest(town);
+          dispatch({ type: 'map', payload: 'town' });
+          break;
         case '/game/map':
           setMapTitle('Upper Clientia Map');
           setMapBackground(mapBG);

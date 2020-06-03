@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from 'react';
-import { dungeon } from '../maps/dungeonAlt';
-import { guild } from '../maps/guildAlt';
-import { playhouse } from '../maps/playhouseAlt';
+import { dungeon } from '../maps/dungeon';
+import { guild } from '../maps/guild';
+import { playhouse } from '../maps/playhouse';
 import { academy } from '../maps/academy';
 import { fishvillage } from '../maps/fishvillage';
 import { worldmap } from '../maps/map';
