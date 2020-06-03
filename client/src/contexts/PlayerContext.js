@@ -1,10 +1,11 @@
 import React, { createContext, useReducer, useContext } from 'react';
-import { dungeon } from '../maps/dungeon';
-import { guild } from '../maps/guild';
-import { playhouse } from '../maps/playhouse';
+import { dungeon } from '../maps/dungeonAlt';
+import { guild } from '../maps/guildAlt';
+import { playhouse } from '../maps/playhouseAlt';
 import { academy } from '../maps/academy';
 import { fishvillage } from '../maps/fishvillage';
 import { worldmap } from '../maps/map';
+import { town } from '../maps/town';
 
 const PlayerContext = createContext();
 const { Provider } = PlayerContext;
@@ -17,6 +18,9 @@ let tileInteract;
 const setCurrentMap = (currentMap) => {
   let map;
   switch (currentMap) {
+    case 'town':
+      map = town;
+      return map;
     case 'worldmap':
       map = worldmap;
       return map;
@@ -159,6 +163,16 @@ const playerReducer = (state, action) => {
       state.direction = 'east';
       state.walkIndex = 0;
       state.isInteracting = false;
+      return {
+        ...state,
+        currentMap: action.payload,
+      };
+    case 'town':
+      state.position = [160, 720];
+      state.spritePosition = '0px 120px';
+      state.direction = 'north';
+      // state.walkIndex = 0;
+      // state.isInteracting = false;
       return {
         ...state,
         currentMap: action.payload,
