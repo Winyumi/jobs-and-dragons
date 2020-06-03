@@ -27,7 +27,7 @@ const World = (props) => {
   useEffect(() => {
     const updateCurrentQuest = () => {
       switch (props.path) {
-        case '/userinfo':
+        case '/profile':
           setMapTitle('Gninnigeb City');
           setMapBackground(townBG);
           setCurrentQuest(town);

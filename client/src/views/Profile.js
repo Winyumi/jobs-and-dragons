@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../contexts/UserContext";
 import { api } from "../utils/api";
-
 import background from "../assets/dark-honeycomb.png";
 
 import "materialize-css";
-
+import World from '../components/World';
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
 
@@ -139,6 +138,11 @@ const Profile = () => {
           Quest 3
         </Link>
         <br></br>
+      </div>
+      <div className="row">
+      <div className="center col s12 m6" style={{ marginTop: "50px" }}>
+        <World />
+      </div>
       </div>
     </div>
   );
