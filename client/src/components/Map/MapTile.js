@@ -22,40 +22,40 @@ import snore from '../../assets/Snore_bubble.gif';
 import notes from '../../assets/Notes_bubble.gif';
 import stagetalk from '../../assets/StageTalk_bubble.gif';
 //Normal tiles
-import wall from '../../assets/J&D_DungeonWall.png';
-import wallTorch from '../../assets/WallTorchFlicker.gif';
-import guildwall from '../../assets/GuildWall.png';
-import barrel from '../../assets/barrel.png';
-import grate from '../../assets/grate.png';
-import crate from '../../assets/Crate.png';
-import plant from '../../assets/Plant.png';
-import bookcase from '../../assets/BookCase.png';
+// import wall from '../../assets/J&D_DungeonWall.png';
+// import wallTorch from '../../assets/WallTorchFlicker.gif';
+// import guildwall from '../../assets/GuildWall.png';
+// import barrel from '../../assets/barrel.png';
+// import grate from '../../assets/grate.png';
+// import crate from '../../assets/Crate.png';
+// import plant from '../../assets/Plant.png';
+// import bookcase from '../../assets/BookCase.png';
 import bed from '../../assets/Bed.png';
-import table from '../../assets/table.png';
-import door from '../../assets/DungeonDoor.png';
-import redwall from '../../assets/RedBrick.png';
-import cagedoor from '../../assets/BarsDoor.png';
-import cage from '../../assets/Bars.png';
-import crate2 from '../../assets/Crate2.png';
-import bartop from '../../assets/BarTop.png';
-import bartopdrink from '../../assets/BarTopDrink.png';
-import drinkbarrel from '../../assets/DrinkBarrel.png';
-import guilddoor from '../../assets/GuildDoor.png';
-import guildwallbanner from '../../assets/GuildWallBan.png';
-import rack from '../../assets/Rack.png';
-import tableext from '../../assets/tableExt.png';
-import barrel2 from '../../assets/barrel2.png';
-import playstairs from '../../assets/Stairs.png';
-import playwall1 from '../../assets/PlayWall.png';
-import playwall2 from '../../assets/PlayWall2.png';
-import playdoor from '../../assets/PlayDoor.png';
-import playcurtains from '../../assets/Curtains.png';
-import curtainspart from '../../assets/CurtainsPart.png';
+// import table from '../../assets/table.png';
+// import door from '../../assets/DungeonDoor.png';
+// import redwall from '../../assets/RedBrick.png';
+// import cagedoor from '../../assets/BarsDoor.png';
+// import cage from '../../assets/Bars.png';
+// import crate2 from '../../assets/Crate2.png';
+// import bartop from '../../assets/BarTop.png';
+// import bartopdrink from '../../assets/BarTopDrink.png';
+// import drinkbarrel from '../../assets/DrinkBarrel.png';
+// import guilddoor from '../../assets/GuildDoor.png';
+// import guildwallbanner from '../../assets/GuildWallBan.png';
+// import rack from '../../assets/Rack.png';
+// import tableext from '../../assets/tableExt.png';
+// import barrel2 from '../../assets/barrel2.png';
+// import playstairs from '../../assets/Stairs.png';
+// import playwall1 from '../../assets/PlayWall.png';
+// import playwall2 from '../../assets/PlayWall2.png';
+// import playdoor from '../../assets/PlayDoor.png';
+// import playcurtains from '../../assets/Curtains.png';
+// import curtainspart from '../../assets/CurtainsPart.png';
 import woodfloor from '../../assets/WoodFloor.png';
-import woodslats from '../../assets/WoodSlats.png';
+// import woodslats from '../../assets/WoodSlats.png';
 import bench from '../../assets/Bench.png';
-import desk from '../../assets/Desk.png';
-import costumerack from '../../assets/costumeRack.png';
+// import desk from '../../assets/Desk.png';
+// import costumerack from '../../assets/costumeRack.png';
 import sleeper from '../../assets/BedSleeper.gif';
 import academywall from '../../assets/academyWall.png';
 import pillar from '../../assets/pillar.png';
@@ -71,12 +71,11 @@ import baseSW from '../../assets/WorldMapTiles/mapSW.png';
 import mapacademy from '../../assets/WorldMapTiles/academy.png';
 import mapcity from '../../assets/WorldMapTiles/City.png';
 import fvillage from '../../assets/WorldMapTiles/fishvillage.png';
-
 import marble from '../../assets/marble.png';
 
-let refreshPage = () => {
-  window.location.reload(false);
-};
+// let refreshPage = () => {
+//   window.location.reload(false);
+// };
 
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
@@ -99,21 +98,40 @@ const MapTile = (props) => {
             77: fvillage,
           });
           break;
+        case 'town':
+          setTileSprites({
+            0: 'clear',
+            26: 'clear',
+          });
+          break;
+        // case 'dungeon':
+        //   setTileSprites({
+        //     0: 'clear',
+        //     1: grate,
+        //     2: exclaim,
+        //     3: talk,
+        //     28: wallTorch,
+        //     29: wall,
+        //     30: barrel,
+        //     31: crate,
+        //     32: plant,
+        //     33: bookcase,
+        //     34: bed,
+        //     35: table,
+        //     27: door,
+        //     75: oracle,
+        //     76: acolyte,
+        //     77: acolyte,
+        //     78: acolyte,
+        //     79: chest,
+        //   });
+        //   break;
         case 'dungeon':
           setTileSprites({
             0: 'clear',
-            1: grate,
             2: exclaim,
             3: talk,
-            28: wallTorch,
-            29: wall,
-            30: barrel,
-            31: crate,
-            32: plant,
-            33: bookcase,
-            34: bed,
-            35: table,
-            27: door,
+            29: 'clear',
             75: oracle,
             76: acolyte,
             77: acolyte,
@@ -124,27 +142,10 @@ const MapTile = (props) => {
         case 'guild':
           setTileSprites({
             0: 'clear',
-            1: grate,
             2: exclaim,
             3: talk,
-            5: cagedoor,
             4: snore,
-            27: redwall,
-            28: guildwall,
-            29: guildwallbanner,
-            30: plant,
-            31: bed,
-            32: table,
-            33: tableext,
-            34: rack,
-            35: barrel,
-            36: bartop,
-            37: bartopdrink,
-            38: guilddoor,
-            39: drinkbarrel,
-            40: crate2,
-            41: barrel2,
-            42: cage,
+            29: 'clear',
             43: sleeper,
             75: guardian,
             76: bartender,
@@ -152,35 +153,82 @@ const MapTile = (props) => {
             78: chest,
           });
           break;
+          // case 'guild':
+          //   setTileSprites({
+          //     0: 'clear',
+          //     1: grate,
+          //     2: exclaim,
+          //     3: talk,
+          //     5: cagedoor,
+          //     4: snore,
+          //     27: redwall,
+          //     28: guildwall,
+          //     29: 'clear',
+          //     30: plant,
+          //     31: bed,
+          //     32: table,
+          //     33: tableext,
+          //     34: rack,
+          //     35: barrel,
+          //     36: bartop,
+          //     37: bartopdrink,
+          //     38: guilddoor,
+          //     39: drinkbarrel,
+          //     40: crate2,
+          //     41: barrel2,
+          //     42: cage,
+          //     43: sleeper,
+          //     75: guardian,
+          //     76: bartender,
+          //     77: guildguard,
+          //     78: chest,
+          //   });
+          //   break;
+        // case 'playhouse':
+        //   setTileSprites({
+        //     0: 'clear',
+        //     1: cagedoor,
+        //     2: woodfloor,
+        //     3: playstairs,
+        //     4: curtainspart,
+        //     5: exclaim,
+        //     6: notes,
+        //     7: stagetalk,
+        //     8: talk,
+        //     27: woodslats,
+        //     28: playwall1,
+        //     29: 'clear',
+        //     30: plant,
+        //     31: bed,
+        //     32: table,
+        //     33: tableext,
+        //     34: playcurtains,
+        //     35: barrel,
+        //     36: woodfloor,
+        //     37: bench,
+        //     38: playdoor,
+        //     39: cage,
+        //     40: crate2,
+        //     41: barrel2,
+        //     42: desk,
+        //     43: bookcase,
+        //     44: costumerack,
+        //     75: bard,
+        //     76: singer,
+        //     77: actress,
+        //     78: manager,
+        //     79: talk,
+        //     80: chest,
+        //   });
+        //   break;
         case 'playhouse':
           setTileSprites({
             0: 'clear',
-            1: cagedoor,
-            2: woodfloor,
-            3: playstairs,
-            4: curtainspart,
             5: exclaim,
             6: notes,
             7: stagetalk,
             8: talk,
-            27: woodslats,
-            28: playwall1,
-            29: playwall2,
-            30: plant,
-            31: bed,
-            32: table,
-            33: tableext,
-            34: playcurtains,
-            35: barrel,
-            36: woodfloor,
-            37: bench,
-            38: playdoor,
-            39: cage,
-            40: crate2,
-            41: barrel2,
-            42: desk,
-            43: bookcase,
-            44: costumerack,
+            29: 'clear',
             75: bard,
             76: singer,
             77: actress,
