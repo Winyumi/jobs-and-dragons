@@ -13,7 +13,8 @@ import { useAuth0 } from "../react-auth0-spa";
 const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
-  console.log(state.user);
+  console.log(state);
+  console.log(user);
   useEffect(() => {
     if (loading || !user) {
       return <Loading />;
@@ -92,15 +93,20 @@ const Profile = () => {
   return (
     <div className="row" style={profileStyle}>
       <div className="center col s12 m6" style={{ marginTop: "50px" }}>
+        <h2 style={h1Style}> Welcome, {user.name}</h2>
+        <div className="card-panel red" style={cardStyle}>
+          Username : {user.nickname}
+        </div>
         <img
           src={user.picture}
           alt="User Profile"
           className="circle responsive-img"
           style={userImageStyle}
         />
-        <h3 style={h3Style}>USERNAME</h3>
         <div className="card-panel red" style={cardStyle}>
-          {user.name}
+          {/* <i class="material-icons">work</i> : {state.user.bio} */}
+          <br></br>
+          <i class="material-icons">email</i> : {user.email}
         </div>
       </div>
 
@@ -145,10 +151,13 @@ const Profile = () => {
 };
 
 const profileStyle = {
-  height: "90vh",
+  height: "100%",
   backgroundImage: `url(${background})`,
 };
 
+const h1Style = {
+  color: "red",
+};
 const h3Style = {
   color: "red",
   marginBottom: "100px",
