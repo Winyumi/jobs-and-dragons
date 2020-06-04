@@ -108,7 +108,7 @@ const MapTile = (props) => {
             8: talk,
             11: 'clear',
             12: bard,
-            13: singer,
+            17: singer,
             14: actress,
             15: manager,
             16: chest,

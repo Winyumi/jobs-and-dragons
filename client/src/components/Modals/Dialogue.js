@@ -570,7 +570,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 13) {
+    gameState.interactTile === 17) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
