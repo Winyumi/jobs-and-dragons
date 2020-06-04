@@ -106,13 +106,12 @@ const MapTile = (props) => {
             6: notes,
             7: stagetalk,
             8: talk,
-            29: 'clear',
-            75: bard,
-            76: singer,
-            77: actress,
-            78: manager,
-            79: talk,
-            80: chest,
+            11: 'clear',
+            12: bard,
+            13: singer,
+            14: actress,
+            15: manager,
+            16: chest,
           });
           break;
         case 'academy':
