@@ -119,14 +119,14 @@ const MapTile = (props) => {
             0: marble,
             1: exclaim,
             2: talk,
-            3: pillar,
-            4: pillar2,
-            5: bed,
-            32: bench,
-            33: academywall,
-            75: headmaster,
-            76: chest,
-            77: orb,
+            12: pillar,
+            13: pillar2,
+            14: bed,
+            15: bench,
+            16: academywall,
+            17: headmaster,
+            18: chest,
+            19: orb,
           });
           break;
         case 'fishvillage':
