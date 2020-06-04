@@ -194,7 +194,7 @@ export default class jobListing extends React.Component {
                 </div>
 
                 <div className="center col s12 m8">
-                  <h3 style={{ color: "red" }}>Sorry, No Listings found</h3>
+                  <h2 style={{ color: "red" }}>Sorry, No Listings found</h2>
                 </div>
               </div>
             </div>
@@ -326,5 +326,5 @@ const ListingStyles = {
 };
 
 const inputBoxStyle = {
-  backgroundColor: "white",
+  backgroundColor: "whitesmoke",
 };
