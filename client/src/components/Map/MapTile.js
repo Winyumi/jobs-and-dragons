@@ -77,12 +77,12 @@ const MapTile = (props) => {
             0: 'clear',
             2: exclaim,
             3: talk,
-            29: 'clear',
-            75: oracle,
-            76: acolyte,
-            77: acolyte,
-            78: acolyte,
-            79: chest,
+            11: 'clear',
+            12: oracle,
+            13: acolyte,
+            14: acolyte,
+            15: acolyte,
+            16: chest,
           });
           break;
         case 'guild':
