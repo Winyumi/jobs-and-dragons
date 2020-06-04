@@ -233,16 +233,17 @@ export default class jobListing extends React.Component {
                             value="Save"
                             className="btn btn-large red darken-4"
                           >
+                            {" "}
                             Save
                           </button>
-                          <button
+                          <a
                             href={item.redirect_url}
                             target="_blank"
-                            // rel="noopener noreferrer"
+                            rel="noopener noreferrer"
                             className="btn btn-large red darken-4"
                           >
                             Apply
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </li>
