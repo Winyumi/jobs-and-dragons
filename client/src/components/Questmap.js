@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-materialize";
 import World from './World';
 import Dialogue from './Modals/Dialogue';
+import cityNav from './Modals/cityNav';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import history from '../utils/history';
 import backgroundDark from "../assets/dark-honeycomb.png";
@@ -66,6 +67,10 @@ const Questmap = () => {
         <Dialogue
           handleDecline={handleQuestDecline}
           handleAccept={handleQuestAccept}
+        /> ||
+        <cityNav
+        handleDecline={handleQuestDecline}
+        handleAccept={handleQuestAccept}
         />
       )} 
     </>

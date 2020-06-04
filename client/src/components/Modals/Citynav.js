@@ -85,12 +85,12 @@ const cityNav = (props) => {
                     <h4>The Namuh Secruoser Guildhouse</h4>
                 </div>
                 <div className='row'>
-                    <p></p>
+                    <p>The headquarters of the Namuh Secruoser Guild and preferred hang out for the Guardian</p>
                     <ul>
                         <li>
                             <Link
                                 className='modal-close'
-                                to="/game/quest/01"
+                                to="/game/quest/02"
                                 onClick={(e) => {
                                     // e.preventDefault();
                                     props.handleDecline();
@@ -123,14 +123,13 @@ const cityNav = (props) => {
             <div className='modal-content' style={modalStyle}>
                 <div style={{}}>
                     <div className='row'>
-                        {/* <img style={imgStyle} src={Link} alt='Link' /> */}
-                        <h4>A Fishing Village</h4>
+                        <h4>The Javan Playhouse</h4>
                     </div>
                     <div className='row'>
-                        <p>A fishing village on the SouthWest coast of Coderia</p>
+                        <p>A struggling playhouse and center of culture in Gninnigeb City</p>
                         <ul>
                             <Link
-                                to='/game/quest/04' // link to fishing village
+                                to='/game/quest/03'
                                 onClick={(e) => {
                                     // e.preventDefault();
                                     props.handleDecline();
