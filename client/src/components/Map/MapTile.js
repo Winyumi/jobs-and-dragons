@@ -91,12 +91,12 @@ const MapTile = (props) => {
             2: exclaim,
             3: talk,
             4: snore,
-            29: 'clear',
-            43: sleeper,
-            75: guardian,
-            76: bartender,
-            77: guildguard,
-            78: chest,
+            11: 'clear',
+            12: sleeper,
+            13: guardian,
+            14: bartender,
+            15: guildguard,
+            16: chest,
           });
           break;
         case 'playhouse':
