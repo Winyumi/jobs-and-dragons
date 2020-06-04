@@ -135,13 +135,13 @@ const MapTile = (props) => {
             2: exclaim,
             3: talk,
             4: woodfloor,
-            26: chest,
-            27: 'clear',
-            28: pier,
-            29: water,
-            75: captain,
-            76: chest,
-            77: orb,
+            11: 'clear',
+            12: chest,
+            13: pier,
+            14: water,
+            15: captain,
+            16: chest,
+            17: orb,
           });
           break;
         default:
