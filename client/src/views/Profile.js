@@ -5,9 +5,12 @@ import { api } from "../utils/api";
 import background from "../assets/dark-honeycomb.png";
 
 import "materialize-css";
-import World from '../components/World';
+
+import Questmap from "../components/Questmap";
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
+// import { Row, Col } from "react-materialize";
+
 
 const Profile = () => {
   const { loading, user } = useAuth0();
@@ -89,7 +92,8 @@ const Profile = () => {
   }
 
   return (
-    <div className="row" style={profileStyle}>
+    <div style={profileStyle}>
+    <div className="row">
       <div className="center col s12 m6" style={{ marginTop: "50px" }}>
         <img
           src={user.picture}
@@ -139,11 +143,13 @@ const Profile = () => {
         </Link>
         <br></br>
       </div>
-      <div className="row">
-      <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-        <World />
+    </div>
+
+    <div className="row">
+      <div className="center col" style={{ marginTop: "50px" }}>
+         <Questmap />
       </div>
-      </div>
+    </div>
     </div>
   );
 };

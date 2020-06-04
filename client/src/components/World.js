@@ -31,7 +31,7 @@ const World = (props) => {
           setMapTitle('Gninnigeb City');
           setMapBackground(townBG);
           setCurrentQuest(town);
-          dispatch({ type: 'map', payload: 'town' });
+          dispatch({ type: 'town', payload: 'town' });
           break;
         case '/game/map':
           setMapTitle('Upper Clientia Map');

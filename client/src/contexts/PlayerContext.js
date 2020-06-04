@@ -169,7 +169,7 @@ const playerReducer = (state, action) => {
       };
     case 'town':
       state.position = [160, 720];
-      state.spritePosition = '0px 120px';
+      state.spritePosition = '0px 0px';
       state.direction = 'north';
       // state.walkIndex = 0;
       // state.isInteracting = false;
@@ -177,16 +177,16 @@ const playerReducer = (state, action) => {
         ...state,
         currentMap: action.payload,
       };
-    case 'map':
-      state.position = [320, 320];
-      // state.spritePosition = '0px 0px';
-      // state.direction = 'east';
-      // state.walkIndex = 0;
-      // state.isInteracting = false;
-      return {
-        ...state,
-        currentMap: action.payload,
-      };
+    // case 'map':
+    //   state.position = [320, 320];
+    //   // state.spritePosition = '0px 0px';
+    //   // state.direction = 'east';
+    //   // state.walkIndex = 0;
+    //   // state.isInteracting = false;
+    //   return {
+    //     ...state,
+    //     currentMap: action.payload,
+    //   };
     default:
       return state;
   }

@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Row, Col } from "react-materialize";
 
-
-import World from '../components/World';
-import Dialogue from '../components/Dialogue';
+import Questmap from '../components/Questmap';
 import CharBox from '../components/CharBox';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import history from '../utils/history';
-
 
 import backgroundDark from "../assets/dark-honeycomb.png";
 import backgroundLight from "../assets/light_honeycomb.png";
@@ -21,33 +18,33 @@ const Game = () => {
     setIsInteracting(state.isInteracting);
   }, [state.isInteracting]);
 
-  let RowStyles;
-  if (isInteracting || isAccepted) {
-    RowStyles = {
-      opacity: "0.25",
-      display: "flex",
-      justifyContent: "center",
-    };
-  } else {
-    RowStyles = {
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
-    };
-  }
+  // let RowStyles;
+  // if (isInteracting || isAccepted) {
+  //   RowStyles = {
+  //     opacity: "0.25",
+  //     display: "flex",
+  //     justifyContent: "center",
+  //   };
+  // } else {
+  //   RowStyles = {
+  //     width: "100%",
+  //     display: "flex",
+  //     justifyContent: "center",
+  //   };
+  // }
 
-  const handleQuestAccept = () => {
-    handleQuestDecline();
-    setIsAccepted(true);
-  };
+  // const handleQuestAccept = () => {
+  //   handleQuestDecline();
+  //   setIsAccepted(true);
+  // };
 
-  const handleQuestDecline = () => {
-    setIsInteracting(!state.isInteracting);
-    dispatch({
-      type: "toggleIsInteracting",
-      payload: !state.isInteracting,
-    });
-  };
+  // const handleQuestDecline = () => {
+  //   setIsInteracting(!state.isInteracting);
+  //   dispatch({
+  //     type: "toggleIsInteracting",
+  //     payload: !state.isInteracting,
+  //   });
+  // };
 
 //   const handleLinkDecline = () => {
 //     setIsOpening(!state.isOpening);
@@ -61,7 +58,7 @@ const Game = () => {
   return (
     <>
       <div style={PageStyles}>
-        <Row style={RowStyles}>
+        <Row >
           <Col className="charnav" s={3} style={{ marginTop: "50px" }}>
             <div style={charBoxStyles}>
               <CharBox />
@@ -69,20 +66,15 @@ const Game = () => {
           </Col>
 
           <Col className="" s={9} style={GameBoxStyles}>
-            <World path={history.location.pathname} />
+            <Questmap />
           </Col>
         </Row>
       </div>
-
-      {isInteracting && (
-        <Dialogue
-          handleDecline={handleQuestDecline}
-          handleAccept={handleQuestAccept}
-        />
       )} 
     </>
   );
 };
+
 export default Game;
 
 const charBoxStyles = {
