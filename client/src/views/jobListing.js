@@ -143,6 +143,64 @@ export default class jobListing extends React.Component {
           <Loading />
         </div>
       );
+    } else if (!items.length) {
+      return (
+        <>
+          <div style={PageStyles}>
+            <div style={ListingStyles}>
+              <div className="row">
+                <div className="center col s12 m3">
+                  <h4 style={{ color: "red" }}>JOB LISTINGS</h4>
+                  <div className="center input-field">
+                    <input
+                      id="roleSearchBox"
+                      placeholder=" Role / Position"
+                      value={this.state.query}
+                      type="text"
+                      style={inputBoxStyle}
+                      onChange={(e) => this.setState({ query: e.target.value })}
+                    ></input>
+                  </div>
+                  <div className="center input-field">
+                    <input
+                      id="locationSearchBox"
+                      placeholder=" Location"
+                      value={this.state.searchLocation}
+                      type="text"
+                      style={inputBoxStyle}
+                      onChange={(e) =>
+                        this.setState({ searchLocation: e.target.value })
+                      }
+                    ></input>
+                  </div>
+                  <input
+                    type="submit"
+                    value="SEARCH"
+                    className="btn btn-large red darken-4"
+                    onClick={(e) => this.handleSubmitSearch(e)}
+                  />
+                  <br></br>
+                  <br></br>
+                  <div className="input-field">
+                    <Link to="/joblisting/saved">
+                      <button
+                        rel="noopener noreferrer"
+                        className="btn btn-large red darken-4"
+                      >
+                        View Saved Jobs
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="center col s12 m8">
+                  <h3 style={{ color: "red" }}>Sorry, No Listings found</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      );
     } else {
       return (
         <>
@@ -226,7 +284,6 @@ export default class jobListing extends React.Component {
                             <b>Description :</b> {item.description}
                           </p>
                         </div>
-
                         <div className="card-action">
                           <button
                             onClick={(e) => this.handleSubmitSave(item)}
@@ -257,9 +314,15 @@ export default class jobListing extends React.Component {
     }
   }
 }
+const PageStyles = {
+  backgroundImage: `url(${backgroundDark})`,
+  height: "100vh",
+};
 
 const ListingStyles = {
   backgroundImage: `url(${backgroundDark})`,
+  height: "100%",
+  paddingBottom: "100px",
 };
 
 const inputBoxStyle = {
