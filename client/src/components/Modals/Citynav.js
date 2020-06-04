@@ -35,7 +35,7 @@ const cityNav = (props) => {
     };
     //gninnigeb City Navigation Modals
     if (
-        gameState.interactTile === 75
+        gameState.interactTile === 12
     ) {
         return (
             <div className='modal-content' style={modalStyle}>
@@ -77,7 +77,7 @@ const cityNav = (props) => {
             </div>
         );
     } else if (
-        gameState.interactTile === 76) {
+        gameState.interactTile === 13) {
         return (
             <div className='modal-content' style={modalStyle}>
             <div style={{}}>
@@ -118,7 +118,7 @@ const cityNav = (props) => {
         </div>
     );
     } else if (
-        gameState.interactTile === 77) {
+        gameState.interactTile === 14) {
         return (
             <div className='modal-content' style={modalStyle}>
                 <div style={{}}>
