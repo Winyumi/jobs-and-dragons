@@ -45,7 +45,6 @@ export default class jobListing extends React.Component {
           results = JSON.parse(
             JSON.stringify(results).replace(/\<strong\>|\<\/strong\>/g, "")
           );
-          console.log(results);
 
           this.setState({
             isLoaded: true,
@@ -84,8 +83,6 @@ export default class jobListing extends React.Component {
           results = JSON.parse(
             JSON.stringify(results).replace(/\<strong\>|\<\/strong\>/g, "")
           );
-          console.log(results);
-
           this.setState({
             isLoaded: true,
             items: results,
