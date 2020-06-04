@@ -46,7 +46,7 @@ const Dialogue = (props) => {
   //Oracle's lair dialogue boxes******
   if (
     gameState.currentMap === 'dungeon' &&
-    gameState.interactTile === 75) {
+    gameState.interactTile === 12) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -95,7 +95,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'dungeon' &&
-    gameState.interactTile === 76
+    gameState.interactTile === 13
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -135,7 +135,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'dungeon' &&
-    gameState.interactTile === 77
+    gameState.interactTile === 14
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -175,7 +175,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'dungeon' &&
-    gameState.interactTile === 78
+    gameState.interactTile === 15
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -214,7 +214,7 @@ const Dialogue = (props) => {
     );
   } else if (
     state.currentMap === 'dungeon' &&
-    state.interactTile === 79) {
+    state.interactTile === 16) {
     return (
       <div className='modal-content' style={chestStyle}>
         <div style={{}}>
@@ -259,7 +259,7 @@ const Dialogue = (props) => {
     //Guild dialogue boxes******
   } else if (
     gameState.currentMap === 'guild' &&
-    gameState.interactTile === 75
+    gameState.interactTile === 13
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -309,7 +309,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'guild' &&
-    gameState.interactTile === 76
+    gameState.interactTile === 14
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -348,7 +348,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'guild' &&
-    gameState.interactTile === 77
+    gameState.interactTile === 15
   ) {
     return (
       <div className='modal-content' style={modalStyle}>
@@ -387,7 +387,7 @@ const Dialogue = (props) => {
     );
   } else if (
     state.currentMap === 'guild' && 
-    state.interactTile === 78) {
+    state.interactTile === 16) {
     return (
       <div className='modal-content' style={chestStyle}>
         <div style={{}}>
@@ -432,7 +432,7 @@ const Dialogue = (props) => {
     //Javan playhouse dialogue boxes******
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 80) {
+    gameState.interactTile === 16) {
     return (
       <div className='modal-content' style={chestStyle}>
         <div style={{}}>
@@ -476,7 +476,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 75) {
+    gameState.interactTile === 12) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -520,7 +520,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 76) {
+    gameState.interactTile === 13) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -558,7 +558,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 77) {
+    gameState.interactTile === 14) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -595,7 +595,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'playhouse' &&
-    gameState.interactTile === 78) {
+    gameState.interactTile === 15) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -634,7 +634,7 @@ const Dialogue = (props) => {
     // Academy Modals
   } else if (
     gameState.currentMap === 'academy' &&
-    gameState.interactTile === 76) {
+    gameState.interactTile === 18) {
     return (
       <div className='modal-content' style={chestStyle}>
         <div style={{}}>
@@ -678,7 +678,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'academy' &&
-    gameState.interactTile === 77) {
+    gameState.interactTile === 19) {
     return (
       <div className='modal-content' style={chestStyle}>
         <div style={{}}>
@@ -722,7 +722,7 @@ const Dialogue = (props) => {
     );
   } else if (
     gameState.currentMap === 'academy' &&
-    gameState.interactTile === 75) {
+    gameState.interactTile === 17) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -764,53 +764,7 @@ const Dialogue = (props) => {
           </div>
         </div>
       </div>
-    );
-    //Acacdemy interactions
-  } else if (
-    gameState.currentMap === 'academy' &&
-    gameState.interactTile === 77) {
-    return (
-      <div className='modal-content' style={chestStyle}>
-        <div style={{}}>
-          <div className='row'>
-            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
-            <h4>You Found an Academy Oediv Orb!</h4>
-          </div>
-          <div className='row'>
-            <p>Peer into the orb for helpful information for your quest!</p>
-            <ul>
-              <li>
-                <a
-                  className='modal-close'
-                  href='https://youtu.be/SDIrz5M5dhE'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                // onClick={e => {
-                //   e.preventDefault();
-                //   props.handleAccept();
-                // }}
-                >
-                  Sure!
-                                              </a>
-              </li>
-              <li>
-                <a
-                  className='modal-close'
-                  href='#!'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    props.handleDecline();
-                  }}
-                >
-                  I'll check my fortune later...
-                                              </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    );
-
+    );  
     //Map Interactions
   } else if (
     gameState.currentMap === 'worldmap' &&
