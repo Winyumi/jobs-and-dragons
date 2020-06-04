@@ -42,10 +42,6 @@ import mapcity from '../../assets/WorldMapTiles/City.png';
 import fvillage from '../../assets/WorldMapTiles/fishvillage.png';
 import marble from '../../assets/marble.png';
 
-// let refreshPage = () => {
-//   window.location.reload(false);
-// };
-
 const MapTile = (props) => {
   const [state, dispatch] = usePlayerContext();
   const [tileSprites, setTileSprites] = useState({});
@@ -61,16 +57,16 @@ const MapTile = (props) => {
             3: baseNW,
             4: baseSW,
             5: baseSE,
-            26: 'clear',
-            75: mapacademy,
-            76: mapcity,
-            77: fvillage,
+            9: 'clear',
+            12: mapacademy,
+            13: mapcity,
+            14: fvillage,
           });
           break;
         case 'town':
           setTileSprites({
             0: 'clear',
-            26: 'clear',
+            11: 'clear',
           });
           break;
         case 'dungeon':
@@ -207,166 +203,6 @@ const MapTile = (props) => {
         return `url(${tileSprites['24']})`;
       case 25:
         return `url(${tileSprites['25']})`;
-      case 26:
-        return `url(${tileSprites['26']})`;
-      case 27:
-        return `url(${tileSprites['27']})`;
-      case 28:
-        return `url(${tileSprites['28']})`;
-      case 29:
-        return `url(${tileSprites['29']})`;
-      case 30:
-        return `url(${tileSprites['30']})`;
-      case 31:
-        return `url(${tileSprites['31']})`;
-      case 32:
-        return `url(${tileSprites['32']})`;
-      case 33:
-        return `url(${tileSprites['33']})`;
-      case 34:
-        return `url(${tileSprites['34']})`;
-      case 35:
-        return `url(${tileSprites['35']})`;
-      case 36:
-        return `url(${tileSprites['36']})`;
-      case 37:
-        return `url(${tileSprites['37']})`;
-      case 38:
-        return `url(${tileSprites['38']})`;
-      case 39:
-        return `url(${tileSprites['39']})`;
-      case 40:
-        return `url(${tileSprites['40']})`;
-      case 41:
-        return `url(${tileSprites['41']})`;
-      case 42:
-        return `url(${tileSprites['42']})`;
-      case 43:
-        return `url(${tileSprites['43']})`;
-      case 44:
-        return `url(${tileSprites['44']})`;
-      case 45:
-        return `url(${tileSprites['45']})`;
-      case 46:
-        return `url(${tileSprites['46']})`;
-      case 47:
-        return `url(${tileSprites['47']})`;
-      case 48:
-        return `url(${tileSprites['48']})`;
-      case 49:
-        return `url(${tileSprites['49']})`;
-      case 50:
-        return `url(${tileSprites['40']})`;
-      case 51:
-        return `url(${tileSprites['51']})`;
-      case 52:
-        return `url(${tileSprites['52']})`;
-      case 53:
-        return `url(${tileSprites['53']})`;
-      case 54:
-        return `url(${tileSprites['54']})`;
-      case 55:
-        return `url(${tileSprites['55']})`;
-      case 56:
-        return `url(${tileSprites['56']})`;
-      case 57:
-        return `url(${tileSprites['57']})`;
-      case 58:
-        return `url(${tileSprites['58']})`;
-      case 59:
-        return `url(${tileSprites['59']})`;
-      case 60:
-        return `url(${tileSprites['60']})`;
-      case 61:
-        return `url(${tileSprites['61']})`;
-      case 62:
-        return `url(${tileSprites['62']})`;
-      case 63:
-        return `url(${tileSprites['63']})`;
-      case 64:
-        return `url(${tileSprites['64']})`;
-      case 65:
-        return `url(${tileSprites['65']})`;
-      case 66:
-        return `url(${tileSprites['66']})`;
-      case 67:
-        return `url(${tileSprites['67']})`;
-      case 68:
-        return `url(${tileSprites['68']})`;
-      case 69:
-        return `url(${tileSprites['69']})`;
-      case 70:
-        return `url(${tileSprites['70']})`;
-      case 71:
-        return `url(${tileSprites['71']})`;
-      case 72:
-        return `url(${tileSprites['72']})`;
-      case 73:
-        return `url(${tileSprites['73']})`;
-      case 74:
-        return `url(${tileSprites['74']})`;
-      case 75:
-        return `url(${tileSprites['75']})`;
-      case 76:
-        return `url(${tileSprites['76']})`;
-      case 77:
-        return `url(${tileSprites['77']})`;
-      case 78:
-        return `url(${tileSprites['78']})`;
-      case 79:
-        return `url(${tileSprites['79']})`;
-      case 80:
-        return `url(${tileSprites['80']})`;
-      case 81:
-        return `url(${tileSprites['81']})`;
-      case 82:
-        return `url(${tileSprites['82']})`;
-      case 83:
-        return `url(${tileSprites['83']})`;
-      case 84:
-        return `url(${tileSprites['84']})`;
-      case 85:
-        return `url(${tileSprites['85']})`;
-      case 86:
-        return `url(${tileSprites['86']})`;
-      case 87:
-        return `url(${tileSprites['87']})`;
-      case 88:
-        return `url(${tileSprites['88']})`;
-      case 89:
-        return `url(${tileSprites['89']})`;
-      case 90:
-        return `url(${tileSprites['90']})`;
-      case 91:
-        return `url(${tileSprites['91']})`;
-      case 92:
-        return `url(${tileSprites['92']})`;
-      case 93:
-        return `url(${tileSprites['93']})`;
-      case 94:
-        return `url(${tileSprites['94']})`;
-      case 95:
-        return `url(${tileSprites['95']})`;
-      case 96:
-        return `url(${tileSprites['96']})`;
-      case 97:
-        return `url(${tileSprites['97']})`;
-      case 98:
-        return `url(${tileSprites['98']})`;
-      case 99:
-        return `url(${tileSprites['99']})`;
-      case 100:
-        return `url(${tileSprites['100']})`;
-      case 101:
-        return `url(${tileSprites['101']})`;
-      case 102:
-        return `url(${tileSprites['102']})`;
-      case 103:
-        return `url(${tileSprites['103']})`;
-      case 104:
-        return `url(${tileSprites['104']})`;
-      case 105:
-        return `url(${tileSprites['105']})`;
       default:
         return tileSprites[type];
     }

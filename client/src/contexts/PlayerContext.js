@@ -61,7 +61,7 @@ const observeObstacles = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile <= 25;
+  return nextTile <= 10;
 };
 
 const observeInteraction = (newPosition, currentMap) => {
@@ -72,7 +72,7 @@ const observeInteraction = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
   tileInteract = nextTile;
-  return nextTile >= 75;
+  return nextTile >= 12;
 };
 
 const dispatchMove = (oldPosition, newPosition, currentMap) => {
