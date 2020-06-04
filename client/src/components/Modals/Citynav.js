@@ -1,18 +1,14 @@
 import React from 'react';
 import { usePlayerContext } from '../../contexts/PlayerContext';
-import { useUserContext } from '../../contexts/UserContext';
+// import { useUserContext } from '../../contexts/UserContext';
 // import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
 import { Link } from 'react-router-dom';
 
 const cityNav = (props) => {
-    const [gameState] = usePlayerContext();
-    const [state] = useUserContext();
+    // const [gameState] = usePlayerContext();
+    // const [state] = useUserContext();
 
-    const imgStyle = {
-        float: 'right',
-        width: '100px',
-    };
     const modalStyle = {
         color: 'white',
         backgroundColor: 'black',
@@ -35,8 +31,7 @@ const cityNav = (props) => {
     };
     //gninnigeb City Navigation Modals
     if (
-        gameState.interactTile === 12
-    ) {
+        gameState.interactTile === 12) {
         return (
             <div className='modal-content' style={modalStyle}>
                 <div style={{}}>
@@ -80,43 +75,42 @@ const cityNav = (props) => {
         gameState.interactTile === 13) {
         return (
             <div className='modal-content' style={modalStyle}>
-            <div style={{}}>
-                <div className='row'>
-                    <h4>The Namuh Secruoser Guildhouse</h4>
-                </div>
-                <div className='row'>
-                    <p>The headquarters of the Namuh Secruoser Guild and preferred hang out for the Guardian</p>
-                    <ul>
-                        <li>
-                            <Link
-                                className='modal-close'
-                                to="/game/quest/02"
-                                onClick={(e) => {
-                                    // e.preventDefault();
-                                    props.handleDecline();
-
-                                }}
-                            >
-                                Enter the Guildhouse
-          </Link>
-                        </li>
-                        <li>
-                            <a
-                                className='modal-close'
-                                href='#!'
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    props.handleDecline();
-                                }}
-                            >
-                                Leave
+                <div style={{}}>
+                    <div className='row'>
+                        <h4>The Namuh Secruoser Guildhouse</h4>
+                    </div>
+                    <div className='row'>
+                        <p>The headquarters of the Namuh Secruoser Guild and preferred hang out for the Guardian</p>
+                        <ul>
+                            <li>
+                                <Link
+                                    className='modal-close'
+                                    to="/game/quest/02"
+                                    onClick={(e) => {
+                                        // e.preventDefault();
+                                        props.handleDecline();
+                                    }}
+                                >
+                                    Enter the Guildhouse
+                                </Link>
+                            </li>
+                            <li>
+                                <a
+                                    className='modal-close'
+                                    href='#!'
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        props.handleDecline();
+                                    }}
+                                >
+                                    Leave
                                       </a>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
     } else if (
         gameState.interactTile === 14) {
         return (

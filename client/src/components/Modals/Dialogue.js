@@ -43,6 +43,16 @@ const Dialogue = (props) => {
     height: '400px',
     padding: '20px',
   };
+  const navStyle = {
+    color: 'white',
+    backgroundColor: 'black',
+    position: 'absolute',
+    top: '33%',
+    left: '33%',
+    width: '400px',
+    height: '400px',
+    padding: '20px',
+  };
   //Oracle's lair dialogue boxes******
   if (
     gameState.currentMap === 'dungeon' &&
@@ -386,7 +396,7 @@ const Dialogue = (props) => {
       </div>
     );
   } else if (
-    state.currentMap === 'guild' && 
+    state.currentMap === 'guild' &&
     state.interactTile === 16) {
     return (
       <div className='modal-content' style={chestStyle}>
@@ -764,12 +774,12 @@ const Dialogue = (props) => {
           </div>
         </div>
       </div>
-    );  
+    );
     //Map Interactions
   } else if (
     gameState.currentMap === 'worldmap' &&
     gameState.interactTile === 75
-    ) {
+  ) {
     return (
       <div className='modal-content' style={modalStyle}>
         <div style={{}}>
@@ -781,7 +791,7 @@ const Dialogue = (props) => {
             <ul>
               <li>
                 <Link
-                className='modal-close'
+                  className='modal-close'
                   to="/game/quest/00"
                   onClick={(e) => {
                     // e.preventDefault();
@@ -824,36 +834,36 @@ const Dialogue = (props) => {
             <p>Go To:</p>
             <ul>
               <li>
-              <Link
-                to='/game/quest/01' // link to the Lair of the Oracle
-                onClick={(e) => {
-                  // e.preventDefault();
-                  props.handleDecline();
-                }}
-              >
-                Lair of the Oracle
+                <Link
+                  to='/game/quest/01' // link to the Lair of the Oracle
+                  onClick={(e) => {
+                    // e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Lair of the Oracle
               </Link>
               </li>
               <li>
-              <Link
-                to='/game/quest/02' // link to the Guildhouse
-                onClick={(e) => {
-                  // e.preventDefault();
-                  props.handleDecline();
-                }}
-              >
-                Namuh Secruoser Guildhouse
+                <Link
+                  to='/game/quest/02' // link to the Guildhouse
+                  onClick={(e) => {
+                    // e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Namuh Secruoser Guildhouse
               </Link>
               </li>
               <li>
-              <Link
-                to='/game/quest/03' // link to the Javan Playhouse
-                onClick={(e) => {
-                  // e.preventDefault();
-                  props.handleAccept();
-                }}
-              >
-                The Javan Playhouse
+                <Link
+                  to='/game/quest/03' // link to the Javan Playhouse
+                  onClick={(e) => {
+                    // e.preventDefault();
+                    props.handleAccept();
+                  }}
+                >
+                  The Javan Playhouse
               </Link>
               </li>
               <li>
@@ -874,7 +884,7 @@ const Dialogue = (props) => {
       </div>
     );
 
-  
+
   } else if (
     gameState.currentMap === 'worldmap' &&
     gameState.interactTile === 77) {
@@ -914,7 +924,129 @@ const Dialogue = (props) => {
         </div>
       </div>
     );
-  }
+  } else    //gninnigeb City Navigation Modals
+    if (
+      gameState.currentMap === 'town' &&
+      gameState.interactTile === 12) {
+      return (
+        <div className='modal-content' style={navStyle}>
+          <div style={{}}>
+            <div className='row'>
+              <h4>Lair of the Oracle</h4>
+            </div>
+            <div className='row'>
+              <p>The home of the wise keeper of Tenretni secrets</p>
+              <ul>
+                <li>
+                  <Link
+                    className='modal-close'
+                    to="/game/quest/01"
+                    onClick={(e) => {
+                      // e.preventDefault();
+                      props.handleDecline();
+
+                    }}
+                  >
+                    Enter the Oracle's Lair
+            </Link>
+                </li>
+                <li>
+                  <a
+                    className='modal-close'
+                    href='#!'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      props.handleDecline();
+                    }}
+                  >
+                    Leave
+                                        </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
+    } else if (
+      gameState.currentMap === 'town' &&
+      gameState.interactTile === 13) {
+      return (
+        <div className='modal-content' style={navStyle}>
+          <div style={{}}>
+            <div className='row'>
+              <h4>The Namuh Secruoser Guildhouse</h4>
+            </div>
+            <div className='row'>
+              <p>The headquarters of the Namuh Secruoser Guild and preferred hang out for the Guardian</p>
+              <ul>
+                <li>
+                  <Link
+                    className='modal-close'
+                    to="/game/quest/02"
+                    onClick={(e) => {
+                      // e.preventDefault();
+                      props.handleDecline();
+                    }}
+                  >
+                    Enter the Guildhouse
+                              </Link>
+                </li>
+                <li>
+                  <a
+                    className='modal-close'
+                    href='#!'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      props.handleDecline();
+                    }}
+                  >
+                    Leave
+                                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
+    } else if (
+      gameState.currentMap === 'town' &&
+      gameState.interactTile === 14) {
+      return (
+        <div className='modal-content' style={navStyle}>
+          <div style={{}}>
+            <div className='row'>
+              <h4>The Javan Playhouse</h4>
+            </div>
+            <div className='row'>
+              <p>A struggling playhouse and center of culture in Gninnigeb City</p>
+              <ul>
+                <Link
+                  to='/game/quest/03'
+                  onClick={(e) => {
+                    // e.preventDefault();
+                    props.handleDecline();
+                  }}
+                >
+                  Enter
+            </Link>
+                <li>
+                  <a
+                    className='modal-close'
+                    href='#!'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      props.handleDecline();
+                    }}
+                  >
+                    Leave
+                                          </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
+    }
 };
 
 export default Dialogue;

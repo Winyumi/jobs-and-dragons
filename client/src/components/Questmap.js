@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-materialize";
 import World from './World';
 import Dialogue from './Modals/Dialogue';
-import Citynav from './Modals/Citynav';
+// import Citynav from './Modals/Citynav';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import history from '../utils/history';
 import backgroundDark from "../assets/dark-honeycomb.png";
 
 const Questmap = () => {
+  const [gameState] = usePlayerContext();
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState(false);
   const [isAccepted, setIsAccepted] = useState(false);
@@ -51,27 +52,7 @@ const Questmap = () => {
   //       payload: !state.isOpening,
   //     });
   //   };
-  if (gameState.currentMap === 'town') {
-
-    return (
-      <>
-        <div style={PageStyles}>
-          <Row>
-            <Col className="" s={9} style={GameBoxStyles}>
-              <World path={history.location.pathname} />
-            </Col>
-          </Row>
-        </div>
-
-        {isInteracting && (
-          <Citynav
-            handleDecline={handleQuestDecline}
-            handleAccept={handleQuestAccept}
-          />
-        )}
-      </>
-    );
-  } else {
+  
 
     return (
       <>
@@ -92,7 +73,6 @@ const Questmap = () => {
       </>
 
     )
-  }
 };
 
 export default Questmap;
