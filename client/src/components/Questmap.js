@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-materialize";
 import World from './World';
-import Dialogue from './Dialogue';
+import Dialogue from './Modals/Dialogue';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import history from '../utils/history';
 import backgroundDark from "../assets/dark-honeycomb.png";

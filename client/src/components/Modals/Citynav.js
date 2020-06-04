@@ -1,0 +1,161 @@
+import React from 'react';
+import { usePlayerContext } from '../../contexts/PlayerContext';
+import { useUserContext } from '../../contexts/UserContext';
+// import M from "materialize-css";
+import 'materialize-css/dist/css/materialize.min.css';
+import { Link } from 'react-router-dom';
+
+const cityNav = (props) => {
+    const [gameState] = usePlayerContext();
+    const [state] = useUserContext();
+
+    const imgStyle = {
+        float: 'right',
+        width: '100px',
+    };
+    const modalStyle = {
+        color: 'white',
+        backgroundColor: 'black',
+        position: 'absolute',
+        top: '33%',
+        left: '33%',
+        width: '700px',
+        height: '300px',
+        padding: '20px',
+    };
+    const chestStyle = {
+        color: 'white',
+        backgroundColor: 'black',
+        position: 'absolute',
+        top: '33%',
+        left: '33%',
+        width: '400px',
+        height: '400px',
+        padding: '20px',
+    };
+    //gninnigeb City Navigation Modals
+    if (
+        gameState.interactTile === 75
+    ) {
+        return (
+            <div className='modal-content' style={modalStyle}>
+                <div style={{}}>
+                    <div className='row'>
+                        <h4>Lair of the Oracle</h4>
+                    </div>
+                    <div className='row'>
+                        <p>The home of the wise keeper of Tenretni secrets</p>
+                        <ul>
+                            <li>
+                                <Link
+                                    className='modal-close'
+                                    to="/game/quest/01"
+                                    onClick={(e) => {
+                                        // e.preventDefault();
+                                        props.handleDecline();
+
+                                    }}
+                                >
+                                    Enter the Oracle's Lair
+              </Link>
+                            </li>
+                            <li>
+                                <a
+                                    className='modal-close'
+                                    href='#!'
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        props.handleDecline();
+                                    }}
+                                >
+                                    Leave
+                                          </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        );
+    } else if (
+        gameState.interactTile === 76) {
+        return (
+            <div className='modal-content' style={modalStyle}>
+            <div style={{}}>
+                <div className='row'>
+                    <h4>The Namuh Secruoser Guildhouse</h4>
+                </div>
+                <div className='row'>
+                    <p></p>
+                    <ul>
+                        <li>
+                            <Link
+                                className='modal-close'
+                                to="/game/quest/01"
+                                onClick={(e) => {
+                                    // e.preventDefault();
+                                    props.handleDecline();
+
+                                }}
+                            >
+                                Enter the Guildhouse
+          </Link>
+                        </li>
+                        <li>
+                            <a
+                                className='modal-close'
+                                href='#!'
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    props.handleDecline();
+                                }}
+                            >
+                                Leave
+                                      </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
+    } else if (
+        gameState.interactTile === 77) {
+        return (
+            <div className='modal-content' style={modalStyle}>
+                <div style={{}}>
+                    <div className='row'>
+                        {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+                        <h4>A Fishing Village</h4>
+                    </div>
+                    <div className='row'>
+                        <p>A fishing village on the SouthWest coast of Coderia</p>
+                        <ul>
+                            <Link
+                                to='/game/quest/04' // link to fishing village
+                                onClick={(e) => {
+                                    // e.preventDefault();
+                                    props.handleDecline();
+                                }}
+                            >
+                                Enter
+              </Link>
+                            <li>
+                                <a
+                                    className='modal-close'
+                                    href='#!'
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        props.handleDecline();
+                                    }}
+                                >
+                                    Leave
+                                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+};
+
+export default cityNav;

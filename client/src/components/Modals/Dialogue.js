@@ -9,8 +9,8 @@ import SingerBox from '../assets/SingerBox.png';
 import ActressBox from '../assets/ActressBox.png';
 import ManagerBox from '../assets/PlayHouseMgrBox.png';
 
-import { usePlayerContext } from '../contexts/PlayerContext';
-import { useUserContext } from '../contexts/UserContext';
+import { usePlayerContext } from '../../contexts/PlayerContext';
+import { useUserContext } from '../../contexts/UserContext';
 // import M from "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css';
 import { Link } from 'react-router-dom';
