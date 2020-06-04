@@ -11,12 +11,12 @@ import backgroundLight from "../assets/light_honeycomb.png";
 
 const Game = () => {
   const [state, dispatch] = usePlayerContext();
-  const [isInteracting, setIsInteracting] = useState(false);
-  const [isAccepted, setIsAccepted] = useState(false);
+  // const [isInteracting, setIsInteracting] = useState(false);
+  // const [isAccepted, setIsAccepted] = useState(false);
 
-  useEffect(() => {
-    setIsInteracting(state.isInteracting);
-  }, [state.isInteracting]);
+  // useEffect(() => {
+  //   setIsInteracting(state.isInteracting);
+  // }, [state.isInteracting]);
 
   // let RowStyles;
   // if (isInteracting || isAccepted) {
