@@ -42,6 +42,7 @@ const App = () => {
             <Route exact path="/coverpage" component={CoverPage} />
             <Route exact path="/resume" component={Resume} />
 
+
             <Route path="/game">
               {/* <PlayerProvider> */}
               <Game />
