@@ -15,7 +15,7 @@ export default class Success extends Component {
     return (
       <div className="card">
         <div className="card-body"><br/><br/>
-           <Bounce><h4>Hang Tight while your Resume Downloads!</h4></Bounce><br/><br/>
+           <Bounce><h4><i className='material-icons right'>mood</i>Hang Tight while your Resume Downloads!</h4></Bounce><br/><br/>
             
             
             
