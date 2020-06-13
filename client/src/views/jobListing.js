@@ -24,6 +24,7 @@ export default class jobListing extends React.Component {
       isLoaded: false,
       items: [],
       query: "",
+      searchLocation: "",
     };
   }
 
@@ -44,6 +45,7 @@ export default class jobListing extends React.Component {
           results = JSON.parse(
             JSON.stringify(results).replace(/\<strong\>|\<\/strong\>/g, "")
           );
+
           this.setState({
             isLoaded: true,
             items: results,
@@ -62,6 +64,7 @@ export default class jobListing extends React.Component {
     e.preventDefault();
 
     const query = this.state.query;
+    const searchLocation = this.state.searchLocation;
 
     fetch(
       "https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=" +
@@ -69,7 +72,9 @@ export default class jobListing extends React.Component {
         "&app_key=" +
         APP_KEY +
         "&what=" +
-        query
+        query +
+        "&where=" +
+        searchLocation
     )
       .then((res) => res.json())
       .then(
@@ -135,6 +140,64 @@ export default class jobListing extends React.Component {
           <Loading />
         </div>
       );
+    } else if (!items.length) {
+      return (
+        <>
+          <div style={PageStyles}>
+            <div style={ListingStyles}>
+              <div className="row">
+                <div className="center col s12 m3">
+                  <h4 style={{ color: "red" }}>JOB LISTINGS</h4>
+                  <div className="center input-field">
+                    <input
+                      id="roleSearchBox"
+                      placeholder=" Role / Position"
+                      value={this.state.query}
+                      type="text"
+                      style={inputBoxStyle}
+                      onChange={(e) => this.setState({ query: e.target.value })}
+                    ></input>
+                  </div>
+                  <div className="center input-field">
+                    <input
+                      id="locationSearchBox"
+                      placeholder=" Location"
+                      value={this.state.searchLocation}
+                      type="text"
+                      style={inputBoxStyle}
+                      onChange={(e) =>
+                        this.setState({ searchLocation: e.target.value })
+                      }
+                    ></input>
+                  </div>
+                  <input
+                    type="submit"
+                    value="SEARCH"
+                    className="btn btn-large red darken-4"
+                    onClick={(e) => this.handleSubmitSearch(e)}
+                  />
+                  <br></br>
+                  <br></br>
+                  <div className="input-field">
+                    <Link to="/joblisting/saved">
+                      <button
+                        rel="noopener noreferrer"
+                        className="btn btn-large red darken-4"
+                      >
+                        View Saved Jobs
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="center col s12 m8">
+                  <h2 style={{ color: "red" }}>Sorry, No Listings found</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      );
     } else {
       return (
         <>
@@ -144,11 +207,24 @@ export default class jobListing extends React.Component {
                 <h4 style={{ color: "red" }}>JOB LISTINGS</h4>
                 <div className="center input-field">
                   <input
-                    id="searchBox"
+                    id="roleSearchBox"
+                    placeholder=" Role / Position"
                     value={this.state.query}
                     type="text"
                     style={inputBoxStyle}
                     onChange={(e) => this.setState({ query: e.target.value })}
+                  ></input>
+                </div>
+                <div className="center input-field">
+                  <input
+                    id="locationSearchBox"
+                    placeholder=" Location"
+                    value={this.state.searchLocation}
+                    type="text"
+                    style={inputBoxStyle}
+                    onChange={(e) =>
+                      this.setState({ searchLocation: e.target.value })
+                    }
                   ></input>
                 </div>
                 <input
@@ -159,7 +235,7 @@ export default class jobListing extends React.Component {
                 />
                 <br></br>
                 <br></br>
-                <div class="input-field">
+                <div className="input-field">
                   <Link to="/joblisting/saved">
                     <button
                       rel="noopener noreferrer"
@@ -189,6 +265,10 @@ export default class jobListing extends React.Component {
                           </p>
                           <p>
                             {" "}
+                            <b>Location :</b> {item.location.display_name}{" "}
+                          </p>
+                          <p>
+                            {" "}
                             <b>Date :</b>{" "}
                             {dateFormat(item.created, "dddd, mmmm dS, yyyy")}
                           </p>
@@ -201,23 +281,23 @@ export default class jobListing extends React.Component {
                             <b>Description :</b> {item.description}
                           </p>
                         </div>
-
                         <div className="card-action">
                           <button
                             onClick={(e) => this.handleSubmitSave(item)}
                             value="Save"
                             className="btn btn-large red darken-4"
                           >
+                            {" "}
                             Save
                           </button>
-                          <button
+                          <a
                             href={item.redirect_url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-large red darken-4"
                           >
                             Apply
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </li>
@@ -231,11 +311,17 @@ export default class jobListing extends React.Component {
     }
   }
 }
+const PageStyles = {
+  backgroundImage: `url(${backgroundDark})`,
+  height: "100vh",
+};
 
 const ListingStyles = {
   backgroundImage: `url(${backgroundDark})`,
+  height: "100%",
+  paddingBottom: "100px",
 };
 
 const inputBoxStyle = {
-  backgroundColor: "white",
+  backgroundColor: "whitesmoke",
 };

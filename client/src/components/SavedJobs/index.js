@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./savedjobs.css";
-import Auth0Context from "../../react-auth0-spa";
-import dateFormat from "dateformat";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './savedjobs.css';
+import Auth0Context from '../../react-auth0-spa';
+import dateFormat from 'dateformat';
 
-import backgroundDark from "../../assets/dark-honeycomb.png";
+import backgroundDark from '../../assets/dark-honeycomb.png';
 
 export default class SavedJobs extends React.Component {
   constructor(props) {
@@ -39,11 +39,11 @@ export default class SavedJobs extends React.Component {
     const userEmail = this.context.user.email;
     async function deleteJobListing(id, email) {
       fetch(`/api/v1/users/emaildj/${email}`, {
-        method: "PUT",
-        mode: "cors",
-        cache: "no-cache",
+        method: 'PUT',
+        mode: 'cors',
+        cache: 'no-cache',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ id: id }),
       });
@@ -60,52 +60,60 @@ export default class SavedJobs extends React.Component {
       return (
         <>
           <div style={ListingStylesFullPage}>
-            <div className="row" style={{ height: "100vh" }}>
-              <div className="col s12 m3">
-                <h4 style={{ color: "red" }}>SAVED JOBS LISTINGS</h4>
-                <Link to="/joblisting">
+            <div className='row' style={{ height: '100vh' }}>
+              <div className='col s12 m3'>
+                <h4 style={{ color: 'red' }}>SAVED JOBS LISTINGS</h4>
+                <Link to='/joblisting'>
                   <button
-                    rel="noopener noreferrer"
-                    className="btn btn-large red darken-4"
+                    rel='noopener noreferrer'
+                    className='btn btn-large red darken-4'
                   >
                     Return to Job Search
                   </button>
                 </Link>
               </div>
 
-              <div className="center col s12 m8">
+              <div className='center col s12 m8'>
                 <ul>
                   {items.map((item) => (
                     <li key={item.id}>
-                      <div className="card grey lighten-2">
-                        <div className="card-content">
-                          <h6 className="card-title activator">{item.title}</h6>
+                      <div className='card grey lighten-2'>
+                        <div className='card-content'>
+                          <h6 className='card-title activator'>{item.title}</h6>
                           <p>
                             <b>Company :</b> {item.title}
                           </p>
                           <p>
                             <b>Date :</b>
-                            {dateFormat(item.created, "dddd, mmmm dS, yyyy")}
+                            {dateFormat(item.created, 'dddd, mmmm dS, yyyy')}
                           </p>
                           <p>
-                            {" "}
+                            {' '}
                             <b>Description :</b> {item.description}
                           </p>
                         </div>
-                        <div className="card-action">
+                        <div className='card-action'>
                           <button
                             onClick={(e) =>
                               this.handleSubmitDelete(item, this.state)
                             }
-                            value="delete"
-                            className="btn btn-large red darken-4"
+                            value='delete'
+                            className='btn btn-large red darken-4'
                           >
                             Delete
                           </button>
+                          <a
+                            href={item.url}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='btn btn-large red darken-4'
+                          >
+                            Apply
+                          </a>
                         </div>
                       </div>
                     </li>
-                  ))}{" "}
+                  ))}{' '}
                 </ul>
               </div>
             </div>
@@ -116,52 +124,60 @@ export default class SavedJobs extends React.Component {
       return (
         <>
           <div style={ListingStyles}>
-            <div className="row">
-              <div className="col s12 m3">
-                <h4 style={{ color: "red" }}>SAVED JOBS LISTINGS</h4>
-                <Link to="/joblisting">
+            <div className='row'>
+              <div className='col s12 m3'>
+                <h4 style={{ color: 'red' }}>SAVED JOBS LISTINGS</h4>
+                <Link to='/joblisting'>
                   <button
-                    rel="noopener noreferrer"
-                    className="btn btn-large red darken-4"
+                    rel='noopener noreferrer'
+                    className='btn btn-large red darken-4'
                   >
                     Return to Job Search
                   </button>
                 </Link>
               </div>
 
-              <div className="center col s12 m8">
+              <div className='center col s12 m8'>
                 <ul>
                   {items.map((item) => (
                     <li key={item.id}>
-                      <div className="card grey lighten-2">
-                        <div className="card-content">
-                          <h6 className="card-title activator">{item.title}</h6>
+                      <div className='card grey lighten-2'>
+                        <div className='card-content'>
+                          <h6 className='card-title activator'>{item.title}</h6>
                           <p>
                             <b>Company :</b> {item.title}
                           </p>
                           <p>
                             <b>Date :</b>
-                            {dateFormat(item.created, "dddd, mmmm dS, yyyy")}
+                            {dateFormat(item.created, 'dddd, mmmm dS, yyyy')}
                           </p>
                           <p>
-                            {" "}
+                            {' '}
                             <b>Description :</b> {item.description}
                           </p>
                         </div>
-                        <div className="card-action">
+                        <div className='card-action'>
                           <button
                             onClick={(e) =>
                               this.handleSubmitDelete(item, this.state)
                             }
-                            value="delete"
-                            className="btn btn-large red darken-4"
+                            value='delete'
+                            className='btn btn-large red darken-4'
                           >
                             Delete
                           </button>
+                          <a
+                            href={item.url}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='btn btn-large red darken-4'
+                          >
+                            Apply
+                          </a>
                         </div>
                       </div>
                     </li>
-                  ))}{" "}
+                  ))}{' '}
                 </ul>
               </div>
             </div>
@@ -174,12 +190,12 @@ export default class SavedJobs extends React.Component {
 
 const ListingStylesFullPage = {
   backgroundImage: `url(${backgroundDark})`,
-  height: "100vh",
-  margin: "0px",
+  height: '100vh',
+  margin: '0px',
 };
 
 const ListingStyles = {
   backgroundImage: `url(${backgroundDark})`,
-  height: "100%",
-  margin: "0px",
+  height: '100%',
+  margin: '0px',
 };
