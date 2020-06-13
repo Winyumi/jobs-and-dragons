@@ -5,6 +5,7 @@ import { playhouse } from '../maps/playhouse';
 import { academy } from '../maps/academy';
 import { fishvillage } from '../maps/fishvillage';
 import { worldmap } from '../maps/map';
+import { town } from '../maps/town';
 
 const PlayerContext = createContext();
 const { Provider } = PlayerContext;
@@ -17,6 +18,9 @@ let tileInteract;
 const setCurrentMap = (currentMap) => {
   let map;
   switch (currentMap) {
+    case 'town':
+      map = town;
+      return map;
     case 'worldmap':
       map = worldmap;
       return map;
@@ -57,7 +61,7 @@ const observeObstacles = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
 
-  return nextTile <= 25;
+  return nextTile <= 10;
 };
 
 const observeInteraction = (newPosition, currentMap) => {
@@ -68,7 +72,7 @@ const observeInteraction = (newPosition, currentMap) => {
 
   const nextTile = map[y][x];
   tileInteract = nextTile;
-  return nextTile >= 75;
+  return nextTile >= 12;
 };
 
 const dispatchMove = (oldPosition, newPosition, currentMap) => {
@@ -163,16 +167,26 @@ const playerReducer = (state, action) => {
         ...state,
         currentMap: action.payload,
       };
-    case 'map':
-      state.position = [320, 320];
-      // state.spritePosition = '0px 0px';
-      // state.direction = 'east';
+    case 'town':
+      state.position = [160, 720];
+      state.spritePosition = '0px 0px';
+      state.direction = 'north';
       // state.walkIndex = 0;
       // state.isInteracting = false;
       return {
         ...state,
         currentMap: action.payload,
       };
+    // case 'map':
+    //   state.position = [320, 320];
+    //   // state.spritePosition = '0px 0px';
+    //   // state.direction = 'east';
+    //   // state.walkIndex = 0;
+    //   // state.isInteracting = false;
+    //   return {
+    //     ...state,
+    //     currentMap: action.payload,
+    //   };
     default:
       return state;
   }

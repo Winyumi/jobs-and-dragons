@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../contexts/UserContext";
 import { api } from "../utils/api";
-
 import background from "../assets/dark-honeycomb.png";
 
 import "materialize-css";
 
+import Questmap from "../components/Questmap";
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
+// import { Row, Col } from "react-materialize";
+
 
 const Profile = () => {
   const { loading, user } = useAuth0();
@@ -90,62 +92,74 @@ const Profile = () => {
   }
 
   return (
-    <div className="row" style={profileStyle}>
-      <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-        <img
-          src={user.picture}
-          alt="User Profile"
-          className="circle responsive-img"
-          style={userImageStyle}
-        />
-        <h3 style={h3Style}>USERNAME</h3>
-        <div className="card-panel red" style={cardStyle}>
-          {user.name}
+    <>
+
+    <div style={profileStyle}>
+      <div className="row">
+        <div className="center col s12 m6" style={{ marginTop: "50px" }}>
+          <img
+            src={user.picture}
+            alt="User Profile"
+            className="circle responsive-img"
+            style={userImageStyle}
+          />
+          <h3 style={h3Style}>USERNAME</h3>
+          <div className="card-panel red" style={cardStyle}>
+            {user.name}
+          </div>
+        </div>
+
+        <div className="center col s12 m6" style={{ marginTop: "50px" }}>
+          <h3 style={h3Style}>Begin Your QUEST</h3>
+          <Link
+            className="btn-large"
+            style={BtnStyle}
+            onMouseOver={changeTo}
+            onMouseLeave={changeBack}
+            to="/game/quest/01"
+            name="gameBtn"
+          >
+            Quest 1
+        </Link>
+          <br></br>
+          <Link
+            className="btn-large"
+            style={BtnStyle}
+            onMouseOver={changeTo}
+            onMouseLeave={changeBack}
+            to="/game/quest/02"
+            name="gameBtn"
+          >
+            Quest 2
+        </Link>
+          <br></br>
+          <Link
+            className="btn-large"
+            style={BtnStyle}
+            onMouseOver={changeTo}
+            onMouseLeave={changeBack}
+            to="/game/quest/03"
+            name="gameBtn"
+          >
+            Quest 3
+        </Link>
+          <br></br>
         </div>
       </div>
 
-      <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-        <h3 style={h3Style}>Begin Your QUEST</h3>
-        <Link
-          className="btn-large"
-          style={BtnStyle}
-          onMouseOver={changeTo}
-          onMouseLeave={changeBack}
-          to="/game/quest/01"
-          name="gameBtn"
-        >
-          Quest 1
-        </Link>
-        <br></br>
-        <Link
-          className="btn-large"
-          style={BtnStyle}
-          onMouseOver={changeTo}
-          onMouseLeave={changeBack}
-          to="/game/quest/02"
-          name="gameBtn"
-        >
-          Quest 2
-        </Link>
-        <br></br>
-        <Link
-          className="btn-large"
-          style={BtnStyle}
-          onMouseOver={changeTo}
-          onMouseLeave={changeBack}
-          to="/game/quest/03"
-          name="gameBtn"
-        >
-          Quest 3
-        </Link>
-        <br></br>
+      <div className="row">
+        <div className="center col l12 s12" style={{ margin: "20px" }}>
+          <Questmap />
+        </div>
       </div>
     </div>
+    </>
   );
 };
 
 const profileStyle = {
   height: "90vh",
+  width: "100%",
   backgroundImage: `url(${background})`,
 };
 
