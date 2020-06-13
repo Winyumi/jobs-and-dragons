@@ -7,6 +7,7 @@ const Player = () => {
 
   useEffect(() => {
     const handleMovement = (e) => {
+      e.preventDefault();
       switch (e.keyCode) {
         case 37:
           dispatch({ type: 'moveleft' });
