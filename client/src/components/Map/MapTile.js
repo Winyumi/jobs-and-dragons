@@ -22,9 +22,9 @@ import snore from '../../assets/Snore_bubble.gif';
 import notes from '../../assets/Notes_bubble.gif';
 import stagetalk from '../../assets/StageTalk_bubble.gif';
 //Normal tiles
-import bed from '../../assets/Bed.png';
+// import bed from '../../assets/Bed.png';
 import woodfloor from '../../assets/WoodFloor.png';
-import bench from '../../assets/Bench.png';
+// import bench from '../../assets/Bench.png';
 import sleeper from '../../assets/BedSleeper.gif';
 import academywall from '../../assets/academyWall.png';
 import pillar from '../../assets/pillar.png';
@@ -121,8 +121,8 @@ const MapTile = (props) => {
             2: talk,
             12: pillar,
             13: pillar2,
-            14: bed,
-            15: bench,
+            // 14: bed,
+            // 15: bench,
             16: academywall,
             17: headmaster,
             18: chest,
