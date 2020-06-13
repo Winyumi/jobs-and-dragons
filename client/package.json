@@ -12,16 +12,20 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^10.0.1",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
     "dateformat": "^3.0.3",
     "dotenv": "^8.2.0",
+    "file-saver": "^2.0.2",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.13.0",
     "react-materialize": "^3.8.10",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-scroll-to": "^3.0.0-beta.6",
-    "react-star-ratings": "^2.3.0"
+    "react-star-ratings": "^2.3.0",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

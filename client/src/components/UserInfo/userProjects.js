@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 export default class UserProjects extends Component {
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+};
+
+
+
   render() {
     const { projects, onChangeHandler, id } = this.props;
     const { name, description } = projects;
@@ -26,6 +33,10 @@ export default class UserProjects extends Component {
             required
           />
         </div>
+        <div className="container text-center">
+                        <button type="button" className="btn btn-info" onClick={this.back}><i className="fas fa-angle-left mr-1"></i>Back</button>
+                    </div>
+
       </div>
     );
   }

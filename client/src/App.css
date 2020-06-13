@@ -90,7 +90,7 @@ h6,
 p,
 span,
 ul,
-li {
+li,label {
   font-family: 'Alagard';
 }
 
@@ -349,3 +349,11 @@ h4 {
   font-weight: 300;
   color: white;
 }
+
+.heading{
+  border-bottom: 1px solid grey;
+}
+
+
+
+

@@ -17,6 +17,16 @@ const EXPERTISE = [
 ];
 
 class userExpertise extends Component {
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+};
+
+continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+}
+
   state = {
     checkboxes: EXPERTISE.reduce(
       (options, option) => ({
@@ -60,6 +70,7 @@ class userExpertise extends Component {
   render() {
     return (
       <div className='row'>
+      <form onSubmit={this.continue}>
         <div className='col'>{this.createCheckboxes()}</div>
         <div>
           <button
@@ -71,6 +82,11 @@ class userExpertise extends Component {
             <i className='material-icons right'>check</i>
           </button>
         </div>
+        <div className="container text-center">
+        <button type="button" className="btn btn-info" onClick={this.back}><i className="fas fa-angle-left mr-1"></i>Back</button>
+        <button type="submit" className="btn btn-info">Next<i className="fas fa-angle-right ml-1"></i></button>
+    </div>
+    </form>
       </div>
     );
   }

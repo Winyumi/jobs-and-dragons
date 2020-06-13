@@ -18,6 +18,7 @@ import history from "./utils/history";
 import UserInfo from "./components/UserInfo";
 import CoverPage from "./components/CoverPage";
 import Resume from "./components/Resume";
+import userForm from "./components/MultiPageResume/UserForm"
 
 // styles/
 import "./App.css";
@@ -41,6 +42,7 @@ const App = () => {
             <Route exact path="/joblisting/saved" component={SavedJobs} />
             <Route exact path="/coverpage" component={CoverPage} />
             <Route exact path="/resume" component={Resume} />
+            <Route exact path="/userForm" component={userForm} />
 
 
             <Route path="/game">
