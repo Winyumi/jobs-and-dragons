@@ -7,23 +7,7 @@ class PersonalDetails extends Component {
         e.preventDefault();
         this.props.nextStep();
     };
-    formSubmit = (e) => {
-        e.preventDefault();
-        const data = this.props.values;
-        console.log(data);
-        axios.post('/create-pdf', data)
-        .then(function (response) { console.log(response.data.data);})
-        .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
-        .then((res) => {
-            console.log(res.data);
-            const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-            saveAs(pdfBlob, 'Resume.pdf');
-        });
-
-    e.target.reset();
-
-    };
     render() {
         const { values, handleChange } = this.props;
         return (
@@ -64,8 +48,7 @@ class PersonalDetails extends Component {
                             <input type="text" placeholder="Skills (Separate each skill with a space and a comma)" name="skills"  className="validate" defaultValue={values.status === 1 ? '' : values.skills} onChange={handleChange} />
                         </div>
                     </div>
-                 <div><button type="button" className="btn waves-effect waves-light">Next<i className="material-icons right">navigate_next</i></button></div>
-                 <button type="submit" className="waves-effect waves-light btn">Download PDF<i className="material-icons right">file_download</i></button>
+                 <div><button type="submit" className="btn waves-effect waves-light">Next<i className="material-icons right">navigate_next</i></button></div>
                 </form>
             
             </div>
