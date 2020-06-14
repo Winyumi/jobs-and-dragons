@@ -1,9 +1,28 @@
 import React, { Component } from 'react'
+import axios from 'axios';
+import {saveAs} from 'file-saver';
 
 class PersonalDetails extends Component {
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
+    };
+    formSubmit = (e) => {
+        e.preventDefault();
+        const data = this.props.values;
+        console.log(data);
+        axios.post('/create-pdf', data)
+        .then(function (response) { console.log(response.data.data);})
+        .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
+        .then((res) => {
+            console.log(res.data);
+            const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+
+            saveAs(pdfBlob, 'Resume.pdf');
+        });
+
+    e.target.reset();
+
     };
     render() {
         const { values, handleChange } = this.props;
@@ -13,7 +32,7 @@ class PersonalDetails extends Component {
 
                     <h3 className="card-title">Personal Info</h3>
                 </div>
-                <form onSubmit={this.continue}>
+                <form onSubmit={this.formSubmit}>
                     <div className="row">
                         <div className="input-field col s6">
                             <i className="material-icons prefix">account_circle</i>
@@ -45,7 +64,8 @@ class PersonalDetails extends Component {
                             <input type="text" placeholder="Skills (Separate each skill with a space and a comma)" name="skills"  className="validate" defaultValue={values.status === 1 ? '' : values.skills} onChange={handleChange} />
                         </div>
                     </div>
-                    <div><button type="submit" className="btn waves-effect waves-light">Next<i className="material-icons right">navigate_next</i></button></div>
+                 <div><button type="button" className="btn waves-effect waves-light">Next<i className="material-icons right">navigate_next</i></button></div>
+                 <button type="submit" className="waves-effect waves-light btn">Download PDF<i className="material-icons right">file_download</i></button>
                 </form>
             
             </div>

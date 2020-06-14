@@ -53,8 +53,8 @@ class Project extends Component {
                     </div>
                     <br />
                     <div className="container text-center">
-                        <button type="button" className="btn btn-info" onClick={this.back}><i className="fas fa-angle-left mr-1"></i>Back</button>
-                        <button type="submit" className="btn btn-info">Next<i className="fas fa-angle-right ml-1"></i></button>
+                    <button type="button" className="btn waves-effect waves-light" onClick={this.back}><i className="material-icons left">navigate_before</i>Back</button>
+                    <button type="submit" className="btn waves-effect waves-light">Next<i className="material-icons right">navigate_next</i></button>
                     </div>
                     <br />
                 </form>

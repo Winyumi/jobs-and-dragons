@@ -39,7 +39,7 @@ class Experience extends Component {
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                            <input type="text" name="exp1_desc" placeholder='Description*' className="form-control" defaultValue={values.status === 1 ? '' : values.exp1_desc} onChange={handleChange} required />
+                            <input type="text" name="exp1_desc" placeholder='Description*'  defaultValue={values.status === 1 ? '' : values.exp1_desc} onChange={handleChange} required />
                         </div>
                     </div>
 
@@ -64,8 +64,8 @@ class Experience extends Component {
                     </div>
                 </div>
                     <div className="container text-center">
-                        <button type="button" className="btn btn-info" onClick={this.back}><i className="fas fa-angle-left mr-1"></i>Back</button>
-                        <button type="submit" className="btn btn-info">Next<i className="fas fa-angle-right ml-1"></i></button>
+                        <button type="button" className="btn waves-effect waves-light" onClick={this.back}><i className="material-icons left">navigate_before</i>Back</button>
+                        <button type="submit" className="btn waves-effect waves-light">Next<i className="material-icons right">navigate_next</i></button>
                     </div>
                 </form>
             </div>

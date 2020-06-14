@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { saveAs } from 'file-saver';
+import {saveAs} from 'file-saver';
+const fileDownload = require('js-file-download');
+
+
 
 class Extras extends Component {
 
@@ -16,20 +19,23 @@ class Extras extends Component {
         this.props.nextStep();
         const data = this.props.values;
         console.log(data);
-
         axios.post('/create-pdf', data)
-            
-            .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
-            .then((res) => {
-                const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+        .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
+        .then((res) => {
+            const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-                saveAs(pdfBlob, 'Resume.pdf');
-            });
+            saveAs(pdfBlob, 'Resume.pdf');
+        });
+
+    e.target.reset();
+
+
 
         e.target.reset();
 
-    }
 
+
+    };
 
     render() {
         const { values, handleChange } = this.props;
@@ -42,23 +48,23 @@ class Extras extends Component {
                     <div className="row">
 
                         <div className="input-field col s12">
-                            <input type="text" name="extra_1"  placeholder="Languages" defaultValue={values.status === 1 ? '' : values.extra_1} onChange={handleChange} required />
+                            <input type="text" name="extra_1"  placeholder="Languages" defaultValue={values.status === 1 ? '' : values.extra_1} onChange={handleChange}  />
                         </div>
                         <div className="input-field col s12">
-                            <input type="text" name="extra_2" placeholder="Hobbies" defaultValue={values.status === 1 ? '' : values.extra_2} onChange={handleChange} required />
+                            <input type="text" name="extra_2" placeholder="Hobbies" defaultValue={values.status === 1 ? '' : values.extra_2} onChange={handleChange}  />
                         </div>
                     </div>
                     <br />
                     <div className="row">
 
                         <div className="input-field col s12">
-                            <input type="text" name="extra_3" id="extra_3" placeholder="Activity/Achievement" defaultValue={values.status === 1 ? '' : values.extra_3} onChange={handleChange} required />
+                            <input type="text" name="extra_3" id="extra_3" placeholder="Volunteering/Achievement" defaultValue={values.status === 1 ? '' : values.extra_3} onChange={handleChange}  />
                         </div>
                     </div>
 
-                    <div className="container text-center">
-                        <button type="button" className="btn btn-info" onClick={this.back}><i className="fas fa-angle-left mr-1"></i>Back</button>
-                        <button type="submit" className="btn pulse">Download PDF<i className="material-icons">file_download</i></button>
+                    <div>
+                        <button type="button" className="waves-effect waves-light btn" onClick={this.back}><i className="material-icons left">navigate_before</i>Back</button>
+                        <button type="submit" className="waves-effect waves-light btn">Download PDF<i className="material-icons right">file_download</i></button>
                     </div>
                 </form>
             </div>
