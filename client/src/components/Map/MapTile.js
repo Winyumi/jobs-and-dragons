@@ -114,7 +114,7 @@ const MapTile = (props) => {
             14: actress,
             15: manager,
             16: chest,
-            17: 'clear',
+            18: 'clear',
           });
           break;
         case 'academy':
