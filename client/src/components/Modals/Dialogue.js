@@ -244,13 +244,13 @@ const Dialogue = (props) => {
                   href='https://www.smashingmagazine.com/2018/06/web-developer-resume/'
                   target='_blank'
                   rel='noopener noreferrer'
-                  onClick={e => {
-                    e.preventDefault();
-                    props.handleAccept();
-                  }}
+                  // onClick={e => {
+                  //   e.preventDefault();
+                  //   props.handleAccept();
+                  // }}
                 >
                   Sure!
-                              </a>
+                </a>
               </li>
               <li>
                 <a
