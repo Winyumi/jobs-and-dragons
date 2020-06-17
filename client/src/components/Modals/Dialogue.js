@@ -576,6 +576,46 @@ const Dialogue = (props) => {
       </div>
     );
   } else if (
+    gameState.currentMap === 'guild' &&
+    gameState.interactTile === 17) {
+    return (
+      <div className='modal-content' style={doorStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+          </div>
+          <div className='row'>
+            <ul>
+                <li>
+                    <Link
+                        className='modal-close'
+                        to="/profile"
+                        onClick={(e) => {
+                            // e.preventDefault();
+                            props.handleDecline();
+                        }}
+                    >
+                        Return to Gninnigeb City
+                    </Link>
+                </li>
+                <li>
+                    <a
+                        className='modal-close'
+                        href='#!'
+                        onClick={(e) => {
+                            e.preventDefault();
+                            props.handleDecline();
+                        }}
+                    >
+                        Stay in the Guild
+                          </a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (
     gameState.currentMap === 'playhouse' &&
     gameState.interactTile === 12) {
     return (
