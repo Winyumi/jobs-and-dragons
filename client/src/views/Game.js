@@ -69,8 +69,7 @@ const Game = () => {
             <Questmap />
           </Col>
         </Row>
-      </div>
-      )} 
+      </div> 
     </>
   );
 };

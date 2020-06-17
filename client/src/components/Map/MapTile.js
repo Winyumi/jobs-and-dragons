@@ -83,6 +83,7 @@ const MapTile = (props) => {
             14: acolyte,
             15: acolyte,
             16: chest,
+            17: 'clear',
           });
           break;
         case 'guild':
