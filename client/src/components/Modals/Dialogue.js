@@ -56,6 +56,17 @@ const Dialogue = (props) => {
     height: '20vh',
     padding: '20px',
   };
+  const doorStyle = {
+    textAlign: 'center',
+    color: 'white',
+    backgroundColor: 'black',
+    position: 'absolute',
+    top: '20%',
+    left: '15%',
+    width: '30vh',
+    height: '10vh',
+    padding: '20px',
+  };
   //Oracle's lair dialogue boxes******
   if (
     gameState.currentMap === 'dungeon' &&
@@ -244,13 +255,13 @@ const Dialogue = (props) => {
                   href='https://www.smashingmagazine.com/2018/06/web-developer-resume/'
                   target='_blank'
                   rel='noopener noreferrer'
-                  onClick={e => {
-                    e.preventDefault();
-                    props.handleAccept();
-                  }}
+                  // onClick={e => {
+                  //   e.preventDefault();
+                  //   props.handleAccept();
+                  // }}
                 >
                   Sure!
-                              </a>
+                </a>
               </li>
               <li>
                 <a
@@ -264,6 +275,46 @@ const Dialogue = (props) => {
                   I'm good for now.
                               </a>
               </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (
+    gameState.currentMap === 'dungeon' &&
+    gameState.interactTile === 17) {
+    return (
+      <div className='modal-content' style={doorStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+          </div>
+          <div className='row'>
+            <ul>
+                <li>
+                    <Link
+                        className='modal-close'
+                        to="/profile"
+                        onClick={(e) => {
+                            // e.preventDefault();
+                            props.handleDecline();
+                        }}
+                    >
+                        Return to Gninnigeb City
+                    </Link>
+                </li>
+                <li>
+                    <a
+                        className='modal-close'
+                        href='#!'
+                        onClick={(e) => {
+                            e.preventDefault();
+                            props.handleDecline();
+                        }}
+                    >
+                        Stay in the Lair
+                          </a>
+                </li>
             </ul>
           </div>
         </div>
@@ -525,6 +576,46 @@ const Dialogue = (props) => {
       </div>
     );
   } else if (
+    gameState.currentMap === 'guild' &&
+    gameState.interactTile === 17) {
+    return (
+      <div className='modal-content' style={doorStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+          </div>
+          <div className='row'>
+            <ul>
+                <li>
+                    <Link
+                        className='modal-close'
+                        to="/profile"
+                        onClick={(e) => {
+                            // e.preventDefault();
+                            props.handleDecline();
+                        }}
+                    >
+                        Return to Gninnigeb City
+                    </Link>
+                </li>
+                <li>
+                    <a
+                        className='modal-close'
+                        href='#!'
+                        onClick={(e) => {
+                            e.preventDefault();
+                            props.handleDecline();
+                        }}
+                    >
+                        Stay in the Guild
+                          </a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (
     gameState.currentMap === 'playhouse' &&
     gameState.interactTile === 12) {
     return (
@@ -676,6 +767,46 @@ const Dialogue = (props) => {
                   Tough times for all of us.
                 </a>
               </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (
+    gameState.currentMap === 'playhouse' &&
+    gameState.interactTile === 18) {
+    return (
+      <div className='modal-content' style={doorStyle}>
+        <div style={{}}>
+          <div className='row'>
+            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+          </div>
+          <div className='row'>
+            <ul>
+                <li>
+                    <Link
+                        className='modal-close'
+                        to="/profile"
+                        onClick={(e) => {
+                            // e.preventDefault();
+                            props.handleDecline();
+                        }}
+                    >
+                        Return to Gninnigeb City
+                    </Link>
+                </li>
+                <li>
+                    <a
+                        className='modal-close'
+                        href='#!'
+                        onClick={(e) => {
+                            e.preventDefault();
+                            props.handleDecline();
+                        }}
+                    >
+                        Stay in the Playhouse
+                          </a>
+                </li>
             </ul>
           </div>
         </div>

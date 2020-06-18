@@ -83,6 +83,7 @@ const MapTile = (props) => {
             14: acolyte,
             15: acolyte,
             16: chest,
+            17: 'clear',
           });
           break;
         case 'guild':
@@ -97,6 +98,7 @@ const MapTile = (props) => {
             14: bartender,
             15: guildguard,
             16: chest,
+            17: 'clear',
           });
           break;
         case 'playhouse':
@@ -112,6 +114,7 @@ const MapTile = (props) => {
             14: actress,
             15: manager,
             16: chest,
+            18: 'clear',
           });
           break;
         case 'academy':
