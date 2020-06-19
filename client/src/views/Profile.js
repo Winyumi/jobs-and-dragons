@@ -5,6 +5,7 @@ import { api } from "../utils/api";
 import background from "../assets/dark-honeycomb.png";
 
 import Stats from "./../components/Stats";
+import Inventory from "./../components/Inventory";
 
 import "materialize-css";
 
@@ -120,53 +121,16 @@ const Profile = () => {
                 </div>
 
                 <div className="row valign-wrapper">
-                  <Stats />
-                </div>
-
-                <div className="row  valign-wrapper">
-                  <div className="col s2">
-                    <div class="card-panel red">
-                      <span class="white-text">
-                        HP : {state.user.numOfStars}
-                      </span>
-                    </div>
+                  <div className="center col s10">
+                    <Stats />
                   </div>
-                  <div className="col s2">
-                    <div class="card-panel red">
-                      <span class="white-text">
-                        card
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col s2">
-                    <div class="card-panel red">
-                      <span class="white-text">
-                        card
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col s2">
-                    <div class="card-panel red">
-                      <span class="white-text">
-                        card
-                      </span>
-                    </div>
-                  </div>
-                  <div className="col s2">
-                    <div class="card-panel red">
-                      <span class="white-text">
-                        card
-                      </span>
-                    </div>
-                  </div>
-
                 </div>
               </div>
 
             </div>
           </div>
 
-          <div className="center col s12 m6" style={{ marginTop: "50px" }}>
+          <div className="center col s12 m6" >
             <h3 style={h3Style}>Begin Your QUEST</h3>
             <Link
               className="btn-large"
@@ -205,8 +169,14 @@ const Profile = () => {
         </div>
 
         <div className="row">
-          <div className="center col s12" style={{ marginTop: "50px", marginBottom: "100px" }}>
+          <div className="center col s12">
             <Questmap />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="center col s12">
+            <Inventory />
           </div>
         </div>
 
@@ -252,6 +222,8 @@ const profileStyle = {
 };
 
 const mediaStyle = {
+  marginLeft: "20px",
+  padding: "10px",
   background: "#535456"
 }
 

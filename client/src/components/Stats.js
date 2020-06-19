@@ -12,27 +12,24 @@ const Stats = () => {
   }, [state.user.gamestats]);
   return (
     <>
-      <div className="row">
-        <div className="col">
+      <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+        <div className="col s12">
           <span>HP</span>
           <StatsBar stat={gamestats.numOfStars * 10} />
-          <div class="progress">
-            <div class="determinate" style={"width: 30px"}></div>
-          </div>
         </div>
-        <div className="col">
+        <div className="col s12">
           <span>JP</span>
           <StatsBar stat={gamestats.jp} />
         </div>
-        <div className="col">
+        <div className="col s12">
           <span >STRENGTH</span>
           <StatsBar stat={gamestats.followers} />
         </div>
-        <div className="col">
+        <div className="col s12">
           <span>SPEED</span>
           <StatsBar stat={gamestats.speed} />
         </div>
-        <div className="col">
+        <div className="col s12">
           <span>EXPERIENCE</span>
           <StatsBar stat={gamestats.publicRepos} />
         </div>
@@ -44,31 +41,28 @@ const Stats = () => {
 
 const StatsBar = (props) => {
   return (
-    <div
-      className="stats-bar"
-      style={{
-        position: "relative",
-        height: "30px",
-        border: "1px solid black",
-      }}
-    >
-      {/* <Filler stat={props.stat} /> */}
+    <div className="stats-bar" >
+      <Filler stat={props.stat} />
     </div>
   );
 };
 
 const Filler = (props) => {
-  console.log(props.stat)
   return (
-    <div
-      className="filler"
-      style={{
-        background: "red",
-        height: "100%",
-        width: `${props.stat}px`,
-      }}
-    >
-      <p>{props.stat}/100</p>
+    // <div
+    //   className="filler"
+    //   style={{
+    //     background: "red",
+    //     height: "100%",
+    //     width: `${props.stat}px`,
+    //   }}
+    // >
+    //   <p>{props.stat}/100</p>
+    // </div>
+    <div class="card-panel red">
+      <span class="white-text">
+        {props.stat}
+      </span>
     </div>
   );
 };
