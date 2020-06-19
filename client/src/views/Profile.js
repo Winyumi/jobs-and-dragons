@@ -4,6 +4,8 @@ import { useUserContext } from "../contexts/UserContext";
 import { api } from "../utils/api";
 import background from "../assets/dark-honeycomb.png";
 
+import Stats from "./../components/Stats";
+
 import "materialize-css";
 
 import Questmap from "../components/Questmap";
@@ -16,6 +18,8 @@ const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
   console.log(state.user);
+  console.log(user);
+
   useEffect(() => {
     if (loading || !user) {
       return <Loading />;
@@ -96,16 +100,69 @@ const Profile = () => {
 
       <div style={profileStyle}>
         <div className="row">
-          <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-            <img
-              src={user.picture}
-              alt="User Profile"
-              className="circle responsive-img"
-              style={userImageStyle}
-            />
-            <h3 style={h3Style}>USERNAME</h3>
-            <div className="card-panel red" style={cardStyle}>
-              {user.name}
+
+          <div className="col s12 m6" style={{ marginTop: "50px" }}>
+            <div className="row">
+              <div className="card-panel" style={mediaStyle}>
+
+                <div className="row valign-wrapper">
+                  <div className="col s3">
+                    <img src={user.picture} alt="User profile picture" class="circle responsive-img"></img>
+                  </div>
+                  <div className="center col s9">
+                    <h5 style={h3Style}>{user.name}</h5>
+                    Username : {user.nickname}
+                    <br></br>
+                    Email : {user.email}
+                    <br></br>
+
+                  </div>
+                </div>
+
+                <div className="row valign-wrapper">
+                  <Stats />
+                </div>
+
+                <div className="row  valign-wrapper">
+                  <div className="col s2">
+                    <div class="card-panel red">
+                      <span class="white-text">
+                        HP : {state.user.numOfStars}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="col s2">
+                    <div class="card-panel red">
+                      <span class="white-text">
+                        card
+                      </span>
+                    </div>
+                  </div>
+                  <div className="col s2">
+                    <div class="card-panel red">
+                      <span class="white-text">
+                        card
+                      </span>
+                    </div>
+                  </div>
+                  <div className="col s2">
+                    <div class="card-panel red">
+                      <span class="white-text">
+                        card
+                      </span>
+                    </div>
+                  </div>
+                  <div className="col s2">
+                    <div class="card-panel red">
+                      <span class="white-text">
+                        card
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -153,15 +210,38 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="row">
-
-          {/* <div className="center col l12 s12" style={{ margin: "20px" }}>
-            <Questmap />
-          </div> */}
-
-        </div>
       </div>
     </>
+  );
+};
+
+const StatsBar = (props) => {
+  return (
+    <div
+      className="stats-bar"
+      style={{
+        position: "relative",
+        height: "30px",
+        border: "1px solid black",
+      }}
+    >
+      <Filler stat={props.stat} />
+    </div>
+  );
+};
+
+const Filler = (props) => {
+  return (
+    <div
+      className="filler"
+      style={{
+        background: "red",
+        height: "100%",
+        width: `${props.stat}px`,
+      }}
+    >
+      <p>{props.stat}/100</p>
+    </div>
   );
 };
 
@@ -171,9 +251,12 @@ const profileStyle = {
   backgroundImage: `url(${background})`,
 };
 
+const mediaStyle = {
+  background: "#535456"
+}
+
 const h3Style = {
   color: "red",
-  marginBottom: "100px",
 };
 
 const BtnStyle = {
@@ -185,11 +268,11 @@ const BtnStyle = {
   boxShadow: "0 5px #999",
 };
 
-const userImageStyle = {
-  width: "200px",
-  height: "200px",
-  marginTop: "50px",
-};
+// const userImageStyle = {
+//   width: "200px",
+//   height: "200px",
+//   marginTop: "50px",
+// };
 
 const cardStyle = {
   fontFamily: "Alagard",

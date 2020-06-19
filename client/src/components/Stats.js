@@ -12,19 +12,31 @@ const Stats = () => {
   }, [state.user.gamestats]);
   return (
     <>
-      <div>
-        <h4 className="center">STATS</h4>
+      <div className="row">
+        <div className="col">
+          <span>HP</span>
+          <StatsBar stat={gamestats.numOfStars * 10} />
+          <div class="progress">
+            <div class="determinate" style={"width: 30px"}></div>
+          </div>
+        </div>
+        <div className="col">
+          <span>JP</span>
+          <StatsBar stat={gamestats.jp} />
+        </div>
+        <div className="col">
+          <span >STRENGTH</span>
+          <StatsBar stat={gamestats.followers} />
+        </div>
+        <div className="col">
+          <span>SPEED</span>
+          <StatsBar stat={gamestats.speed} />
+        </div>
+        <div className="col">
+          <span>EXPERIENCE</span>
+          <StatsBar stat={gamestats.publicRepos} />
+        </div>
 
-        <h6 className="center">HP</h6>
-        <StatsBar stat={gamestats.numOfStars * 10} />
-        <h6 className="center">JP</h6>
-        <StatsBar stat={gamestats.jp} />
-        <h6 className="center">STRENGTH</h6>
-        <StatsBar stat={gamestats.followers} />
-        <h6 className="center">SPEED</h6>
-        <StatsBar stat={gamestats.speed} />
-        <h6 className="center">EXPERIENCE</h6>
-        <StatsBar stat={gamestats.publicRepos} />
       </div>
     </>
   );
@@ -40,12 +52,13 @@ const StatsBar = (props) => {
         border: "1px solid black",
       }}
     >
-      <Filler stat={props.stat} />
+      {/* <Filler stat={props.stat} /> */}
     </div>
   );
 };
 
 const Filler = (props) => {
+  console.log(props.stat)
   return (
     <div
       className="filler"
