@@ -5,7 +5,7 @@ import { api } from "../utils/api";
 import background from "../assets/dark-honeycomb.png";
 
 import "materialize-css";
-
+import ProgressBarExample from "../components/progressBar/index";
 import Questmap from "../components/Questmap";
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
@@ -29,6 +29,11 @@ const Profile = () => {
           name: "",
           email: "",
           picture: "",
+          progressTracker:{
+            quest1: false,
+            quest2: false,
+            quest3: false
+          },
           gamestats: {
             publicRepos: 0,
             followers: 0,
@@ -144,8 +149,11 @@ const Profile = () => {
             Quest 3
         </Link>
           <br></br>
+        <ProgressBarExample/>
         </div>
+       
       </div>
+
 
       <div className="row">
         <div className="center col l12 s12" style={{ margin: "20px" }}>

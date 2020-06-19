@@ -29,6 +29,11 @@ const UserProvider = ({
       name: '',
       email: '',
       picture: '',
+      progressTracker:{
+        quest1: false,
+        quest2: false,
+        quest3: false
+      },
       gamestats: {
         publicRepos: 0,
         followers: 0,
