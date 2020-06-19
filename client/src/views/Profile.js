@@ -94,71 +94,79 @@ const Profile = () => {
   return (
     <>
 
-    <div style={profileStyle}>
-      <div className="row">
-        <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-          <img
-            src={user.picture}
-            alt="User Profile"
-            className="circle responsive-img"
-            style={userImageStyle}
-          />
-          <h3 style={h3Style}>USERNAME</h3>
-          <div className="card-panel red" style={cardStyle}>
-            {user.name}
+      <div style={profileStyle}>
+        <div className="row">
+          <div className="center col s12 m6" style={{ marginTop: "50px" }}>
+            <img
+              src={user.picture}
+              alt="User Profile"
+              className="circle responsive-img"
+              style={userImageStyle}
+            />
+            <h3 style={h3Style}>USERNAME</h3>
+            <div className="card-panel red" style={cardStyle}>
+              {user.name}
+            </div>
+          </div>
+
+          <div className="center col s12 m6" style={{ marginTop: "50px" }}>
+            <h3 style={h3Style}>Begin Your QUEST</h3>
+            <Link
+              className="btn-large"
+              style={BtnStyle}
+              onMouseOver={changeTo}
+              onMouseLeave={changeBack}
+              to="/game/quest/01"
+              name="gameBtn"
+            >
+              Quest 1
+            </Link>
+            <br></br>
+            <Link
+              className="btn-large"
+              style={BtnStyle}
+              onMouseOver={changeTo}
+              onMouseLeave={changeBack}
+              to="/game/quest/02"
+              name="gameBtn"
+            >
+              Quest 2
+            </Link>
+            <br></br>
+            <Link
+              className="btn-large"
+              style={BtnStyle}
+              onMouseOver={changeTo}
+              onMouseLeave={changeBack}
+              to="/game/quest/03"
+              name="gameBtn"
+            >
+              Quest 3
+            </Link>
+            <br></br>
           </div>
         </div>
 
-        <div className="center col s12 m6" style={{ marginTop: "50px" }}>
-          <h3 style={h3Style}>Begin Your QUEST</h3>
-          <Link
-            className="btn-large"
-            style={BtnStyle}
-            onMouseOver={changeTo}
-            onMouseLeave={changeBack}
-            to="/game/quest/01"
-            name="gameBtn"
-          >
-            Quest 1
-        </Link>
-          <br></br>
-          <Link
-            className="btn-large"
-            style={BtnStyle}
-            onMouseOver={changeTo}
-            onMouseLeave={changeBack}
-            to="/game/quest/02"
-            name="gameBtn"
-          >
-            Quest 2
-        </Link>
-          <br></br>
-          <Link
-            className="btn-large"
-            style={BtnStyle}
-            onMouseOver={changeTo}
-            onMouseLeave={changeBack}
-            to="/game/quest/03"
-            name="gameBtn"
-          >
-            Quest 3
-        </Link>
-          <br></br>
+        <div className="row">
+          <div className="center col s12" style={{ marginTop: "50px", marginBottom: "100px" }}>
+            <Questmap />
+          </div>
         </div>
-      </div>
 
-      <div className="row">
-        <div className="center col l12 s12" style={{ margin: "20px" }}>
-          <Questmap />
+        <div className="row">
+
+          {/* <div className="center col l12 s12" style={{ margin: "20px" }}>
+            <Questmap />
+          </div> */}
+
         </div>
       </div>
-    </div>
     </>
   );
 };
 
 const profileStyle = {
-  height: "90vh",
+  height: "100%",
   width: "100%",
   backgroundImage: `url(${background})`,
 };

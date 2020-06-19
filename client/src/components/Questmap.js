@@ -52,27 +52,27 @@ const Questmap = () => {
   //       payload: !state.isOpening,
   //     });
   //   };
-  
 
-    return (
-      <>
-        <div style={PageStyles}>
-          <Row>
-            <Col className="" s={9} style={GameBoxStyles}>
-              <World path={history.location.pathname} />
-            </Col>
-          </Row>
-        </div>
 
-        {isInteracting && (
-          <Dialogue
-            handleDecline={handleQuestDecline}
-            handleAccept={handleQuestAccept}
-          />
-        )}
-      </>
+  return (
+    <>
+      <div style={PageStyles}>
+        <Row>
+          <Col className="" s={12} style={GameBoxStyles}>
+            <World path={history.location.pathname} />
+          </Col>
+        </Row>
+      </div>
 
-    )
+      {isInteracting && (
+        <Dialogue
+          handleDecline={handleQuestDecline}
+          handleAccept={handleQuestAccept}
+        />
+      )}
+    </>
+
+  )
 };
 
 export default Questmap;
