@@ -21,13 +21,9 @@ export default class index extends Component {
   static contextType = Auth0Context;
   
   saveButton=()=>{
+   
     const userEmail = this.context.user.email;
     let coverPageInfo = {
-      progressTracker: { 
-        quest1: true,
-        quest2: true,
-        quest3: true },
-      coverpage:{
           receiver:this.state.receiver,
           receiverCompany:this.state.receiverCompany,
           position:this.state.position,
@@ -39,9 +35,23 @@ export default class index extends Component {
           body:this.state.body,
           close:this.state.close
       }
+      async function quest3comp(data, email){
+        const res = fetch(`/api/v1/users/email/${email}`, {
+          method: 'PUT',
+          mode: 'cors',
+          cache: 'no-cache',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+        if (res.ok) {
+          return res.data;
+      }
     }
+     
     async function coverPageSave(data, email){
-      const res = fetch(`/api/v1/users/email/${email}`, {
+      const res = fetch(`/api/v1/users/emailCP/${email}`, {
         method: 'PUT',
         mode: 'cors',
         cache: 'no-cache',
@@ -54,13 +64,14 @@ export default class index extends Component {
         return res.data;
     }
   }
+  quest3comp({progressTracker: { 
+    quest1: true,
+    quest2: true,
+    quest3: true }},userEmail);
+
   coverPageSave(coverPageInfo,userEmail);
-  return (
-    <div>
-  <a style={{ fontFamily: 'Alagard' }} href='#'>Save
-  
-</a>
-</div>)
+
+    
 
   }
   submitButton = () =>(
@@ -198,8 +209,10 @@ export default class index extends Component {
             <button className='print waves-effect waves-light btn'>
               {this.submitButton()}
             </button>
-            <button className='print waves-effect waves-light btn'>
-              {this.saveButton()}
+            <button onClick={this.saveButton} className='print waves-effect waves-light btn'>
+            <a style={{ fontFamily: 'Alagard' }} href='#'>Save
+  
+  </a>
             </button>
           </form>
         </div>

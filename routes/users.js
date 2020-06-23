@@ -23,6 +23,10 @@ router
 router
 .route('/emailjs/:email')
 .put(User.updateByEmailPush);
+
+router
+.route('/emailcp/:email')
+.put(User.updateByEmailPushCP);
 // matches with "/api/v1/users/emaildj"
 router
 .route('/emaildj/:email')
