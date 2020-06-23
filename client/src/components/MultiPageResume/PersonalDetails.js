@@ -16,7 +16,7 @@ class PersonalDetails extends Component {
 
                     <h3 className="card-title">Personal Info</h3>
                 </div>
-                <form onSubmit={this.formSubmit}>
+                <form onSubmit={this.continue}>
                     <div className="row">
                         <div className="input-field col s6">
                             <i className="material-icons prefix">account_circle</i>

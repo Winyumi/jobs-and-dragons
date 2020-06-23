@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {saveAs} from 'file-saver';
-const fileDownload = require('js-file-download');
+const FileDownload = require('js-file-download');
 
 
 
@@ -20,22 +20,18 @@ class Extras extends Component {
         const data = this.props.values;
         console.log(data);
         axios.post('/create-pdf', data)
-        .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
-        .then((res) => {
-            const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
-
-            saveAs(pdfBlob, 'Resume.pdf');
-        });
-
-    e.target.reset();
-
-
-
-        e.target.reset();
+            .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
+            .then((res) => {
+                const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+                FileDownload(pdfBlob, 'Resume.pdf');
+            })
+            .catch((error) => { console.log(error) })
 
 
 
     };
+    
+
 
     render() {
         const { values, handleChange } = this.props;
