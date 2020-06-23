@@ -130,7 +130,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="center col s12 m6" >
+          {/* <div className="center col s12 m6" >
             <h3 style={h3Style}>Begin Your QUEST</h3>
             <Link
               className="btn-large"
@@ -165,7 +165,8 @@ const Profile = () => {
               Quest 3
             </Link>
             <br></br>
-          </div>
+          </div> */}
+
         </div>
 
         <div className="row">
