@@ -116,7 +116,6 @@ const Profile = () => {
                     <br></br>
                     Email : {user.email}
                     <br></br>
-
                   </div>
                 </div>
 
@@ -166,6 +165,77 @@ const Profile = () => {
             </Link>
             <br></br>
           </div> */}
+
+
+          {/* Quest 1 Description  */}
+          <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest1Description">
+
+            <div className="card-panel" style={mediaStyle}>
+
+              <div className="row valign-wrapper">
+                <div className="center col s12">
+                  <h3 style={h3Style}>QUEST 1 Description</h3>
+                  <div class="card-panel red">
+                    <span class="white-text">
+                      ENTER Game Explaination 1
+                    </span>
+                  </div>
+                  <div class="card-panel red">
+                    <span class="white-text">
+                      ENTER Real World Explaination 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quest 2 Description  */}
+          <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest2Description">
+
+            <div className="card-panel" style={mediaStyle}>
+
+              <div className="row valign-wrapper">
+                <div className="center col s12">
+                  <h3 style={h3Style}>QUEST 2 Description</h3>
+                  <div class="card-panel red">
+                    <span class="white-text">
+                      ENTER Game Explaination 2
+                    </span>
+                  </div>
+                  <div class="card-panel red">
+                    <span class="white-text">
+                      ENTER Real World Explaination 2
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quest 3 Description  */}
+          <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest3Description">
+
+            <div className="card-panel" style={mediaStyle}>
+
+              <div className="row valign-wrapper">
+                <div className="center col s12">
+                  <h3 style={h3Style}>QUEST 3 Description</h3>
+                  <div class="card-panel red">
+                    <span class="white-text">
+                      ENTER Game Explaination 3
+                    </span>
+                  </div>
+                  <div class="card-panel red">
+                    <span class="white-text">
+                      ENTER Real World Explaination 3
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
         </div>
 
