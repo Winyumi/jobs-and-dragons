@@ -70,17 +70,9 @@ const Game = () => {
 
 export default Game;
 
-const charBoxStyles = {
-
-  padding: "30px",
-  paddingBottom: "100px",
-  backgroundImage: `url(${backgroundLight})`,
-};
-
 const PageStyles = {
-  paddingLeft: "20px",
-  paddingRight: "20px",
-  paddingBottom: "100px",
+  padding: "100px",
+  paddingBottom: "200px",
   width: "100%",
   height: "100%",
   backgroundImage: `url(${backgroundDark})`,
