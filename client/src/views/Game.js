@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-materialize";
 
 import Questmap from '../components/Questmap';
@@ -46,47 +46,35 @@ const Game = () => {
   //   });
   // };
 
-//   const handleLinkDecline = () => {
-//     setIsOpening(!state.isOpening);
-//     dispatch({
-//       type: "toggleIsOpening",
-//       payload: !state.isOpening,
-//     });
-//   };
+  //   const handleLinkDecline = () => {
+  //     setIsOpening(!state.isOpening);
+  //     dispatch({
+  //       type: "toggleIsOpening",
+  //       payload: !state.isOpening,
+  //     });
+  //   };
 
 
   return (
     <>
       <div style={PageStyles}>
-        <Row >
-          <Col className="charnav" s={3} style={{ marginTop: "50px" }}>
-            <div style={charBoxStyles}>
-              <CharBox />
-            </div>
-          </Col>
-
-          <Col className="" s={9} style={GameBoxStyles}>
+        <Row center>
+          <Col className="offset-s2" s={10} style={GameBoxStyles}>
             <Questmap />
           </Col>
         </Row>
-      </div> 
+      </div>
     </>
   );
 };
 
 export default Game;
 
-const charBoxStyles = {
-  margin: "30px",
-  padding: "30px",
-  paddingBottom: "100px",
-  backgroundImage: `url(${backgroundLight})`,
-};
-
 const PageStyles = {
-  top: "0px",
+  padding: "100px",
+  paddingBottom: "200px",
   width: "100%",
-  height: "90vh",
+  height: "100%",
   backgroundImage: `url(${backgroundDark})`,
 };
 

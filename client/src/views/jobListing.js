@@ -127,8 +127,29 @@ export default class jobListing extends React.Component {
         return res.data;
       }
     }
+
+    async function quest2comp(data, email){
+      const res = fetch(`/api/v1/users/email/${email}`, {
+        method: 'PUT',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        return res.data;
+    }
+  }
+    quest2comp({progressTracker: { 
+      quest1: true,
+      quest2: true,
+      quest3: false }},userEmail);
     updateJobInfo(jobInfo, userEmail);
   };
+
+  
 
   render() {
     const { error, isLoaded, items } = this.state;

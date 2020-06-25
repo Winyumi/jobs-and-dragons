@@ -109,6 +109,10 @@ export default class index extends Component {
       expertise: this.state.expertise,
       descripiton: this.state.description,
       designation: this.state.designation,
+      progressTracker: { 
+        quest1: true,
+        quest2: false,
+        quest3: false }
     };
     async function getUserInfo(userEmail) {
       try {
@@ -155,8 +159,8 @@ export default class index extends Component {
     // console.log(this.state.email);
     getUserInfo(this.state.email).then((result) => {
       // console.log(result);
-      // console.log(result.data.email);
-      // console.log(this.state.email);
+      console.log(result.data.email);
+      console.log(this.state.email);
       if (result.data.email === this.state.email) {
         updateUserInfo(userInfo, result.data.email);
       } else {

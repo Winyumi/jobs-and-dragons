@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+
+.progress-bar {
+float: center;
+  height: 50px;
+  width: 500px;
+  border-radius: 0px;
+  border: 9px groove rgb(92, 27, 27);
+  position:relative;
+  margin-left: 200px;
+
+
+ 
+}
+
+.filler {
+  background: red;
+  height: 100%;
+  border-radius: inherit;
+  transition: width .2s ease-in;
+
+}
+
+button {
+  margin-right: 10px;
+  padding: 7px 12px;
+  font-size: 14px;
+  background: #d14836;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  outline: 0;
+}
+

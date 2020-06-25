@@ -14,20 +14,18 @@ const jobSearchSchema = new mongoose.Schema({
   },
   applied: { type: Boolean, default: false }
 });
-// const gameStatSchema = new mongoose.Schema({
-//   hp: Number,
-//   jp: Number,
-//   strength:Number,
-//   speed: Number,
-//   intelligence: Number
-
-// })
-
-// const inventorySchema = new mongoose.Schema({
-//   scroll: { type: Boolean, default: false },
-//   bow: { type: Boolean, default: false }
-// });
-// create a user schema
+const coverPageSchema = new mongoose.Schema({
+  receiver:String,
+  receiver:String,
+  position:String,
+  sender: String,
+  address:String,
+  phone: Number,
+  email: String,
+  intro:String,
+  body:String,
+  close:String
+});
 
 const UserSchema = new mongoose.Schema({
   username: String,
@@ -42,9 +40,14 @@ const UserSchema = new mongoose.Schema({
   skills: [],
   projects: [],
   expertise: [],
+  coverpage: [coverPageSchema],
   jobsearch: [jobSearchSchema],
   gamestats: { type: Map },
-  inventory: { type: Map }
+  inventory: { type: Map },
+  progressTracker: {
+    quest1: false,
+    quest2: false,
+    quest3: false}
 });
 
 const User = mongoose.model('User', UserSchema);

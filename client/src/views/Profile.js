@@ -8,7 +8,7 @@ import Stats from "./../components/Stats";
 import Inventory from "./../components/Inventory";
 
 import "materialize-css";
-
+import ProgressBarExample from "../components/progressBar/index";
 import Questmap from "../components/Questmap";
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
@@ -34,6 +34,11 @@ const Profile = () => {
           name: "",
           email: "",
           picture: "",
+          progressTracker:{
+            quest1: false,
+            quest2: false,
+            quest3: false
+          },
           gamestats: {
             publicRepos: 0,
             followers: 0,
@@ -124,6 +129,13 @@ const Profile = () => {
                     <Stats />
                   </div>
                 </div>
+
+                <div className="row ">
+                  <div className="center col s12">
+                    <ProgressBarExample />
+                  </div>
+                </div>
+
               </div>
 
             </div>
@@ -245,11 +257,11 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="center col s12">
             <Inventory />
           </div>
-        </div>
+        </div> */}
 
       </div>
     </>
