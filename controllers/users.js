@@ -57,6 +57,11 @@ module.exports = {
     .then(user => res.json(user))
     .catch(err => res.status(422).json(err));
   },
+  updateByEmailPushCP: function(req, res){
+    db.User.findOneAndUpdate({email: req.params.email}, {$push:{coverpage:req.body}})
+    .then(user => res.json(user))
+    .catch(err => res.status(422).json(err));
+  },
   remove: function(req, res) {
     db.User.findOneAndDelete({ id: req.params.id })
       .then(dbModel => res.json(dbModel))
