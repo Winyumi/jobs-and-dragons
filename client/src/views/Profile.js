@@ -19,7 +19,6 @@ const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
   console.log(state.user);
-  console.log(user);
 
   useEffect(() => {
     if (loading || !user) {
@@ -100,6 +99,8 @@ const Profile = () => {
   function changeBack(e) {
     e.target.style.background = "#535456";
   }
+  
+  const questState = state.user.progressTracker;
 
   return (
     <>
@@ -180,10 +181,9 @@ const Profile = () => {
 
 
           {/* Quest 1 Description  */}
+          {!questState.quest1 && !questState.quest2 && !questState.quest3 ? 
           <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest1Description">
-
             <div className="card-panel" style={mediaStyle}>
-
               <div className="row valign-wrapper">
                 <div className="center col s12">
                   <h3 style={h3Style}>QUEST 1 Description</h3>
@@ -200,13 +200,13 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> : '' }
+          
 
           {/* Quest 2 Description  */}
+          {questState.quest1 && !questState.quest2 && !questState.quest3 ? 
           <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest2Description">
-
             <div className="card-panel" style={mediaStyle}>
-
               <div className="row valign-wrapper">
                 <div className="center col s12">
                   <h3 style={h3Style}>QUEST 2 Description</h3>
@@ -223,13 +223,12 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> : '' }
 
           {/* Quest 3 Description  */}
+          {questState.quest1 && questState.quest2 && !questState.quest3 ? 
           <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest3Description">
-
             <div className="card-panel" style={mediaStyle}>
-
               <div className="row valign-wrapper">
                 <div className="center col s12">
                   <h3 style={h3Style}>QUEST 3 Description</h3>
@@ -246,8 +245,37 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> : '' }
 
+           {/* ALL QUEST COMPLETED - After 3rd Quest  */}
+           {questState.quest1 && questState.quest2 && questState.quest3 ? 
+          <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest3Description">
+            <div className="card-panel" style={mediaStyle}>
+              <div className="row valign-wrapper">
+                <div className="center col s12">
+                  <h3 style={h3Style}>Your Are Ready to Conquer the WORLD !!! </h3>
+                  <br></br>
+                  <Link to="/resume">
+                      <button
+                        rel="noopener noreferrer"
+                        className="btn btn-large red darken-4"
+                      >
+                        View Resume
+                      </button>
+                    </Link>
+                    <br></br>
+                    <Link to="/joblisting/saved">
+                      <button
+                        rel="noopener noreferrer"
+                        className="btn btn-large red darken-4"
+                      >
+                        View Saved Jobs
+                      </button>
+                    </Link>
+                </div>
+              </div>
+            </div>
+          </div> : '' }
 
         </div>
 
