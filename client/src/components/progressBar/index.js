@@ -21,8 +21,9 @@ export default class ProgressBarExample extends React.Component {
         .then((res) => res.json())
         .then(
           (result) =>
-          {
-            if (result.data.progressTracker.quest1===true && result.data.progressTracker.quest2 === false && result.data.progressTracker.quest3=== false){ 
+          {if (result.data.progressTracker.quest1===false && result.data.progressTracker.quest2 === false && result.data.progressTracker.quest3=== false){ 
+            return this.setState(prevState =>({percentage:prevState.percentage + 0}))
+          }else if (result.data.progressTracker.quest1===true && result.data.progressTracker.quest2 === false && result.data.progressTracker.quest3=== false){ 
            return this.setState(prevState =>({percentage:prevState.percentage + 33.333}))
           }else if (result.data.progressTracker.quest1===true && result.data.progressTracker.quest2 === true && result.data.progressTracker.quest3=== false ){ 
             return this.setState(prevState =>({percentage:prevState.percentage + 66.666}))
@@ -65,14 +66,11 @@ export default class ProgressBarExample extends React.Component {
         case 0:
             text = "Student";
             break;
-        case 25:
+        case 33.333:
             text = 'Employer Ready' ;
             break;
-        case 50:
+        case 66.666:
             text =  "Employer Competative";
-            break;
-        case 75:
-            text = "Industry Ready";
             break;
         case 100:
             text = "Industry Professional";
