@@ -8,30 +8,30 @@ import history from '../utils/history';
 import backgroundDark from '../assets/dark-honeycomb.png';
 
 const Questmap = () => {
-  const [gameState] = usePlayerContext();
+  // const [gameState] = usePlayerContext();
   const [state, dispatch] = usePlayerContext();
   const [isInteracting, setIsInteracting] = useState(false);
-  const [isAccepted, setIsAccepted] = useState(false);
+  const [, setIsAccepted] = useState(false);
 
   useEffect(() => {
     setIsInteracting(state.isInteracting);
   }, [state.isInteracting]);
 
-  let RowStyles;
-  if (isInteracting || isAccepted) {
-    RowStyles = {
-      opacity: '0.25',
-      display: 'flex',
-      justifyContent: 'center',
-    };
-  } else {
-    RowStyles = {
-      width: '100%',
-      position: 'relative',
-      display: 'flex',
-      justifyContent: 'center',
-    };
-  }
+  // let RowStyles;
+  // if (isInteracting || isAccepted) {
+  //   RowStyles = {
+  //     opacity: '0.25',
+  //     display: 'flex',
+  //     justifyContent: 'center',
+  //   };
+  // } else {
+  //   RowStyles = {
+  //     width: '100%',
+  //     position: 'relative',
+  //     display: 'flex',
+  //     justifyContent: 'center',
+  //   };
+  // }
 
   const handleQuestAccept = () => {
     handleQuestDecline();
@@ -54,12 +54,11 @@ const Questmap = () => {
   //     });
   //   };
 
-
   return (
     <>
       <div style={PageStyles}>
         <Row>
-          <Col className="" s={12} style={GameBoxStyles}>
+          <Col className='' s={12} style={GameBoxStyles}>
             <World path={history.location.pathname} />
           </Col>
         </Row>

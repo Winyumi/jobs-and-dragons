@@ -43,7 +43,7 @@ import fvillage from '../../assets/WorldMapTiles/fishvillage.png';
 import marble from '../../assets/marble.png';
 
 const MapTile = (props) => {
-  const [state, dispatch] = usePlayerContext();
+  const [state] = usePlayerContext();
   const [tileSprites, setTileSprites] = useState({});
 
   useEffect(() => {

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { api } from "../utils/api";
-import { useUserContext } from "../contexts/UserContext";
-import "materialize-css";
+import React, { useState, useEffect } from 'react';
+// import { api } from "../utils/api";
+import { useUserContext } from '../contexts/UserContext';
+import 'materialize-css';
 
 const Stats = () => {
-  const [state, dispatch] = useUserContext();
+  const [state] = useUserContext();
   const [gamestats, setGamestats] = useState({});
 
   useEffect(() => {
@@ -13,28 +13,30 @@ const Stats = () => {
   return (
     <>
       {/* <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}> */}
-      <div className="row valign-wrapper" style={{ width: '100%' , marginRight: "1rem"}}>
-        <div className="col s12">
+      <div
+        className='row valign-wrapper'
+        style={{ width: '100%', marginRight: '1rem' }}
+      >
+        <div className='col s12'>
           <span>HP</span>
           <StatsBar stat={gamestats.numOfStars * 10} />
         </div>
-        <div className="col s12">
+        <div className='col s12'>
           <span>JP</span>
           <StatsBar stat={gamestats.jp} />
         </div>
-        <div className="col s12">
-          <span >STRENGTH</span>
+        <div className='col s12'>
+          <span>STRENGTH</span>
           <StatsBar stat={gamestats.followers} />
         </div>
-        <div className="col s12">
+        <div className='col s12'>
           <span>SPEED</span>
           <StatsBar stat={gamestats.speed} />
         </div>
-        <div className="col s12">
+        <div className='col s12'>
           <span>EXPERIENCE</span>
           <StatsBar stat={gamestats.publicRepos} />
         </div>
-
       </div>
     </>
   );
@@ -42,7 +44,7 @@ const Stats = () => {
 
 const StatsBar = (props) => {
   return (
-    <div className="stats-bar" >
+    <div className='stats-bar'>
       <Filler stat={props.stat} />
     </div>
   );
@@ -60,10 +62,8 @@ const Filler = (props) => {
     // >
     //   <p>{props.stat}/100</p>
     // </div>
-    <div className="card-panel red">
-      <span className="white-text">
-        {props.stat}
-      </span>
+    <div className='card-panel red'>
+      <span className='white-text'>{props.stat}</span>
     </div>
   );
 };

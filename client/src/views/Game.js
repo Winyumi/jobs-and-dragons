@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Row, Col } from "react-materialize";
+import React from 'react';
+import { Row, Col } from 'react-materialize';
 
 import Questmap from '../components/Questmap';
-import CharBox from '../components/CharBox';
-import { usePlayerContext } from '../contexts/PlayerContext';
-import history from '../utils/history';
+// import CharBox from '../components/CharBox';
+// import { usePlayerContext } from '../contexts/PlayerContext';
+// import history from '../utils/history';
 
-import backgroundDark from "../assets/dark-honeycomb.png";
-import backgroundLight from "../assets/light_honeycomb.png";
+import backgroundDark from '../assets/dark-honeycomb.png';
+// import backgroundLight from "../assets/light_honeycomb.png";
 
 const Game = () => {
-  const [state, dispatch] = usePlayerContext();
+  // const [state, dispatch] = usePlayerContext();
   // const [isInteracting, setIsInteracting] = useState(false);
   // const [isAccepted, setIsAccepted] = useState(false);
 
@@ -54,12 +54,11 @@ const Game = () => {
   //     });
   //   };
 
-
   return (
     <>
       <div style={PageStyles}>
         <Row center>
-          <Col className="offset-s2" s={10} style={GameBoxStyles}>
+          <Col className='offset-s2' s={10} style={GameBoxStyles}>
             <Questmap />
           </Col>
         </Row>
@@ -71,14 +70,14 @@ const Game = () => {
 export default Game;
 
 const PageStyles = {
-  padding: "100px",
-  paddingBottom: "200px",
-  width: "100%",
-  height: "100%",
+  padding: '100px',
+  paddingBottom: '200px',
+  width: '100%',
+  height: '100%',
   backgroundImage: `url(${backgroundDark})`,
 };
 
 const GameBoxStyles = {
-  display: "flex",
-  justifyContent: "center",
+  display: 'flex',
+  justifyContent: 'center',
 };

@@ -18,8 +18,8 @@ import { fishvillage } from '../maps/fishvillage';
 import { worldmap } from '../maps/map';
 
 const World = (props) => {
-  const [state, dispatch] = usePlayerContext();
-  const [currentMap, setCurrentMap] = useState();
+  const [, dispatch] = usePlayerContext();
+  // const [currentMap, setCurrentMap] = useState();
   const [currentQuest, setCurrentQuest] = useState(dungeon);
   const [mapBackground, setMapBackground] = useState();
   const [mapTitle, setMapTitle] = useState();
