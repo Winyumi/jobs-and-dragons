@@ -9,8 +9,6 @@ export default class ProgressBarExample extends React.Component {
       this.state = {
         percentage: 0
       }
-      
-      
     }
     
     static contextType = Auth0Context;
@@ -32,14 +30,12 @@ export default class ProgressBarExample extends React.Component {
           }
 
         })
-      
-  console.log(this.state)
     }
   
     
     render() {
       return (
-        <div className="progBar">
+        <div className="progBar center">
           <h3>Progress</h3>
           <ProgressBar percentage={this.state.percentage} />
           <Title percentage={this.state.percentage}/>
@@ -75,9 +71,7 @@ export default class ProgressBarExample extends React.Component {
         case 100:
             text = "Industry Professional";
             break;
-      }
-      console.log(props.percentage);
-     
+      }     
      return <h2>{text}</h2> ;
       ;
   }
