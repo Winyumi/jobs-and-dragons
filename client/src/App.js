@@ -23,7 +23,7 @@ import Resume from './components/Resume';
 import './App.css';
 
 const App = () => {
-  const { loading } = useAuth0();
+  const { loading, isAuthenticated } = useAuth0();
 
   if (loading) {
     return <Loading />;
@@ -32,7 +32,7 @@ const App = () => {
   return (
     <Router history={history}>
       <div id='app'>
-        <NavBar />
+        {isAuthenticated ? <NavBar /> : null}
         <div className='row'>
           <Switch>
             <Route exact path='/' component={Home} />
@@ -62,13 +62,11 @@ const App = () => {
               component={Resume}
             ></PrivateRoute>
 
-            <PrivateRoute path='/game' component={Game}>
-              {/* <Game /> */}
-            </PrivateRoute>
+            <PrivateRoute path='/game' component={Game}></PrivateRoute>
             <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
           </Switch>
         </div>
-        <Footer />
+        {isAuthenticated ? <Footer /> : null}
       </div>
     </Router>
   );
