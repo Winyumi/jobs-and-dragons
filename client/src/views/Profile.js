@@ -12,7 +12,7 @@ import ProgressBarExample from "../components/progressBar/index";
 import Questmap from "../components/Questmap";
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
-// import { Row, Col } from "react-materialize";
+import { Row, Col } from "react-materialize";
 
 
 const Profile = () => {
@@ -278,11 +278,27 @@ const Profile = () => {
 
         </div>
 
+        <div style={PageStyles}>
+        <Row>
+        <Col s={1} />
+
+          <Col s={10} style={GameBoxStyles}>
+            <Questmap />
+          </Col>
+          <Col s={1} />
+
+        </Row>
+      </div>
+{/*       
         <div className="row">
-          <div className="center col s12">
+        <Col s={1} />
+
+          <div className="center col s10">
             <Questmap />
           </div>
-        </div>
+          <Col s={1} />
+
+        </div> */}
 
         {/* <div className="row">
           <div className="center col s12">
@@ -341,14 +357,14 @@ const h3Style = {
   color: "red",
 };
 
-const BtnStyle = {
-  width: "200px",
-  background: "#535456",
-  borderRadius: "25%",
-  fontFamily: "Alagard",
-  margin: "10px",
-  boxShadow: "0 5px #999",
-};
+// const BtnStyle = {
+//   width: "200px",
+//   background: "#535456",
+//   borderRadius: "25%",
+//   fontFamily: "Alagard",
+//   margin: "10px",
+//   boxShadow: "0 5px #999",
+// };
 
 // const userImageStyle = {
 //   width: "200px",
@@ -363,5 +379,18 @@ const cardStyle = {
   textShadow: "2px 2px darkred",
   margin: "20px",
 };
+
+const PageStyles = {
+  paddingTop: "100px",
+  paddingBottom: "150px",
+  width: "100%",
+  height: "100%",
+};
+
+const GameBoxStyles = {
+  display: "flex",
+  justifyContent: "center",
+};
+
 
 export default Profile;

@@ -58,10 +58,14 @@ const Game = () => {
   return (
     <>
       <div style={PageStyles}>
-        <Row center>
-          <Col className="offset-s2" s={10} style={GameBoxStyles}>
+        <Row>
+        <Col s={1} />
+
+          <Col s={10} style={GameBoxStyles}>
             <Questmap />
           </Col>
+          <Col s={1} />
+
         </Row>
       </div>
     </>
@@ -71,8 +75,8 @@ const Game = () => {
 export default Game;
 
 const PageStyles = {
-  padding: "100px",
-  paddingBottom: "200px",
+  paddingTop: "100px",
+  paddingBottom: "150px",
   width: "100%",
   height: "100%",
   backgroundImage: `url(${backgroundDark})`,
