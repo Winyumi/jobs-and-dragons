@@ -13,24 +13,24 @@ const Stats = () => {
   return (
     <>
       <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
-        <div className="col s12">
+        {/* <div className="col s12">
           <span>HP</span>
           <StatsBar stat={gamestats.numOfStars * 10} />
-        </div>
+        </div> */}
         <div className="col s12">
-          <span>JP</span>
+          <span>HP</span>
           <StatsBar stat={gamestats.jp} />
         </div>
-        <div className="col s12">
+        {/* <div className="col s12">
           <span >STRENGTH</span>
           <StatsBar stat={gamestats.followers} />
-        </div>
+        </div> */}
         <div className="col s12">
           <span>SPEED</span>
           <StatsBar stat={gamestats.speed} />
         </div>
         <div className="col s12">
-          <span>EXPERIENCE</span>
+          <span>XP</span>
           <StatsBar stat={gamestats.publicRepos} />
         </div>
 
@@ -49,16 +49,6 @@ const StatsBar = (props) => {
 
 const Filler = (props) => {
   return (
-    // <div
-    //   className="filler"
-    //   style={{
-    //     background: "red",
-    //     height: "100%",
-    //     width: `${props.stat}px`,
-    //   }}
-    // >
-    //   <p>{props.stat}/100</p>
-    // </div>
     <div class="card-panel red">
       <span class="white-text">
         {props.stat}
