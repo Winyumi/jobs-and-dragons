@@ -60,8 +60,8 @@ const Filler = (props) => {
     // >
     //   <p>{props.stat}/100</p>
     // </div>
-    <div class="card-panel red">
-      <span class="white-text">
+    <div className="card-panel red">
+      <span className="white-text">
         {props.stat}
       </span>
     </div>

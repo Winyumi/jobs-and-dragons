@@ -114,7 +114,7 @@ const Profile = () => {
 
                 <div className="row valign-wrapper">
                   <div className="col s3">
-                    <img src={user.picture} alt="User profile picture" class="circle responsive-img"></img>
+                    <img src={user.picture} alt="User profile picture" className="circle responsive-img"></img>
                   </div>
                   <div className="center col s9">
                     <h5 style={h3Style}>{user.name}</h5>
@@ -142,59 +142,24 @@ const Profile = () => {
             </div>
           </div>
 
-          {/* <div className="center col s12 m6" >
-            <h3 style={h3Style}>Begin Your QUEST</h3>
-            <Link
-              className="btn-large"
-              style={BtnStyle}
-              onMouseOver={changeTo}
-              onMouseLeave={changeBack}
-              to="/game/quest/01"
-              name="gameBtn"
-            >
-              Quest 1
-            </Link>
-            <br></br>
-            <Link
-              className="btn-large"
-              style={BtnStyle}
-              onMouseOver={changeTo}
-              onMouseLeave={changeBack}
-              to="/game/quest/02"
-              name="gameBtn"
-            >
-              Quest 2
-            </Link>
-            <br></br>
-            <Link
-              className="btn-large"
-              style={BtnStyle}
-              onMouseOver={changeTo}
-              onMouseLeave={changeBack}
-              to="/game/quest/03"
-              name="gameBtn"
-            >
-              Quest 3
-            </Link>
-            <br></br>
-          </div> */}
-
-
           {/* Quest 1 Description  */}
           {!questState.quest1 && !questState.quest2 && !questState.quest3 ?
             <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest1Description">
               <div className="card-panel" style={mediaStyle}>
                 <div className="row valign-wrapper">
                   <div className="center col s12">
-                    <h3 style={h3Style}>QUEST 1 Description</h3>
+                    <h3 style={h3Style}>Quest Description</h3>
                     <div className="card-panel red">
                       <span className="white-text">
-                        ENTER Game Explaination 1
+                        Welcome {user.nickname} to the beginning of your adventure! All three of your quests can be
+                        completed in Gninnigeb City, the place you see below. You must seek out the Oracle of Secivres Reerac,
+                        a mysterious wiseman who will aid you in your first quest, the crafting of your first scroll! Be sure to 
+                        speak to his Acolytes and to explore his entire lair; you might find some unexpected help along the way...
                     </span>
                     </div>
-                    <div className="card-panel red">
-                      <span className="white-text">
-                        ENTER Real World Explaination 1
+                    <div className="card-panel white">
+                      <span className="black-text" style={{fontFamily: "sans-serif", fontWeight:"bolder"}}>
+                        The goal of this quest is to create your first resume, using information you will find along the way.
                     </span>
                     </div>
                   </div>
@@ -209,14 +174,14 @@ const Profile = () => {
               <div className="card-panel" style={mediaStyle}>
                 <div className="row valign-wrapper">
                   <div className="center col s12">
-                    <h3 style={h3Style}>QUEST 2 Description</h3>
+                    <h3 style={h3Style}>Quest Description</h3>
                     <div className="card-panel red">
                       <span className="white-text">
                         ENTER Game Explaination 2
                     </span>
                     </div>
-                    <div className="card-panel red">
-                      <span className="white-text">
+                    <div className="card-panel white">
+                    <span className="black-text" style={{fontFamily: "sans-serif", fontWeight:"bolder"}}>
                         ENTER Real World Explaination 2
                     </span>
                     </div>
@@ -237,8 +202,8 @@ const Profile = () => {
                         ENTER Game Explaination 3
                     </span>
                     </div>
-                    <div className="card-panel red">
-                      <span className="white-text">
+                    <div className="card-panel white">
+                    <span className="black-text" style={{fontFamily: "sans-serif", fontWeight:"bolder"}}>
                         ENTER Real World Explaination 3
                     </span>
                     </div>
@@ -253,7 +218,7 @@ const Profile = () => {
               <div className="card-panel" style={mediaStyle}>
                 <div className="row valign-wrapper">
                   <div className="center col s12">
-                    <h3 style={h3Style}>Your Are Ready to Conquer the WORLD !!! </h3>
+                    <h3 style={h3Style}>You Are Ready to Conquer the WORLD !!! </h3>
                     <br></br>
                     <Link to="/resume">
                       <button
