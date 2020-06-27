@@ -2,7 +2,9 @@ import React from 'react'
 import "./style.css";
 import Auth0Context from '../../react-auth0-spa';
 
+
 export default class ProgressBarExample extends React.Component {
+  
      constructor(props) {
       super(props)
       
@@ -19,8 +21,11 @@ export default class ProgressBarExample extends React.Component {
       const userEmail = this.context.user.email;
       fetch(`/api/v1/users/email/${userEmail}`)
         .then((res) => res.json())
+  
         .then(
+          
           (result) =>
+          
           {if (result.data.progressTracker.quest1===false && result.data.progressTracker.quest2 === false && result.data.progressTracker.quest3=== false){ 
             return this.setState(prevState =>({percentage:prevState.percentage + 0}))
           }else if (result.data.progressTracker.quest1===true && result.data.progressTracker.quest2 === false && result.data.progressTracker.quest3=== false){ 
@@ -29,10 +34,11 @@ export default class ProgressBarExample extends React.Component {
             return this.setState(prevState =>({percentage:prevState.percentage + 66.666}))
           }else if (result.data.progressTracker.quest1===true && result.data.progressTracker.quest2 === true && result.data.progressTracker.quest3=== true){
             return this.setState(prevState =>({percentage:prevState.percentage + 100}))
+          } else {
+            return this.setState(prevState =>({percentage:prevState.percentage + 0}))
           }
-
         })
-      
+
   console.log(this.state)
     }
   

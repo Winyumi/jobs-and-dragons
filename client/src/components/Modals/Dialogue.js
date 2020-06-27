@@ -645,7 +645,7 @@ const Dialogue = (props) => {
               <li>
                 <a
                   className='modal-close'
-                  // href='/coverpage'
+                  href='#!'
                   onClick={(e) => {
                     e.preventDefault();
                     props.handleDecline();
@@ -933,6 +933,7 @@ const Dialogue = (props) => {
               <li>
                 <a
                   className='modal-close'
+                  href='#!'
                   onClick={(e) => {
                     e.preventDefault();
                     props.handleDecline();
