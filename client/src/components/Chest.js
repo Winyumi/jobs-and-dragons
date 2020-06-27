@@ -22,8 +22,6 @@ const Chest = (props) => {
     padding: '20px',
   };
 
-  console.log(state);
-
   if (state.currentMap === 'academy' && state.interactTile === 76) {
   return (
     <div className='modal-content' style={chestStyle}>

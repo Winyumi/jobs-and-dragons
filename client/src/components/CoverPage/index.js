@@ -109,7 +109,6 @@ export default class index extends Component {
   } */
 
   render() {
-    console.log(this.state);
     return (
       <React.Fragment>
         <div className='logContainer'>

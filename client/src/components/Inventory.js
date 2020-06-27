@@ -16,7 +16,6 @@ const Inventory = () => {
     height: "40px",
     align: "center",
   };
-  //   console.log(state);
   return (
     <>
       <h4 className="center">INVENTORY</h4>

@@ -16,7 +16,6 @@ const RateSkills = ({ label }) => {
               numberOfStars={4}
               name={label}
               changeRating={(newRating, name) => {
-                console.log(name + "  " + newRating)
                 setRating(newRating);
               }}
               starDimension='20px'
