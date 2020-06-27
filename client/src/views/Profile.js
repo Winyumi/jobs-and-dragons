@@ -199,15 +199,19 @@ const Profile = () => {
               <div className="card-panel" style={mediaStyle}>
                 <div className="row valign-wrapper">
                   <div className="center col s12">
-                    <h3 style={h3Style}>QUEST 3 Description</h3>
+                    <h3 style={h3Style}>Quest Description</h3>
                     <div class="card-panel red">
                       <span className="white-text">
-                        ENTER Game Explaination 3
+                        The Boj can be slippery prey, but the Secruoserans said you did well. Your next quest
+                        be your last in Gninnigeb City, but perhaps your most challenging yet...You must visit the 
+                        Javan Playhouse and find the Bard. Word is the Playhouse has fallen on hard times,
+                        so the Bard has extended his expertise to adventurers such as yourself to help you craft a Phoenix Scroll.
+                        It will be the first of many, I'm sure, but everyone needs guidance on their first attempt.
                     </span>
                     </div>
                     <div className="card-panel white">
                     <span className="black-text" style={{fontFamily: "sans-serif", fontWeight:"bolder"}}>
-                        ENTER Real World Explaination 3
+                        The goal of this quest is to create your first cover letter to apply to your saved job listing.
                     </span>
                     </div>
                   </div>
