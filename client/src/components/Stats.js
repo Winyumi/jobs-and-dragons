@@ -12,7 +12,8 @@ const Stats = () => {
   }, [state.user.gamestats]);
   return (
     <>
-      <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+      {/* <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}> */}
+      <div className="row valign-wrapper" style={{ width: '100%' , marginRight: "1rem"}}>
         <div className="col s12">
           <span>HP</span>
           <StatsBar stat={gamestats.numOfStars * 10} />

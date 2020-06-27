@@ -33,7 +33,7 @@ const Profile = () => {
           name: "",
           email: "",
           picture: "",
-          progressTracker:{
+          progressTracker: {
             quest1: false,
             quest2: false,
             quest3: false
@@ -91,15 +91,15 @@ const Profile = () => {
     });
   }, [loading, user, dispatch]);
 
-  function changeTo(e) {
-    e.target.style.background = "red";
-    e.target.style.translate = "5px";
-  }
+  // function changeTo(e) {
+  //   e.target.style.background = "red";
+  //   e.target.style.translate = "5px";
+  // }
 
-  function changeBack(e) {
-    e.target.style.background = "#535456";
-  }
-  
+  // function changeBack(e) {
+  //   e.target.style.background = "#535456";
+  // }
+
   const questState = state.user.progressTracker;
 
   return (
@@ -131,10 +131,10 @@ const Profile = () => {
                   </div>
                 </div>
 
-                <div className="row ">
-                  <div className="center col s12">
+                <div className="row valign-wrapper">
+                  {/* <div className="center col s12"> */}
                     <ProgressBarExample />
-                  </div>
+                  {/* </div> */}
                 </div>
 
               </div>
@@ -181,81 +181,81 @@ const Profile = () => {
 
 
           {/* Quest 1 Description  */}
-          {!questState.quest1 && !questState.quest2 && !questState.quest3 ? 
-          <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest1Description">
-            <div className="card-panel" style={mediaStyle}>
-              <div className="row valign-wrapper">
-                <div className="center col s12">
-                  <h3 style={h3Style}>QUEST 1 Description</h3>
-                  <div class="card-panel red">
-                    <span class="white-text">
-                      ENTER Game Explaination 1
+          {!questState.quest1 && !questState.quest2 && !questState.quest3 ?
+            <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest1Description">
+              <div className="card-panel" style={mediaStyle}>
+                <div className="row valign-wrapper">
+                  <div className="center col s12">
+                    <h3 style={h3Style}>QUEST 1 Description</h3>
+                    <div className="card-panel red">
+                      <span className="white-text">
+                        ENTER Game Explaination 1
                     </span>
-                  </div>
-                  <div class="card-panel red">
-                    <span class="white-text">
-                      ENTER Real World Explaination 1
+                    </div>
+                    <div className="card-panel red">
+                      <span className="white-text">
+                        ENTER Real World Explaination 1
                     </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div> : '' }
-          
+            </div> : ''}
+
 
           {/* Quest 2 Description  */}
-          {questState.quest1 && !questState.quest2 && !questState.quest3 ? 
-          <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest2Description">
-            <div className="card-panel" style={mediaStyle}>
-              <div className="row valign-wrapper">
-                <div className="center col s12">
-                  <h3 style={h3Style}>QUEST 2 Description</h3>
-                  <div class="card-panel red">
-                    <span class="white-text">
-                      ENTER Game Explaination 2
+          {questState.quest1 && !questState.quest2 && !questState.quest3 ?
+            <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest2Description">
+              <div className="card-panel" style={mediaStyle}>
+                <div className="row valign-wrapper">
+                  <div className="center col s12">
+                    <h3 style={h3Style}>QUEST 2 Description</h3>
+                    <div className="card-panel red">
+                      <span className="white-text">
+                        ENTER Game Explaination 2
                     </span>
-                  </div>
-                  <div class="card-panel red">
-                    <span class="white-text">
-                      ENTER Real World Explaination 2
+                    </div>
+                    <div className="card-panel red">
+                      <span className="white-text">
+                        ENTER Real World Explaination 2
                     </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div> : '' }
+            </div> : ''}
 
           {/* Quest 3 Description  */}
-          {questState.quest1 && questState.quest2 && !questState.quest3 ? 
-          <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest3Description">
-            <div className="card-panel" style={mediaStyle}>
-              <div className="row valign-wrapper">
-                <div className="center col s12">
-                  <h3 style={h3Style}>QUEST 3 Description</h3>
-                  <div class="card-panel red">
-                    <span class="white-text">
-                      ENTER Game Explaination 3
+          {questState.quest1 && questState.quest2 && !questState.quest3 ?
+            <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest3Description">
+              <div className="card-panel" style={mediaStyle}>
+                <div className="row valign-wrapper">
+                  <div className="center col s12">
+                    <h3 style={h3Style}>QUEST 3 Description</h3>
+                    <div class="card-panel red">
+                      <span className="white-text">
+                        ENTER Game Explaination 3
                     </span>
-                  </div>
-                  <div class="card-panel red">
-                    <span class="white-text">
-                      ENTER Real World Explaination 3
+                    </div>
+                    <div className="card-panel red">
+                      <span className="white-text">
+                        ENTER Real World Explaination 3
                     </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div> : '' }
+            </div> : ''}
 
-           {/* ALL QUEST COMPLETED - After 3rd Quest  */}
-           {questState.quest1 && questState.quest2 && questState.quest3 ? 
-          <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest3Description">
-            <div className="card-panel" style={mediaStyle}>
-              <div className="row valign-wrapper">
-                <div className="center col s12">
-                  <h3 style={h3Style}>Your Are Ready to Conquer the WORLD !!! </h3>
-                  <br></br>
-                  <Link to="/resume">
+          {/* ALL QUEST COMPLETED - After 3rd Quest  */}
+          {questState.quest1 && questState.quest2 && questState.quest3 ?
+            <div className="center col s12 m6" style={{ marginTop: "50px" }} id="quest3Description">
+              <div className="card-panel" style={mediaStyle}>
+                <div className="row valign-wrapper">
+                  <div className="center col s12">
+                    <h3 style={h3Style}>Your Are Ready to Conquer the WORLD !!! </h3>
+                    <br></br>
+                    <Link to="/resume">
                       <button
                         rel="noopener noreferrer"
                         className="btn btn-large red darken-4"
@@ -272,10 +272,10 @@ const Profile = () => {
                         View Saved Jobs
                       </button>
                     </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div> : '' }
+            </div> : ''}
 
         </div>
 
@@ -296,20 +296,20 @@ const Profile = () => {
   );
 };
 
-const StatsBar = (props) => {
-  return (
-    <div
-      className="stats-bar"
-      style={{
-        position: "relative",
-        height: "30px",
-        border: "1px solid black",
-      }}
-    >
-      <Filler stat={props.stat} />
-    </div>
-  );
-};
+// const StatsBar = (props) => {
+//   return (
+//     <div
+//       className="stats-bar"
+//       style={{
+//         position: "relative",
+//         height: "30px",
+//         border: "1px solid black",
+//       }}
+//     >
+//       <Filler stat={props.stat} />
+//     </div>
+//   );
+// };
 
 const Filler = (props) => {
   return (

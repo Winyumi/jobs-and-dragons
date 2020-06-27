@@ -3,16 +3,12 @@
 
 
 .progress-bar {
-float: center;
+  float: center;
   height: 50px;
-  width: 500px;
+  width: 100%;
   border-radius: 0px;
   border: 9px groove rgb(92, 27, 27);
-  position:relative;
-  margin-left: 200px;
-
-
- 
+  position: relative;
 }
 
 .filler {

@@ -45,7 +45,7 @@ export default class ProgressBarExample extends React.Component {
     
     render() {
       return (
-        <div className="progBar">
+        <div className="col center s12 progBar">
           <h3>Progress</h3>
           <ProgressBar percentage={this.state.percentage} />
           <Title percentage={this.state.percentage}/>
@@ -76,7 +76,7 @@ export default class ProgressBarExample extends React.Component {
             text = 'Employer Ready' ;
             break;
         case 66.666:
-            text =  "Employer Competative";
+            text =  "Employer Competitive";
             break;
         case 100:
             text = "Industry Professional";
