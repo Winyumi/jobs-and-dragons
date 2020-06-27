@@ -177,13 +177,16 @@ const Profile = () => {
                     <h3 style={h3Style}>Quest Description</h3>
                     <div className="card-panel red">
                       <span className="white-text">
-                        ENTER Game Explaination 2
+                        Great Job on creating your scroll! The Oracle was very impressed, can't stop talking about it actually...Now, 
+                        this next quest will be a bit more of a challenge. You must return to Gninnigeb City and seek out the Namuh Secruoser
+                        Guildhouse and it's leader, the mysterious "Guardian". If she approves of you, she'll allow you to go on your first hunt
+                        for the elusive Boj. Good luck!
                     </span>
                     </div>
                     <div className="card-panel white">
                     <span className="black-text" style={{fontFamily: "sans-serif", fontWeight:"bolder"}}>
-                        ENTER Real World Explaination 2
-                    </span>
+                        The goal of this quest is to perform your first job search and save one job listing.
+                     </span>
                     </div>
                   </div>
                 </div>
