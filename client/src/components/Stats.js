@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
-// import { api } from "../utils/api";
 import { useUserContext } from '../contexts/UserContext';
 import 'materialize-css';
+import { useAuth0 } from '../react-auth0-spa';
+import Loading from '../components/Loading';
 
 const Stats = () => {
+  const { loading } = useAuth0();
   const [state] = useUserContext();
   const [gamestats, setGamestats] = useState({});
 
   useEffect(() => {
     setGamestats(state.user.gamestats);
   }, [state.user.gamestats]);
+
+  if (loading || Object.keys(gamestats).length === 0) {
+    return <Loading />;
+  }
+
   return (
     <>
       {/* <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}> */}
@@ -52,16 +59,6 @@ const StatsBar = (props) => {
 
 const Filler = (props) => {
   return (
-    // <div
-    //   className="filler"
-    //   style={{
-    //     background: "red",
-    //     height: "100%",
-    //     width: `${props.stat}px`,
-    //   }}
-    // >
-    //   <p>{props.stat}/100</p>
-    // </div>
     <div className='card-panel red'>
       <span className='white-text'>{props.stat}</span>
     </div>

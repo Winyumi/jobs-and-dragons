@@ -57,8 +57,8 @@ const Game = () => {
   return (
     <>
       <div style={PageStyles}>
-        <Row center>
-          <Col className='offset-s2' s={10} style={GameBoxStyles}>
+        <Row>
+          <Col className='offset-s1' s={10} style={GameBoxStyles}>
             <Questmap />
           </Col>
         </Row>

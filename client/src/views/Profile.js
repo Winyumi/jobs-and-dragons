@@ -236,7 +236,7 @@ const Profile = () => {
                 <div className='row valign-wrapper'>
                   <div className='center col s12'>
                     <h3 style={h3Style}>Quest Description</h3>
-                    <div class='card-panel red'>
+                    <div className='card-panel red'>
                       <span className='white-text'>
                         The Boj can be slippery prey, but the Secruoserans said
                         you did well. Your next quest be your last in Gninnigeb
