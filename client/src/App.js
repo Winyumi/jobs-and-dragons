@@ -35,7 +35,16 @@ const App = () => {
         {isAuthenticated ? <NavBar /> : null}
         <div className='row'>
           <Switch>
-            <Route exact path='/' component={Home} />
+            {isAuthenticated ? (
+              <Route exact path='/' component={Home} />
+            ) : (
+              <Route>
+                <NavBar />
+                <Home />
+                <Footer />
+              </Route>
+            )}
+
             <PrivateRoute
               exact
               path='/userinfo'
