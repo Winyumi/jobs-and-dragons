@@ -19,29 +19,25 @@ const Stats = () => {
 
   return (
     <>
-      {/* <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}> */}
-      <div
-        className='row valign-wrapper'
-        style={{ width: '100%', marginRight: '1rem' }}
-      >
-        <div className='col s12'>
+      <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+        {/* <div className="col s12">
           <span>HP</span>
           <StatsBar stat={gamestats.numOfStars * 10} />
-        </div>
-        <div className='col s12'>
-          <span>JP</span>
+        </div> */}
+        <div className="col s12">
+          <span>HP</span>
           <StatsBar stat={gamestats.jp} />
         </div>
-        <div className='col s12'>
-          <span>STRENGTH</span>
+        {/* <div className="col s12">
+          <span >STRENGTH</span>
           <StatsBar stat={gamestats.followers} />
-        </div>
-        <div className='col s12'>
+        </div> */}
+        <div className="col s12">
           <span>SPEED</span>
           <StatsBar stat={gamestats.speed} />
         </div>
-        <div className='col s12'>
-          <span>EXPERIENCE</span>
+        <div className="col s12">
+          <span>XP</span>
           <StatsBar stat={gamestats.publicRepos} />
         </div>
       </div>

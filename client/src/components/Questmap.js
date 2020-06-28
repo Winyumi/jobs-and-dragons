@@ -46,14 +46,6 @@ const Questmap = () => {
     });
   };
 
-  //   const handleLinkDecline = () => {
-  //     setIsOpening(!state.isOpening);
-  //     dispatch({
-  //       type: "toggleIsOpening",
-  //       payload: !state.isOpening,
-  //     });
-  //   };
-
   return (
     <>
       <div style={PageStyles}>
@@ -86,4 +78,5 @@ const PageStyles = {
 const GameBoxStyles = {
   display: 'flex',
   justifyContent: 'center',
+  zoom: '90%',
 };

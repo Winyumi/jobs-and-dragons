@@ -37,14 +37,12 @@ export default class index extends Component {
       },
     };
     this.updateUserInfo(data, this.state.email).then((res) => {
-      console.log(res);
       this.props.history.push({ pathname: '/profile', state: res });
     });
   };
 
   render() {
     // const { state } = this.props.location;
-    // console.log(this.state);
     if (!this.state) {
       return <Redirect to='/userinfo'></Redirect>;
     }

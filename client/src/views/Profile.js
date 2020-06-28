@@ -5,19 +5,17 @@ import { api } from '../utils/api';
 import background from '../assets/dark-honeycomb.png';
 
 import Stats from './../components/Stats';
-// import Inventory from './../components/Inventory';
 
 import 'materialize-css';
 import ProgressBarExample from '../components/progressBar/index';
 import Questmap from '../components/Questmap';
 import Loading from '../components/Loading';
 import { useAuth0 } from '../react-auth0-spa';
-// import { Row, Col } from "react-materialize";
+import { Row, Col } from 'react-materialize';
 
 const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
-  // console.log(state.user);
 
   useEffect(() => {
     if (loading || !user) {
@@ -89,15 +87,6 @@ const Profile = () => {
       }
     });
   }, [loading, user, dispatch]);
-
-  // function changeTo(e) {
-  //   e.target.style.background = "red";
-  //   e.target.style.translate = "5px";
-  // }
-
-  // function changeBack(e) {
-  //   e.target.style.background = "#535456";
-  // }
 
   const questState = state.user.progressTracker;
 
@@ -310,16 +299,17 @@ const Profile = () => {
         </div>
 
         <div className='row'>
-          <div className='center col s12' style={GameBoxStyles}>
-            <Questmap />
+          <div className='center col s12'>
+            <Row>
+              <Col s={1} />
+
+              <Col s={10} style={GameBoxStyles}>
+                <Questmap />
+              </Col>
+              <Col s={1} />
+            </Row>
           </div>
         </div>
-
-        {/* <div className="row">
-          <div className="center col s12">
-            <Inventory />
-          </div>
-        </div> */}
       </div>
     </>
   );
@@ -377,27 +367,16 @@ const h3Style = {
   color: 'red',
 };
 
-// const BtnStyle = {
-//   width: '200px',
-//   background: '#535456',
-//   borderRadius: '25%',
-//   fontFamily: 'Alagard',
-//   margin: '10px',
-//   boxShadow: '0 5px #999',
-// };
+const PageStyles = {
+  paddingTop: '100px',
+  paddingBottom: '150px',
+  width: '100%',
+  height: '100%',
+};
 
-// const userImageStyle = {
-//   width: "200px",
-//   height: "200px",
-//   marginTop: "50px",
-// };
-
-// const cardStyle = {
-//   fontFamily: 'Alagard',
-//   fontSize: 'xx-large',
-//   color: 'whitesmoke',
-//   textShadow: '2px 2px darkred',
-//   margin: '20px',
+// const GameBoxStyles = {
+//   display: 'flex',
+//   justifyContent: 'center',
 // };
 
 export default Profile;

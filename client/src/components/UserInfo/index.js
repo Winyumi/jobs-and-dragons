@@ -35,7 +35,6 @@ export default class index extends Component {
         expertise,
         projects,
       } = this.props.location.state;
-      console.log(this.props.location.state);
       this.setState({
         name: name,
         email: email,
@@ -152,15 +151,10 @@ export default class index extends Component {
       });
       if (res.ok) {
         const jsonRes = await res.json();
-        console.log(jsonRes);
         return jsonRes.data;
       }
     }
-    // console.log(this.state.email);
     getUserInfo(this.state.email).then((result) => {
-      // console.log(result);
-      console.log(result.data.email);
-      console.log(this.state.email);
       if (result.data.email === this.state.email) {
         updateUserInfo(userInfo, result.data.email);
       } else {

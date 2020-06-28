@@ -58,7 +58,6 @@ export default class ProgressBarExample extends React.Component {
         }
       });
 
-    // console.log(this.state);
   }
 
   render() {
@@ -102,7 +101,6 @@ const Title = (props) => {
     default:
       break;
   }
-  // console.log(props.percentage);
 
   return <h2>Level: {text}</h2>;
 };

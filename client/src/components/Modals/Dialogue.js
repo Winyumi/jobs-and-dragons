@@ -29,7 +29,7 @@ const Dialogue = (props) => {
     backgroundColor: 'black',
     position: 'absolute',
     top: '33%',
-    left: '25%',
+    left: '27%',
     width: '700px',
     minWidth: '350px',
     height: '300px',
@@ -45,7 +45,7 @@ const Dialogue = (props) => {
     top: '33%',
     left: '33%',
     width: '40vh',
-    height: '20vh',
+    // height: '20vh',
     padding: '20px',
   };
   const navStyle = {
@@ -246,42 +246,40 @@ const Dialogue = (props) => {
   ) {
     return (
       <div className='modal-content' style={chestStyle}>
-        <div style={{}}>
-          <div className='row'>
-            {/* <img style={imgStyle} src={Link} alt='Link' /> */}
-            <h4>You Found a Link!</h4>
-          </div>
-          <div className='row'>
-            <p>Use this link to find helpful information for your quest!</p>
-            <ul>
-              <li>
-                <a
-                  className='modal-close'
-                  href='https://www.smashingmagazine.com/2018/06/web-developer-resume/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  // onClick={e => {
-                  //   e.preventDefault();
-                  //   props.handleAccept();
-                  // }}
-                >
-                  Sure!
-                </a>
-              </li>
-              <li>
-                <a
-                  className='modal-close'
-                  href='#!'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    props.handleDecline();
-                  }}
-                >
-                  I'm good for now.
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div className='row'>
+          {/* <img style={imgStyle} src={Link} alt='Link' /> */}
+          <h4>You Found a Link!</h4>
+        </div>
+        <div className='row'>
+          <p>Use this link to find helpful information for your quest!</p>
+          <ul>
+            <li>
+              <a
+                className='modal-close'
+                href='https://www.smashingmagazine.com/2018/06/web-developer-resume/'
+                target='_blank'
+                rel='noopener noreferrer'
+                // onClick={e => {
+                //   e.preventDefault();
+                //   props.handleAccept();
+                // }}
+              >
+                Sure!
+              </a>
+            </li>
+            <li>
+              <a
+                className='modal-close'
+                href='#!'
+                onClick={(e) => {
+                  e.preventDefault();
+                  props.handleDecline();
+                }}
+              >
+                I'm good for now.
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     );
@@ -504,6 +502,8 @@ const Dialogue = (props) => {
           </div>
           <div className='row'>
             <p>Use this link to find helpful information for your quest!</p>
+          </div>
+          <div className='row'>
             <ul>
               <li>
                 <a
