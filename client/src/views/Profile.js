@@ -121,9 +121,7 @@ const Profile = () => {
                 </div>
 
                 <div className='row valign-wrapper'>
-                  {/* <div className="center col s12"> */}
                   <ProgressBarExample />
-                  {/* </div> */}
                 </div>
               </div>
             </div>
@@ -297,7 +295,6 @@ const Profile = () => {
             ''
           )}
         </div>
-
         <div className='row'>
           <div className='center col s12'>
             <Row>
@@ -314,37 +311,7 @@ const Profile = () => {
     </>
   );
 };
-
-// const StatsBar = (props) => {
-//   return (
-//     <div
-//       className="stats-bar"
-//       style={{
-//         position: "relative",
-//         height: "30px",
-//         border: "1px solid black",
-//       }}
-//     >
-//       <Filler stat={props.stat} />
-//     </div>
-//   );
-// };
-
-// const Filler = (props) => {
-//   return (
-//     <div
-//       className='filler'
-//       style={{
-//         background: 'red',
-//         height: '100%',
-//         width: `${props.stat}px`,
-//       }}
-//     >
-//       <p>{props.stat}/100</p>
-//     </div>
-//   );
-// };
-
+    
 const GameBoxStyles = {
   display: 'flex',
   justifyContent: 'center',
@@ -373,10 +340,5 @@ const PageStyles = {
   width: '100%',
   height: '100%',
 };
-
-// const GameBoxStyles = {
-//   display: 'flex',
-//   justifyContent: 'center',
-// };
 
 export default Profile;
