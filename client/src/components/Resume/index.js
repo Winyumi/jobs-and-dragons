@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { PDFExport } from '@progress/kendo-react-pdf';
 
+import { Button } from 'react-materialize';
+
 export default class index extends Component {
   state = {
     ...this.props.location.state,
@@ -144,24 +146,36 @@ export default class index extends Component {
           </div>
         </PDFExport>
         <div>
-          <button
-            className='back btn-floating btn-medium blue'
+          <Button
+            className='back btn-floating btn-medium blue tooltipped' 
+            tooltip='Edit'
+            tooltipOptions={{
+              position: 'left'
+            }}
             onClick={this.onSubmitHandler}
           >
             <i className='small material-icons'>edit</i>
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={this.exportToPDF}
-            className='download btn-floating btn-medium blue'
+            className='download btn-floating btn-medium blue tooltipped' 
+            tooltip='Download PDF'
+            tooltipOptions={{
+              position: 'left'
+            }}
           >
             <i className='small material-icons'>file_download</i>
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={this.handleComplete}
-            className='complete btn-floating btn-medium blue'
+            className='complete btn-floating btn-medium blue tooltipped'
+            tooltip='Back to Profile'
+            tooltipOptions={{
+              position: 'left'
+            }}
           >
             <i className='small material-icons'>flash_on</i>
-          </button>
+          </Button>
         </div>
       </React.Fragment>
     );
