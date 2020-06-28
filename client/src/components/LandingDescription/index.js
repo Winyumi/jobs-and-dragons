@@ -143,6 +143,7 @@ const imageBoxStyle = {
 
 const spanStyle = {
   fontSize: "1.5rem",
+  fontFamily: 'sans-serif',
 };
 
 const descStyle = {

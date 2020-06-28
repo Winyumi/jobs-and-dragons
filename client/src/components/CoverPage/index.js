@@ -4,6 +4,8 @@ import Home from './HomePage';
 import Auth0Context from '../../react-auth0-spa';
 import { Link } from 'react-router-dom';
 
+import { Row, Col } from 'react-materialize';
+
 export default class index extends Component {
   state = {
     receiver: 'Receiver ',
@@ -80,7 +82,7 @@ export default class index extends Component {
     <div>
       <ReactToPrint
         trigger={() => (
-          <a style={{ fontFamily: 'Alagard' }} href='#'>
+          <a style={{ fontFamily: 'Alagard', color:'white' }} href='#'>
             Print<i className='material-icons right'>print</i>
           </a>
         )}
@@ -112,6 +114,24 @@ export default class index extends Component {
   render() {
     return (
       <React.Fragment>
+        <Row>
+        <Col className='' s={2}>
+          <Link to ='/joblisting/saved'>
+                <button
+                  className='gotosaved btn btn-large red darken-4'  
+
+                > Go to Saved  Jobs   
+              </button>
+              </Link>
+              <Link to ='/userinfo'>
+              <button
+                className='gotoresume btn btn-large red darken-4'
+              >Resume Builder
+            </button>
+          </Link>
+        </Col>
+
+        <Col className='' s={10}>
         <div className='logContainer'>
           <form>
             <h2>Cover Letter Generator</h2>
@@ -206,33 +226,22 @@ export default class index extends Component {
                 })
               }
             />
-            <button className='print waves-effect waves-light btn'>
-              {this.submitButton()}
-            </button>
-            <button
-              onClick={this.saveButton}
-              className='waves-effect waves-light btn'
-            >
-              <a style={{ fontFamily: 'Alagard' }} href='#'>
-                Save
-              </a>
-            </button></form>
-            <Link to ='/joblisting/saved' target="_blank" >
+              <button className='print btn btn-large red darken-4'>
+                {this.submitButton()}
+              </button>
+              
               <button
-                className='gotosaved waves-effect waves-light btn'  
-              > Go to Saved  Jobs   
+                onClick={this.saveButton}
+                className='btn btn-large red darken-4'
+              >
+                <a style={{ fontFamily: 'Alagard', color:'white' }} href='#'>
+                  Save
+                </a>
             </button>
-            </Link>
-            <Link to ='/userinfo' target="_blank" >
-            <button
-              className='gotoresume waves-effect waves-light btn'
-            >Resume Builder
-          </button>
-          </Link>
-
-          
-        
-</div>
+            </form>
+          </div> 
+        </Col>
+      </Row>
       </React.Fragment>
     );
   }

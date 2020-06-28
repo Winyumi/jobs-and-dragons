@@ -302,7 +302,7 @@ h4 {
 .logContainer {
   width: 80%;
   margin: 0 auto;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   font-family: "Alagard";
 }
 
@@ -337,6 +337,7 @@ h4 {
   margin-top: 10px;
   padding: 12px 10px;
   box-sizing: border-box;
+  border: 1px solid darkgrey;
   font-weight: 300;
   font-family: "Alagard";
 }
@@ -355,18 +356,18 @@ h4 {
   border-bottom: 1px solid grey;
 }
 
-.gotosaved {
+/* .gotosaved {
   position: absolute;
   top: 70px;
   right: 15px;
-}
+} */
 
-.gotoresume {
+/* .gotoresume {
   position: absolute;
   top: 120px;
   right: 15px;
   text-align: center;
 
-}
+} */
 
 
