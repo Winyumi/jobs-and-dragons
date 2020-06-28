@@ -121,9 +121,7 @@ const Profile = () => {
                 </div>
 
                 <div className='row valign-wrapper'>
-                  {/* <div className="center col s12"> */}
                   <ProgressBarExample />
-                  {/* </div> */}
                 </div>
               </div>
             </div>
@@ -301,64 +299,16 @@ const Profile = () => {
         <div style={PageStyles}>
         <Row>
         <Col s={1} />
-
           <Col s={10} style={GameBoxStyles}>
             <Questmap />
           </Col>
           <Col s={1} />
-
         </Row>
       </div>
-{/*       
-        <div className="row">
-        <Col s={1} />
-
-          <div className="center col s10">
-            <Questmap />
-          </div>
-          <Col s={1} />
-
-        </div> */}
-
-        {/* <div className="row">
-          <div className="center col s12">
-            <Inventory />
-          </div>
-        </div> */}
       </div>
     </>
   );
 };
-
-// const StatsBar = (props) => {
-//   return (
-//     <div
-//       className="stats-bar"
-//       style={{
-//         position: "relative",
-//         height: "30px",
-//         border: "1px solid black",
-//       }}
-//     >
-//       <Filler stat={props.stat} />
-//     </div>
-//   );
-// };
-
-// const Filler = (props) => {
-//   return (
-//     <div
-//       className='filler'
-//       style={{
-//         background: 'red',
-//         height: '100%',
-//         width: `${props.stat}px`,
-//       }}
-//     >
-//       <p>{props.stat}/100</p>
-//     </div>
-//   );
-// };
 
 const profileStyle = {
   height: '100%',
@@ -377,7 +327,7 @@ const h3Style = {
 };
 
 const PageStyles = {
-  paddingTop: "100px",
+  paddingTop: "10px",
   paddingBottom: "150px",
   width: "100%",
   height: "100%",
