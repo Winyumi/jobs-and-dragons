@@ -23,14 +23,15 @@ const Game = () => {
 export default Game;
 
 const PageStyles = {
-  paddingTop: "100px",
-  paddingBottom: "150px",
-  width: "100%",
-  height: "100%",
+  paddingTop: '100px',
+  paddingBottom: '150px',
+  width: '100%',
+  height: '100%',
   backgroundImage: `url(${backgroundDark})`,
 };
 
 const GameBoxStyles = {
   display: 'flex',
   justifyContent: 'center',
+  position: 'relative',
 };

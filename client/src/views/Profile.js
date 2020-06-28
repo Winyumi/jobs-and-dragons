@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
 import { api } from '../utils/api';
@@ -11,11 +11,12 @@ import ProgressBarExample from '../components/progressBar/index';
 import Questmap from '../components/Questmap';
 import Loading from '../components/Loading';
 import { useAuth0 } from '../react-auth0-spa';
-import { Row, Col } from "react-materialize";
+import { Row, Col } from 'react-materialize';
 
 const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (loading || !user) {
@@ -25,7 +26,9 @@ const Profile = () => {
     api.getUserInfo(user.email).then((result) => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
+        setIsLoading(false);
       } else {
+        setIsLoading(true);
         let newUser = {
           name: '',
           email: '',
@@ -80,6 +83,7 @@ const Profile = () => {
                 api.addUserInfo(newUser).then((result) => {
                   if (result.success) {
                     dispatch({ type: 'user', payload: result.data });
+                    setIsLoading(false);
                   }
                 });
               });
@@ -121,9 +125,7 @@ const Profile = () => {
                 </div>
 
                 <div className='row valign-wrapper'>
-                  {/* <div className="center col s12"> */}
-                  <ProgressBarExample />
-                  {/* </div> */}
+                  {!isLoading ? <ProgressBarExample /> : null}
                 </div>
               </div>
             </div>
@@ -297,68 +299,27 @@ const Profile = () => {
             ''
           )}
         </div>
-
-        <div style={PageStyles}>
-        <Row>
-        <Col s={1} />
-
-          <Col s={10} style={GameBoxStyles}>
-            <Questmap />
-          </Col>
-          <Col s={1} />
-
-        </Row>
-      </div>
-{/*       
-        <div className="row">
-        <Col s={1} />
-
-          <div className="center col s10">
-            <Questmap />
+        <div className='row'>
+          <div style={PageStyles}>
+            <Row>
+              <Col s={1} />
+              <Col s={10} style={GameBoxStyles}>
+                <Questmap />
+              </Col>
+              <Col s={1} />
+            </Row>
           </div>
-          <Col s={1} />
-
-        </div> */}
-
-        {/* <div className="row">
-          <div className="center col s12">
-            <Inventory />
-          </div>
-        </div> */}
+        </div>
       </div>
     </>
   );
 };
 
-// const StatsBar = (props) => {
-//   return (
-//     <div
-//       className="stats-bar"
-//       style={{
-//         position: "relative",
-//         height: "30px",
-//         border: "1px solid black",
-//       }}
-//     >
-//       <Filler stat={props.stat} />
-//     </div>
-//   );
-// };
-
-// const Filler = (props) => {
-//   return (
-//     <div
-//       className='filler'
-//       style={{
-//         background: 'red',
-//         height: '100%',
-//         width: `${props.stat}px`,
-//       }}
-//     >
-//       <p>{props.stat}/100</p>
-//     </div>
-//   );
-// };
+const GameBoxStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  position: 'relative',
+};
 
 const profileStyle = {
   height: '100%',
@@ -377,16 +338,10 @@ const h3Style = {
 };
 
 const PageStyles = {
-  paddingTop: "100px",
-  paddingBottom: "150px",
-  width: "100%",
-  height: "100%",
+  paddingTop: '10px',
+  paddingBottom: '150px',
+  width: '100%',
+  height: '100%',
 };
-
-const GameBoxStyles = {
-  display: "flex",
-  justifyContent: "center",
-};
-
 
 export default Profile;
