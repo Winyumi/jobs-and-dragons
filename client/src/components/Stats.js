@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { api } from "../utils/api";
-import { useUserContext } from "../contexts/UserContext";
-import "materialize-css";
+import React, { useState, useEffect } from 'react';
+import { useUserContext } from '../contexts/UserContext';
+import 'materialize-css';
+import { useAuth0 } from '../react-auth0-spa';
+import Loading from '../components/Loading';
 
 const Stats = () => {
-  const [state, dispatch] = useUserContext();
+  const { loading } = useAuth0();
+  const [state] = useUserContext();
   const [gamestats, setGamestats] = useState({});
 
   useEffect(() => {
     setGamestats(state.user.gamestats);
   }, [state.user.gamestats]);
+
+  if (loading || Object.keys(gamestats).length === 0) {
+    return <Loading />;
+  }
+
   return (
     <>
       <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
@@ -33,7 +40,6 @@ const Stats = () => {
           <span>XP</span>
           <StatsBar stat={gamestats.publicRepos} />
         </div>
-
       </div>
     </>
   );
@@ -41,7 +47,7 @@ const Stats = () => {
 
 const StatsBar = (props) => {
   return (
-    <div className="stats-bar" >
+    <div className='stats-bar'>
       <Filler stat={props.stat} />
     </div>
   );
@@ -49,10 +55,8 @@ const StatsBar = (props) => {
 
 const Filler = (props) => {
   return (
-    <div class="card-panel red">
-      <span class="white-text">
-        {props.stat}
-      </span>
+    <div className='card-panel red'>
+      <span className='white-text'>{props.stat}</span>
     </div>
   );
 };
