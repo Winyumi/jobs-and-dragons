@@ -147,7 +147,7 @@ export default class index extends Component {
         </PDFExport>
         <div>
           <Button
-            className='back btn-floating btn-medium blue tooltipped' 
+            className='back btn-floating btn-medium black tooltipped' 
             tooltip='Edit'
             tooltipOptions={{
               position: 'left'
@@ -158,7 +158,7 @@ export default class index extends Component {
           </Button>
           <Button
             onClick={this.exportToPDF}
-            className='download btn-floating btn-medium blue tooltipped' 
+            className='download btn-floating btn-medium black tooltipped' 
             tooltip='Download PDF'
             tooltipOptions={{
               position: 'left'
@@ -168,7 +168,7 @@ export default class index extends Component {
           </Button>
           <Button
             onClick={this.handleComplete}
-            className='complete btn-floating btn-medium blue tooltipped'
+            className='complete btn-floating btn-medium black tooltipped'
             tooltip='Back to Dashboard'
             tooltipOptions={{
               position: 'left'
