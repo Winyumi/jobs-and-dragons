@@ -6,10 +6,8 @@ import dotenv from 'dotenv';
 import 'materialize-css';
 import dateFormat from 'dateformat';
 import Loading from '../components/Loading';
-// import useUserContext from "../contexts/UserContext";
 import Auth0Context from '../react-auth0-spa';
 import backgroundDark from '../assets/dark-honeycomb.png';
-// import { withRouter } from "react-router-dom";
 
 dotenv.config();
 
@@ -157,143 +155,83 @@ export default class jobListing extends React.Component {
 
   render() {
     const { error, isLoaded, items } = this.state;
+
     if (error) {
       return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
+    }
+
+    if (!isLoaded) {
       return (
         <div>
           <Loading />
         </div>
       );
-    } else if (!items.length) {
-      return (
-        <>
-          <div style={PageStyles}>
-            <div style={ListingStyles}>
-              <div className='row'>
-                <div className='center col s12 m3'>
-                  <h4 style={{ color: 'red' }}>JOB LISTINGS</h4>
-                  <div className='center input-field'>
-                    <input
-                      id='roleSearchBox'
-                      placeholder=' Role / Position'
-                      value={this.state.query}
-                      type='text'
-                      style={inputBoxStyle}
-                      onChange={(e) => this.setState({ query: e.target.value })}
-                    ></input>
-                  </div>
-                  <div className='center input-field'>
-                    <input
-                      id='locationSearchBox'
-                      placeholder=' Location'
-                      value={this.state.searchLocation}
-                      type='text'
-                      style={inputBoxStyle}
-                      onChange={(e) =>
-                        this.setState({ searchLocation: e.target.value })
-                      }
-                    ></input>
-                  </div>
-                  <input
-                    type='submit'
-                    value='SEARCH'
-                    className='btn btn-large red darken-4'
-                    onClick={(e) => this.handleSubmitSearch(e)}
-                  />
-                  <br></br>
-                  <br></br>
-                  <div className='input-field'>
-                    <Link to='/joblisting/saved'>
-                      <button
-                        rel='noopener noreferrer'
-                        className='btn btn-large red darken-4'
-                      >
-                        View Saved Jobs
-                      </button>
-                    </Link>
-                  </div>
-                  <br></br>
-                  <br></br>
-                  <div className='input-field'>
-                    <Link to='/profile'>
-                      <button
-                        rel='noopener noreferrer'
-                        className='btn btn-large red darken-4'
-                      >
-                        Profile
-                      </button>
-                    </Link>
-                  </div>
-                </div>
+    }
 
-                <div className='center col s12 m8'>
-                  <h2 style={{ color: 'red' }}>Sorry, No Listings found</h2>
-                </div>
+    if (!items.length) PageStyles.height = 'calc(100vh - 141.5px)';
+
+    return (
+      <div style={PageStyles}>
+        <div style={ListingStyles}>
+          <div className='row'>
+            <div className='center col s12 m3'>
+              <h4 style={{ color: 'red' }}>JOB LISTINGS</h4>
+              <div className='center input-field'>
+                <input
+                  id='roleSearchBox'
+                  placeholder=' Role / Position'
+                  value={this.state.query}
+                  type='text'
+                  style={inputBoxStyle}
+                  onChange={(e) => this.setState({ query: e.target.value })}
+                ></input>
               </div>
-            </div>
-          </div>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <div style={ListingStyles}>
-            <div className='row'>
-              <div className='center col s12 m3'>
-                <h4 style={{ color: 'red' }}>JOB LISTINGS</h4>
-                <div className='center input-field'>
-                  <input
-                    id='roleSearchBox'
-                    placeholder=' Role / Position'
-                    value={this.state.query}
-                    type='text'
-                    style={inputBoxStyle}
-                    onChange={(e) => this.setState({ query: e.target.value })}
-                  ></input>
-                </div>
-                <div className='center input-field'>
-                  <input
-                    id='locationSearchBox'
-                    placeholder=' Location'
-                    value={this.state.searchLocation}
-                    type='text'
-                    style={inputBoxStyle}
-                    onChange={(e) =>
-                      this.setState({ searchLocation: e.target.value })
-                    }
-                  ></input>
-                </div>
+              <div className='center input-field'>
+                <input
+                  id='locationSearchBox'
+                  placeholder=' Location'
+                  value={this.state.searchLocation}
+                  type='text'
+                  style={inputBoxStyle}
+                  onChange={(e) =>
+                    this.setState({ searchLocation: e.target.value })
+                  }
+                ></input>
+              </div>
+              <div className='input-field'>
                 <input
                   type='submit'
                   value='SEARCH'
                   className='btn btn-large red darken-4'
                   onClick={(e) => this.handleSubmitSearch(e)}
                 />
-                <br></br>
-                <br></br>
-                <div className='input-field'>
-                  <Link to='/joblisting/saved'>
-                    <button
-                      rel='noopener noreferrer'
-                      className='btn btn-large red darken-4'
-                    >
-                      View Saved Jobs
-                    </button>
-                  </Link>
-                </div>
-                <div className='input-field'>
-                  <Link to='/profile'>
-                    <button
-                      rel='noopener noreferrer'
-                      className='btn btn-large red darken-4'
-                    >
-                      Dashboard
-                    </button>
-                  </Link>
-                </div>
               </div>
-
+              <div className='input-field'>
+                <Link to='/joblisting/saved'>
+                  <button
+                    rel='noopener noreferrer'
+                    className='btn btn-large red darken-4'
+                  >
+                    View Saved Jobs
+                  </button>
+                </Link>
+              </div>
+              <div className='input-field'>
+                <Link to='/profile'>
+                  <button
+                    rel='noopener noreferrer'
+                    className='btn btn-large red darken-4'
+                  >
+                    Profile
+                  </button>
+                </Link>
+              </div>
+            </div>
+            {!items.length ? (
+              <div className='center col s12 m8'>
+                <h2 style={{ color: 'red' }}>Sorry, No Listings found</h2>
+              </div>
+            ) : (
               <div className='center col s12 m8'>
                 <ul>
                   {items.map((item) => (
@@ -355,16 +293,15 @@ export default class jobListing extends React.Component {
                   ))}
                 </ul>
               </div>
-            </div>
+            )}
           </div>
-        </>
-      );
-    }
+        </div>
+      </div>
+    );
   }
 }
 const PageStyles = {
   backgroundImage: `url(${backgroundDark})`,
-  height: '100vh',
 };
 
 const ListingStyles = {
@@ -375,4 +312,6 @@ const ListingStyles = {
 
 const inputBoxStyle = {
   backgroundColor: 'whitesmoke',
+  paddingLeft: '10px',
+  paddingRight: '10px',
 };
