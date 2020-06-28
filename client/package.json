@@ -16,7 +16,6 @@
     "dotenv": "^8.2.0",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.0",
-    "react-animations": "^1.0.0",
     "react-dom": "^16.13.0",
     "react-materialize": "^3.8.10",
     "react-router-dom": "^5.1.2",
