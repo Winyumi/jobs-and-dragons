@@ -310,7 +310,7 @@ const Profile = () => {
         </div>
 
         <div className='row'>
-          <div className='center col s12'>
+          <div className='center col s12' style={GameBoxStyles}>
             <Questmap />
           </div>
         </div>
@@ -354,6 +354,12 @@ const Profile = () => {
 //     </div>
 //   );
 // };
+
+const GameBoxStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  position: 'relative',
+};
 
 const profileStyle = {
   height: '100%',

@@ -63,7 +63,6 @@ const Questmap = () => {
           </Col>
         </Row>
       </div>
-
       {isInteracting && (
         <Dialogue
           handleDecline={handleQuestDecline}
@@ -81,6 +80,7 @@ const PageStyles = {
   width: '100%',
   height: '90vh',
   backgroundImage: `url(${backgroundDark})`,
+  position: 'relative',
 };
 
 const GameBoxStyles = {
