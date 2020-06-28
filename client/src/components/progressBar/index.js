@@ -19,7 +19,7 @@ export default class ProgressBarExample extends React.Component {
       .then((res) => res.json())
 
       .then((result) => {
-        console.log(result);
+//         console.log(result);
         if (
           result.data.progressTracker.quest1 === false &&
           result.data.progressTracker.quest2 === false &&
