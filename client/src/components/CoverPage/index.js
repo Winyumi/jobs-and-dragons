@@ -104,10 +104,10 @@ export default class index extends Component {
     </div>
   );
 
-  /*   onSubmitHandler = (e) => {
+     onSubmitHandler = (e) => {
     e.preventDefault();
-    <Link to ='/joblisting/saved' target="_blank" />
-  } */
+    
+  } 
 
   render() {
     return (
@@ -211,24 +211,28 @@ export default class index extends Component {
             </button>
             <button
               onClick={this.saveButton}
-              className='print waves-effect waves-light btn'
+              className='waves-effect waves-light btn'
             >
               <a style={{ fontFamily: 'Alagard' }} href='#'>
                 Save
               </a>
+            </button></form>
+            <Link to ='/joblisting/saved' target="_blank" >
+              <button
+                className='gotosaved waves-effect waves-light btn'  
+              > Go to Saved  Jobs   
             </button>
-          </form>
-        </div>
-        <Link to='/joblisting/saved' target='_blank'>
-          <div>
+            </Link>
+            <Link to ='/userinfo' target="_blank" >
             <button
-              className='info-visible btn-floating btn-medium black'
-              //onClick={this.onSubmitHandler}
-            >
-              <i className='small material-icons'>visibility</i>
-            </button>
-          </div>
-        </Link>
+              className='gotoresume waves-effect waves-light btn'
+            >Resume Builder
+          </button>
+          </Link>
+
+          
+        
+</div>
       </React.Fragment>
     );
   }

@@ -355,6 +355,18 @@ h4 {
   border-bottom: 1px solid grey;
 }
 
+.gotosaved {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+}
 
+.gotoresume {
+  position: absolute;
+  top: 120px;
+  right: 15px;
+  text-align: center;
+
+}
 
 

@@ -13,20 +13,11 @@ import jobListing from './views/jobListing';
 import SavedJobs from './views/SavedJobs';
 
 // import { useUserContext } from './contexts/UserContext';
-<<<<<<< HEAD
-import { useAuth0 } from "./react-auth0-spa";
-import history from "./utils/history";
-import UserInfo from "./components/UserInfo";
-import CoverPage from "./components/CoverPage";
-import Resume from "./components/Resume";
-import userForm from "./components/MultiPageResume/UserForm"
-=======
 import { useAuth0 } from './react-auth0-spa';
 import history from './utils/history';
 import UserInfo from './components/UserInfo';
 import CoverPage from './components/CoverPage';
 import Resume from './components/Resume';
->>>>>>> 1e7cb802440d6c2322d6ec4500d59b7d465c4026
 
 // styles/
 import './App.css';
