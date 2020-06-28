@@ -4,6 +4,8 @@ import Home from './HomePage';
 import Auth0Context from '../../react-auth0-spa';
 import { Link } from 'react-router-dom';
 
+import { Row, Col } from 'react-materialize';
+
 export default class index extends Component {
   state = {
     receiver: 'Receiver ',
@@ -80,7 +82,7 @@ export default class index extends Component {
     <div>
       <ReactToPrint
         trigger={() => (
-          <a style={{ fontFamily: 'Alagard' }} href='#'>
+          <a style={{ fontFamily: 'Alagard', color:'white' }} href='#'>
             Print<i className='material-icons right'>print</i>
           </a>
         )}
@@ -104,14 +106,32 @@ export default class index extends Component {
     </div>
   );
 
-  /*   onSubmitHandler = (e) => {
+     onSubmitHandler = (e) => {
     e.preventDefault();
-    <Link to ='/joblisting/saved' target="_blank" />
-  } */
+    
+  } 
 
   render() {
     return (
       <React.Fragment>
+        <Row>
+        <Col className='' s={2}>
+          <Link to ='/joblisting/saved'>
+                <button
+                  className='gotosaved btn btn-large red darken-4'  
+
+                > Go to Saved  Jobs   
+              </button>
+              </Link>
+              <Link to ='/userinfo'>
+              <button
+                className='gotoresume btn btn-large red darken-4'
+              >Resume Builder
+            </button>
+          </Link>
+        </Col>
+
+        <Col className='' s={10}>
         <div className='logContainer'>
           <form>
             <h2>Cover Letter Generator</h2>
@@ -206,29 +226,22 @@ export default class index extends Component {
                 })
               }
             />
-            <button className='print waves-effect waves-light btn'>
-              {this.submitButton()}
+              <button className='print btn btn-large red darken-4'>
+                {this.submitButton()}
+              </button>
+              
+              <button
+                onClick={this.saveButton}
+                className='btn btn-large red darken-4'
+              >
+                <a style={{ fontFamily: 'Alagard', color:'white' }} href='#'>
+                  Save
+                </a>
             </button>
-            <button
-              onClick={this.saveButton}
-              className='print waves-effect waves-light btn'
-            >
-              <a style={{ fontFamily: 'Alagard' }} href='#'>
-                Save
-              </a>
-            </button>
-          </form>
-        </div>
-        <Link to='/joblisting/saved' target='_blank'>
-          <div>
-            <button
-              className='info-visible btn-floating btn-medium black'
-              //onClick={this.onSubmitHandler}
-            >
-              <i className='small material-icons'>visibility</i>
-            </button>
-          </div>
-        </Link>
+            </form>
+          </div> 
+        </Col>
+      </Row>
       </React.Fragment>
     );
   }

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 export default class UserEducation extends Component {
+
+
   render() {
     const { education, onChangeHandler, id } = this.props;
     const { degree, from, start, end } = education;
 
     return (
       <div className='info' id={id}>
+      <form>
         <div className='form-group'>
           <input
             type='text'
@@ -46,6 +49,8 @@ export default class UserEducation extends Component {
             onChange={onChangeHandler('end', 'education', id)}
           />
         </div>
+
+    </form>
       </div>
     );
   }

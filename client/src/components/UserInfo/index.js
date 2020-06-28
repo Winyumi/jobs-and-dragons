@@ -48,8 +48,10 @@ export default class index extends Component {
     }
   }
 
-  componentDidUpdate() {
-    localStorage.setItem('data', JSON.stringify(this.state));
+  componentDidMount() {
+    if (localStorage.getItem('data')) {
+      this.setState(JSON.parse(localStorage.getItem('data')))
+    }
   }
 
   onChangeHandler = (name, from, id) => (e) => {
@@ -98,7 +100,6 @@ export default class index extends Component {
 
   onSubmitHandler = (e) => {
     e.preventDefault();
-
     let userInfo = {
       name: this.state.name,
       bio: this.state.bio,
@@ -161,8 +162,9 @@ export default class index extends Component {
         addUserInfo(userInfo);
       }
     });
-
+    localStorage.setItem('data', JSON.stringify(userInfo));
     this.props.history.push({ pathname: '/resume', state: this.state });
+
   };
 
   handleExpertiseSubmit = (expertise) => {
@@ -204,8 +206,10 @@ export default class index extends Component {
                 education={formValue}
               />
             </div>
+
           ))}
         </section>
+        <hr></hr>
         <section id='exp'>
           <div className='util'>
             <h4>Experience</h4>
@@ -233,7 +237,7 @@ export default class index extends Component {
             </div>
           ))}
         </section>
-
+        <hr></hr>
         <section id='expertise'>
           <div className='util'>
             <h4>Expertise</h4>
@@ -246,7 +250,7 @@ export default class index extends Component {
             expertise={expertise}
           />
         </section>
-
+        <hr></hr>
         <section id='skills'>
           <div className='util'>
             <h4>Skills</h4>
@@ -306,7 +310,7 @@ export default class index extends Component {
           </div>
           <UserSkills />
         </section>
-
+        <hr></hr>
         <section id='projects'>
           <div className='util'>
             <h4>Projects</h4>
@@ -334,6 +338,8 @@ export default class index extends Component {
             </div>
           ))}
         </section>
+        <hr></hr>
+
         <button
           type='submit'
           value='SUBMIT'

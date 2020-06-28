@@ -225,7 +225,7 @@ input[type="submit"] {
 
 .back {
   position: absolute;
-  top: 140px;
+  top: 100px;
   right: 15px;
 }
 .info-visible {
@@ -236,13 +236,13 @@ input[type="submit"] {
 
 .download {
   position: absolute;
-  top: 200px;
+  top: 160px;
   right: 15px;
 }
 
 .complete {
   position: absolute;
-  top: 260px;
+  top: 220px;
   right: 15px;
 }
 
@@ -302,7 +302,7 @@ h4 {
 .logContainer {
   width: 80%;
   margin: 0 auto;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   font-family: "Alagard";
 }
 
@@ -337,6 +337,7 @@ h4 {
   margin-top: 10px;
   padding: 12px 10px;
   box-sizing: border-box;
+  border: 1px solid darkgrey;
   font-weight: 300;
   font-family: "Alagard";
 }
@@ -350,3 +351,23 @@ h4 {
   font-weight: 300;
   color: white;
 }
+
+.heading{
+  border-bottom: 1px solid grey;
+}
+
+/* .gotosaved {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+} */
+
+/* .gotoresume {
+  position: absolute;
+  top: 120px;
+  right: 15px;
+  text-align: center;
+
+} */
+
+

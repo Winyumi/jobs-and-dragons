@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 export default class UserDetail extends Component {
+
+
   render() {
     const { values, onChangeHandler } = this.props;
     const { name, email, bio, phone } = values;
     return (
       <div className='info'>
         <h3>Info</h3>
+        <form>
         <div className='form-group'>
           <input
             type='text'
@@ -21,7 +24,7 @@ export default class UserDetail extends Component {
           <input
             type='email'
             name='email'
-            placeholder='Your Email'
+            placeholder='Your Email (email address should match the login email address)'
             value={email}
             onChange={onChangeHandler('email')}
             required
@@ -46,6 +49,8 @@ export default class UserDetail extends Component {
             required
           />
         </div>
+
+</form>
       </div>
     );
   }

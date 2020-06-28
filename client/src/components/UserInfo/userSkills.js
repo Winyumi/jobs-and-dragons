@@ -16,6 +16,16 @@ const SKILLS = [
 ];
 
 class userSkills extends Component {
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+};
+
+continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+}
+
   state = {
     Rating: SKILLS.reduce(
       (options, option) => ({
@@ -35,7 +45,11 @@ class userSkills extends Component {
   render() {
     return (
       <div className='row'>
+      <form onSubmit={this.continue}>
+
           {this.createRating()}
+
+</form>
       </div>
     );
   }

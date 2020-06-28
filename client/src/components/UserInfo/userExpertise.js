@@ -17,6 +17,8 @@ const EXPERTISE = [
 ];
 
 class userExpertise extends Component {
+
+
   state = {
     checkboxes: EXPERTISE.reduce(
       (options, option) => ({
@@ -60,6 +62,7 @@ class userExpertise extends Component {
   render() {
     return (
       <div className='row'>
+      <form>
         <div className='col'>{this.createCheckboxes()}</div>
         <div>
           <button
@@ -71,6 +74,7 @@ class userExpertise extends Component {
             <i className='material-icons right'>check</i>
           </button>
         </div>
+    </form>
       </div>
     );
   }
