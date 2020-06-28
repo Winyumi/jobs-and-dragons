@@ -299,19 +299,26 @@ const Profile = () => {
             ''
           )}
         </div>
-
-        <div style={PageStyles}>
-          <Row>
-            <Col s={1} />
-            <Col s={10} style={GameBoxStyles}>
-              <Questmap />
-            </Col>
-            <Col s={1} />
-          </Row>
+        <div className='row'>
+          <div style={PageStyles}>
+            <Row>
+              <Col s={1} />
+              <Col s={10} style={GameBoxStyles}>
+                <Questmap />
+              </Col>
+              <Col s={1} />
+            </Row>
+          </div>
         </div>
       </div>
     </>
   );
+};
+
+const GameBoxStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  position: 'relative',
 };
 
 const profileStyle = {
@@ -335,11 +342,6 @@ const PageStyles = {
   paddingBottom: '150px',
   width: '100%',
   height: '100%',
-};
-
-const GameBoxStyles = {
-  display: 'flex',
-  justifyContent: 'center',
 };
 
 export default Profile;
