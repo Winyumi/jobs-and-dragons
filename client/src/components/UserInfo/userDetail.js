@@ -29,7 +29,7 @@ continue = e => {
           <input
             type='email'
             name='email'
-            placeholder='Your Email'
+            placeholder='Your Email (email address should match the login email address)'
             value={email}
             onChange={onChangeHandler('email')}
             required
@@ -54,9 +54,7 @@ continue = e => {
             required
           />
         </div>
-        <div className="container text-center">
-        <button type="submit" className="btn btn-info">Next<i className="fas fa-angle-right ml-1"></i></button>
-    </div>
+
 </form>
       </div>
     );

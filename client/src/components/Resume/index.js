@@ -145,22 +145,14 @@ export default class index extends Component {
         </PDFExport>
         <div>
           <button
-            className='back btn-floating btn-medium blue'
+            className='back waves-effect waves-light btn'
             onClick={this.onSubmitHandler}
-          >
-            <i className='small material-icons'>edit</i>
+          > Edit This Resume
           </button>
           <button
             onClick={this.exportToPDF}
-            className='download btn-floating btn-medium blue'
-          >
-            <i className='small material-icons'>file_download</i>
-          </button>
-          <button
-            onClick={this.handleComplete}
-            className='complete btn-floating btn-medium blue'
-          >
-            <i className='small material-icons'>flash_on</i>
+            className='download waves-effect waves-light btn'
+          > Download Resume
           </button>
         </div>
       </React.Fragment>
