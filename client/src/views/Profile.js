@@ -11,7 +11,7 @@ import ProgressBarExample from '../components/progressBar/index';
 import Questmap from '../components/Questmap';
 import Loading from '../components/Loading';
 import { useAuth0 } from '../react-auth0-spa';
-import { Row, Col } from "react-materialize";
+import { Row, Col } from 'react-materialize';
 
 const Profile = () => {
   const { loading, user } = useAuth0();
@@ -295,19 +295,27 @@ const Profile = () => {
             ''
           )}
         </div>
+        <div className='row'>
+          <div className='center col s12'>
+            <Row>
+              <Col s={1} />
 
-        <div style={PageStyles}>
-        <Row>
-        <Col s={1} />
-          <Col s={10} style={GameBoxStyles}>
-            <Questmap />
-          </Col>
-          <Col s={1} />
-        </Row>
-      </div>
+              <Col s={10} style={GameBoxStyles}>
+                <Questmap />
+              </Col>
+              <Col s={1} />
+            </Row>
+          </div>
+        </div>
       </div>
     </>
   );
+};
+    
+const GameBoxStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  position: 'relative',
 };
 
 const profileStyle = {
@@ -327,16 +335,10 @@ const h3Style = {
 };
 
 const PageStyles = {
-  paddingTop: "10px",
-  paddingBottom: "150px",
-  width: "100%",
-  height: "100%",
+  paddingTop: '100px',
+  paddingBottom: '150px',
+  width: '100%',
+  height: '100%',
 };
-
-const GameBoxStyles = {
-  display: "flex",
-  justifyContent: "center",
-};
-
 
 export default Profile;
