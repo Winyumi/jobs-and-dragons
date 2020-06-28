@@ -228,7 +228,7 @@ class UserForm extends Component {
                     </div>
                 );
 
-            case 6:
+/*             case 6:
 
                 return (
                     <div className="App pt-5 mt-5">
@@ -238,7 +238,7 @@ class UserForm extends Component {
                         </div>
                         <br />
                     </div>
-                );
+                ); */
 
         }
     }

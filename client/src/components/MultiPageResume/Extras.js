@@ -5,6 +5,7 @@ const FileDownload = require('js-file-download');
 
 
 
+
 class Extras extends Component {
 
     back = e => {
@@ -61,6 +62,7 @@ class Extras extends Component {
                     <div>
                         <button type="button" className="waves-effect waves-light btn" onClick={this.back}><i className="material-icons left">navigate_before</i>Back</button>
                         <button type="submit" className="waves-effect waves-light btn">Download PDF<i className="material-icons right">file_download</i></button>
+                    
                     </div>
                 </form>
             </div>

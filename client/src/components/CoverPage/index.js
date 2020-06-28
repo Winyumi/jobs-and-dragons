@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactToPrint from 'react-to-print';
 import Home from './HomePage';
+import Auth0Context from '../../react-auth0-spa';
 import { Link } from 'react-router-dom';
 
 export default class index extends Component {
@@ -17,12 +18,70 @@ export default class index extends Component {
     close: 'close',
   };
 
+  static contextType = Auth0Context;
+
+  saveButton = () => {
+    const userEmail = this.context.user.email;
+    let coverPageInfo = {
+      receiver: this.state.receiver,
+      receiverCompany: this.state.receiverCompany,
+      position: this.state.position,
+      sender: this.state.sender,
+      address: this.state.address,
+      phone: this.state.phone,
+      email: this.state.email,
+      intro: this.state.intro,
+      body: this.state.body,
+      close: this.state.close,
+    };
+    async function quest3comp(data, email) {
+      const res = fetch(`/api/v1/users/email/${email}`, {
+        method: 'PUT',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        return res.data;
+      }
+    }
+
+    async function coverPageSave(data, email) {
+      const res = fetch(`/api/v1/users/emailCP/${email}`, {
+        method: 'PUT',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        return res.data;
+      }
+    }
+    quest3comp(
+      {
+        progressTracker: {
+          quest1: true,
+          quest2: true,
+          quest3: true,
+        },
+      },
+      userEmail
+    );
+
+    coverPageSave(coverPageInfo, userEmail);
+  };
   submitButton = () => (
     <div>
       <ReactToPrint
         trigger={() => (
           <a style={{ fontFamily: 'Alagard' }} href='#'>
-            Print<i class='material-icons right'>print</i>
+            Print<i className='material-icons right'>print</i>
           </a>
         )}
         content={() => this.componentRef}
@@ -51,7 +110,6 @@ export default class index extends Component {
   } */
 
   render() {
-    console.log(this.state);
     return (
       <React.Fragment>
         <div className='logContainer'>
@@ -151,6 +209,14 @@ export default class index extends Component {
             <button className='print waves-effect waves-light btn'>
               {this.submitButton()}
             </button>
+            <button
+              onClick={this.saveButton}
+              className='print waves-effect waves-light btn'
+            >
+              <a style={{ fontFamily: 'Alagard' }} href='#'>
+                Save
+              </a>
+            </button>
           </form>
         </div>
         <Link to='/joblisting/saved' target='_blank'>
@@ -159,7 +225,7 @@ export default class index extends Component {
               className='info-visible btn-floating btn-medium black'
               //onClick={this.onSubmitHandler}
             >
-              <i class='small material-icons'>visibility</i>
+              <i className='small material-icons'>visibility</i>
             </button>
           </div>
         </Link>

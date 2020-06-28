@@ -35,7 +35,6 @@ export default class index extends Component {
         expertise,
         projects,
       } = this.props.location.state;
-      console.log(this.props.location.state);
       this.setState({
         name: name,
         email: email,
@@ -109,6 +108,10 @@ export default class index extends Component {
       expertise: this.state.expertise,
       descripiton: this.state.description,
       designation: this.state.designation,
+      progressTracker: { 
+        quest1: true,
+        quest2: false,
+        quest3: false }
     };
     async function getUserInfo(userEmail) {
       try {
@@ -148,15 +151,10 @@ export default class index extends Component {
       });
       if (res.ok) {
         const jsonRes = await res.json();
-        console.log(jsonRes);
         return jsonRes.data;
       }
     }
-    // console.log(this.state.email);
     getUserInfo(this.state.email).then((result) => {
-      // console.log(result);
-      // console.log(result.data.email);
-      // console.log(this.state.email);
       if (result.data.email === this.state.email) {
         updateUserInfo(userInfo, result.data.email);
       } else {
