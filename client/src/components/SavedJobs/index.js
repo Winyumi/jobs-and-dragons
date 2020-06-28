@@ -71,9 +71,20 @@ export default class SavedJobs extends React.Component {
                     Return to Job Search
                   </button>
                 </Link>
+                <Link to='/profile'>
+                  <button
+                    rel='noopener noreferrer'
+                    className='btn btn-large red darken-4'
+                  >
+                    Return to Dashboard
+                  </button>
+                </Link>
               </div>
 
               <div className='center col s12 m8'>
+                <h1>No Listing saved</h1>
+              </div>
+              {/* <div className='center col s12 m8'>
                 <ul>
                   {items.map((item) => (
                     <li key={item.id}>
@@ -115,7 +126,7 @@ export default class SavedJobs extends React.Component {
                     </li>
                   ))}{' '}
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </>

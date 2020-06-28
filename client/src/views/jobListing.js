@@ -213,6 +213,18 @@ export default class jobListing extends React.Component {
                       </button>
                     </Link>
                   </div>
+                  <br></br>
+                  <br></br>
+                  <div className='input-field'>
+                    <Link to='/profile'>
+                      <button
+                        rel='noopener noreferrer'
+                        className='btn btn-large red darken-4'
+                      >
+                        Dashboard
+                      </button>
+                    </Link>
+                  </div>
                 </div>
 
                 <div className='center col s12 m8'>
@@ -270,6 +282,16 @@ export default class jobListing extends React.Component {
                     </button>
                   </Link>
                 </div>
+                <div className='input-field'>
+                    <Link to='/profile'>
+                      <button
+                        rel='noopener noreferrer'
+                        className='btn btn-large red darken-4'
+                      >
+                        Dashboard
+                      </button>
+                    </Link>
+                  </div>
               </div>
 
               <div className='center col s12 m8'>
@@ -308,7 +330,8 @@ export default class jobListing extends React.Component {
                         </div>
                         <div className='card-action'>
                           <button
-                            onClick={(e) => this.handleSubmitSave(item)}
+                            onClick={(e) => {this.handleSubmitSave(item); return `  <a class="btn" onclick="M.toast({html: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Toast!</a>
+                            `}}
                             value='Save'
                             className='btn btn-large red darken-4'
                           >

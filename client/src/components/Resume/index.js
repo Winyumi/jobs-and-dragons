@@ -169,7 +169,7 @@ export default class index extends Component {
           <Button
             onClick={this.handleComplete}
             className='complete btn-floating btn-medium blue tooltipped'
-            tooltip='Back to Profile'
+            tooltip='Back to Dashboard'
             tooltipOptions={{
               position: 'left'
             }}
