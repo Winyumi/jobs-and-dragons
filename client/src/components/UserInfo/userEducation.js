@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 
 export default class UserEducation extends Component {
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-};
 
-continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-}
 
   render() {
     const { education, onChangeHandler, id } = this.props;
@@ -17,7 +9,7 @@ continue = e => {
 
     return (
       <div className='info' id={id}>
-      <form onSubmit={this.continue}>
+      <form>
         <div className='form-group'>
           <input
             type='text'

@@ -3,18 +3,13 @@ import React, { Component } from 'react';
 export default class UserDetail extends Component {
 
 
-continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-}
-
   render() {
     const { values, onChangeHandler } = this.props;
     const { name, email, bio, phone } = values;
     return (
       <div className='info'>
         <h3>Info</h3>
-        <form onSubmit={this.continue}>
+        <form>
         <div className='form-group'>
           <input
             type='text'

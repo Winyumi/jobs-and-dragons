@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 
 export default class UserExp extends Component {
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-};
 
-continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-}
 
   render() {
     const { experience, onChangeHandler, id } = this.props;
     const { name, start, end, description, designation } = experience;
     return (
       <div className='info' id={id}>
-      <form onSubmit={this.continue}>
+      <form>
         <div className='form-group'>
           <input
             type='text'

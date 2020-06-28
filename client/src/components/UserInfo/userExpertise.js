@@ -17,15 +17,7 @@ const EXPERTISE = [
 ];
 
 class userExpertise extends Component {
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-};
 
-continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-}
 
   state = {
     checkboxes: EXPERTISE.reduce(
@@ -70,7 +62,7 @@ continue = e => {
   render() {
     return (
       <div className='row'>
-      <form onSubmit={this.continue}>
+      <form>
         <div className='col'>{this.createCheckboxes()}</div>
         <div>
           <button

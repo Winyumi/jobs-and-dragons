@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 export default class UserProjects extends Component {
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-};
 
 
 
