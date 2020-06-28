@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
 import { api } from '../utils/api';
@@ -16,6 +16,7 @@ import { Row, Col } from 'react-materialize';
 const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (loading || !user) {
@@ -25,7 +26,9 @@ const Profile = () => {
     api.getUserInfo(user.email).then((result) => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
+        setIsLoading(false);
       } else {
+        setIsLoading(true);
         let newUser = {
           name: '',
           email: '',
@@ -80,6 +83,7 @@ const Profile = () => {
                 api.addUserInfo(newUser).then((result) => {
                   if (result.success) {
                     dispatch({ type: 'user', payload: result.data });
+                    setIsLoading(false);
                   }
                 });
               });
@@ -121,7 +125,7 @@ const Profile = () => {
                 </div>
 
                 <div className='row valign-wrapper'>
-                  <ProgressBarExample />
+                  {!isLoading ? <ProgressBarExample /> : null}
                 </div>
               </div>
             </div>
@@ -296,10 +300,9 @@ const Profile = () => {
           )}
         </div>
         <div className='row'>
-          <div className='center col s12'>
+          <div style={PageStyles}>
             <Row>
               <Col s={1} />
-
               <Col s={10} style={GameBoxStyles}>
                 <Questmap />
               </Col>
@@ -311,7 +314,7 @@ const Profile = () => {
     </>
   );
 };
-    
+
 const GameBoxStyles = {
   display: 'flex',
   justifyContent: 'center',
@@ -335,7 +338,7 @@ const h3Style = {
 };
 
 const PageStyles = {
-  paddingTop: '100px',
+  paddingTop: '10px',
   paddingBottom: '150px',
   width: '100%',
   height: '100%',
