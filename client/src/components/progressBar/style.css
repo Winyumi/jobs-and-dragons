@@ -1,18 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-
-
 .progress-bar {
-float: center;
   height: 50px;
-  width: 500px;
-  border-radius: 0px;
+  max-width: auto;
   border: 9px groove rgb(92, 27, 27);
   position:relative;
-  margin-left: 200px;
-
-
- 
+  margin:10px;
 }
 
 .filler {
@@ -20,7 +11,6 @@ float: center;
   height: 100%;
   border-radius: inherit;
   transition: width .2s ease-in;
-
 }
 
 button {

@@ -1,30 +1,45 @@
-import React, { useState, useEffect } from "react";
-import { api } from "../utils/api";
-import { useUserContext } from "../contexts/UserContext";
-import "materialize-css";
+import React, { useState, useEffect } from 'react';
+import { useUserContext } from '../contexts/UserContext';
+import 'materialize-css';
+import { useAuth0 } from '../react-auth0-spa';
+import Loading from '../components/Loading';
 
 const Stats = () => {
-  const [state, dispatch] = useUserContext();
+  const { loading } = useAuth0();
+  const [state] = useUserContext();
   const [gamestats, setGamestats] = useState({});
 
   useEffect(() => {
     setGamestats(state.user.gamestats);
   }, [state.user.gamestats]);
+
+  if (loading || Object.keys(gamestats).length === 0) {
+    return <Loading />;
+  }
+
   return (
     <>
-      <div>
-        <h4 className="center">STATS</h4>
-
-        <h6 className="center">HP</h6>
-        <StatsBar stat={gamestats.numOfStars * 10} />
-        <h6 className="center">JP</h6>
-        <StatsBar stat={gamestats.jp} />
-        <h6 className="center">STRENGTH</h6>
-        <StatsBar stat={gamestats.followers} />
-        <h6 className="center">SPEED</h6>
-        <StatsBar stat={gamestats.speed} />
-        <h6 className="center">EXPERIENCE</h6>
-        <StatsBar stat={gamestats.publicRepos} />
+      <div className="row valign-wrapper" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+        {/* <div className="col s12">
+          <span>HP</span>
+          <StatsBar stat={gamestats.numOfStars * 10} />
+        </div> */}
+        <div className="col s12">
+          <span>HP</span>
+          <StatsBar stat={gamestats.jp} />
+        </div>
+        {/* <div className="col s12">
+          <span >STRENGTH</span>
+          <StatsBar stat={gamestats.followers} />
+        </div> */}
+        <div className="col s12">
+          <span>SPEED</span>
+          <StatsBar stat={gamestats.speed} />
+        </div>
+        <div className="col s12">
+          <span>XP</span>
+          <StatsBar stat={gamestats.publicRepos} />
+        </div>
       </div>
     </>
   );
@@ -32,14 +47,7 @@ const Stats = () => {
 
 const StatsBar = (props) => {
   return (
-    <div
-      className="stats-bar"
-      style={{
-        position: "relative",
-        height: "30px",
-        border: "1px solid black",
-      }}
-    >
+    <div className='stats-bar'>
       <Filler stat={props.stat} />
     </div>
   );
@@ -47,15 +55,8 @@ const StatsBar = (props) => {
 
 const Filler = (props) => {
   return (
-    <div
-      className="filler"
-      style={{
-        background: "red",
-        height: "100%",
-        width: `${props.stat}px`,
-      }}
-    >
-      <p>{props.stat}/100</p>
+    <div className='card-panel red'>
+      <span className='white-text'>{props.stat}</span>
     </div>
   );
 };
