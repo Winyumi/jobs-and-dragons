@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
 import { api } from '../utils/api';
@@ -11,11 +11,12 @@ import ProgressBarExample from '../components/progressBar/index';
 import Questmap from '../components/Questmap';
 import Loading from '../components/Loading';
 import { useAuth0 } from '../react-auth0-spa';
-import { Row, Col } from "react-materialize";
+import { Row, Col } from 'react-materialize';
 
 const Profile = () => {
   const { loading, user } = useAuth0();
   const [state, dispatch] = useUserContext();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (loading || !user) {
@@ -25,7 +26,9 @@ const Profile = () => {
     api.getUserInfo(user.email).then((result) => {
       if (result.success) {
         dispatch({ type: 'user', payload: result.data });
+        setIsLoading(false);
       } else {
+        setIsLoading(true);
         let newUser = {
           name: '',
           email: '',
@@ -80,6 +83,7 @@ const Profile = () => {
                 api.addUserInfo(newUser).then((result) => {
                   if (result.success) {
                     dispatch({ type: 'user', payload: result.data });
+                    setIsLoading(false);
                   }
                 });
               });
@@ -121,7 +125,7 @@ const Profile = () => {
                 </div>
 
                 <div className='row valign-wrapper'>
-                  <ProgressBarExample />
+                  {!isLoading ? <ProgressBarExample /> : null}
                 </div>
               </div>
             </div>
@@ -297,14 +301,14 @@ const Profile = () => {
         </div>
 
         <div style={PageStyles}>
-        <Row>
-        <Col s={1} />
-          <Col s={10} style={GameBoxStyles}>
-            <Questmap />
-          </Col>
-          <Col s={1} />
-        </Row>
-      </div>
+          <Row>
+            <Col s={1} />
+            <Col s={10} style={GameBoxStyles}>
+              <Questmap />
+            </Col>
+            <Col s={1} />
+          </Row>
+        </div>
       </div>
     </>
   );
@@ -327,16 +331,15 @@ const h3Style = {
 };
 
 const PageStyles = {
-  paddingTop: "10px",
-  paddingBottom: "150px",
-  width: "100%",
-  height: "100%",
+  paddingTop: '10px',
+  paddingBottom: '150px',
+  width: '100%',
+  height: '100%',
 };
 
 const GameBoxStyles = {
-  display: "flex",
-  justifyContent: "center",
+  display: 'flex',
+  justifyContent: 'center',
 };
-
 
 export default Profile;
