@@ -157,7 +157,7 @@ export default class index extends Component {
       }
     }
     getUserInfo(this.state.email).then((result) => {
-      if (result.data.email === this.state.email) {
+      if (result.data.email && result.data.email === this.state.email) {
         updateUserInfo(userInfo, result.data.email);
       } else {
         addUserInfo(userInfo);
