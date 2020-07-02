@@ -11,6 +11,7 @@ import 'materialize-css';
 function Home() {
   return (
     <>
+
       <div style={mainStyle}>
         <img
           className='responsive-img'
@@ -18,7 +19,13 @@ function Home() {
           src={background}
           alt='Background'
         />
+
         <div style={topStyle}>
+          <div style={loginStyle}>
+            <h4>Guest Login</h4>
+            <p>Email: jobsanddragons@gmail.com</p>
+            <p>Password: J&Dteam2020</p>
+          </div>
           <div className='container'>
             <img
               style={brandLogoStyle}
@@ -31,9 +38,12 @@ function Home() {
           <div className='container' style={descStyle}>
             <h3>Let the JOB HUNT begin ...</h3>
           </div>
+
         </div>
+
         <LandingDescription />
       </div>
+
     </>
   );
 }
@@ -71,5 +81,14 @@ const descStyle = {
   width: '90vw',
   textShadow: '2px 2px black',
 };
+
+const loginStyle = {
+  marginTop: "0",
+  top: "0",
+  float: "right",
+  color: 'white',
+  width: "30rem",
+  background: 'black'
+}
 
 export default Home;
