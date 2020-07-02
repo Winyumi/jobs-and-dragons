@@ -22,8 +22,10 @@ Searching for a job in your field can be frustrating, repetitive, laborious, and
 
 Go to [Jobs & Dragons](https://jobs-and-dragons.herokuapp.com/)
 
-Guest Login:
+Demo Guest Login:
+
 email - jobsanddragons@gmail.com
+
 password - J&Dteam2020
 
 ## Motivation
