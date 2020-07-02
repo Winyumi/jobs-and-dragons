@@ -52,7 +52,7 @@ SO THAT I be ready for the next opportunity
 
 ## Getting Started
 
-1. Visit the website and log into using your GitHub profile. If you do not have a GitHub account or do not wish to provide the app with your info, please use the Demo Guest Login email and password provided below. Those who do not log in with a GitHub account will not have the base 
+1. Visit the website and log into using your GitHub profile. If you do not have a GitHub account or do not wish to provide the app with your info, please use the Demo Guest Login email and password provided above. Those who do not log in with a GitHub account will not have the base 
 RPG character stats as those who do.
 2. Through the profile page, navigate through the quests:
   - Quest 1: Find the Oracle and create your first resume.
