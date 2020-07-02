@@ -48,11 +48,11 @@ export default class index extends Component {
     }
   }
 
-  componentDidMount() {
-    if (localStorage.getItem('data')) {
-      this.setState(JSON.parse(localStorage.getItem('data')))
-    }
-  }
+  // componentDidMount() {
+  //   if (localStorage.getItem('data')) {
+  //     this.setState(JSON.parse(localStorage.getItem('data')))
+  //   }
+  // }
 
   onChangeHandler = (name, from, id) => (e) => {
     let value = e.target.value;
@@ -109,10 +109,11 @@ export default class index extends Component {
       expertise: this.state.expertise,
       descripiton: this.state.description,
       designation: this.state.designation,
-      progressTracker: { 
+      progressTracker: {
         quest1: true,
         quest2: false,
-        quest3: false }
+        quest3: false,
+      },
     };
     async function getUserInfo(userEmail) {
       try {
@@ -156,7 +157,7 @@ export default class index extends Component {
       }
     }
     getUserInfo(this.state.email).then((result) => {
-      if (result.data.email === this.state.email) {
+      if (result.data.email && result.data.email === this.state.email) {
         updateUserInfo(userInfo, result.data.email);
       } else {
         addUserInfo(userInfo);
@@ -164,7 +165,6 @@ export default class index extends Component {
     });
     localStorage.setItem('data', JSON.stringify(userInfo));
     this.props.history.push({ pathname: '/resume', state: this.state });
-
   };
 
   handleExpertiseSubmit = (expertise) => {
@@ -206,7 +206,6 @@ export default class index extends Component {
                 education={formValue}
               />
             </div>
-
           ))}
         </section>
         <hr></hr>

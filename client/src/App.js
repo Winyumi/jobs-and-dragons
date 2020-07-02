@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import 'materialize-css';
 
 import PrivateRoute from './components/PrivateRoute';
@@ -14,7 +14,6 @@ import SavedJobs from './views/SavedJobs';
 
 // import { useUserContext } from './contexts/UserContext';
 import { useAuth0 } from './react-auth0-spa';
-import history from './utils/history';
 import UserInfo from './components/UserInfo';
 import CoverPage from './components/CoverPage';
 import Resume from './components/Resume';
@@ -30,54 +29,48 @@ const App = () => {
   }
 
   return (
-    <Router history={history}>
-      <div id='app'>
-        {isAuthenticated ? <NavBar /> : null}
-        <div className='row'>
-          <Switch>
-            {isAuthenticated ? (
-              <Route exact path='/' component={Home} />
-            ) : (
-              <Route>
-                <NavBar />
-                <Home />
-                <Footer />
-              </Route>
-            )}
+    <div id='app'>
+      {isAuthenticated ? <NavBar /> : null}
+      <div className='row'>
+        <Switch>
+          {isAuthenticated ? (
+            <Route exact path='/' component={Home} />
+          ) : (
+            <Route>
+              <NavBar />
+              <Home />
+              <Footer />
+            </Route>
+          )}
 
-            <PrivateRoute
-              exact
-              path='/userinfo'
-              component={UserInfo}
-            ></PrivateRoute>
-            <PrivateRoute
-              exact
-              path='/joblisting'
-              component={jobListing}
-            ></PrivateRoute>
-            <PrivateRoute
-              exact
-              path='/joblisting/saved'
-              component={SavedJobs}
-            ></PrivateRoute>
-            <PrivateRoute
-              exact
-              path='/coverpage'
-              component={CoverPage}
-            ></PrivateRoute>
-            <PrivateRoute
-              exact
-              path='/resume'
-              component={Resume}
-            ></PrivateRoute>
+          <PrivateRoute
+            exact
+            path='/userinfo'
+            component={UserInfo}
+          ></PrivateRoute>
+          <PrivateRoute
+            exact
+            path='/joblisting'
+            component={jobListing}
+          ></PrivateRoute>
+          <PrivateRoute
+            exact
+            path='/joblisting/saved'
+            component={SavedJobs}
+          ></PrivateRoute>
+          <PrivateRoute
+            exact
+            path='/coverpage'
+            component={CoverPage}
+          ></PrivateRoute>
+          <PrivateRoute exact path='/resume' component={Resume}></PrivateRoute>
 
-            <PrivateRoute path='/game' component={Game}></PrivateRoute>
-            <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
-          </Switch>
-        </div>
-        {isAuthenticated ? <Footer /> : null}
+          <PrivateRoute path='/game' component={Game}></PrivateRoute>
+          <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
+        </Switch>
       </div>
-    </Router>
+      {isAuthenticated ? <Footer /> : null}
+    </div>
   );
 };
 

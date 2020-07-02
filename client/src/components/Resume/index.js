@@ -85,8 +85,8 @@ export default class index extends Component {
                               </div>
                               <div className='description'>
                                 <ul>
-                                  {exp.description.split(',').map((desc) => (
-                                    <li>{desc}</li>
+                                  {exp.description.split(',').map((desc, i) => (
+                                    <li key={i}>{desc}</li>
                                   ))}
                                 </ul>
                               </div>
@@ -147,10 +147,10 @@ export default class index extends Component {
         </PDFExport>
         <div>
           <Button
-            className='back btn-floating btn-medium red darken-4 tooltipped' 
+            className='back btn-floating btn-medium red darken-4 tooltipped'
             tooltip='Edit'
             tooltipOptions={{
-              position: 'left'
+              position: 'left',
             }}
             onClick={this.onSubmitHandler}
           >
@@ -158,10 +158,10 @@ export default class index extends Component {
           </Button>
           <Button
             onClick={this.exportToPDF}
-            className='download btn-floating btn-medium red darken-4 tooltipped' 
+            className='download btn-floating btn-medium red darken-4 tooltipped'
             tooltip='Download PDF'
             tooltipOptions={{
-              position: 'left'
+              position: 'left',
             }}
           >
             <i className='small material-icons'>file_download</i>
@@ -171,7 +171,7 @@ export default class index extends Component {
             className='complete btn-floating btn-medium red darken-4 tooltipped'
             tooltip='Back to Dashboard'
             tooltipOptions={{
-              position: 'left'
+              position: 'left',
             }}
           >
             <i className='small material-icons'>flash_on</i>
