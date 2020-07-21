@@ -122,8 +122,7 @@ export default class Index extends Component {
         </Page>
       </Document >
     )
-
-    ReactPDF.render(<CoverLetter />, `${__dirname}/${props.sender}CoverLetter.pdf`);
+    // ReactPDF.render(<CoverLetter />, `${__dirname}/${props.sender}CoverLetter.pdf`);
   }
 
 
@@ -165,22 +164,45 @@ export default class Index extends Component {
       <React.Fragment>
         <Row>
           <Col className='' s={2}>
-            <Link 
+            <div 
+              className='buttons'
+              style={{position: 'fixed', display: 'flex', flexDirection: 'column'}}
+              >
+              <Link
+                target='_blank'
+                to='/joblisting/saved'>
+                <button
+                  className='gotosaved btn btn-large red darken-4'
 
-              to='/joblisting/saved'>
-              <button
-                className='gotosaved btn btn-large red darken-4'
-
-              > Go to Saved  Jobs
+                > Go to Saved  Jobs
               </button>
-            </Link>
-            <Link to='/userinfo'>
-              <button
-                className='gotoresume btn btn-large red darken-4'
-              >Resume Builder
+              </Link>
+              <Link
+                target='_blank'
+                to='/userinfo'>
+                <button
+                  className='gotoresume btn btn-large red darken-4'
+                >Resume Builder
             </button>
-            </Link>
+              </Link>
+              <button className='print btn btn-large red darken-4'>
+                {this.submitButton()}
+                <a style={{ fontFamily: 'Alagard', color: 'white' }} href='#!'>
+                  Submit
+                </a>
+              </button>
+
+              <button
+                onClick={this.saveButton}
+                className='btn btn-large red darken-4'
+              >
+                <a style={{ fontFamily: 'Alagard', color: 'white' }} href='#!'>
+                  Save
+                </a>
+              </button>
+            </div>
           </Col>
+
 
           <Col className='' s={10}>
             <div className='logContainer'>
@@ -277,18 +299,6 @@ export default class Index extends Component {
                     })
                   }
                 />
-                <button className='print btn btn-large red darken-4'>
-                  {this.submitButton()}
-                </button>
-
-                <button
-                  onClick={this.saveButton}
-                  className='btn btn-large red darken-4'
-                >
-                  <a style={{ fontFamily: 'Alagard', color: 'white' }} href='#!'>
-                    Save
-                </a>
-                </button>
               </form>
             </div>
           </Col>
