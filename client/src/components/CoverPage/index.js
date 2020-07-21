@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import ReactToPrint from 'react-to-print';
-import Home from './HomePage';
+import ReactPDF, {
+  Document,
+  Page,
+} from '@react-pdf/renderer';
+// import CoverLetter from './HomePage';
 import Auth0Context from '../../react-auth0-spa';
 import { Link } from 'react-router-dom';
 
 import { Row, Col } from 'react-materialize';
 
-export default class index extends Component {
+export default class Index extends Component {
   state = {
     receiver: 'Receiver ',
     receiverCompany: 'Company',
@@ -79,33 +83,77 @@ export default class index extends Component {
     coverPageSave(coverPageInfo, userEmail);
   };
 
-  submitButton = () => (
-    <div>
-      <ReactToPrint
-        trigger={() => (
-          <a style={{ fontFamily: 'Alagard', color: 'white' }} href='!#'>
-            Print<i className='material-icons right'>print</i>
-          </a>
-        )}
-        content={() => this.componentRef}
-      />
-      <div className='home-hidden'>
-        <Home
-          ref={(el) => (this.componentRef = el)}
-          receiver={this.state.receiver}
-          receiverCompany={this.state.receiverCompany}
-          position={this.state.position}
-          sender={this.state.sender}
-          address={this.state.address}
-          phone={this.state.phone}
-          email={this.state.email}
-          intro={this.state.intro}
-          body={this.state.body}
-          close={this.state.close}
-        />
-      </div>
-    </div>
-  );
+  submitButton = () => {
+    const props = this.props;
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    const today = new Date();
+
+    const CoverLetter = (
+      <Document className="cpsummary">
+        <Page size="A4">
+          <header>
+            <h4>{props.sender} | {props.position}</h4>
+          </header>
+          <div className="page" style={{ fontSize: '12px' }}>
+            <div>
+              <p>{monthNames[today.getMonth()]} {today.getDate()}, {today.getFullYear()}</p>
+              <p style={{ color: '#ff3333' }}>To</p>
+              <p>{props.receiver}</p>
+              <p>{props.receiverCompany}</p>
+            </div>
+            <div>
+              <p><span style={{ color: '#ff3333', fontSize: '12px' }}>From: </span> {props.sender}</p>
+              <p><span style={{ color: '#ff3333', fontSize: '12px' }}>Address: </span> {props.address}</p>
+              <p><span style={{ color: '#ff3333', fontSize: '12px' }}>Phone: </span> {props.phone}</p>
+              <p><span style={{ color: '#ff3333', fontSize: '12px' }}>E-mail: </span> {props.email}</p>
+            </div>
+            <div>
+              <p style={{ marginTop: '25px' }}>Hi {props.receiver},</p>
+              <p style={{ fontSize: '12px' }}>{props.intro}</p>
+              <p style={{ fontSize: '12px' }}>{props.body}</p>
+              <p style={{ fontSize: '12px' }}>{props.close}</p>
+              <p style={{ marginTop: '25px' }}>Sincerely,</p>
+              <p>{props.sender}</p>
+            </div>
+          </div>
+        </Page>
+      </Document >
+    )
+
+    ReactPDF.render(<CoverLetter />, `${__dirname}/${props.sender}CoverLetter.pdf`);
+  }
+
+
+  // (
+  //   <div>
+  //     <ReactToPrint
+  //       trigger={() => (
+  //         <a style={{ fontFamily: 'Alagard', color: 'white' }} href='!#'>
+  //           Print<i className='material-icons right'>print</i>
+  //         </a>
+  //       )}
+  //       content={() => this.componentRef}
+  //     />
+  //     <div className='home-hidden'>
+  //       <Home
+  //         ref={(el) => (this.componentRef = el)}
+  //         receiver={this.state.receiver}
+  //         receiverCompany={this.state.receiverCompany}
+  //         position={this.state.position}
+  //         sender={this.state.sender}
+  //         address={this.state.address}
+  //         phone={this.state.phone}
+  //         email={this.state.email}
+  //         intro={this.state.intro}
+  //         body={this.state.body}
+  //         close={this.state.close}
+  //       />
+  //     </div>
+  //   </div>
+  // );
 
   onSubmitHandler = (e) => {
     e.preventDefault();
@@ -117,7 +165,9 @@ export default class index extends Component {
       <React.Fragment>
         <Row>
           <Col className='' s={2}>
-            <Link to='/joblisting/saved'>
+            <Link 
+
+              to='/joblisting/saved'>
               <button
                 className='gotosaved btn btn-large red darken-4'
 
@@ -235,7 +285,7 @@ export default class index extends Component {
                   onClick={this.saveButton}
                   className='btn btn-large red darken-4'
                 >
-                  <a style={{ fontFamily: 'Alagard', color: 'white' }} href='!#'>
+                  <a style={{ fontFamily: 'Alagard', color: 'white' }} href='#!'>
                     Save
                 </a>
                 </button>
@@ -247,3 +297,5 @@ export default class index extends Component {
     );
   }
 }
+
+

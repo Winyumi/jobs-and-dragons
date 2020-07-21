@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import 'materialize-css';
 import { Row, Col } from 'react-materialize';
 import World from './World';
 import Dialogue from './Modals/Dialogue';

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import 'materialize-css';
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min.js";
 
 import PrivateRoute from './components/PrivateRoute';
 import Loading from './components/Loading';
@@ -63,10 +65,11 @@ const App = () => {
             path='/coverpage'
             component={CoverPage}
           ></PrivateRoute>
-          <PrivateRoute exact path='/resume' component={Resume}></PrivateRoute>
 
+          <PrivateRoute exact path='/resume' component={Resume}></PrivateRoute>
           <PrivateRoute path='/game' component={Game}></PrivateRoute>
           <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
+          
         </Switch>
       </div>
       {isAuthenticated ? <Footer /> : null}

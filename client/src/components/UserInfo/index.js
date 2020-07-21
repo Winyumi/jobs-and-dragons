@@ -64,6 +64,7 @@ export default class index extends Component {
     }
     this.setState(newState);
   };
+
   addMoreFormGrp = (grp) => (e) => {
     e.preventDefault();
     let newState = { ...this.state };
@@ -89,6 +90,7 @@ export default class index extends Component {
     }
     this.setState(newState);
   };
+
   removeFormGrp = (grp, id) => (e) => {
     e.preventDefault();
     let newState = { ...this.state };
@@ -142,6 +144,7 @@ export default class index extends Component {
         return res.data;
       }
     }
+
     async function addUserInfo(userInfo) {
       //check if user exisits
       const res = await fetch('/api/v1/users', {
@@ -156,11 +159,17 @@ export default class index extends Component {
         return jsonRes.data;
       }
     }
+
     getUserInfo(this.state.email).then((result) => {
-      if (result.data.email && result.data.email === this.state.email) {
-        updateUserInfo(userInfo, result.data.email);
-      } else {
-        addUserInfo(userInfo);
+      try {
+        if (result.data.email && result.data.email === this.state.email) {
+          updateUserInfo(userInfo, result.data.email);
+        } else {
+          addUserInfo(userInfo);
+        }
+      } catch (err) {
+        console.log("empty field(s) in userinfo page")
+        return;
       }
     });
     localStorage.setItem('data', JSON.stringify(userInfo));

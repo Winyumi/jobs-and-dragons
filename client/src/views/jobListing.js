@@ -68,19 +68,19 @@ export default class JobListing extends React.Component {
     const searchLocation = this.state.searchLocation;
 
     fetch(
-      // 'https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=' +
-      //   APP_ID +
-      //   '&app_key=' +
-      //   APP_KEY +
-      //   '&what=' +
-      //   query +
-      //   '&where=' +
-      //   searchLocation
-      `https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}` +
-      '&what=' +
-      query +
-      '&where=' +
-      searchLocation
+      'https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=' +
+        APP_ID +
+        '&app_key=' +
+        APP_KEY +
+        '&what=' +
+        query +
+        '&where=' +
+        searchLocation
+      // `https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}` +
+      // '&what=' +
+      // query +
+      // '&where=' +
+      // searchLocation
     )
       .then((res) => res.json())
       .then(
