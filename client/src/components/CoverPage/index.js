@@ -78,11 +78,12 @@ export default class index extends Component {
 
     coverPageSave(coverPageInfo, userEmail);
   };
+
   submitButton = () => (
     <div>
       <ReactToPrint
         trigger={() => (
-          <a style={{ fontFamily: 'Alagard', color:'white' }} href='#'>
+          <a style={{ fontFamily: 'Alagard', color: 'white' }} href='!#'>
             Print<i className='material-icons right'>print</i>
           </a>
         )}
@@ -106,142 +107,142 @@ export default class index extends Component {
     </div>
   );
 
-     onSubmitHandler = (e) => {
+  onSubmitHandler = (e) => {
     e.preventDefault();
-    
-  } 
+
+  }
 
   render() {
     return (
       <React.Fragment>
         <Row>
-        <Col className='' s={2}>
-          <Link to ='/joblisting/saved'>
-                <button
-                  className='gotosaved btn btn-large red darken-4'  
+          <Col className='' s={2}>
+            <Link to='/joblisting/saved'>
+              <button
+                className='gotosaved btn btn-large red darken-4'
 
-                > Go to Saved  Jobs   
+              > Go to Saved  Jobs
               </button>
-              </Link>
-              <Link to ='/userinfo'>
+            </Link>
+            <Link to='/userinfo'>
               <button
                 className='gotoresume btn btn-large red darken-4'
               >Resume Builder
             </button>
-          </Link>
-        </Col>
+            </Link>
+          </Col>
 
-        <Col className='' s={10}>
-        <div className='logContainer'>
-          <form>
-            <h2>Cover Letter Generator</h2>
-            <p>Receiver</p>
-            <input
-              placeholder="Receiver's Name"
-              onBlur={(element) =>
-                this.setState({
-                  receiver: element.target.value,
-                })
-              }
-            />
-            <p>Company</p>
-            <input
-              placeholder="Receiver's Company"
-              onBlur={(element) =>
-                this.setState({
-                  receiverCompany: element.target.value,
-                })
-              }
-            />
-            <p>Position</p>
-            <input
-              placeholder='Position applied for'
-              onBlur={(element) =>
-                this.setState({
-                  position: element.target.value,
-                })
-              }
-            />
-            <p>Sender</p>
-            <input
-              placeholder="Sender's Name"
-              onBlur={(element) =>
-                this.setState({
-                  sender: element.target.value,
-                })
-              }
-            />
-            <p>Address</p>
-            <input
-              placeholder="Sender's Address"
-              onBlur={(element) =>
-                this.setState({
-                  address: element.target.value,
-                })
-              }
-            />
-            <p>Phone</p>
-            <input
-              placeholder="Sender's Phone"
-              onBlur={(element) =>
-                this.setState({
-                  phone: element.target.value,
-                })
-              }
-            />
-            <p>Email</p>
-            <input
-              type='email'
-              placeholder="Sender's Email"
-              onBlur={(element) =>
-                this.setState({
-                  email: element.target.value,
-                })
-              }
-            />
-            <p>Intro</p>
-            <textarea
-              placeholder='This is your opportunity to introduce yourself and includes why you are writing to them'
-              onBlur={(element) =>
-                this.setState({
-                  intro: element.target.value,
-                })
-              }
-            />
-            <p>Body</p>
-            <textarea
-              placeholder='Discuss your relevant qualifications according to the job description'
-              onBlur={(element) =>
-                this.setState({
-                  body: element.target.value,
-                })
-              }
-            />
-            <p>Close</p>
-            <textarea
-              placeholder='Thank the recipient and provide contact information and follow-up details'
-              onBlur={(element) =>
-                this.setState({
-                  close: element.target.value,
-                })
-              }
-            />
-              <button className='print btn btn-large red darken-4'>
-                {this.submitButton()}
-              </button>
-              
-              <button
-                onClick={this.saveButton}
-                className='btn btn-large red darken-4'
-              >
-                <a style={{ fontFamily: 'Alagard', color:'white' }} href='#'>
-                  Save
+          <Col className='' s={10}>
+            <div className='logContainer'>
+              <form>
+                <h2>Cover Letter Generator</h2>
+                <p>Receiver</p>
+                <input
+                  placeholder="Receiver's Name"
+                  onBlur={(element) =>
+                    this.setState({
+                      receiver: element.target.value,
+                    })
+                  }
+                />
+                <p>Company</p>
+                <input
+                  placeholder="Receiver's Company"
+                  onBlur={(element) =>
+                    this.setState({
+                      receiverCompany: element.target.value,
+                    })
+                  }
+                />
+                <p>Position</p>
+                <input
+                  placeholder='Position applied for'
+                  onBlur={(element) =>
+                    this.setState({
+                      position: element.target.value,
+                    })
+                  }
+                />
+                <p>Sender</p>
+                <input
+                  placeholder="Sender's Name"
+                  onBlur={(element) =>
+                    this.setState({
+                      sender: element.target.value,
+                    })
+                  }
+                />
+                <p>Address</p>
+                <input
+                  placeholder="Sender's Address"
+                  onBlur={(element) =>
+                    this.setState({
+                      address: element.target.value,
+                    })
+                  }
+                />
+                <p>Phone</p>
+                <input
+                  placeholder="Sender's Phone"
+                  onBlur={(element) =>
+                    this.setState({
+                      phone: element.target.value,
+                    })
+                  }
+                />
+                <p>Email</p>
+                <input
+                  type='email'
+                  placeholder="Sender's Email"
+                  onBlur={(element) =>
+                    this.setState({
+                      email: element.target.value,
+                    })
+                  }
+                />
+                <p>Intro</p>
+                <textarea
+                  placeholder='This is your opportunity to introduce yourself and includes why you are writing to them'
+                  onBlur={(element) =>
+                    this.setState({
+                      intro: element.target.value,
+                    })
+                  }
+                />
+                <p>Body</p>
+                <textarea
+                  placeholder='Discuss your relevant qualifications according to the job description'
+                  onBlur={(element) =>
+                    this.setState({
+                      body: element.target.value,
+                    })
+                  }
+                />
+                <p>Close</p>
+                <textarea
+                  placeholder='Thank the recipient and provide contact information and follow-up details'
+                  onBlur={(element) =>
+                    this.setState({
+                      close: element.target.value,
+                    })
+                  }
+                />
+                <button className='print btn btn-large red darken-4'>
+                  {this.submitButton()}
+                </button>
+
+                <button
+                  onClick={this.saveButton}
+                  className='btn btn-large red darken-4'
+                >
+                  <a style={{ fontFamily: 'Alagard', color: 'white' }} href='!#'>
+                    Save
                 </a>
-            </button>
-            </form>
-          </div> 
-        </Col>
-      </Row>
+                </button>
+              </form>
+            </div>
+          </Col>
+        </Row>
       </React.Fragment>
     );
   }

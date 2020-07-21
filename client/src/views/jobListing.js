@@ -9,10 +9,12 @@ import Loading from '../components/Loading';
 import Auth0Context from '../react-auth0-spa';
 import backgroundDark from '../assets/dark-honeycomb.png';
 
-dotenv.config();
+require('dotenv').config();
 
 const APP_ID = 'a69247c0';
 const APP_KEY = '24fc9762a9d2f3a031f002f7afe14f75';
+
+console.log(`${process.env.APP_ID}`)
 
 export default class jobListing extends React.Component {
   constructor(props) {
@@ -35,6 +37,7 @@ export default class jobListing extends React.Component {
         '&app_key=' +
         APP_KEY +
         '&what=Web Developer'
+      // `https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}` + '&what=Web Developer'
     )
       .then((res) => res.json())
       .then(
@@ -65,14 +68,19 @@ export default class jobListing extends React.Component {
     const searchLocation = this.state.searchLocation;
 
     fetch(
-      'https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=' +
-        APP_ID +
-        '&app_key=' +
-        APP_KEY +
-        '&what=' +
-        query +
-        '&where=' +
-        searchLocation
+      // 'https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=' +
+      //   APP_ID +
+      //   '&app_key=' +
+      //   APP_KEY +
+      //   '&what=' +
+      //   query +
+      //   '&where=' +
+      //   searchLocation
+      `https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}` +
+      '&what=' +
+      query +
+      '&where=' +
+      searchLocation
     )
       .then((res) => res.json())
       .then(
