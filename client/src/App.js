@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Home from './views/Home';
 import Profile from './views/Profile';
 import Game from './views/Game';
-import jobListing from './views/jobListing';
+import JobListing from './views/jobListing';
 import SavedJobs from './views/SavedJobs';
 
 // import { useUserContext } from './contexts/UserContext';
@@ -51,7 +51,7 @@ const App = () => {
           <PrivateRoute
             exact
             path='/joblisting'
-            component={jobListing}
+            component={JobListing}
           ></PrivateRoute>
           <PrivateRoute
             exact

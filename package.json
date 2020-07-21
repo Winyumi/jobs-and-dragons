@@ -26,7 +26,7 @@
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/pickers": "^3.2.10",
-    "@react-pdf/renderer": "^1.6.8",
+    "@react-pdf/renderer": "^1.6.9",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",

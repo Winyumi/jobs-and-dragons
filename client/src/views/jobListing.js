@@ -16,7 +16,7 @@ const APP_KEY = '24fc9762a9d2f3a031f002f7afe14f75';
 
 console.log(`${process.env.APP_ID}`)
 
-export default class jobListing extends React.Component {
+export default class JobListing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
