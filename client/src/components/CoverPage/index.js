@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useStyle } from 'react';
 import ReactToPrint from 'react-to-print';
 import ReactPDF, {
   Document,
@@ -8,9 +8,17 @@ import ReactPDF, {
 import Auth0Context from '../../react-auth0-spa';
 import { Link } from 'react-router-dom';
 
-import { Row, Col } from 'react-materialize';
+import { Row, Col, Textarea, Button } from 'react-materialize';
+
+const infoStyle = {
+    color: '#ff3333', 
+    fontSize: '12px'
+};
 
 export default class Index extends Component {
+
+
+
   state = {
     receiver: 'Receiver ',
     receiverCompany: 'Company',
@@ -105,10 +113,10 @@ export default class Index extends Component {
               <p>{props.receiverCompany}</p>
             </div>
             <div>
-              <p><span style={{ color: '#ff3333', fontSize: '12px' }}>From: </span> {props.sender}</p>
-              <p><span style={{ color: '#ff3333', fontSize: '12px' }}>Address: </span> {props.address}</p>
-              <p><span style={{ color: '#ff3333', fontSize: '12px' }}>Phone: </span> {props.phone}</p>
-              <p><span style={{ color: '#ff3333', fontSize: '12px' }}>E-mail: </span> {props.email}</p>
+              <p><span style={infoStyle} >From: </span> {props.sender}</p>
+              <p><span style={infoStyle}>Address: </span> {props.address}</p>
+              <p><span style={infoStyle}>Phone: </span> {props.phone}</p>
+              <p><span style={infoStyle}>E-mail: </span> {props.email}</p>
             </div>
             <div>
               <p style={{ marginTop: '25px' }}>Hi {props.receiver},</p>
@@ -167,15 +175,14 @@ export default class Index extends Component {
             <div 
               className='buttons'
               style={{position: 'fixed', display: 'flex', flexDirection: 'column'}}
-              >
+            >
               <Link
                 target='_blank'
                 to='/joblisting/saved'>
                 <button
                   className='gotosaved btn btn-large red darken-4'
-
-                > Go to Saved  Jobs
-              </button>
+                > Open Saved Jobs
+                </button>
               </Link>
               <Link
                 target='_blank'
@@ -183,23 +190,23 @@ export default class Index extends Component {
                 <button
                   className='gotoresume btn btn-large red darken-4'
                 >Resume Builder
-            </button>
+                </button>
               </Link>
-              <button className='print btn btn-large red darken-4'>
+              <Button className='print btn btn-large red darken-4'>
                 {this.submitButton()}
                 <a style={{ fontFamily: 'Alagard', color: 'white' }} href='#!'>
                   Submit
                 </a>
-              </button>
+              </Button>
 
-              <button
+              <Button
                 onClick={this.saveButton}
                 className='btn btn-large red darken-4'
               >
                 <a style={{ fontFamily: 'Alagard', color: 'white' }} href='#!'>
                   Save
                 </a>
-              </button>
+              </Button>
             </div>
           </Col>
 
